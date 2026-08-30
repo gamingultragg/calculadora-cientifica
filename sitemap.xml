@@ -237,6 +237,13 @@
     <priority>0.7</priority>
   </url>
 
+  <!-- Institucional -->
+  <url>
+    <loc>https://www.calculadoracientifica.com.ar/sobre-nosotros/</loc>
+    <changefreq>yearly</changefreq>
+    <priority>0.4</priority>
+  </url>
+
   <!-- Legal -->
   <url>
     <loc>https://www.calculadoracientifica.com.ar/privacidad/</loc>

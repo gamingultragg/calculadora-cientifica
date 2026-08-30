@@ -333,6 +333,14 @@ legales = 46 páginas**, todas en `sitemap.xml` (excepto la 404, que lleva `noin
    Verificado en vivo: `"15.000"` en Interés Compuesto ahora da el resultado correcto
    ($16.902,38 al 12% anual sobre $15.000, antes hubiera calculado sobre "$15").
 
+✅ **Revisión de seguridad (XSS)**: se auditaron los ~40 usos de `innerHTML` en las 18
+   calculadoras. Todos interpolan exclusivamente números ya validados y formateados (`fmt()`) o
+   strings fijos del código fuente (etiquetas de campos); ninguno inserta texto crudo tipeado por
+   el usuario. Los mensajes de error que citan el input inválido (ej. `"${input.value}" no es un
+   número válido`) usan `textContent` en los 18 archivos sin excepción, nunca `innerHTML` — así que
+   no ejecutan HTML/JS aunque alguien escriba algo como `<script>` en un campo numérico.
+   **Resultado: 0 vectores XSS encontrados.**
+
 ✅ **Validación de `sitemap.xml`** (`scripts/validate-sitemap.py`, no destructiva): confirma que el
    archivo sea XML bien formado y que coincida 1:1 con las páginas reales del sitio — sin URLs
    duplicadas, sin entradas que apunten a páginas que ya no existen, y sin páginas indexables que

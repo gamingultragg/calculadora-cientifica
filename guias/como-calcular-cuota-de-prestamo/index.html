@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="es-AR">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Cómo se Calcula la Cuota de un Préstamo (Sistema Francés) | Calculadora Científica</title>
+<meta name="description" content="Guía completa sobre el sistema francés de amortización: la fórmula de la cuota fija, un ejemplo resuelto paso a paso, y por qué al principio se paga más interés que capital." />
+<link rel="canonical" href="https://www.calculadoracientifica.com.ar/guias/como-calcular-cuota-de-prestamo/" />
+<link rel="alternate" hreflang="es-AR" href="https://www.calculadoracientifica.com.ar/guias/como-calcular-cuota-de-prestamo/" />
+<link rel="alternate" hreflang="es" href="https://www.calculadoracientifica.com.ar/guias/como-calcular-cuota-de-prestamo/" />
+<link rel="icon" type="image/svg+xml" href="/assets/img/favicon.svg" />
+<link rel="icon" type="image/png" sizes="32x32" href="/assets/img/favicon-32.png" />
+<link rel="icon" type="image/png" sizes="16x16" href="/assets/img/favicon-16.png" />
+<link rel="apple-touch-icon" href="/assets/img/apple-touch-icon.png" />
+
+<meta property="og:type" content="article" />
+<meta property="og:locale" content="es_AR" />
+<meta property="og:site_name" content="Calculadora Científica" />
+<meta property="og:title" content="Cómo se Calcula la Cuota de un Préstamo (Sistema Francés)" />
+<meta property="og:description" content="Fórmula de la cuota fija y un ejemplo resuelto paso a paso." />
+<meta property="og:url" content="https://www.calculadoracientifica.com.ar/guias/como-calcular-cuota-de-prestamo/" />
+<meta property="og:image" content="https://www.calculadoracientifica.com.ar/assets/img/og-image.png" />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="630" />
+<meta name="twitter:image" content="https://www.calculadoracientifica.com.ar/assets/img/og-image.png" />
+<meta name="twitter:card" content="summary_large_image" />
+
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Roboto+Mono:wght@400;500;700&display=swap" rel="stylesheet" />
+
+<script src="https://cdn.tailwindcss.com"></script>
+<script>
+  tailwind.config = { darkMode: "class", theme: { extend: { fontFamily: { sans: ["Inter","ui-sans-serif","system-ui","sans-serif"], mono: ["Roboto Mono","ui-monospace","monospace"] } } } };
+</script>
+<link rel="stylesheet" href="/assets/css/styles.css" />
+<script src="/assets/js/theme.js"></script>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Article",
+      "headline": "Cómo se calcula la cuota de un préstamo (sistema francés)",
+      "description": "Guía completa sobre el sistema francés de amortización: la fórmula de la cuota fija, un ejemplo resuelto paso a paso, y por qué al principio se paga más interés que capital.",
+      "author": { "@type": "Organization", "name": "Calculadora Científica" },
+      "publisher": { "@type": "Organization", "name": "Calculadora Científica" },
+      "mainEntityOfPage": "https://www.calculadoracientifica.com.ar/guias/como-calcular-cuota-de-prestamo/",
+      "inLanguage": "es-AR",
+      "datePublished": "2026-08-30"
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        { "@type": "ListItem", "position": 1, "name": "Inicio", "item": "https://www.calculadoracientifica.com.ar/" },
+        { "@type": "ListItem", "position": 2, "name": "Guías", "item": "https://www.calculadoracientifica.com.ar/guias/" },
+        { "@type": "ListItem", "position": 3, "name": "Cómo se calcula la cuota de un préstamo", "item": "https://www.calculadoracientifica.com.ar/guias/como-calcular-cuota-de-prestamo/" }
+      ]
+    }
+  ]
+}
+</script>
+</head>
+<body class="min-h-screen font-sans antialiased">
+
+  <header class="sticky top-0 z-40 backdrop-blur border-b border-[var(--color-border)] bg-[var(--color-bg)]/85">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 h-16 flex items-center justify-between">
+      <a href="/" class="flex items-center gap-2 font-display font-extrabold text-lg">
+        <span class="w-8 h-8 rounded-lg bg-[var(--color-primary)] text-white flex items-center justify-center text-sm">∑</span>
+        Calculadora<span class="text-[var(--color-primary)]">Científica</span>
+      </a>
+      <button data-theme-toggle type="button" aria-label="Cambiar tema claro/oscuro"
+        class="w-10 h-10 rounded-full surface flex items-center justify-center hover:shadow-md transition-shadow">
+        <span data-theme-icon>🌙</span>
+      </button>
+    </div>
+  </header>
+
+  <main class="max-w-3xl mx-auto px-4 sm:px-6 py-8">
+    <nav aria-label="Breadcrumb" class="text-sm text-[var(--color-text-muted)] mb-4">
+      <ol class="flex flex-wrap items-center gap-1">
+        <li><a href="/" class="hover:text-[var(--color-primary)]">Inicio</a></li>
+        <li aria-hidden="true">/</li>
+        <li><a href="/guias/" class="hover:text-[var(--color-primary)]">Guías</a></li>
+        <li aria-hidden="true">/</li>
+        <li class="text-[var(--color-text)] font-medium" aria-current="page">Cómo se calcula la cuota de un préstamo</li>
+      </ol>
+    </nav>
+
+    <article>
+      <h1 class="font-display font-extrabold text-2xl sm:text-3xl">Cómo se calcula la cuota de un préstamo (sistema francés)</h1>
+      <p class="mt-3 text-[var(--color-text-muted)] leading-relaxed">
+        El sistema francés es el más usado en préstamos personales, hipotecarios y prendarios en
+        Argentina y Latinoamérica: la cuota es siempre la misma, mes a mes, hasta terminar de pagar
+        el préstamo. Esta guía muestra de dónde sale esa cuota.
+      </p>
+
+      <div class="mt-6 rounded-2xl surface p-4 flex items-center justify-between gap-3">
+        <p class="text-sm">¿Preferís que lo calcule por vos?</p>
+        <a href="/calculadoras/finanzas/amortizacion-prestamos/" class="calc-btn calc-btn--op px-4 py-2 text-sm whitespace-nowrap">Abrir calculadora</a>
+      </div>
+
+      <h2 class="font-display font-bold text-xl mt-8 mb-2">1. La fórmula</h2>
+      <p class="font-numeric text-center my-3 text-[var(--color-text)]">Cuota = P × i / (1 − (1 + i)^−N)</p>
+      <p class="text-[var(--color-text-muted)] leading-relaxed">
+        <span class="font-numeric">P</span>: monto del préstamo. <span class="font-numeric">i</span>:
+        tasa de interés periódica (la tasa anual dividida por la cantidad de cuotas por año).
+        <span class="font-numeric">N</span>: cantidad total de cuotas.
+      </p>
+
+      <h2 class="font-display font-bold text-xl mt-8 mb-2">2. Ejemplo resuelto</h2>
+      <p class="text-[var(--color-text-muted)] leading-relaxed">
+        Préstamo de $100.000, tasa nominal anual del 12%, a pagar en 12 cuotas mensuales.
+      </p>
+      <ol class="list-decimal list-inside space-y-1 text-[var(--color-text-muted)] font-numeric">
+        <li>i = 12% / 12 = 1% mensual = 0,01</li>
+        <li>N = 12 cuotas</li>
+        <li>Cuota = 100.000 × 0,01 / (1 − 1,01⁻¹²) = 1.000 / 0,112551 ≈ $8.884,88</li>
+        <li>Total pagado = 8.884,88 × 12 ≈ $106.618,55</li>
+        <li>Interés total = 106.618,55 − 100.000 ≈ $6.618,55</li>
+      </ol>
+
+      <h2 class="font-display font-bold text-xl mt-8 mb-2">3. ¿Por qué al principio se paga "más interés"?</h2>
+      <p class="text-[var(--color-text-muted)] leading-relaxed">
+        Aunque la cuota es fija, la proporción de capital e interés que la componen cambia mes a
+        mes. Al principio, la deuda pendiente es alta, así que el interés de ese mes (que se calcula
+        sobre el saldo pendiente) también es alto — y una porción menor de la cuota amortiza
+        capital. A medida que el saldo baja, cada cuota destina más a capital y menos a interés,
+        aunque el monto total de la cuota no cambie.
+      </p>
+
+      <h2 class="font-display font-bold text-xl mt-8 mb-2">4. Tasa nominal vs tasa efectiva</h2>
+      <p class="text-[var(--color-text-muted)] leading-relaxed">
+        La tasa que suele anunciarse es la <strong class="text-[var(--color-text)]">nominal anual
+        (TNA)</strong>, que simplemente se divide por la cantidad de cuotas al año para obtener la
+        tasa periódica. La <strong class="text-[var(--color-text)]">tasa efectiva anual (TEA)</strong>
+        es mayor, porque considera el efecto compuesto de pagar cuotas antes de que termine el año
+        — es la métrica más justa para comparar dos préstamos con distinta frecuencia de pago.
+      </p>
+
+      <h2 class="font-display font-bold text-xl mt-8 mb-2">5. Errores comunes</h2>
+      <ul class="list-disc list-inside space-y-1 text-[var(--color-text-muted)]">
+        <li>Usar la tasa anual directamente sin dividirla por la cantidad de cuotas por año.</li>
+        <li>Confundir el monto del préstamo con el total que se termina pagando (que siempre es mayor, por el interés).</li>
+        <li>Comparar dos préstamos solo por el valor de la cuota, sin mirar el plazo total ni la TEA.</li>
+      </ul>
+    </article>
+
+    <section class="mt-10 surface rounded-2xl p-5 shadow-sm">
+      <h2 class="font-display font-semibold text-lg mb-2">Calculadoras relacionadas</h2>
+      <ul class="space-y-2 text-sm">
+        <li><a class="text-[var(--color-primary)] hover:underline" href="/calculadoras/finanzas/amortizacion-prestamos/">Amortización de Préstamos</a></li>
+        <li><a class="text-[var(--color-primary)] hover:underline" href="/calculadoras/finanzas/interes-compuesto/">Interés Compuesto</a></li>
+      </ul>
+    </section>
+  </main>
+
+  <footer class="border-t border-[var(--color-border)] mt-10">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 py-10 text-sm text-[var(--color-text-muted)] flex flex-col sm:flex-row items-center justify-between gap-4">
+      <p>© 2026 Calculadora Científica · Hecho en Argentina 🇦🇷</p>
+      <a href="/" class="hover:text-[var(--color-primary)]">← Volver al inicio</a>
+    </div>
+  </footer>
+</body>
+</html>

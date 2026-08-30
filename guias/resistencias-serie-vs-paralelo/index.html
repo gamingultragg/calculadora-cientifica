@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="es-AR">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Resistencias en Serie vs Paralelo: Diferencias y Fórmulas | Calculadora Científica</title>
+<meta name="description" content="Guía completa sobre resistencias en serie y en paralelo: fórmulas, diferencias, cuándo usar cada configuración y ejemplos resueltos de circuitos." />
+<link rel="canonical" href="https://www.calculadoracientifica.com.ar/guias/resistencias-serie-vs-paralelo/" />
+<link rel="alternate" hreflang="es-AR" href="https://www.calculadoracientifica.com.ar/guias/resistencias-serie-vs-paralelo/" />
+<link rel="alternate" hreflang="es" href="https://www.calculadoracientifica.com.ar/guias/resistencias-serie-vs-paralelo/" />
+<link rel="icon" type="image/svg+xml" href="/assets/img/favicon.svg" />
+<link rel="icon" type="image/png" sizes="32x32" href="/assets/img/favicon-32.png" />
+<link rel="icon" type="image/png" sizes="16x16" href="/assets/img/favicon-16.png" />
+<link rel="apple-touch-icon" href="/assets/img/apple-touch-icon.png" />
+
+<meta property="og:type" content="article" />
+<meta property="og:locale" content="es_AR" />
+<meta property="og:site_name" content="Calculadora Científica" />
+<meta property="og:title" content="Resistencias en Serie vs Paralelo" />
+<meta property="og:description" content="Fórmulas, diferencias y ejemplos resueltos de circuitos." />
+<meta property="og:url" content="https://www.calculadoracientifica.com.ar/guias/resistencias-serie-vs-paralelo/" />
+<meta property="og:image" content="https://www.calculadoracientifica.com.ar/assets/img/og-image.png" />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="630" />
+<meta name="twitter:image" content="https://www.calculadoracientifica.com.ar/assets/img/og-image.png" />
+<meta name="twitter:card" content="summary_large_image" />
+
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Roboto+Mono:wght@400;500;700&display=swap" rel="stylesheet" />
+
+<script src="https://cdn.tailwindcss.com"></script>
+<script>
+  tailwind.config = { darkMode: "class", theme: { extend: { fontFamily: { sans: ["Inter","ui-sans-serif","system-ui","sans-serif"], mono: ["Roboto Mono","ui-monospace","monospace"] } } } };
+</script>
+<link rel="stylesheet" href="/assets/css/styles.css" />
+<script src="/assets/js/theme.js"></script>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Article",
+      "headline": "Resistencias en serie vs paralelo: diferencias y fórmulas",
+      "description": "Guía completa sobre resistencias en serie y en paralelo: fórmulas, diferencias, cuándo usar cada configuración y ejemplos resueltos de circuitos.",
+      "author": { "@type": "Organization", "name": "Calculadora Científica" },
+      "publisher": { "@type": "Organization", "name": "Calculadora Científica" },
+      "mainEntityOfPage": "https://www.calculadoracientifica.com.ar/guias/resistencias-serie-vs-paralelo/",
+      "inLanguage": "es-AR",
+      "datePublished": "2026-08-30"
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        { "@type": "ListItem", "position": 1, "name": "Inicio", "item": "https://www.calculadoracientifica.com.ar/" },
+        { "@type": "ListItem", "position": 2, "name": "Guías", "item": "https://www.calculadoracientifica.com.ar/guias/" },
+        { "@type": "ListItem", "position": 3, "name": "Resistencias en serie vs paralelo", "item": "https://www.calculadoracientifica.com.ar/guias/resistencias-serie-vs-paralelo/" }
+      ]
+    }
+  ]
+}
+</script>
+</head>
+<body class="min-h-screen font-sans antialiased">
+
+  <header class="sticky top-0 z-40 backdrop-blur border-b border-[var(--color-border)] bg-[var(--color-bg)]/85">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 h-16 flex items-center justify-between">
+      <a href="/" class="flex items-center gap-2 font-display font-extrabold text-lg">
+        <span class="w-8 h-8 rounded-lg bg-[var(--color-primary)] text-white flex items-center justify-center text-sm">∑</span>
+        Calculadora<span class="text-[var(--color-primary)]">Científica</span>
+      </a>
+      <button data-theme-toggle type="button" aria-label="Cambiar tema claro/oscuro"
+        class="w-10 h-10 rounded-full surface flex items-center justify-center hover:shadow-md transition-shadow">
+        <span data-theme-icon>🌙</span>
+      </button>
+    </div>
+  </header>
+
+  <main class="max-w-3xl mx-auto px-4 sm:px-6 py-8">
+    <nav aria-label="Breadcrumb" class="text-sm text-[var(--color-text-muted)] mb-4">
+      <ol class="flex flex-wrap items-center gap-1">
+        <li><a href="/" class="hover:text-[var(--color-primary)]">Inicio</a></li>
+        <li aria-hidden="true">/</li>
+        <li><a href="/guias/" class="hover:text-[var(--color-primary)]">Guías</a></li>
+        <li aria-hidden="true">/</li>
+        <li class="text-[var(--color-text)] font-medium" aria-current="page">Resistencias en serie vs paralelo</li>
+      </ol>
+    </nav>
+
+    <article>
+      <h1 class="font-display font-extrabold text-2xl sm:text-3xl">Resistencias en serie vs paralelo: diferencias y fórmulas</h1>
+      <p class="mt-3 text-[var(--color-text-muted)] leading-relaxed">
+        Cómo se conectan los resistores en un circuito cambia por completo la resistencia total.
+        Esta guía explica las dos configuraciones básicas, sus fórmulas y cuándo se usa cada una.
+      </p>
+
+      <div class="mt-6 rounded-2xl surface p-4 flex items-center justify-between gap-3">
+        <p class="text-sm">¿Preferís que lo calcule por vos?</p>
+        <a href="/calculadoras/ingenieria/resistencias-serie-paralelo/" class="calc-btn calc-btn--op px-4 py-2 text-sm whitespace-nowrap">Abrir calculadora</a>
+      </div>
+
+      <h2 class="font-display font-bold text-xl mt-8 mb-2">1. Resistencias en serie</h2>
+      <p class="text-[var(--color-text-muted)] leading-relaxed">
+        Están conectadas una a continuación de la otra, formando un único camino para la corriente.
+        La resistencia total es simplemente la suma de todas:
+      </p>
+      <p class="font-numeric text-center my-3 text-[var(--color-text)]">R_total = R₁ + R₂ + … + Rₙ</p>
+      <p class="text-[var(--color-text-muted)] leading-relaxed">
+        Ejemplo: tres resistores de 100 Ω, 220 Ω y 330 Ω en serie → R_total = 100 + 220 + 330 = 650 Ω.
+        La resistencia total en serie <strong class="text-[var(--color-text)]">siempre es mayor</strong>
+        que la resistencia individual más grande.
+      </p>
+
+      <h2 class="font-display font-bold text-xl mt-8 mb-2">2. Resistencias en paralelo</h2>
+      <p class="text-[var(--color-text-muted)] leading-relaxed">
+        Están conectadas entre los mismos dos puntos, formando varios caminos alternativos para la corriente:
+      </p>
+      <p class="font-numeric text-center my-3 text-[var(--color-text)]">1/R_total = 1/R₁ + 1/R₂ + … + 1/Rₙ</p>
+      <p class="text-[var(--color-text-muted)] leading-relaxed">
+        Ejemplo: dos resistores de 100 Ω en paralelo → 1/R_total = 1/100 + 1/100 = 2/100 → R_total = 50 Ω.
+        La resistencia total en paralelo <strong class="text-[var(--color-text)]">siempre es menor</strong>
+        que la resistencia individual más chica: cada camino adicional facilita más el paso de corriente.
+      </p>
+      <p class="text-[var(--color-text-muted)] leading-relaxed mt-2">
+        Caso particular con dos resistores, más rápido de calcular a mano:
+      </p>
+      <p class="font-numeric text-center my-3 text-[var(--color-text)]">R_total = (R₁ × R₂) / (R₁ + R₂)</p>
+
+      <h2 class="font-display font-bold text-xl mt-8 mb-2">3. ¿Cuándo se usa cada una?</h2>
+      <p class="text-[var(--color-text-muted)] leading-relaxed">
+        En <strong class="text-[var(--color-text)]">serie</strong> se usa cuando se quiere limitar la
+        corriente total del circuito o dividir el voltaje entre varios componentes (divisor de
+        voltaje). En <strong class="text-[var(--color-text)]">paralelo</strong> se usa cuando cada
+        componente necesita el mismo voltaje pero puede recibir distinta corriente — por ejemplo,
+        las luces de una casa: si se corta una, las demás siguen funcionando (a diferencia de una
+        guirnalda de luces en serie, donde una falla apaga todo el circuito).
+      </p>
+
+      <h2 class="font-display font-bold text-xl mt-8 mb-2">4. Errores comunes</h2>
+      <ul class="list-disc list-inside space-y-1 text-[var(--color-text-muted)]">
+        <li>Sumar directamente las resistencias en paralelo (hay que invertir, sumar, e invertir de nuevo).</li>
+        <li>Olvidar que el resultado en paralelo siempre da menor a la resistencia más chica del grupo — si da mayor, hay un error de cálculo.</li>
+        <li>Un resistor de 0 Ω en paralelo genera un cortocircuito (división por cero).</li>
+      </ul>
+
+      <h2 class="font-display font-bold text-xl mt-8 mb-2">5. Verificá tu resultado</h2>
+      <p class="text-[var(--color-text-muted)] leading-relaxed">
+        La <a class="text-[var(--color-primary)] hover:underline" href="/calculadoras/ingenieria/resistencias-serie-paralelo/">calculadora de resistencias en serie y paralelo</a>
+        acepta cualquier cantidad de resistores y calcula el total al instante. Después podés usar
+        la <a class="text-[var(--color-primary)] hover:underline" href="/calculadoras/fisica/ley-de-ohm/">Ley de Ohm</a>
+        para calcular voltaje, corriente o potencia sobre ese total.
+      </p>
+    </article>
+
+    <section class="mt-10 surface rounded-2xl p-5 shadow-sm">
+      <h2 class="font-display font-semibold text-lg mb-2">Calculadoras relacionadas</h2>
+      <ul class="space-y-2 text-sm">
+        <li><a class="text-[var(--color-primary)] hover:underline" href="/calculadoras/ingenieria/resistencias-serie-paralelo/">Resistencias en Serie y Paralelo</a></li>
+        <li><a class="text-[var(--color-primary)] hover:underline" href="/calculadoras/fisica/ley-de-ohm/">Ley de Ohm</a></li>
+      </ul>
+    </section>
+  </main>
+
+  <footer class="border-t border-[var(--color-border)] mt-10">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 py-10 text-sm text-[var(--color-text-muted)] flex flex-col sm:flex-row items-center justify-between gap-4">
+      <p>© 2026 Calculadora Científica · Hecho en Argentina 🇦🇷</p>
+      <a href="/" class="hover:text-[var(--color-primary)]">← Volver al inicio</a>
+    </div>
+  </footer>
+</body>
+</html>

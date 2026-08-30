@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="es-AR">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Calculadora Científica Online Gratis | Matemáticas, Estadística, Física y más</title>
+<meta name="description" content="Calculadoras científicas online gratis: matemáticas avanzadas, estadística, ecuaciones, matrices, física, química, ingeniería y finanzas. Sin registro, con fórmulas explicadas." />
+<link rel="canonical" href="https://www.calculadoracientifica.com.ar/" />
+<link rel="alternate" hreflang="es-AR" href="https://www.calculadoracientifica.com.ar/" />
+<link rel="alternate" hreflang="es" href="https://www.calculadoracientifica.com.ar/" />
+<link rel="icon" type="image/svg+xml" href="/assets/img/favicon.svg" />
+<link rel="icon" type="image/png" sizes="32x32" href="/assets/img/favicon-32.png" />
+<link rel="icon" type="image/png" sizes="16x16" href="/assets/img/favicon-16.png" />
+<link rel="apple-touch-icon" href="/assets/img/apple-touch-icon.png" />
+
+<!-- Open Graph / Twitter -->
+<meta property="og:type" content="website" />
+<meta property="og:locale" content="es_AR" />
+<meta property="og:site_name" content="Calculadora Científica" />
+<meta property="og:title" content="Calculadora Científica Online Gratis | calculadoracientifica.com.ar" />
+<meta property="og:description" content="Herramientas gratuitas de matemáticas, estadística, física, química, ingeniería y finanzas con explicación paso a paso." />
+<meta property="og:url" content="https://www.calculadoracientifica.com.ar/" />
+<meta property="og:image" content="https://www.calculadoracientifica.com.ar/assets/img/og-image.png" />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="630" />
+<meta name="twitter:image" content="https://www.calculadoracientifica.com.ar/assets/img/og-image.png" />
+<meta name="twitter:card" content="summary_large_image" />
+
+<!-- Fuentes -->
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Roboto+Mono:wght@400;500;700&display=swap" rel="stylesheet" />
+
+<!-- Tailwind (Play CDN) -->
+<script src="https://cdn.tailwindcss.com"></script>
+<script>
+  tailwind.config = {
+    darkMode: "class",
+    theme: {
+      extend: {
+        fontFamily: {
+          sans: ["Inter", "ui-sans-serif", "system-ui", "sans-serif"],
+          mono: ["Roboto Mono", "ui-monospace", "monospace"],
+        },
+      },
+    },
+  };
+</script>
+<link rel="stylesheet" href="/assets/css/styles.css" />
+<script src="/assets/js/theme.js"></script>
+
+<!-- JSON-LD: WebSite + Organization -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "WebSite",
+      "name": "Calculadora Científica",
+      "url": "https://www.calculadoracientifica.com.ar/",
+      "inLanguage": "es-AR",
+      "potentialAction": {
+        "@type": "SearchAction",
+        "target": "https://www.calculadoracientifica.com.ar/?q={search_term_string}",
+        "query-input": "required name=search_term_string"
+      }
+    },
+    {
+      "@type": "Organization",
+      "name": "Calculadora Científica",
+      "url": "https://www.calculadoracientifica.com.ar/",
+      "logo": "https://www.calculadoracientifica.com.ar/assets/img/logo.png"
+    }
+  ]
+}
+</script>
+</head>
+<body class="min-h-screen font-sans antialiased">
+
+  <!-- SHARED: HEADER -->
+  <header class="sticky top-0 z-40 backdrop-blur border-b border-[var(--color-border)] bg-[var(--color-bg)]/85">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 h-16 flex items-center justify-between">
+      <a href="/" class="flex items-center gap-2 font-display font-extrabold text-lg">
+        <span class="w-8 h-8 rounded-lg bg-[var(--color-primary)] text-white flex items-center justify-center text-sm">∑</span>
+        Calculadora<span class="text-[var(--color-primary)]">Científica</span>
+      </a>
+      <nav class="hidden md:flex items-center gap-6 text-sm font-medium text-[var(--color-text-muted)]">
+        <a href="#categorias" class="hover:text-[var(--color-text)]">Categorías</a>
+        <a href="#calculadoras" class="hover:text-[var(--color-text)]">Calculadoras</a>
+        <a href="/guias/" class="hover:text-[var(--color-text)]">Guías</a>
+      </nav>
+      <button data-theme-toggle type="button" aria-label="Cambiar tema claro/oscuro"
+        class="w-10 h-10 rounded-full surface flex items-center justify-center hover:shadow-md transition-shadow">
+        <span data-theme-icon>🌙</span>
+      </button>
+    </div>
+  </header>
+
+  <!-- HERO -->
+  <section class="max-w-6xl mx-auto px-4 sm:px-6 pt-14 pb-10 text-center">
+    <h1 class="font-display font-extrabold text-3xl sm:text-5xl tracking-tight text-[var(--color-text)]">
+      Calculadoras científicas online,<br class="hidden sm:block" />
+      <span class="text-[var(--color-primary)]">gratis y con fórmulas explicadas</span>
+    </h1>
+    <p class="mt-4 max-w-2xl mx-auto text-base sm:text-lg text-[var(--color-text-muted)]">
+      Matemáticas, estadística, física, química, ingeniería y finanzas.
+      Resultados al instante, sin registro, con el desarrollo paso a paso.
+    </p>
+
+    <!-- Buscador instantáneo -->
+    <div class="mt-8 max-w-xl mx-auto">
+      <label for="calc-search" class="sr-only">Buscar calculadora</label>
+      <div class="relative">
+        <svg class="w-5 h-5 absolute left-4 top-1/2 -translate-y-1/2 text-[var(--color-text-muted)]" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-4.35-4.35M17 10.5a6.5 6.5 0 11-13 0 6.5 6.5 0 0113 0z"/>
+        </svg>
+        <input
+          id="calc-search"
+          type="text"
+          placeholder="Buscar: matrices, ecuación cuadrática, desviación estándar…"
+          class="w-full pl-11 pr-4 py-3.5 rounded-2xl surface shadow-sm focus:outline-none focus:ring-2 focus:ring-[var(--color-primary)] text-[var(--color-text)] placeholder:text-[var(--color-text-muted)]"
+          autocomplete="off"
+        />
+      </div>
+    </div>
+  </section>
+
+  <!-- Filtro de categorías -->
+  <section id="categorias" class="max-w-6xl mx-auto px-4 sm:px-6">
+    <div class="flex flex-wrap justify-center gap-2">
+      <button data-category-filter="all" class="px-4 py-2 rounded-full text-sm font-semibold bg-[var(--color-primary)] text-white border border-transparent transition-colors">
+        Todas
+      </button>
+      <button data-category-filter="matematicas" class="px-4 py-2 rounded-full text-sm font-semibold surface transition-colors">Matemáticas Avanzadas</button>
+      <button data-category-filter="estadistica" class="px-4 py-2 rounded-full text-sm font-semibold surface transition-colors">Estadística</button>
+      <button data-category-filter="fisica" class="px-4 py-2 rounded-full text-sm font-semibold surface transition-colors">Física</button>
+      <button data-category-filter="quimica" class="px-4 py-2 rounded-full text-sm font-semibold surface transition-colors">Química</button>
+      <button data-category-filter="ingenieria" class="px-4 py-2 rounded-full text-sm font-semibold surface transition-colors">Ingeniería</button>
+      <button data-category-filter="finanzas" class="px-4 py-2 rounded-full text-sm font-semibold surface transition-colors">Finanzas</button>
+    </div>
+  </section>
+
+  <!-- Grid de calculadoras -->
+  <main id="calculadoras" class="max-w-6xl mx-auto px-4 sm:px-6 py-10">
+    <div class="flex items-center justify-between mb-4">
+      <h2 class="font-display font-bold text-xl">Todas las calculadoras</h2>
+      <span id="calc-result-count" class="text-sm text-[var(--color-text-muted)]"></span>
+    </div>
+
+    <div id="calc-grid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4"></div>
+
+    <div id="calc-empty" class="hidden text-center py-16">
+      <p class="text-lg font-semibold">No encontramos calculadoras para tu búsqueda</p>
+      <p class="text-sm text-[var(--color-text-muted)] mt-1">Probá con otro término, por ejemplo "matrices" o "media".</p>
+    </div>
+  </main>
+
+  <!-- SHARED: FOOTER -->
+  <footer class="border-t border-[var(--color-border)] mt-10">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 py-10 text-sm text-[var(--color-text-muted)] flex flex-col sm:flex-row items-center justify-between gap-4">
+      <p>© 2026 Calculadora Científica · Hecho en Argentina 🇦🇷</p>
+      <p>Herramientas educativas gratuitas para estudiantes y profesionales de habla hispana.</p>
+    </div>
+  </footer>
+
+  <script src="/assets/js/calculators-data.js"></script>
+  <script src="/assets/js/main.js"></script>
+</body>
+</html>

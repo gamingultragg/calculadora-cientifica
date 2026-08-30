@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="es-AR">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Calculadora de Ecuaciones de Segundo Grado (Cuadráticas) | Calculadora Científica</title>
+<meta name="description" content="Resolvé ecuaciones de segundo grado online con la fórmula cuadrática (Bhaskara). Desarrollo paso a paso, raíces reales y complejas, gratis y sin registro." />
+<link rel="canonical" href="https://www.calculadoracientifica.com.ar/calculadoras/matematicas-avanzadas/ecuaciones-segundo-grado/" />
+<link rel="alternate" hreflang="es-AR" href="https://www.calculadoracientifica.com.ar/calculadoras/matematicas-avanzadas/ecuaciones-segundo-grado/" />
+<link rel="alternate" hreflang="es" href="https://www.calculadoracientifica.com.ar/calculadoras/matematicas-avanzadas/ecuaciones-segundo-grado/" />
+<link rel="icon" type="image/svg+xml" href="/assets/img/favicon.svg" />
+<link rel="icon" type="image/png" sizes="32x32" href="/assets/img/favicon-32.png" />
+<link rel="icon" type="image/png" sizes="16x16" href="/assets/img/favicon-16.png" />
+<link rel="apple-touch-icon" href="/assets/img/apple-touch-icon.png" />
+
+<meta property="og:type" content="website" />
+<meta property="og:locale" content="es_AR" />
+<meta property="og:site_name" content="Calculadora Científica" />
+<meta property="og:title" content="Calculadora de Ecuaciones de Segundo Grado" />
+<meta property="og:description" content="Fórmula cuadrática con pasos, raíces reales y complejas. Gratis y sin registro." />
+<meta property="og:url" content="https://www.calculadoracientifica.com.ar/calculadoras/matematicas-avanzadas/ecuaciones-segundo-grado/" />
+<meta property="og:image" content="https://www.calculadoracientifica.com.ar/assets/img/og-image.png" />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="630" />
+<meta name="twitter:image" content="https://www.calculadoracientifica.com.ar/assets/img/og-image.png" />
+<meta name="twitter:card" content="summary_large_image" />
+
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Roboto+Mono:wght@400;500;700&display=swap" rel="stylesheet" />
+
+<script src="https://cdn.tailwindcss.com"></script>
+<script>
+  tailwind.config = {
+    darkMode: "class",
+    theme: {
+      extend: {
+        fontFamily: {
+          sans: ["Inter", "ui-sans-serif", "system-ui", "sans-serif"],
+          mono: ["Roboto Mono", "ui-monospace", "monospace"],
+        },
+      },
+    },
+  };
+</script>
+<link rel="stylesheet" href="/assets/css/styles.css" />
+<script src="/assets/js/theme.js"></script>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "SoftwareApplication",
+      "name": "Calculadora de Ecuaciones de Segundo Grado",
+      "applicationCategory": "EducationalApplication",
+      "operatingSystem": "Web",
+      "url": "https://www.calculadoracientifica.com.ar/calculadoras/matematicas-avanzadas/ecuaciones-segundo-grado/",
+      "description": "Resuelve ecuaciones cuadráticas ax² + bx + c = 0 con la fórmula general, mostrando el desarrollo paso a paso y raíces reales o complejas.",
+      "offers": { "@type": "Offer", "price": "0", "priceCurrency": "ARS" },
+      "inLanguage": "es-AR"
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        { "@type": "ListItem", "position": 1, "name": "Inicio", "item": "https://www.calculadoracientifica.com.ar/" },
+        { "@type": "ListItem", "position": 2, "name": "Matemáticas Avanzadas", "item": "https://www.calculadoracientifica.com.ar/calculadoras/matematicas-avanzadas/" },
+        { "@type": "ListItem", "position": 3, "name": "Ecuaciones de Segundo Grado", "item": "https://www.calculadoracientifica.com.ar/calculadoras/matematicas-avanzadas/ecuaciones-segundo-grado/" }
+      ]
+    },
+    {
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "¿Qué es el discriminante?",
+          "acceptedAnswer": { "@type": "Answer", "text": "Es la expresión Δ = b² - 4ac. Su signo determina si la ecuación tiene raíces reales distintas, una raíz real doble, o raíces complejas." }
+        },
+        {
+          "@type": "Question",
+          "name": "¿Qué pasa si a = 0?",
+          "acceptedAnswer": { "@type": "Answer", "text": "Si a = 0 la ecuación deja de ser cuadrática (se vuelve lineal), por lo que la fórmula cuadrática no aplica. La calculadora lo señala como error." }
+        },
+        {
+          "@type": "Question",
+          "name": "¿Qué son las raíces complejas?",
+          "acceptedAnswer": { "@type": "Answer", "text": "Cuando el discriminante es negativo, no hay raíces reales: las soluciones son números complejos de la forma p ± qi, donde i es la unidad imaginaria." }
+        }
+      ]
+    }
+  ]
+}
+</script>
+</head>
+<body class="min-h-screen font-sans antialiased">
+
+  <header class="sticky top-0 z-40 backdrop-blur border-b border-[var(--color-border)] bg-[var(--color-bg)]/85">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 h-16 flex items-center justify-between">
+      <a href="/" class="flex items-center gap-2 font-display font-extrabold text-lg">
+        <span class="w-8 h-8 rounded-lg bg-[var(--color-primary)] text-white flex items-center justify-center text-sm">∑</span>
+        Calculadora<span class="text-[var(--color-primary)]">Científica</span>
+      </a>
+      <button data-theme-toggle type="button" aria-label="Cambiar tema claro/oscuro"
+        class="w-10 h-10 rounded-full surface flex items-center justify-center hover:shadow-md transition-shadow">
+        <span data-theme-icon>🌙</span>
+      </button>
+    </div>
+  </header>
+
+  <main class="max-w-6xl mx-auto px-4 sm:px-6 py-8">
+    <nav aria-label="Breadcrumb" class="text-sm text-[var(--color-text-muted)] mb-4">
+      <ol class="flex flex-wrap items-center gap-1">
+        <li><a href="/" class="hover:text-[var(--color-primary)]">Inicio</a></li>
+        <li aria-hidden="true">/</li>
+        <li><a href="/calculadoras/matematicas-avanzadas/" class="hover:text-[var(--color-primary)]">Matemáticas Avanzadas</a></li>
+        <li aria-hidden="true">/</li>
+        <li class="text-[var(--color-text)] font-medium" aria-current="page">Ecuaciones de Segundo Grado</li>
+      </ol>
+    </nav>
+
+    <h1 class="font-display font-extrabold text-2xl sm:text-3xl">Calculadora de Ecuaciones de Segundo Grado</h1>
+    <p class="mt-2 text-[var(--color-text-muted)] max-w-2xl">
+      Resolvé ecuaciones de la forma <span class="font-numeric">ax² + bx + c = 0</span> con la fórmula
+      cuadrática. Mostramos el desarrollo paso a paso y las raíces, reales o complejas.
+    </p>
+
+    <div class="mt-6 grid grid-cols-1 lg:grid-cols-[420px_1fr] gap-6 items-start">
+      <!-- Formulario -->
+      <section class="surface rounded-2xl p-5 shadow-sm">
+        <p class="font-numeric text-center text-lg mb-4">a·x² + b·x + c = 0</p>
+
+        <div id="eq-error" class="hidden alert-error rounded-lg px-3 py-2 text-sm mb-4" role="alert" aria-live="polite"></div>
+
+        <form id="eq-form" class="space-y-4" novalidate>
+          <div>
+            <label for="eq-a" class="block text-sm font-medium mb-1">Coeficiente a</label>
+            <input id="eq-a" name="a" type="text" inputmode="decimal" placeholder="Ej: 1"
+              class="w-full rounded-xl surface px-3 py-2.5 font-numeric focus:outline-none focus:ring-2 focus:ring-[var(--color-primary)]" />
+          </div>
+          <div>
+            <label for="eq-b" class="block text-sm font-medium mb-1">Coeficiente b</label>
+            <input id="eq-b" name="b" type="text" inputmode="decimal" placeholder="Ej: -3"
+              class="w-full rounded-xl surface px-3 py-2.5 font-numeric focus:outline-none focus:ring-2 focus:ring-[var(--color-primary)]" />
+          </div>
+          <div>
+            <label for="eq-c" class="block text-sm font-medium mb-1">Coeficiente c</label>
+            <input id="eq-c" name="c" type="text" inputmode="decimal" placeholder="Ej: 2"
+              class="w-full rounded-xl surface px-3 py-2.5 font-numeric focus:outline-none focus:ring-2 focus:ring-[var(--color-primary)]" />
+          </div>
+          <div class="flex gap-2">
+            <button type="submit" class="calc-btn calc-btn--op flex-1 py-2.5">Resolver</button>
+            <button type="button" id="eq-clear" class="calc-btn flex-1 py-2.5">Limpiar</button>
+          </div>
+        </form>
+      </section>
+
+      <!-- Resultado + ayuda -->
+      <section class="space-y-4">
+        <section id="eq-result-panel" class="hidden surface rounded-2xl p-5 shadow-sm">
+          <h2 class="font-display font-semibold text-lg mb-3">Desarrollo paso a paso</h2>
+          <ol id="eq-steps" class="space-y-2 text-sm font-numeric leading-relaxed"></ol>
+          <div class="mt-4 pt-4 border-t border-[var(--color-border)]">
+            <h3 class="font-display font-semibold mb-2">Raíces</h3>
+            <div id="eq-roots" class="text-xl font-numeric font-bold text-[var(--color-primary)]"></div>
+          </div>
+        </section>
+
+        <details class="help-accordion surface rounded-2xl p-5 shadow-sm" open>
+          <summary class="flex items-center justify-between font-display font-semibold text-lg">
+            Ayuda y Fórmulas Teóricas
+            <svg class="chevron w-5 h-5 text-[var(--color-text-muted)]" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7"/></svg>
+          </summary>
+          <div class="mt-4 space-y-4 text-sm leading-relaxed text-[var(--color-text-muted)]">
+            <div>
+              <h3 class="font-semibold text-[var(--color-text)] mb-1">Fórmula cuadrática</h3>
+              <p class="font-numeric text-[var(--color-text)]">x = (-b ± √(b² - 4ac)) / 2a</p>
+            </div>
+            <div>
+              <h3 class="font-semibold text-[var(--color-text)] mb-1">El discriminante (Δ)</h3>
+              <p><span class="font-numeric">Δ &gt; 0</span>: dos raíces reales distintas.</p>
+              <p><span class="font-numeric">Δ = 0</span>: una raíz real doble.</p>
+              <p><span class="font-numeric">Δ &lt; 0</span>: dos raíces complejas conjugadas.</p>
+            </div>
+            <div>
+              <h3 class="font-semibold text-[var(--color-text)] mb-1">¿Por qué a no puede ser 0?</h3>
+              <p>Si <span class="font-numeric">a = 0</span> el término cuadrático desaparece y la ecuación se
+                vuelve lineal (<span class="font-numeric">bx + c = 0</span>), fuera del alcance de esta
+                calculadora.</p>
+            </div>
+          </div>
+        </details>
+
+        <section class="surface rounded-2xl p-5 shadow-sm">
+          <h2 class="font-display font-semibold text-lg mb-2">Calculadoras relacionadas</h2>
+          <ul class="space-y-2 text-sm">
+            <li><a class="text-[var(--color-primary)] hover:underline" href="/calculadoras/matematicas-avanzadas/calculadora-cientifica-online/">Calculadora Científica Online</a></li>
+            <li><a class="text-[var(--color-primary)] hover:underline" href="/calculadoras/matematicas-avanzadas/calculadora-matrices/">Calculadora de Matrices 2×2 y 3×3</a></li>
+            <li><a class="text-[var(--color-primary)] hover:underline" href="/calculadoras/estadistica/calculadora-estadistica-descriptiva/">Estadística Descriptiva</a></li>
+          </ul>
+        </section>
+
+        <section class="surface rounded-2xl p-5 shadow-sm">
+          <h2 class="font-display font-semibold text-lg mb-2">¿Querés entender el "por qué"?</h2>
+          <p class="text-sm text-[var(--color-text-muted)] mb-3">Leé la guía completa con ejemplos resueltos de los tres casos (raíces reales, raíz doble y raíces complejas).</p>
+          <a class="text-[var(--color-primary)] hover:underline text-sm font-semibold" href="/guias/como-resolver-ecuaciones-de-segundo-grado/">Cómo resolver una ecuación de segundo grado paso a paso →</a>
+        </section>
+      </section>
+    </div>
+  </main>
+
+  <footer class="border-t border-[var(--color-border)] mt-10">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 py-10 text-sm text-[var(--color-text-muted)] flex flex-col sm:flex-row items-center justify-between gap-4">
+      <p>© 2026 Calculadora Científica · Hecho en Argentina 🇦🇷</p>
+      <a href="/" class="hover:text-[var(--color-primary)]">← Volver al inicio</a>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>

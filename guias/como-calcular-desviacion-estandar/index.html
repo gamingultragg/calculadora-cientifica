@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="es-AR">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Cómo Calcular la Desviación Estándar Paso a Paso | Calculadora Científica</title>
+<meta name="description" content="Guía completa para calcular la desviación estándar muestral y poblacional paso a paso, con la fórmula, un ejemplo resuelto y cuándo usar cada versión." />
+<link rel="canonical" href="https://www.calculadoracientifica.com.ar/guias/como-calcular-desviacion-estandar/" />
+<link rel="alternate" hreflang="es-AR" href="https://www.calculadoracientifica.com.ar/guias/como-calcular-desviacion-estandar/" />
+<link rel="alternate" hreflang="es" href="https://www.calculadoracientifica.com.ar/guias/como-calcular-desviacion-estandar/" />
+<link rel="icon" type="image/svg+xml" href="/assets/img/favicon.svg" />
+<link rel="icon" type="image/png" sizes="32x32" href="/assets/img/favicon-32.png" />
+<link rel="icon" type="image/png" sizes="16x16" href="/assets/img/favicon-16.png" />
+<link rel="apple-touch-icon" href="/assets/img/apple-touch-icon.png" />
+
+<meta property="og:type" content="article" />
+<meta property="og:locale" content="es_AR" />
+<meta property="og:site_name" content="Calculadora Científica" />
+<meta property="og:title" content="Cómo Calcular la Desviación Estándar Paso a Paso" />
+<meta property="og:description" content="Muestral vs poblacional, fórmula y ejemplo resuelto." />
+<meta property="og:url" content="https://www.calculadoracientifica.com.ar/guias/como-calcular-desviacion-estandar/" />
+<meta property="og:image" content="https://www.calculadoracientifica.com.ar/assets/img/og-image.png" />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="630" />
+<meta name="twitter:image" content="https://www.calculadoracientifica.com.ar/assets/img/og-image.png" />
+<meta name="twitter:card" content="summary_large_image" />
+
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Roboto+Mono:wght@400;500;700&display=swap" rel="stylesheet" />
+
+<script src="https://cdn.tailwindcss.com"></script>
+<script>
+  tailwind.config = { darkMode: "class", theme: { extend: { fontFamily: { sans: ["Inter","ui-sans-serif","system-ui","sans-serif"], mono: ["Roboto Mono","ui-monospace","monospace"] } } } };
+</script>
+<link rel="stylesheet" href="/assets/css/styles.css" />
+<script src="/assets/js/theme.js"></script>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Article",
+      "headline": "Cómo calcular la desviación estándar paso a paso",
+      "description": "Guía completa para calcular la desviación estándar muestral y poblacional paso a paso, con la fórmula, un ejemplo resuelto y cuándo usar cada versión.",
+      "author": { "@type": "Organization", "name": "Calculadora Científica" },
+      "publisher": { "@type": "Organization", "name": "Calculadora Científica" },
+      "mainEntityOfPage": "https://www.calculadoracientifica.com.ar/guias/como-calcular-desviacion-estandar/",
+      "inLanguage": "es-AR",
+      "datePublished": "2026-08-30"
+    },
+    {
+      "@type": "HowTo",
+      "name": "Cómo calcular la desviación estándar",
+      "step": [
+        { "@type": "HowToStep", "name": "Calcular la media", "text": "Sumá todos los valores y dividí por la cantidad de datos." },
+        { "@type": "HowToStep", "name": "Calcular las diferencias al cuadrado", "text": "Para cada dato, restá la media y elevá el resultado al cuadrado." },
+        { "@type": "HowToStep", "name": "Promediar las diferencias", "text": "Sumá esos cuadrados y dividí por n (poblacional) o n-1 (muestral) para obtener la varianza." },
+        { "@type": "HowToStep", "name": "Sacar la raíz cuadrada", "text": "La desviación estándar es la raíz cuadrada de la varianza." }
+      ]
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        { "@type": "ListItem", "position": 1, "name": "Inicio", "item": "https://www.calculadoracientifica.com.ar/" },
+        { "@type": "ListItem", "position": 2, "name": "Guías", "item": "https://www.calculadoracientifica.com.ar/guias/" },
+        { "@type": "ListItem", "position": 3, "name": "Cómo calcular la desviación estándar", "item": "https://www.calculadoracientifica.com.ar/guias/como-calcular-desviacion-estandar/" }
+      ]
+    }
+  ]
+}
+</script>
+</head>
+<body class="min-h-screen font-sans antialiased">
+
+  <header class="sticky top-0 z-40 backdrop-blur border-b border-[var(--color-border)] bg-[var(--color-bg)]/85">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 h-16 flex items-center justify-between">
+      <a href="/" class="flex items-center gap-2 font-display font-extrabold text-lg">
+        <span class="w-8 h-8 rounded-lg bg-[var(--color-primary)] text-white flex items-center justify-center text-sm">∑</span>
+        Calculadora<span class="text-[var(--color-primary)]">Científica</span>
+      </a>
+      <button data-theme-toggle type="button" aria-label="Cambiar tema claro/oscuro"
+        class="w-10 h-10 rounded-full surface flex items-center justify-center hover:shadow-md transition-shadow">
+        <span data-theme-icon>🌙</span>
+      </button>
+    </div>
+  </header>
+
+  <main class="max-w-3xl mx-auto px-4 sm:px-6 py-8">
+    <nav aria-label="Breadcrumb" class="text-sm text-[var(--color-text-muted)] mb-4">
+      <ol class="flex flex-wrap items-center gap-1">
+        <li><a href="/" class="hover:text-[var(--color-primary)]">Inicio</a></li>
+        <li aria-hidden="true">/</li>
+        <li><a href="/guias/" class="hover:text-[var(--color-primary)]">Guías</a></li>
+        <li aria-hidden="true">/</li>
+        <li class="text-[var(--color-text)] font-medium" aria-current="page">Desviación estándar</li>
+      </ol>
+    </nav>
+
+    <article>
+      <h1 class="font-display font-extrabold text-2xl sm:text-3xl">Cómo calcular la desviación estándar paso a paso</h1>
+      <p class="mt-3 text-[var(--color-text-muted)] leading-relaxed">
+        La desviación estándar mide qué tan dispersos están los datos respecto de la media. Es una
+        de las medidas más usadas en estadística, control de calidad e investigación. Esta guía
+        muestra cómo calcularla a mano, incluyendo la diferencia entre la versión muestral y la poblacional.
+      </p>
+
+      <div class="mt-6 rounded-2xl surface p-4 flex items-center justify-between gap-3">
+        <p class="text-sm">¿Preferís que lo calcule por vos? Ingresá tu lista de datos.</p>
+        <a href="/calculadoras/estadistica/calculadora-estadistica-descriptiva/" class="calc-btn calc-btn--op px-4 py-2 text-sm whitespace-nowrap">Abrir calculadora</a>
+      </div>
+
+      <h2 class="font-display font-bold text-xl mt-8 mb-2">1. La fórmula</h2>
+      <p class="text-[var(--color-text-muted)] leading-relaxed">Poblacional (cuando tenés todos los datos del universo que te interesa):</p>
+      <p class="font-numeric text-center my-3 text-[var(--color-text)]">σ = √( Σ(xᵢ − x̄)² / n )</p>
+      <p class="text-[var(--color-text-muted)] leading-relaxed">Muestral (cuando tus datos son una muestra de un universo más grande):</p>
+      <p class="font-numeric text-center my-3 text-[var(--color-text)]">s = √( Σ(xᵢ − x̄)² / (n − 1) )</p>
+      <p class="text-[var(--color-text-muted)] leading-relaxed">
+        La única diferencia es dividir por <span class="font-numeric">n</span> o por
+        <span class="font-numeric">n − 1</span>. La versión muestral da un resultado ligeramente
+        mayor, para compensar la incertidumbre de trabajar con una muestra en vez de la población completa.
+      </p>
+
+      <h2 class="font-display font-bold text-xl mt-8 mb-2">2. Ejemplo resuelto</h2>
+      <p class="text-[var(--color-text-muted)] leading-relaxed">Datos: 2, 4, 4, 4, 5, 5, 7, 9 (n = 8)</p>
+      <ol class="list-decimal list-inside space-y-1 text-[var(--color-text-muted)] font-numeric">
+        <li>Media: (2+4+4+4+5+5+7+9) / 8 = 40 / 8 = 5</li>
+        <li>Diferencias al cuadrado: (2-5)²=9, (4-5)²=1 (×3), (5-5)²=0 (×2), (7-5)²=4, (9-5)²=16</li>
+        <li>Suma de cuadrados: 9 + 1 + 1 + 1 + 0 + 0 + 4 + 16 = 32</li>
+        <li>Varianza poblacional: 32 / 8 = 4</li>
+        <li>Desviación estándar poblacional: √4 = 2</li>
+        <li>Varianza muestral: 32 / 7 ≈ 4,57</li>
+        <li>Desviación estándar muestral: √4,57 ≈ 2,14</li>
+      </ol>
+
+      <h2 class="font-display font-bold text-xl mt-8 mb-2">3. ¿Cuál versión debo usar?</h2>
+      <p class="text-[var(--color-text-muted)] leading-relaxed">
+        Usá la <strong class="text-[var(--color-text)]">poblacional</strong> cuando tus datos son
+        <em>todo</em> lo que te interesa medir (por ejemplo, las notas de todo un curso). Usá la
+        <strong class="text-[var(--color-text)]">muestral</strong> cuando tus datos son una parte de
+        un universo más grande y querés generalizar (por ejemplo, encuestar a 100 personas para
+        estimar algo sobre un país entero). En la práctica científica y de investigación, la
+        muestral es la más común.
+      </p>
+
+      <h2 class="font-display font-bold text-xl mt-8 mb-2">4. Errores comunes</h2>
+      <ul class="list-disc list-inside space-y-1 text-[var(--color-text-muted)]">
+        <li>Olvidar elevar al cuadrado las diferencias (sin el cuadrado, siempre suman cerca de 0).</li>
+        <li>Confundir varianza (sin raíz) con desviación estándar (con raíz).</li>
+        <li>Usar n en vez de n−1 quiere decir que estás calculando la poblacional, no la muestral (y viceversa).</li>
+      </ul>
+
+      <h2 class="font-display font-bold text-xl mt-8 mb-2">5. Verificá tu resultado</h2>
+      <p class="text-[var(--color-text-muted)] leading-relaxed">
+        La <a class="text-[var(--color-primary)] hover:underline" href="/calculadoras/estadistica/calculadora-estadistica-descriptiva/">calculadora de estadística descriptiva</a>
+        calcula ambas versiones automáticamente, junto con media, mediana, moda y rango.
+      </p>
+    </article>
+
+    <section class="mt-10 surface rounded-2xl p-5 shadow-sm">
+      <h2 class="font-display font-semibold text-lg mb-2">Calculadoras relacionadas</h2>
+      <ul class="space-y-2 text-sm">
+        <li><a class="text-[var(--color-primary)] hover:underline" href="/calculadoras/estadistica/calculadora-estadistica-descriptiva/">Estadística Descriptiva</a></li>
+        <li><a class="text-[var(--color-primary)] hover:underline" href="/calculadoras/estadistica/permutaciones-y-combinaciones/">Permutaciones y Combinaciones</a></li>
+      </ul>
+    </section>
+  </main>
+
+  <footer class="border-t border-[var(--color-border)] mt-10">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 py-10 text-sm text-[var(--color-text-muted)] flex flex-col sm:flex-row items-center justify-between gap-4">
+      <p>© 2026 Calculadora Científica · Hecho en Argentina 🇦🇷</p>
+      <a href="/" class="hover:text-[var(--color-primary)]">← Volver al inicio</a>
+    </div>
+  </footer>
+</body>
+</html>

@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="es-AR">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Permutaciones vs Combinaciones: Cómo Saber Cuál Usar | Calculadora Científica</title>
+<meta name="description" content="Guía práctica para distinguir permutaciones de combinaciones: el criterio del orden, fórmulas, con y sin repetición, y ejemplos resueltos de probabilidad." />
+<link rel="canonical" href="https://www.calculadoracientifica.com.ar/guias/permutaciones-vs-combinaciones/" />
+<link rel="alternate" hreflang="es-AR" href="https://www.calculadoracientifica.com.ar/guias/permutaciones-vs-combinaciones/" />
+<link rel="alternate" hreflang="es" href="https://www.calculadoracientifica.com.ar/guias/permutaciones-vs-combinaciones/" />
+<link rel="icon" type="image/svg+xml" href="/assets/img/favicon.svg" />
+<link rel="icon" type="image/png" sizes="32x32" href="/assets/img/favicon-32.png" />
+<link rel="icon" type="image/png" sizes="16x16" href="/assets/img/favicon-16.png" />
+<link rel="apple-touch-icon" href="/assets/img/apple-touch-icon.png" />
+
+<meta property="og:type" content="article" />
+<meta property="og:locale" content="es_AR" />
+<meta property="og:site_name" content="Calculadora Científica" />
+<meta property="og:title" content="Permutaciones vs Combinaciones: Cómo Saber Cuál Usar" />
+<meta property="og:description" content="El criterio del orden, fórmulas y ejemplos resueltos." />
+<meta property="og:url" content="https://www.calculadoracientifica.com.ar/guias/permutaciones-vs-combinaciones/" />
+<meta property="og:image" content="https://www.calculadoracientifica.com.ar/assets/img/og-image.png" />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="630" />
+<meta name="twitter:image" content="https://www.calculadoracientifica.com.ar/assets/img/og-image.png" />
+<meta name="twitter:card" content="summary_large_image" />
+
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Roboto+Mono:wght@400;500;700&display=swap" rel="stylesheet" />
+
+<script src="https://cdn.tailwindcss.com"></script>
+<script>
+  tailwind.config = { darkMode: "class", theme: { extend: { fontFamily: { sans: ["Inter","ui-sans-serif","system-ui","sans-serif"], mono: ["Roboto Mono","ui-monospace","monospace"] } } } };
+</script>
+<link rel="stylesheet" href="/assets/css/styles.css" />
+<script src="/assets/js/theme.js"></script>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Article",
+      "headline": "Permutaciones vs combinaciones: cómo saber cuál usar",
+      "description": "Guía práctica para distinguir permutaciones de combinaciones: el criterio del orden, fórmulas, con y sin repetición, y ejemplos resueltos de probabilidad.",
+      "author": { "@type": "Organization", "name": "Calculadora Científica" },
+      "publisher": { "@type": "Organization", "name": "Calculadora Científica" },
+      "mainEntityOfPage": "https://www.calculadoracientifica.com.ar/guias/permutaciones-vs-combinaciones/",
+      "inLanguage": "es-AR",
+      "datePublished": "2026-08-30"
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        { "@type": "ListItem", "position": 1, "name": "Inicio", "item": "https://www.calculadoracientifica.com.ar/" },
+        { "@type": "ListItem", "position": 2, "name": "Guías", "item": "https://www.calculadoracientifica.com.ar/guias/" },
+        { "@type": "ListItem", "position": 3, "name": "Permutaciones vs combinaciones", "item": "https://www.calculadoracientifica.com.ar/guias/permutaciones-vs-combinaciones/" }
+      ]
+    }
+  ]
+}
+</script>
+</head>
+<body class="min-h-screen font-sans antialiased">
+
+  <header class="sticky top-0 z-40 backdrop-blur border-b border-[var(--color-border)] bg-[var(--color-bg)]/85">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 h-16 flex items-center justify-between">
+      <a href="/" class="flex items-center gap-2 font-display font-extrabold text-lg">
+        <span class="w-8 h-8 rounded-lg bg-[var(--color-primary)] text-white flex items-center justify-center text-sm">∑</span>
+        Calculadora<span class="text-[var(--color-primary)]">Científica</span>
+      </a>
+      <button data-theme-toggle type="button" aria-label="Cambiar tema claro/oscuro"
+        class="w-10 h-10 rounded-full surface flex items-center justify-center hover:shadow-md transition-shadow">
+        <span data-theme-icon>🌙</span>
+      </button>
+    </div>
+  </header>
+
+  <main class="max-w-3xl mx-auto px-4 sm:px-6 py-8">
+    <nav aria-label="Breadcrumb" class="text-sm text-[var(--color-text-muted)] mb-4">
+      <ol class="flex flex-wrap items-center gap-1">
+        <li><a href="/" class="hover:text-[var(--color-primary)]">Inicio</a></li>
+        <li aria-hidden="true">/</li>
+        <li><a href="/guias/" class="hover:text-[var(--color-primary)]">Guías</a></li>
+        <li aria-hidden="true">/</li>
+        <li class="text-[var(--color-text)] font-medium" aria-current="page">Permutaciones vs combinaciones</li>
+      </ol>
+    </nav>
+
+    <article>
+      <h1 class="font-display font-extrabold text-2xl sm:text-3xl">Permutaciones vs combinaciones: cómo saber cuál usar</h1>
+      <p class="mt-3 text-[var(--color-text-muted)] leading-relaxed">
+        Es la pregunta más común en análisis combinatorio: ¿esto es una permutación o una
+        combinación? La respuesta siempre depende de una sola cosa — si el orden importa o no.
+      </p>
+
+      <div class="mt-6 rounded-2xl surface p-4 flex items-center justify-between gap-3">
+        <p class="text-sm">¿Preferís que lo calcule por vos?</p>
+        <a href="/calculadoras/estadistica/permutaciones-y-combinaciones/" class="calc-btn calc-btn--op px-4 py-2 text-sm whitespace-nowrap">Abrir calculadora</a>
+      </div>
+
+      <h2 class="font-display font-bold text-xl mt-8 mb-2">1. El criterio: ¿importa el orden?</h2>
+      <p class="text-[var(--color-text-muted)] leading-relaxed">
+        Si cambiar el orden de los elementos elegidos genera un resultado distinto, es una
+        <strong class="text-[var(--color-text)]">permutación</strong>. Si el orden no cambia nada
+        (solo importa <em>qué</em> elementos quedaron elegidos, no en qué secuencia), es una
+        <strong class="text-[var(--color-text)]">combinación</strong>.
+      </p>
+      <p class="text-[var(--color-text-muted)] leading-relaxed mt-2">
+        Ejemplo clásico: elegir el 1°, 2° y 3° puesto de una carrera es una permutación (A-B-C es
+        distinto de B-A-C). Elegir 3 personas al azar para un comité es una combinación (no importa
+        el orden en que se las nombra, el grupo {A,B,C} es el mismo).
+      </p>
+
+      <h2 class="font-display font-bold text-xl mt-8 mb-2">2. Fórmulas (sin repetición)</h2>
+      <p class="font-numeric text-center my-3 text-[var(--color-text)]">Permutación: P(n,r) = n! / (n − r)!</p>
+      <p class="font-numeric text-center my-3 text-[var(--color-text)]">Combinación: C(n,r) = n! / (r!(n − r)!)</p>
+      <p class="text-[var(--color-text-muted)] leading-relaxed">
+        Notá que C(n,r) es simplemente P(n,r) dividido por <span class="font-numeric">r!</span>:
+        se divide por todas las formas de reordenar los r elementos elegidos, porque en una
+        combinación esas reordenaciones ya no cuentan como distintas.
+      </p>
+
+      <h2 class="font-display font-bold text-xl mt-8 mb-2">3. Ejemplo comparativo</h2>
+      <p class="text-[var(--color-text-muted)] leading-relaxed">
+        De un grupo de 5 personas (A, B, C, D, E), se eligen 2:
+      </p>
+      <ul class="list-disc list-inside space-y-1 text-[var(--color-text-muted)] font-numeric">
+        <li>Permutaciones P(5,2) = 5!/(5-2)! = 20 (AB, BA, AC, CA, … cuentan distinto)</li>
+        <li>Combinaciones C(5,2) = 20/2! = 10 (AB y BA son el mismo grupo)</li>
+      </ul>
+
+      <h2 class="font-display font-bold text-xl mt-8 mb-2">4. ¿Y la repetición?</h2>
+      <p class="text-[var(--color-text-muted)] leading-relaxed">
+        Además de si el orden importa, hay que preguntarse si un elemento puede elegirse más de una
+        vez. Con repetición permitida:
+      </p>
+      <p class="font-numeric text-center my-3 text-[var(--color-text)]">Permutaciones con repetición: nʳ</p>
+      <p class="font-numeric text-center my-3 text-[var(--color-text)]">Combinaciones con repetición: C(n + r − 1, r)</p>
+      <p class="text-[var(--color-text-muted)] leading-relaxed">
+        Ejemplo: una contraseña de 4 dígitos (0-9), donde los dígitos se pueden repetir y el orden
+        importa, tiene 10⁴ = 10.000 posibilidades — permutación con repetición.
+      </p>
+
+      <h2 class="font-display font-bold text-xl mt-8 mb-2">5. Tabla resumen</h2>
+      <div class="overflow-x-auto scroll-thin mt-3">
+        <table class="w-full text-sm border-collapse">
+          <thead>
+            <tr class="text-left text-[var(--color-text-muted)]">
+              <th class="py-2 pr-4">¿Orden importa?</th>
+              <th class="py-2 pr-4">¿Se repite?</th>
+              <th class="py-2">Fórmula</th>
+            </tr>
+          </thead>
+          <tbody class="text-[var(--color-text)] font-numeric">
+            <tr class="border-t border-[var(--color-border)]"><td class="py-2 pr-4">Sí</td><td class="py-2 pr-4">No</td><td class="py-2">P(n,r) = n!/(n-r)!</td></tr>
+            <tr class="border-t border-[var(--color-border)]"><td class="py-2 pr-4">Sí</td><td class="py-2 pr-4">Sí</td><td class="py-2">nʳ</td></tr>
+            <tr class="border-t border-[var(--color-border)]"><td class="py-2 pr-4">No</td><td class="py-2 pr-4">No</td><td class="py-2">C(n,r) = n!/(r!(n-r)!)</td></tr>
+            <tr class="border-t border-[var(--color-border)]"><td class="py-2 pr-4">No</td><td class="py-2 pr-4">Sí</td><td class="py-2">C(n+r-1, r)</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </article>
+
+    <section class="mt-10 surface rounded-2xl p-5 shadow-sm">
+      <h2 class="font-display font-semibold text-lg mb-2">Calculadoras relacionadas</h2>
+      <ul class="space-y-2 text-sm">
+        <li><a class="text-[var(--color-primary)] hover:underline" href="/calculadoras/estadistica/permutaciones-y-combinaciones/">Permutaciones y Combinaciones</a></li>
+        <li><a class="text-[var(--color-primary)] hover:underline" href="/calculadoras/estadistica/calculadora-estadistica-descriptiva/">Estadística Descriptiva</a></li>
+      </ul>
+    </section>
+  </main>
+
+  <footer class="border-t border-[var(--color-border)] mt-10">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 py-10 text-sm text-[var(--color-text-muted)] flex flex-col sm:flex-row items-center justify-between gap-4">
+      <p>© 2026 Calculadora Científica · Hecho en Argentina 🇦🇷</p>
+      <a href="/" class="hover:text-[var(--color-primary)]">← Volver al inicio</a>
+    </div>
+  </footer>
+</body>
+</html>

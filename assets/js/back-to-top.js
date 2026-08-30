@@ -1,35 +1,24 @@
 /**
- * back-to-top.js — Botones flotantes: "volver arriba" (scroll suave al
- * inicio de la página actual) y "volver al home" (navega a /, ausente en
- * la propia home). Ambos aparecen apenas se empieza a scrollear.
+ * back-to-top.js — Botón flotante "volver arriba" (scroll suave al inicio
+ * de la página actual), visible apenas se empieza a scrollear. El botón
+ * "volver al home" es independiente del scroll: siempre visible (se
+ * inyecta ya sin las clases que lo ocultan, ver inject-back-to-home.py).
  */
 (function () {
   const topBtn = document.getElementById("back-to-top");
-  const homeBtn = document.getElementById("back-to-home");
-  if (!topBtn && !homeBtn) return;
+  if (!topBtn) return;
 
-  function toggle(btn) {
-    if (!btn) return;
+  function toggle() {
     const visible = window.scrollY > 50;
-    btn.classList.toggle("opacity-0", !visible);
-    btn.classList.toggle("pointer-events-none", !visible);
-    btn.classList.toggle("translate-y-2", !visible);
+    topBtn.classList.toggle("opacity-0", !visible);
+    topBtn.classList.toggle("pointer-events-none", !visible);
+    topBtn.classList.toggle("translate-y-2", !visible);
   }
 
-  if (topBtn) {
-    topBtn.addEventListener("click", () => {
-      window.scrollTo({ top: 0, behavior: "smooth" });
-    });
-  }
+  topBtn.addEventListener("click", () => {
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  });
 
-  window.addEventListener(
-    "scroll",
-    () => {
-      toggle(topBtn);
-      toggle(homeBtn);
-    },
-    { passive: true }
-  );
-  toggle(topBtn);
-  toggle(homeBtn);
+  window.addEventListener("scroll", toggle, { passive: true });
+  toggle();
 })();

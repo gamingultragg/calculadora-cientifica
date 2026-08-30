@@ -322,6 +322,13 @@ legales = 46 páginas**, todas en `sitemap.xml` (excepto la 404, que lleva `noin
      por teclado) en las 47 páginas, para no forzar a usuarios de teclado/lectores de pantalla a
      tabular por todo el header en cada página.
 
+✅ **Validación de `sitemap.xml`** (`scripts/validate-sitemap.py`, no destructiva): confirma que el
+   archivo sea XML bien formado y que coincida 1:1 con las páginas reales del sitio — sin URLs
+   duplicadas, sin entradas que apunten a páginas que ya no existen, y sin páginas indexables que
+   falten. Necesario porque el sitemap se fue editando a mano en ~10 tandas distintas a lo largo del
+   proyecto; resultado actual: **46 URLs, 0 problemas**, servido en producción con
+   `content-type: application/xml`.
+
 ## Deploy
 
 El sitio está en producción en **Cloudflare Pages**, conectado al repo de GitHub

@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="es-AR">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Cómo Calcular Porcentajes: Aumentos, Descuentos y Variación | Calculadora Científica</title>
+<meta name="description" content="Guía completa para calcular porcentajes: cuánto es el X% de Y, qué porcentaje representa un valor, aplicar descuentos y aumentos, y variación porcentual." />
+<link rel="canonical" href="https://www.calculadoracientifica.com.ar/guias/como-calcular-porcentajes/" />
+<link rel="alternate" hreflang="es-AR" href="https://www.calculadoracientifica.com.ar/guias/como-calcular-porcentajes/" />
+<link rel="alternate" hreflang="es" href="https://www.calculadoracientifica.com.ar/guias/como-calcular-porcentajes/" />
+<link rel="icon" type="image/svg+xml" href="/assets/img/favicon.svg" />
+<link rel="icon" type="image/png" sizes="32x32" href="/assets/img/favicon-32.png" />
+<link rel="icon" type="image/png" sizes="16x16" href="/assets/img/favicon-16.png" />
+<link rel="apple-touch-icon" href="/assets/img/apple-touch-icon.png" />
+
+<meta property="og:type" content="article" />
+<meta property="og:locale" content="es_AR" />
+<meta property="og:site_name" content="Calculadora Científica" />
+<meta property="og:title" content="Cómo Calcular Porcentajes: Aumentos, Descuentos y Variación" />
+<meta property="og:description" content="Las 3 fórmulas de porcentaje más usadas, explicadas con ejemplos." />
+<meta property="og:url" content="https://www.calculadoracientifica.com.ar/guias/como-calcular-porcentajes/" />
+<meta property="og:image" content="https://www.calculadoracientifica.com.ar/assets/img/og-image.png" />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="630" />
+<meta name="twitter:image" content="https://www.calculadoracientifica.com.ar/assets/img/og-image.png" />
+<meta name="twitter:card" content="summary_large_image" />
+
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Roboto+Mono:wght@400;500;700&display=swap" rel="stylesheet" />
+
+<script src="https://cdn.tailwindcss.com"></script>
+<script>
+  tailwind.config = { darkMode: "class", theme: { extend: { fontFamily: { sans: ["Inter","ui-sans-serif","system-ui","sans-serif"], mono: ["Roboto Mono","ui-monospace","monospace"] } } } };
+</script>
+<link rel="stylesheet" href="/assets/css/styles.css" />
+<script src="/assets/js/theme.js"></script>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Article",
+      "headline": "Cómo calcular porcentajes: aumentos, descuentos y variación",
+      "description": "Guía completa para calcular porcentajes: cuánto es el X% de Y, qué porcentaje representa un valor, aplicar descuentos y aumentos, y variación porcentual.",
+      "author": { "@type": "Organization", "name": "Calculadora Científica" },
+      "publisher": { "@type": "Organization", "name": "Calculadora Científica" },
+      "mainEntityOfPage": "https://www.calculadoracientifica.com.ar/guias/como-calcular-porcentajes/",
+      "inLanguage": "es-AR",
+      "datePublished": "2026-08-30"
+    },
+    {
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "¿Cómo se calcula un descuento?",
+          "acceptedAnswer": { "@type": "Answer", "text": "Precio final = Precio original × (1 − descuento/100). Por ejemplo, con 20% de descuento sobre $1000: 1000 × 0,8 = $800." }
+        },
+        {
+          "@type": "Question",
+          "name": "¿Cómo se calcula un aumento porcentual?",
+          "acceptedAnswer": { "@type": "Answer", "text": "Precio final = Precio original × (1 + aumento/100). Por ejemplo, con 15% de aumento sobre $1000: 1000 × 1,15 = $1150." }
+        }
+      ]
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        { "@type": "ListItem", "position": 1, "name": "Inicio", "item": "https://www.calculadoracientifica.com.ar/" },
+        { "@type": "ListItem", "position": 2, "name": "Guías", "item": "https://www.calculadoracientifica.com.ar/guias/" },
+        { "@type": "ListItem", "position": 3, "name": "Cómo calcular porcentajes", "item": "https://www.calculadoracientifica.com.ar/guias/como-calcular-porcentajes/" }
+      ]
+    }
+  ]
+}
+</script>
+</head>
+<body class="min-h-screen font-sans antialiased">
+
+  <header class="sticky top-0 z-40 backdrop-blur border-b border-[var(--color-border)] bg-[var(--color-bg)]/85">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 h-16 flex items-center justify-between">
+      <a href="/" class="flex items-center gap-2 font-display font-extrabold text-lg">
+        <span class="w-8 h-8 rounded-lg bg-[var(--color-primary)] text-white flex items-center justify-center text-sm">∑</span>
+        Calculadora<span class="text-[var(--color-primary)]">Científica</span>
+      </a>
+      <button data-theme-toggle type="button" aria-label="Cambiar tema claro/oscuro"
+        class="w-10 h-10 rounded-full surface flex items-center justify-center hover:shadow-md transition-shadow">
+        <span data-theme-icon>🌙</span>
+      </button>
+    </div>
+  </header>
+
+  <main class="max-w-3xl mx-auto px-4 sm:px-6 py-8">
+    <nav aria-label="Breadcrumb" class="text-sm text-[var(--color-text-muted)] mb-4">
+      <ol class="flex flex-wrap items-center gap-1">
+        <li><a href="/" class="hover:text-[var(--color-primary)]">Inicio</a></li>
+        <li aria-hidden="true">/</li>
+        <li><a href="/guias/" class="hover:text-[var(--color-primary)]">Guías</a></li>
+        <li aria-hidden="true">/</li>
+        <li class="text-[var(--color-text)] font-medium" aria-current="page">Cómo calcular porcentajes</li>
+      </ol>
+    </nav>
+
+    <article>
+      <h1 class="font-display font-extrabold text-2xl sm:text-3xl">Cómo calcular porcentajes: aumentos, descuentos y variación</h1>
+      <p class="mt-3 text-[var(--color-text-muted)] leading-relaxed">
+        Los porcentajes aparecen todo el tiempo: descuentos, aumentos de sueldo, intereses,
+        estadísticas. Esta guía junta las fórmulas que más se necesitan, con ejemplos de cada una.
+      </p>
+
+      <div class="mt-6 rounded-2xl surface p-4 flex items-center justify-between gap-3">
+        <p class="text-sm">¿Preferís que lo calcule por vos?</p>
+        <a href="/calculadoras/finanzas/calculadora-de-porcentajes/" class="calc-btn calc-btn--op px-4 py-2 text-sm whitespace-nowrap">Abrir calculadora</a>
+      </div>
+
+      <h2 class="font-display font-bold text-xl mt-8 mb-2">1. ¿Cuánto es el X% de Y?</h2>
+      <p class="font-numeric text-center my-3 text-[var(--color-text)]">resultado = Y × (X / 100)</p>
+      <p class="text-[var(--color-text-muted)] leading-relaxed">
+        Ejemplo: el 21% (IVA) de $15.000 es 15.000 × 0,21 = $3.150.
+      </p>
+
+      <h2 class="font-display font-bold text-xl mt-8 mb-2">2. ¿X es qué porcentaje de Y?</h2>
+      <p class="font-numeric text-center my-3 text-[var(--color-text)]">porcentaje = (X / Y) × 100</p>
+      <p class="text-[var(--color-text-muted)] leading-relaxed">
+        Ejemplo: si sacaste 45 puntos sobre 180 posibles, sacaste (45/180) × 100 = 25%.
+      </p>
+
+      <h2 class="font-display font-bold text-xl mt-8 mb-2">3. Aplicar un descuento</h2>
+      <p class="font-numeric text-center my-3 text-[var(--color-text)]">Precio final = Precio × (1 − descuento/100)</p>
+      <p class="text-[var(--color-text-muted)] leading-relaxed">
+        Ejemplo: un producto de $1000 con 20% de descuento cuesta 1000 × 0,8 = $800. Un error común
+        es restar el descuento del 100% mal (usar 0,2 en vez de 0,8) — recordá que estás calculando
+        lo que <em>queda</em>, no lo que se descuenta.
+      </p>
+
+      <h2 class="font-display font-bold text-xl mt-8 mb-2">4. Aplicar un aumento</h2>
+      <p class="font-numeric text-center my-3 text-[var(--color-text)]">Precio final = Precio × (1 + aumento/100)</p>
+      <p class="text-[var(--color-text-muted)] leading-relaxed">
+        Ejemplo: un sueldo de $500.000 con 15% de aumento pasa a 500.000 × 1,15 = $575.000.
+      </p>
+
+      <h2 class="font-display font-bold text-xl mt-8 mb-2">5. Variación porcentual entre dos valores</h2>
+      <p class="font-numeric text-center my-3 text-[var(--color-text)]">variación = ((B − A) / A) × 100</p>
+      <p class="text-[var(--color-text-muted)] leading-relaxed">
+        Se usa cuando ya tenés el valor inicial (A) y el final (B), y querés saber qué porcentaje de
+        cambio hubo. Ejemplo: las ventas pasaron de $25.000 a $31.000 → ((31.000−25.000)/25.000)×100
+        = 24% de aumento.
+      </p>
+
+      <h2 class="font-display font-bold text-xl mt-8 mb-2">6. El error más común: aumentar y después descontar el mismo %</h2>
+      <p class="text-[var(--color-text-muted)] leading-relaxed">
+        Si un precio sube 20% y después baja 20%, <strong class="text-[var(--color-text)]">no vuelve
+        al valor original</strong>. $1000 con +20% es $1200; ese $1200 con −20% es 1200 × 0,8 =
+        $960, no $1000. Esto pasa porque el segundo porcentaje se aplica sobre una base distinta
+        (más grande) que el primero.
+      </p>
+    </article>
+
+    <section class="mt-10 surface rounded-2xl p-5 shadow-sm">
+      <h2 class="font-display font-semibold text-lg mb-2">Calculadoras relacionadas</h2>
+      <ul class="space-y-2 text-sm">
+        <li><a class="text-[var(--color-primary)] hover:underline" href="/calculadoras/finanzas/calculadora-de-porcentajes/">Calculadora de Porcentajes</a></li>
+        <li><a class="text-[var(--color-primary)] hover:underline" href="/calculadoras/finanzas/interes-compuesto/">Interés Compuesto</a></li>
+      </ul>
+    </section>
+  </main>
+
+  <footer class="border-t border-[var(--color-border)] mt-10">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 py-10 text-sm text-[var(--color-text-muted)] flex flex-col sm:flex-row items-center justify-between gap-4">
+      <p>© 2026 Calculadora Científica · Hecho en Argentina 🇦🇷</p>
+      <a href="/" class="hover:text-[var(--color-primary)]">← Volver al inicio</a>
+    </div>
+  </footer>
+</body>
+</html>

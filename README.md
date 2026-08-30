@@ -287,8 +287,13 @@ enlazada en ambas direcciones.
    Newton** (Física), **Calculadora de Diluciones** (Química), **Ley de Hooke** (Ingeniería) y
    **Calculadora de Porcentajes** (Finanzas).
 
-**Catálogo actual: 18 calculadoras + 13 guías + 6 landing pages de categoría + home + 404
-= 40 páginas**, todas en `sitemap.xml` (excepto la 404, que lleva `noindex`).
+✅ **Cobertura de guías al 100% otra vez**: guía companion para las 5 calculadoras más nuevas —
+   `/guias/puntaje-z-y-curva-normal/`, `/guias/segunda-ley-de-newton-explicada/`,
+   `/guias/como-hacer-una-dilucion/`, `/guias/ley-de-hooke-y-elasticidad/` y
+   `/guias/como-calcular-porcentajes/`. Las 18 calculadoras del catálogo tienen su guía.
+
+**Catálogo actual: 18 calculadoras + 18 guías + 6 landing pages de categoría + home + 404
+= 44 páginas**, todas en `sitemap.xml` (excepto la 404, que lleva `noindex`), auditoría en 0 problemas.
 
 ## Deploy
 

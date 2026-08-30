@@ -301,15 +301,17 @@ enlazada en ambas direcciones.
 ✅ **Calculadora Básica** (`/calculadoras/matematicas-avanzadas/calculadora-basica/`): 4 operaciones
    + porcentaje, con evaluación **secuencial** (como una calculadora de bolsillo real —
    `2+3×4` da `20`, no `14`), a diferencia de la científica que sí respeta la prioridad de
-   operaciones. Forma parte del catálogo normal (categoría Matemáticas) **y además** tiene una
-   tarjeta destacada arriba de todo en la home, a pedido del usuario. Lógica de evaluación
-   secuencial validada con 5 casos en Node antes de implementar (orden de operaciones, división
-   encadenada, cambio de operador a mitad de cuenta, división por cero, decimales) y confirmada en
-   el navegador.
+   operaciones. Lógica de evaluación secuencial validada con 5 casos en Node antes de implementar
+   (orden de operaciones, división encadenada, cambio de operador a mitad de cuenta, división por
+   cero, decimales) y confirmada en el navegador. Al principio se agregó también al catálogo
+   data-driven (`calculators-data.js`), pero quedaba duplicada en la home (banner destacado +
+   tarjeta repetida más abajo), así que se sacó de ahí a pedido del usuario — la página sigue viva
+   y en el sitemap, solo dejó de listarse en la grilla/buscador y en la categoría Matemáticas;
+   se accede por el banner destacado o por URL directa.
 
-**Catálogo actual: 19 calculadoras + 18 guías + 6 landing pages de categoría + home + 404 + 2
-legales = 47 páginas**, todas en `sitemap.xml` (excepto la 404, que lleva `noindex`), auditoría en
-0 problemas.
+**Catálogo actual: 18 calculadoras listadas (+ 1 destacada solo vía banner) + 18 guías + 6 landing
+pages de categoría + home + 404 + 2 legales = 47 páginas**, todas en `sitemap.xml` (excepto la 404,
+que lleva `noindex`), auditoría en 0 problemas.
 
 ✅ **Validación de JSON-LD** (`scripts/validate-jsonld.py`, no destructiva): parsea los 44 bloques
    `<script type="application/ld+json">` del sitio y verifica que sean JSON sintácticamente válido,

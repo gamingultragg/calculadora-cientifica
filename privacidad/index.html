@@ -22,6 +22,7 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Roboto+Mono:wght@400;500;700&display=swap" rel="stylesheet" />
 
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7274131858034505" crossorigin="anonymous"></script>
 <script src="https://cdn.tailwindcss.com"></script>
 <script>
   tailwind.config = { darkMode: "class", theme: { extend: { fontFamily: { sans: ["Inter","ui-sans-serif","system-ui","sans-serif"], mono: ["Roboto Mono","ui-monospace","monospace"] } } } };
@@ -81,17 +82,27 @@
           <li><strong class="text-[var(--color-text)]">Cloudflare</strong>: aloja el sitio y provee la red de distribución de contenido (CDN) y el certificado HTTPS.</li>
           <li><strong class="text-[var(--color-text)]">Cloudflare Web Analytics</strong>: mide visitas y páginas vistas de forma agregada y anónima, sin cookies ni huella digital (fingerprinting) del dispositivo. No podemos identificarte individualmente con estos datos.</li>
           <li><strong class="text-[var(--color-text)]">Google Fonts</strong>: sirve las tipografías del sitio (Inter y Roboto Mono) desde los servidores de Google.</li>
+          <li><strong class="text-[var(--color-text)]">Google AdSense</strong>: muestra anuncios en el sitio, que es lo que nos permite mantenerlo gratis. Puede usar cookies y almacenamiento del navegador para mostrar anuncios relevantes, medir su rendimiento y prevenir fraude. Más detalles en la sección <a class="text-[var(--color-primary-link)] hover:underline" href="#cookies">Cookies</a> de esta misma página.</li>
         </ul>
         <p class="mt-2">Ninguno de estos servicios recibe los datos que ingresás en las calculadoras — esos
           cálculos ocurren enteramente en tu navegador y nunca salen de tu dispositivo.</p>
       </section>
 
-      <section class="surface rounded-2xl p-5">
+      <section id="cookies" class="surface rounded-2xl p-5">
         <h2 class="font-display font-semibold text-lg text-[var(--color-text)] mb-2">Cookies</h2>
-        <p>Este sitio no utiliza cookies. La analítica que usamos (Cloudflare Web Analytics) está
-          diseñada específicamente para no requerirlas. Si en el futuro incorporamos alguna
-          herramienta que sí use cookies (por ejemplo, de publicidad), actualizaremos esta página y
-          mostraremos un aviso de consentimiento antes de activarla.</p>
+        <p>La analítica que usamos (Cloudflare Web Analytics) no utiliza cookies — está diseñada
+          específicamente para no requerirlas.</p>
+        <p class="mt-2">Usamos <strong class="text-[var(--color-text)]">Google AdSense</strong> para
+          mostrar anuncios, que sí puede usar cookies y tecnologías similares (propias y de
+          terceros) para mostrar anuncios basados en tus visitas a este sitio y a otros, y para
+          medir su rendimiento. Cuando corresponda por tu ubicación (por ejemplo, si visitás desde
+          la Unión Europea o el Reino Unido), Google te va a mostrar un aviso de consentimiento
+          antes de activar cookies de personalización, gestionado por la plataforma de mensajes de
+          privacidad de Google.</p>
+        <p class="mt-2">Podés administrar o inhabilitar los anuncios personalizados de Google desde
+          <a class="text-[var(--color-primary-link)] hover:underline" href="https://adssettings.google.com/" target="_blank" rel="noopener noreferrer">Configuración de anuncios de Google</a>,
+          y conocer más sobre cómo Google usa estos datos en
+          <a class="text-[var(--color-primary-link)] hover:underline" href="https://policies.google.com/technologies/partner-sites" target="_blank" rel="noopener noreferrer">cómo Google usa la información de sitios que usan sus servicios</a>.</p>
       </section>
 
       <section class="surface rounded-2xl p-5">

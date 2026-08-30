@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="es-AR">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Calculadora de la Ley de Hooke (F=kx) Online | Calculadora Científica</title>
+<meta name="description" content="Calculá fuerza elástica, constante del resorte o deformación con la Ley de Hooke (F=kx) online. Ingresá dos valores conocidos y obtené el tercero, gratis." />
+<link rel="canonical" href="https://www.calculadoracientifica.com.ar/calculadoras/ingenieria/ley-de-hooke/" />
+<link rel="alternate" hreflang="es-AR" href="https://www.calculadoracientifica.com.ar/calculadoras/ingenieria/ley-de-hooke/" />
+<link rel="alternate" hreflang="es" href="https://www.calculadoracientifica.com.ar/calculadoras/ingenieria/ley-de-hooke/" />
+<link rel="icon" type="image/svg+xml" href="/assets/img/favicon.svg" />
+<link rel="icon" type="image/png" sizes="32x32" href="/assets/img/favicon-32.png" />
+<link rel="icon" type="image/png" sizes="16x16" href="/assets/img/favicon-16.png" />
+<link rel="apple-touch-icon" href="/assets/img/apple-touch-icon.png" />
+
+<meta property="og:type" content="website" />
+<meta property="og:locale" content="es_AR" />
+<meta property="og:site_name" content="Calculadora Científica" />
+<meta property="og:title" content="Calculadora de la Ley de Hooke (F=kx)" />
+<meta property="og:description" content="Fuerza elástica, constante del resorte o deformación. Gratis." />
+<meta property="og:url" content="https://www.calculadoracientifica.com.ar/calculadoras/ingenieria/ley-de-hooke/" />
+<meta property="og:image" content="https://www.calculadoracientifica.com.ar/assets/img/og-image.png" />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="630" />
+<meta name="twitter:image" content="https://www.calculadoracientifica.com.ar/assets/img/og-image.png" />
+<meta name="twitter:card" content="summary_large_image" />
+
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Roboto+Mono:wght@400;500;700&display=swap" rel="stylesheet" />
+
+<script src="https://cdn.tailwindcss.com"></script>
+<script>
+  tailwind.config = { darkMode: "class", theme: { extend: { fontFamily: { sans: ["Inter","ui-sans-serif","system-ui","sans-serif"], mono: ["Roboto Mono","ui-monospace","monospace"] } } } };
+</script>
+<link rel="stylesheet" href="/assets/css/styles.css" />
+<script src="/assets/js/theme.js"></script>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "SoftwareApplication",
+      "name": "Calculadora de la Ley de Hooke",
+      "applicationCategory": "EducationalApplication",
+      "operatingSystem": "Web",
+      "url": "https://www.calculadoracientifica.com.ar/calculadoras/ingenieria/ley-de-hooke/",
+      "description": "Calcula fuerza elástica, constante del resorte o deformación con la Ley de Hooke (F = k·x).",
+      "offers": { "@type": "Offer", "price": "0", "priceCurrency": "ARS" },
+      "inLanguage": "es-AR"
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        { "@type": "ListItem", "position": 1, "name": "Inicio", "item": "https://www.calculadoracientifica.com.ar/" },
+        { "@type": "ListItem", "position": 2, "name": "Ingeniería", "item": "https://www.calculadoracientifica.com.ar/calculadoras/ingenieria/" },
+        { "@type": "ListItem", "position": 3, "name": "Ley de Hooke", "item": "https://www.calculadoracientifica.com.ar/calculadoras/ingenieria/ley-de-hooke/" }
+      ]
+    },
+    {
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "¿Cuál es la fórmula de la Ley de Hooke?",
+          "acceptedAnswer": { "@type": "Answer", "text": "F = k × x, donde F es la fuerza elástica en newtons, k la constante del resorte en N/m y x la deformación (elongación o compresión) en metros." }
+        },
+        {
+          "@type": "Question",
+          "name": "¿Hasta qué punto es válida la Ley de Hooke?",
+          "acceptedAnswer": { "@type": "Answer", "text": "Solo es válida dentro del límite elástico del material. Más allá de ese punto, el material se deforma permanentemente y la relación deja de ser lineal." }
+        }
+      ]
+    }
+  ]
+}
+</script>
+</head>
+<body class="min-h-screen font-sans antialiased">
+
+  <header class="sticky top-0 z-40 backdrop-blur border-b border-[var(--color-border)] bg-[var(--color-bg)]/85">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 h-16 flex items-center justify-between">
+      <a href="/" class="flex items-center gap-2 font-display font-extrabold text-lg">
+        <span class="w-8 h-8 rounded-lg bg-[var(--color-primary)] text-white flex items-center justify-center text-sm">∑</span>
+        Calculadora<span class="text-[var(--color-primary)]">Científica</span>
+      </a>
+      <button data-theme-toggle type="button" aria-label="Cambiar tema claro/oscuro"
+        class="w-10 h-10 rounded-full surface flex items-center justify-center hover:shadow-md transition-shadow">
+        <span data-theme-icon>🌙</span>
+      </button>
+    </div>
+  </header>
+
+  <main class="max-w-6xl mx-auto px-4 sm:px-6 py-8">
+    <nav aria-label="Breadcrumb" class="text-sm text-[var(--color-text-muted)] mb-4">
+      <ol class="flex flex-wrap items-center gap-1">
+        <li><a href="/" class="hover:text-[var(--color-primary)]">Inicio</a></li>
+        <li aria-hidden="true">/</li>
+        <li><a href="/calculadoras/ingenieria/" class="hover:text-[var(--color-primary)]">Ingeniería</a></li>
+        <li aria-hidden="true">/</li>
+        <li class="text-[var(--color-text)] font-medium" aria-current="page">Ley de Hooke</li>
+      </ol>
+    </nav>
+
+    <h1 class="font-display font-extrabold text-2xl sm:text-3xl">Calculadora de la Ley de Hooke</h1>
+    <p class="mt-2 text-[var(--color-text-muted)] max-w-2xl">
+      Calculá fuerza elástica, constante del resorte o deformación a partir de los otros dos valores.
+    </p>
+
+    <div class="mt-6 grid grid-cols-1 lg:grid-cols-[420px_1fr] gap-6 items-start">
+      <section class="surface rounded-2xl p-5 shadow-sm">
+        <div id="hk-error" class="hidden alert-error rounded-lg px-3 py-2 text-sm mb-4" role="alert" aria-live="polite"></div>
+
+        <label for="hk-target" class="block text-sm font-medium mb-1">¿Qué querés calcular?</label>
+        <select id="hk-target" class="w-full rounded-xl surface px-3 py-2.5 mb-4 focus:outline-none focus:ring-2 focus:ring-[var(--color-primary)]">
+          <option value="f">Fuerza elástica (F)</option>
+          <option value="k">Constante del resorte (k)</option>
+          <option value="x">Deformación (x)</option>
+        </select>
+
+        <div id="hk-inputs" class="space-y-4"></div>
+        <button id="hk-solve" class="calc-btn calc-btn--op w-full py-2.5 mt-4">Calcular</button>
+      </section>
+
+      <section class="space-y-4">
+        <section id="hk-result-panel" class="hidden surface rounded-2xl p-5 shadow-sm">
+          <h2 class="font-display font-semibold text-lg mb-3">Desarrollo y resultado</h2>
+          <ol id="hk-steps" class="space-y-2 text-sm font-numeric leading-relaxed"></ol>
+        </section>
+
+        <details class="help-accordion surface rounded-2xl p-5 shadow-sm" open>
+          <summary class="flex items-center justify-between font-display font-semibold text-lg">
+            Ayuda y Fórmulas Teóricas
+            <svg class="chevron w-5 h-5 text-[var(--color-text-muted)]" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7"/></svg>
+          </summary>
+          <div class="mt-4 space-y-4 text-sm leading-relaxed text-[var(--color-text-muted)]">
+            <div>
+              <h3 class="font-semibold text-[var(--color-text)] mb-1">Ley de Hooke</h3>
+              <p class="font-numeric text-[var(--color-text)]">F = k × x</p>
+              <p>F en newtons (N), k en newtons por metro (N/m), x en metros (m).</p>
+            </div>
+            <div>
+              <h3 class="font-semibold text-[var(--color-text)] mb-1">Límite elástico</h3>
+              <p>Esta fórmula solo describe el comportamiento dentro de la zona elástica del material. Más allá de ese límite, la deformación deja de ser proporcional a la fuerza.</p>
+            </div>
+          </div>
+        </details>
+
+        <section class="surface rounded-2xl p-5 shadow-sm">
+          <h2 class="font-display font-semibold text-lg mb-2">Calculadoras relacionadas</h2>
+          <ul class="space-y-2 text-sm">
+            <li><a class="text-[var(--color-primary)] hover:underline" href="/calculadoras/fisica/segunda-ley-de-newton/">Segunda Ley de Newton</a></li>
+            <li><a class="text-[var(--color-primary)] hover:underline" href="/calculadoras/ingenieria/resistencias-serie-paralelo/">Resistencias en Serie y Paralelo</a></li>
+          </ul>
+        </section>
+      </section>
+    </div>
+  </main>
+
+  <footer class="border-t border-[var(--color-border)] mt-10">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 py-10 text-sm text-[var(--color-text-muted)] flex flex-col sm:flex-row items-center justify-between gap-4">
+      <p>© 2026 Calculadora Científica · Hecho en Argentina 🇦🇷</p>
+      <a href="/" class="hover:text-[var(--color-primary)]">← Volver al inicio</a>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>

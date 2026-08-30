@@ -282,8 +282,21 @@ enlazada en ambas direcciones.
    plataforma (Netlify/Vercel/GitHub Pages la detectan por convención de nombre; Apache necesita
    `ErrorDocument 404 /404.html`; Nginx necesita `error_page 404 /404.html`).
 
-**Catálogo actual: 13 calculadoras + 13 guías + 6 landing pages de categoría + home + 404
-= 35 páginas**, todas en `sitemap.xml` (excepto la 404, que lleva `noindex`).
+✅ **Tercera calculadora en las 5 categorías que tenían solo dos**, para emparejarlas con
+   Matemáticas Avanzadas: **Distribución Normal / Puntaje Z** (Estadística), **Segunda Ley de
+   Newton** (Física), **Calculadora de Diluciones** (Química), **Ley de Hooke** (Ingeniería) y
+   **Calculadora de Porcentajes** (Finanzas).
+
+**Catálogo actual: 18 calculadoras + 13 guías + 6 landing pages de categoría + home + 404
+= 40 páginas**, todas en `sitemap.xml` (excepto la 404, que lleva `noindex`).
+
+## Deploy
+
+El sitio está en producción en **Cloudflare Pages**, conectado al repo de GitHub
+(`gamingultragg/calculadora-cientifica`, rama `main`). Cada `git push` a `main` dispara un
+redeploy automático — no hay build command, se sirve la raíz del repo tal cual. Dominio propio
+(`calculadoracientifica.com.ar`, registrado en NIC Argentina) en proceso de propagación de DNS
+hacia los nameservers de Cloudflare.
 
 ### Sobre la migración a framework con build
 

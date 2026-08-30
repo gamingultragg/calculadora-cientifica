@@ -86,9 +86,9 @@
         <span class="w-8 h-8 rounded-lg bg-[var(--color-primary)] text-white flex items-center justify-center text-sm">∑</span>
         Calculadora<span class="text-[var(--color-primary-link)]">Científica</span>
       </a>
-      <nav class="hidden md:flex items-center gap-6 text-sm font-medium text-[var(--color-text-muted)]">
-        <a href="#calculadoras" class="hover:text-[var(--color-text)]">Calculadoras</a>
-        <a href="/guias/" class="hover:text-[var(--color-text)]">Guías</a>
+      <nav class="hidden md:flex items-center gap-4 text-sm font-medium">
+        <a href="#calculadoras" class="text-[var(--color-text-muted)] hover:text-[var(--color-text)]">Calculadoras</a>
+        <a href="/guias/" class="px-4 py-1.5 rounded-full bg-[var(--color-primary)] text-white hover:brightness-110 transition">Guías</a>
       </nav>
       <button data-theme-toggle type="button" aria-label="Cambiar tema claro/oscuro"
         class="w-10 h-10 rounded-full surface flex items-center justify-center hover:shadow-md transition-shadow">
@@ -124,6 +124,11 @@
         />
       </div>
     </div>
+
+    <p class="mt-5 text-sm text-[var(--color-text-muted)]">
+      ¿Preferís empezar por la teoría?
+      <a href="/guias/" class="font-semibold text-[var(--color-primary-link)] hover:underline">Mirá nuestras guías paso a paso →</a>
+    </p>
   </section>
 
   <!-- Filtro de categorías -->
@@ -155,6 +160,93 @@
       <p class="text-sm text-[var(--color-text-muted)] mt-1">Probá con otro término, por ejemplo "matrices" o "media".</p>
     </div>
   </main>
+
+  <!-- Guías destacadas -->
+  <section class="max-w-6xl mx-auto px-4 sm:px-6 py-10 border-t border-[var(--color-border)]">
+    <div class="flex items-center justify-between mb-4">
+      <div>
+        <h2 class="font-display font-bold text-xl">Guías paso a paso</h2>
+        <p class="text-sm text-[var(--color-text-muted)] mt-1">Para entender el "por qué" antes de usar la calculadora, con ejemplos resueltos.</p>
+      </div>
+      <a href="/guias/" class="hidden sm:inline-flex items-center gap-1 text-sm font-semibold text-[var(--color-primary-link)] hover:underline whitespace-nowrap">
+        Ver todas las guías
+        <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M13 7l5 5m0 0l-5 5m5-5H6"/></svg>
+      </a>
+    </div>
+
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+      <a href="/guias/como-resolver-ecuaciones-de-segundo-grado/"
+        class="surface block rounded-2xl p-5 shadow-sm hover:shadow-md hover:-translate-y-0.5 transition-all duration-150">
+        <span class="badge bg-blue-100 text-blue-700 dark:bg-blue-500/15 dark:text-blue-300">Matemáticas Avanzadas</span>
+        <h3 class="mt-3 font-display font-semibold text-lg text-[var(--color-text)]">Cómo resolver una ecuación de segundo grado paso a paso</h3>
+        <p class="mt-1.5 text-sm text-[var(--color-text-muted)] leading-relaxed">Fórmula cuadrática, discriminante, raíces reales y complejas, con ejemplos resueltos.</p>
+        <span class="mt-4 inline-flex items-center gap-1 text-sm font-semibold text-[var(--color-primary-link)]">
+          Leer guía
+          <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M13 7l5 5m0 0l-5 5m5-5H6"/></svg>
+        </span>
+      </a>
+
+      <a href="/guias/como-calcular-desviacion-estandar/"
+        class="surface block rounded-2xl p-5 shadow-sm hover:shadow-md hover:-translate-y-0.5 transition-all duration-150">
+        <span class="badge bg-violet-100 text-violet-700 dark:bg-violet-500/15 dark:text-violet-300">Estadística</span>
+        <h3 class="mt-3 font-display font-semibold text-lg text-[var(--color-text)]">Cómo calcular la desviación estándar paso a paso</h3>
+        <p class="mt-1.5 text-sm text-[var(--color-text-muted)] leading-relaxed">Muestral vs poblacional, con la fórmula y un ejemplo resuelto.</p>
+        <span class="mt-4 inline-flex items-center gap-1 text-sm font-semibold text-[var(--color-primary-link)]">
+          Leer guía
+          <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M13 7l5 5m0 0l-5 5m5-5H6"/></svg>
+        </span>
+      </a>
+
+      <a href="/guias/ley-de-ohm-explicada/"
+        class="surface block rounded-2xl p-5 shadow-sm hover:shadow-md hover:-translate-y-0.5 transition-all duration-150">
+        <span class="badge bg-orange-100 text-orange-700 dark:bg-orange-500/15 dark:text-orange-300">Física</span>
+        <h3 class="mt-3 font-display font-semibold text-lg text-[var(--color-text)]">Ley de Ohm explicada</h3>
+        <p class="mt-1.5 text-sm text-[var(--color-text-muted)] leading-relaxed">Voltaje, corriente, resistencia y potencia, con ejemplos de circuitos.</p>
+        <span class="mt-4 inline-flex items-center gap-1 text-sm font-semibold text-[var(--color-primary-link)]">
+          Leer guía
+          <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M13 7l5 5m0 0l-5 5m5-5H6"/></svg>
+        </span>
+      </a>
+
+      <a href="/guias/como-calcular-ph-y-poh/"
+        class="surface block rounded-2xl p-5 shadow-sm hover:shadow-md hover:-translate-y-0.5 transition-all duration-150">
+        <span class="badge bg-green-100 text-green-700 dark:bg-green-500/15 dark:text-green-300">Química</span>
+        <h3 class="mt-3 font-display font-semibold text-lg text-[var(--color-text)]">Cómo calcular el pH y el pOH de una solución</h3>
+        <p class="mt-1.5 text-sm text-[var(--color-text-muted)] leading-relaxed">Fórmula, escala de acidez y un ejemplo resuelto paso a paso.</p>
+        <span class="mt-4 inline-flex items-center gap-1 text-sm font-semibold text-[var(--color-primary-link)]">
+          Leer guía
+          <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M13 7l5 5m0 0l-5 5m5-5H6"/></svg>
+        </span>
+      </a>
+
+      <a href="/guias/resistencias-serie-vs-paralelo/"
+        class="surface block rounded-2xl p-5 shadow-sm hover:shadow-md hover:-translate-y-0.5 transition-all duration-150">
+        <span class="badge bg-amber-100 text-amber-700 dark:bg-amber-500/15 dark:text-amber-300">Ingeniería</span>
+        <h3 class="mt-3 font-display font-semibold text-lg text-[var(--color-text)]">Resistencias en serie vs paralelo</h3>
+        <p class="mt-1.5 text-sm text-[var(--color-text-muted)] leading-relaxed">Diferencias, fórmulas y cuándo usar cada configuración.</p>
+        <span class="mt-4 inline-flex items-center gap-1 text-sm font-semibold text-[var(--color-primary-link)]">
+          Leer guía
+          <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M13 7l5 5m0 0l-5 5m5-5H6"/></svg>
+        </span>
+      </a>
+
+      <a href="/guias/como-calcular-porcentajes/"
+        class="surface block rounded-2xl p-5 shadow-sm hover:shadow-md hover:-translate-y-0.5 transition-all duration-150">
+        <span class="badge bg-teal-100 text-teal-700 dark:bg-teal-500/15 dark:text-teal-300">Finanzas</span>
+        <h3 class="mt-3 font-display font-semibold text-lg text-[var(--color-text)]">Cómo calcular porcentajes</h3>
+        <p class="mt-1.5 text-sm text-[var(--color-text-muted)] leading-relaxed">Aumentos, descuentos, variación porcentual y el error más común.</p>
+        <span class="mt-4 inline-flex items-center gap-1 text-sm font-semibold text-[var(--color-primary-link)]">
+          Leer guía
+          <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M13 7l5 5m0 0l-5 5m5-5H6"/></svg>
+        </span>
+      </a>
+    </div>
+
+    <a href="/guias/" class="sm:hidden mt-4 flex items-center justify-center gap-1 text-sm font-semibold text-[var(--color-primary-link)] hover:underline">
+      Ver todas las guías
+      <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M13 7l5 5m0 0l-5 5m5-5H6"/></svg>
+    </a>
+  </section>
 
   <!-- SHARED: FOOTER -->
   <footer class="border-t border-[var(--color-border)] mt-10">

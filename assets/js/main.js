@@ -66,6 +66,10 @@
       .replace(/[̀-ͯ]/g, "");
   }
 
+  // Orden de categorías para agrupar la vista "Todas" (si no, las tarjetas
+  // quedan mezcladas en el orden en que se fueron agregando al catálogo).
+  const categoryOrder = Object.keys(CC_CATEGORIES);
+
   function render() {
     const query = normalize(searchInput.value.trim());
 
@@ -78,6 +82,8 @@
       );
       return haystack.includes(query);
     });
+
+    filtered.sort((a, b) => categoryOrder.indexOf(a.category) - categoryOrder.indexOf(b.category));
 
     grid.innerHTML = "";
     filtered.forEach((calc) => grid.appendChild(cardTemplate(calc)));

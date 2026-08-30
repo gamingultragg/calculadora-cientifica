@@ -292,8 +292,15 @@ enlazada en ambas direcciones.
    `/guias/como-hacer-una-dilucion/`, `/guias/ley-de-hooke-y-elasticidad/` y
    `/guias/como-calcular-porcentajes/`. Las 18 calculadoras del catálogo tienen su guía.
 
-**Catálogo actual: 18 calculadoras + 18 guías + 6 landing pages de categoría + home + 404
-= 44 páginas**, todas en `sitemap.xml` (excepto la 404, que lleva `noindex`), auditoría en 0 problemas.
+✅ **Páginas legales**: `/privacidad/` y `/terminos-de-uso/` — sin recolección de datos personales,
+   `localStorage` solo para el tema claro/oscuro, exención de responsabilidad sobre los resultados
+   de las calculadoras (uso educativo/referencial, verificar antes de decisiones importantes) y
+   propiedad del contenido. Enlazadas desde el footer de las 46 páginas del sitio
+   (`scripts/inject-legal-links.py`, idempotente, mismo patrón que el de favicons).
+
+**Catálogo actual: 18 calculadoras + 18 guías + 6 landing pages de categoría + home + 404 + 2
+legales = 46 páginas**, todas en `sitemap.xml` (excepto la 404, que lleva `noindex`), auditoría en
+0 problemas.
 
 ## Deploy
 

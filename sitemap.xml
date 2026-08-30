@@ -142,6 +142,11 @@
     <priority>0.7</priority>
   </url>
   <url>
+    <loc>https://www.calculadoracientifica.com.ar/guias/orden-de-operaciones-vs-calculo-secuencial/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
     <loc>https://www.calculadoracientifica.com.ar/guias/como-resolver-ecuaciones-de-segundo-grado/</loc>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>

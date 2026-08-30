@@ -4,6 +4,21 @@
  * mantener buena precisión numérica en valores grandes.
  */
 (function () {
+  // Convierte un input numérico en formato es-AR ("15.000" con punto de
+  // miles, "1.234,56" con punto de miles y coma decimal, o un número
+  // simple como "9.8") al formato que entiende Number(). Un punto seguido
+  // de 1, 2 o más de 3 dígitos se interpreta como separador decimal (no
+  // de miles), evitando falsos positivos como "3.14" o "0.5".
+  function normalizeNumberInput(value) {
+    let str = String(value).trim();
+    if (str.includes(",")) {
+      str = str.replace(/\./g, "").replace(",", ".");
+    } else if (/^-?[1-9]\d{0,2}(\.\d{3})+$/.test(str)) {
+      str = str.replace(/\./g, "");
+    }
+    return str;
+  }
+
   const modeSelect = document.getElementById("pc-mode");
   const rWrap = document.getElementById("pc-r-wrap");
   const errorEl = document.getElementById("pc-error");
@@ -30,7 +45,7 @@
   function parseNonNegativeInt(id, label) {
     const el = document.getElementById(id);
     el.classList.remove("field-error");
-    const raw = el.value.trim().replace(",", ".");
+    const raw = normalizeNumberInput(el.value);
     if (raw === "") {
       el.classList.add("field-error");
       throw new Error(`El campo "${label}" no puede estar vacío.`);

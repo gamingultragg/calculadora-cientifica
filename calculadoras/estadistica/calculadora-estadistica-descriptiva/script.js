@@ -3,6 +3,21 @@
  * de media, mediana, moda, varianza, desviación estándar y rango.
  */
 (function () {
+  // Convierte un input numérico en formato es-AR ("15.000" con punto de
+  // miles, "1.234,56" con punto de miles y coma decimal, o un número
+  // simple como "9.8") al formato que entiende Number(). Un punto seguido
+  // de 1, 2 o más de 3 dígitos se interpreta como separador decimal (no
+  // de miles), evitando falsos positivos como "3.14" o "0.5".
+  function normalizeNumberInput(value) {
+    let str = String(value).trim();
+    if (str.includes(",")) {
+      str = str.replace(/\./g, "").replace(",", ".");
+    } else if (/^-?[1-9]\d{0,2}(\.\d{3})+$/.test(str)) {
+      str = str.replace(/\./g, "");
+    }
+    return str;
+  }
+
   const form = document.getElementById("ed-form");
   const input = document.getElementById("ed-input");
   const errorEl = document.getElementById("ed-error");
@@ -124,7 +139,7 @@
     e.preventDefault();
     clearError();
 
-    const raw = input.value.trim().replace(",", ".");
+    const raw = normalizeNumberInput(input.value);
     if (raw === "") {
       showError("Ingresá un valor numérico antes de agregar.");
       return;

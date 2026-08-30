@@ -322,6 +322,17 @@ legales = 46 páginas**, todas en `sitemap.xml` (excepto la 404, que lleva `noin
      por teclado) en las 47 páginas, para no forzar a usuarios de teclado/lectores de pantalla a
      tabular por todo el header en cada página.
 
+✅ **Bug real de parseo numérico corregido en las 17 calculadoras con inputs de texto**: el código
+   original solo convertía la coma decimal (`.replace(",", ".")`), sin contemplar el punto de miles
+   del formato es-AR. Consecuencia real: escribir `"15.000"` (quince mil) se interpretaba
+   silenciosamente como `15` — sin ningún error, un resultado 1000 veces menor sin ninguna señal de
+   que algo estaba mal. `"1.234,56"` directamente daba `NaN`. Se reemplazó por
+   `normalizeNumberInput()` (validado con 12 casos de borde antes de aplicarlo: miles, miles+decimal,
+   decimal con coma, decimal con punto tipo "9.8"/"3.14" sin romperse, negativos, múltiples grupos de
+   miles) vía `scripts/fix-number-parsing.py`, que tocó los 19 puntos de parseo en 17 archivos.
+   Verificado en vivo: `"15.000"` en Interés Compuesto ahora da el resultado correcto
+   ($16.902,38 al 12% anual sobre $15.000, antes hubiera calculado sobre "$15").
+
 ✅ **Validación de `sitemap.xml`** (`scripts/validate-sitemap.py`, no destructiva): confirma que el
    archivo sea XML bien formado y que coincida 1:1 con las páginas reales del sitio — sin URLs
    duplicadas, sin entradas que apunten a páginas que ya no existen, y sin páginas indexables que

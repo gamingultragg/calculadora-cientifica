@@ -3,6 +3,21 @@
  * desarrollo paso a paso y soporte de raíces complejas.
  */
 (function () {
+  // Convierte un input numérico en formato es-AR ("15.000" con punto de
+  // miles, "1.234,56" con punto de miles y coma decimal, o un número
+  // simple como "9.8") al formato que entiende Number(). Un punto seguido
+  // de 1, 2 o más de 3 dígitos se interpreta como separador decimal (no
+  // de miles), evitando falsos positivos como "3.14" o "0.5".
+  function normalizeNumberInput(value) {
+    let str = String(value).trim();
+    if (str.includes(",")) {
+      str = str.replace(/\./g, "").replace(",", ".");
+    } else if (/^-?[1-9]\d{0,2}(\.\d{3})+$/.test(str)) {
+      str = str.replace(/\./g, "");
+    }
+    return str;
+  }
+
   const form = document.getElementById("eq-form");
   const clearBtn = document.getElementById("eq-clear");
   const errorEl = document.getElementById("eq-error");
@@ -27,7 +42,7 @@
   }
 
   function parseCoefficient(rawValue, fieldLabel) {
-    const trimmed = (rawValue ?? "").trim().replace(",", ".");
+    const trimmed = normalizeNumberInput((rawValue ?? ""));
     if (trimmed === "") {
       throw new Error(`El campo "${fieldLabel}" no puede estar vacío.`);
     }

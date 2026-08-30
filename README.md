@@ -302,6 +302,13 @@ enlazada en ambas direcciones.
 legales = 46 páginas**, todas en `sitemap.xml` (excepto la 404, que lleva `noindex`), auditoría en
 0 problemas.
 
+✅ **Validación de JSON-LD** (`scripts/validate-jsonld.py`, no destructiva): parsea los 44 bloques
+   `<script type="application/ld+json">` del sitio y verifica que sean JSON sintácticamente válido,
+   que tengan forma correcta (`@context`, `@type`/`@graph`), y que toda URL propia referenciada
+   adentro (breadcrumbs, `mainEntityOfPage`) resuelva a una página real. Resultado actual:
+   **44/44 bloques válidos, 0 problemas** — protege los rich snippets de Google de errores de
+   sintaxis invisibles a simple vista.
+
 ## Deploy
 
 El sitio está en producción en **Cloudflare Pages**, conectado al repo de GitHub

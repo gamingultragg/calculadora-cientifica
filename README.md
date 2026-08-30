@@ -309,9 +309,9 @@ enlazada en ambas direcciones.
    y en el sitemap, solo dejó de listarse en la grilla/buscador y en la categoría Matemáticas;
    se accede por el banner destacado o por URL directa.
 
-**Catálogo actual: 18 calculadoras listadas (+ 1 destacada solo vía banner) + 18 guías + 6 landing
-pages de categoría + home + 404 + 2 legales = 47 páginas**, todas en `sitemap.xml` (excepto la 404,
-que lleva `noindex`), auditoría en 0 problemas.
+**Catálogo actual: 19 calculadoras listadas (+ 1 destacada solo vía banner) + 20 guías + 6 landing
+pages de categoría + home + 404 + sobre-nosotros + 2 legales = 51 páginas**, todas en `sitemap.xml`
+(excepto la 404, que lleva `noindex`), auditoría en 0 problemas.
 
 ✅ **Validación de JSON-LD** (`scripts/validate-jsonld.py`, no destructiva): parsea los 44 bloques
    `<script type="application/ld+json">` del sitio y verifica que sean JSON sintácticamente válido,
@@ -364,8 +364,29 @@ que lleva `noindex`), auditoría en 0 problemas.
 El sitio está en producción en **Cloudflare Pages**, conectado al repo de GitHub
 (`gamingultragg/calculadora-cientifica`, rama `main`). Cada `git push` a `main` dispara un
 redeploy automático — no hay build command, se sirve la raíz del repo tal cual. Dominio propio
-(`calculadoracientifica.com.ar`, registrado en NIC Argentina) en proceso de propagación de DNS
-hacia los nameservers de Cloudflare.
+(`calculadoracientifica.com.ar`, registrado en NIC Argentina) **conectado y activo**, con SSL en
+ambos hosts (`calculadoracientifica.com.ar` y `www.calculadoracientifica.com.ar`). El subdominio
+`calculadora-cientifica.pages.dev` redirige con 301 al dominio definitivo vía
+`functions/_middleware.js` (Pages Function), necesario para que Search Console aceptara el "Cambio
+de dirección". Google Search Console: propiedad `www.calculadoracientifica.com.ar` verificada,
+sitemap enviado (0 errores), Change of Address confirmado.
+
+Cloudflare Web Analytics activo (beacon cookieless). Sin Google Analytics ni ningún otro tracker.
+
+### Auditoría Lighthouse (PageSpeed Insights, mobile, 4G simulado)
+
+Performance 84 · Accessibility 100 · Best Practices 100 · SEO 100 · Agentic Browsing 2/2.
+
+El cuello de botella de Performance es conocido y ya documentado más abajo: Tailwind Play CDN
+genera el CSS en el navegador en tiempo de ejecución, lo cual bloquea el render (~1.700ms
+estimados) — es el mismo trade-off de la migración a framework con build pendiente. TBT 0ms y CLS 0
+son excelentes; no hay bloqueo de interactividad ni saltos de layout.
+
+Un hallazgo real de esta auditoría: el banner destacado de Calculadora Básica en el home no
+llegaba a 4.5:1 de contraste (texto blanco sobre `blue-600`, con o sin opacidad reducida, topeaba
+en 3.68:1 — insuficiente incluso en blanco sólido). Se corrigió pasando el fondo a `blue-800` y el
+subtítulo a `blue-100` opaco (en vez de `text-white/85` translúcido, para no depender del
+compositing de alpha en el muestreo de píxeles de Lighthouse). Accessibility pasó de 95 a 100.
 
 ### Sobre la migración a framework con build
 

@@ -215,4 +215,13 @@ const CC_CALCULATORS = [
     url: "/calculadoras/finanzas/amortizacion-prestamos/",
     status: "live",
   },
+  {
+    id: "calculadora-de-iva",
+    title: "Calculadora de IVA",
+    description: "Agregá el IVA a un neto o discriminalo de un total, con las alícuotas de Argentina.",
+    category: "finanzas",
+    keywords: ["iva", "impuesto", "alicuota", "neto", "factura", "21%", "10.5%"],
+    url: "/calculadoras/finanzas/calculadora-de-iva/",
+    status: "live",
+  },
 ];

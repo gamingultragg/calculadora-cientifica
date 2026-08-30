@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="es-AR">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Cómo Calcular el IVA: Agregarlo y Discriminarlo, con Ejemplos | Calculadora Científica</title>
+<meta name="description" content="Guía completa para calcular el IVA en Argentina: cómo agregarlo a un monto neto, cómo discriminarlo de un total, las tres alícuotas vigentes, y el error más común." />
+<link rel="canonical" href="https://www.calculadoracientifica.com.ar/guias/como-calcular-iva/" />
+<link rel="alternate" hreflang="es-AR" href="https://www.calculadoracientifica.com.ar/guias/como-calcular-iva/" />
+<link rel="alternate" hreflang="es" href="https://www.calculadoracientifica.com.ar/guias/como-calcular-iva/" />
+<link rel="icon" type="image/svg+xml" href="/assets/img/favicon.svg" />
+<link rel="icon" type="image/png" sizes="32x32" href="/assets/img/favicon-32.png" />
+<link rel="icon" type="image/png" sizes="16x16" href="/assets/img/favicon-16.png" />
+<link rel="apple-touch-icon" href="/assets/img/apple-touch-icon.png" />
+
+<meta property="og:type" content="article" />
+<meta property="og:locale" content="es_AR" />
+<meta property="og:site_name" content="Calculadora Científica" />
+<meta property="og:title" content="Cómo Calcular el IVA" />
+<meta property="og:description" content="Agregar y discriminar el IVA, las tres alícuotas de Argentina, y el error más común." />
+<meta property="og:url" content="https://www.calculadoracientifica.com.ar/guias/como-calcular-iva/" />
+<meta property="og:image" content="https://www.calculadoracientifica.com.ar/assets/img/og-image.png" />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="630" />
+<meta name="twitter:image" content="https://www.calculadoracientifica.com.ar/assets/img/og-image.png" />
+<meta name="twitter:card" content="summary_large_image" />
+
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Roboto+Mono:wght@400;500;700&display=swap" rel="stylesheet" />
+
+<script src="https://cdn.tailwindcss.com"></script>
+<script>
+  tailwind.config = { darkMode: "class", theme: { extend: { fontFamily: { sans: ["Inter","ui-sans-serif","system-ui","sans-serif"], mono: ["Roboto Mono","ui-monospace","monospace"] } } } };
+</script>
+<link rel="stylesheet" href="/assets/css/styles.css" />
+<script src="/assets/js/theme.js"></script>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Article",
+      "headline": "Cómo calcular el IVA: agregarlo y discriminarlo, con ejemplos",
+      "description": "Guía completa para calcular el IVA en Argentina: cómo agregarlo a un monto neto, cómo discriminarlo de un total, las tres alícuotas vigentes, y el error más común.",
+      "author": { "@type": "Organization", "name": "Calculadora Científica" },
+      "publisher": { "@type": "Organization", "name": "Calculadora Científica" },
+      "mainEntityOfPage": "https://www.calculadoracientifica.com.ar/guias/como-calcular-iva/",
+      "inLanguage": "es-AR",
+      "datePublished": "2026-08-30"
+    },
+    {
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "¿Cómo se calcula el IVA de un precio sin IVA?",
+          "acceptedAnswer": { "@type": "Answer", "text": "IVA = Neto × (alícuota / 100). Con 21% sobre $10.000: IVA = $2.100, y el precio final es $12.100." }
+        },
+        {
+          "@type": "Question",
+          "name": "¿Cómo saco el neto de un precio que ya tiene IVA incluido?",
+          "acceptedAnswer": { "@type": "Answer", "text": "Neto = Total / (1 + alícuota / 100). Con 21% sobre un total de $12.100: Neto = $10.000." }
+        }
+      ]
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        { "@type": "ListItem", "position": 1, "name": "Inicio", "item": "https://www.calculadoracientifica.com.ar/" },
+        { "@type": "ListItem", "position": 2, "name": "Guías", "item": "https://www.calculadoracientifica.com.ar/guias/" },
+        { "@type": "ListItem", "position": 3, "name": "Cómo calcular el IVA", "item": "https://www.calculadoracientifica.com.ar/guias/como-calcular-iva/" }
+      ]
+    }
+  ]
+}
+</script>
+</head>
+<body class="min-h-screen font-sans antialiased">
+  <a href="#main-content" class="sr-only focus:not-sr-only focus:fixed focus:top-3 focus:left-3 focus:z-50 focus:px-4 focus:py-2 focus:rounded-lg focus:bg-[var(--color-primary)] focus:text-white focus:text-sm focus:font-semibold">Saltar al contenido</a>
+
+  <header class="sticky top-0 z-40 backdrop-blur border-b border-[var(--color-border)] bg-[var(--color-bg)]/85">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 h-16 flex items-center justify-between">
+      <a href="/" class="flex items-center gap-2 font-display font-extrabold text-lg">
+        <span class="w-8 h-8 rounded-lg bg-[var(--color-primary)] text-white flex items-center justify-center text-sm">∑</span>
+        Calculadora<span class="text-[var(--color-primary-link)]">Científica</span>
+      </a>
+      <button data-theme-toggle type="button" aria-label="Cambiar tema claro/oscuro"
+        class="w-10 h-10 rounded-full surface flex items-center justify-center hover:shadow-md transition-shadow">
+        <span data-theme-icon>🌙</span>
+      </button>
+    </div>
+  </header>
+
+  <main id="main-content" class="max-w-3xl mx-auto px-4 sm:px-6 py-8">
+    <nav aria-label="Breadcrumb" class="text-sm text-[var(--color-text-muted)] mb-4">
+      <ol class="flex flex-wrap items-center gap-1">
+        <li><a href="/" class="hover:text-[var(--color-primary-link)]">Inicio</a></li>
+        <li aria-hidden="true">/</li>
+        <li><a href="/guias/" class="hover:text-[var(--color-primary-link)]">Guías</a></li>
+        <li aria-hidden="true">/</li>
+        <li class="text-[var(--color-text)] font-medium" aria-current="page">Cómo calcular el IVA</li>
+      </ol>
+    </nav>
+
+    <article>
+      <h1 class="font-display font-extrabold text-2xl sm:text-3xl">Cómo calcular el IVA: agregarlo y discriminarlo, con ejemplos</h1>
+      <p class="mt-3 text-[var(--color-text-muted)] leading-relaxed">
+        El IVA (Impuesto al Valor Agregado) aparece en casi cualquier compra o factura en
+        Argentina. Esta guía junta las dos cuentas que más se necesitan — agregarlo a un precio
+        neto, y discriminarlo de un precio que ya lo incluye — con ejemplos resueltos de cada una.
+      </p>
+
+      <div class="mt-6 rounded-2xl surface p-4 flex items-center justify-between gap-3">
+        <p class="text-sm">¿Preferís que lo calcule por vos?</p>
+        <a href="/calculadoras/finanzas/calculadora-de-iva/" class="calc-btn calc-btn--op px-4 py-2 text-sm whitespace-nowrap">Abrir calculadora</a>
+      </div>
+
+      <h2 class="font-display font-bold text-xl mt-8 mb-2">1. Agregar IVA a un precio neto</h2>
+      <p class="font-numeric text-center my-3 text-[var(--color-text)]">Total = Neto × (1 + alícuota / 100)</p>
+      <p class="text-[var(--color-text-muted)] leading-relaxed">
+        Ejemplo: un producto cuesta $10.000 + IVA, con la alícuota general del 21%. Total = 10.000
+        × 1,21 = $12.100. El IVA en sí es $2.100 (10.000 × 0,21).
+      </p>
+
+      <h2 class="font-display font-bold text-xl mt-8 mb-2">2. Discriminar el IVA de un precio que ya lo incluye</h2>
+      <p class="font-numeric text-center my-3 text-[var(--color-text)]">Neto = Total / (1 + alícuota / 100)</p>
+      <p class="text-[var(--color-text-muted)] leading-relaxed">
+        Ejemplo: una factura dice $12.100, IVA incluido, al 21%. Neto = 12.100 / 1,21 = $10.000.
+        El IVA es la diferencia: 12.100 − 10.000 = $2.100.
+      </p>
+
+      <h2 class="font-display font-bold text-xl mt-8 mb-2">3. El error más común: restar el porcentaje del total</h2>
+      <p class="text-[var(--color-text-muted)] leading-relaxed">
+        Para sacar el neto de $12.100 con 21% de IVA, es tentador calcular 12.100 − 21% = 12.100 −
+        2.541 = $9.559. <strong class="text-[var(--color-text)]">Es incorrecto.</strong> El 21% se
+        calculó sobre el <em>neto</em> ($10.000), no sobre el total ($12.100) — restar el 21% del
+        total resta de más. Por eso hay que dividir por 1,21, no restar el 21%.
+      </p>
+
+      <h2 class="font-display font-bold text-xl mt-8 mb-2">4. Las tres alícuotas vigentes en Argentina</h2>
+      <ul class="list-disc list-inside text-[var(--color-text-muted)] leading-relaxed space-y-1 mt-2">
+        <li><strong class="text-[var(--color-text)]">21%</strong> — alícuota general, aplica a la mayoría de los bienes y servicios.</li>
+        <li><strong class="text-[var(--color-text)]">10,5%</strong> — alícuota reducida, aplica por ejemplo a ciertos alimentos y a la construcción de vivienda.</li>
+        <li><strong class="text-[var(--color-text)]">27%</strong> — alícuota incrementada, para servicios como electricidad, gas y telecomunicaciones prestados a usuarios no residenciales.</li>
+      </ul>
+      <p class="text-[var(--color-text-muted)] leading-relaxed mt-3">
+        Este listado es orientativo y con fines educativos — para una situación fiscal concreta,
+        consultá siempre con un contador o la fuente oficial de AFIP/ARCA, ya que las alícuotas y
+        exenciones pueden cambiar.
+      </p>
+    </article>
+
+    <section class="mt-10 surface rounded-2xl p-5 shadow-sm">
+      <h2 class="font-display font-semibold text-lg mb-2">Calculadoras relacionadas</h2>
+      <ul class="space-y-2 text-sm">
+        <li><a class="text-[var(--color-primary-link)] hover:underline" href="/calculadoras/finanzas/calculadora-de-iva/">Calculadora de IVA</a></li>
+        <li><a class="text-[var(--color-primary-link)] hover:underline" href="/calculadoras/finanzas/calculadora-de-porcentajes/">Calculadora de Porcentajes</a></li>
+      </ul>
+    </section>
+  </main>
+
+  <footer class="border-t border-[var(--color-border)] mt-10">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 py-10 text-sm text-[var(--color-text-muted)] flex flex-col sm:flex-row items-center justify-between gap-4">
+      <p>© 2026 Calculadora Científica · Hecho en Argentina 🇦🇷 · <a href="/sobre-nosotros/" class="hover:text-[var(--color-primary-link)]">Sobre Nosotros</a> · <a href="/privacidad/" class="hover:text-[var(--color-primary-link)]">Privacidad</a> · <a href="/terminos-de-uso/" class="hover:text-[var(--color-primary-link)]">Términos</a></p>
+      <a href="/" class="hover:text-[var(--color-primary-link)]">← Volver al inicio</a>
+    </div>
+  </footer>
+  <!-- Cloudflare Web Analytics --><script type='module' src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "62cded9cafa8475a9f6f875888b918b9"}'></script><!-- End Cloudflare Web Analytics -->
+<a href="/" id="back-to-home" aria-label="Ir al inicio del sitio"
+  class="fixed bottom-6 right-6 z-40 w-11 h-11 rounded-full surface shadow-lg hidden lg:flex items-center justify-center transition-all duration-200 hover:shadow-xl">
+  <svg class="w-5 h-5 text-[var(--color-text)]" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+    <path stroke-linecap="round" stroke-linejoin="round" d="M3 9.5L12 3l9 6.5M5 9.5V20a1 1 0 001 1h4v-6h4v6h4a1 1 0 001-1V9.5"/>
+  </svg>
+</a>
+<button id="back-to-top" type="button" aria-label="Volver al inicio de la página"
+  class="fixed bottom-20 right-6 z-40 w-11 h-11 rounded-full bg-[var(--color-primary)] text-white shadow-lg hidden lg:flex items-center justify-center opacity-0 pointer-events-none translate-y-2 transition-all duration-200 hover:brightness-110">
+  <svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5">
+    <path stroke-linecap="round" stroke-linejoin="round" d="M5 15l7-7 7 7"/>
+  </svg>
+</button>
+<script src="/assets/js/back-to-top.js"></script>
+</body>
+</html>

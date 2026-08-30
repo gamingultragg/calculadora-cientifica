@@ -50,6 +50,15 @@ const CC_CATEGORIES = {
 
 const CC_CALCULATORS = [
   {
+    id: "calculadora-basica",
+    title: "Calculadora Básica Online",
+    description: "Sumar, restar, multiplicar, dividir y porcentajes, simple y rápida.",
+    category: "matematicas",
+    keywords: ["basica", "simple", "sumar", "restar", "multiplicar", "dividir", "porcentaje"],
+    url: "/calculadoras/matematicas-avanzadas/calculadora-basica/",
+    status: "live",
+  },
+  {
     id: "calculadora-cientifica",
     title: "Calculadora Científica Online",
     description:

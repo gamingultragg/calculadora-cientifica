@@ -298,8 +298,17 @@ enlazada en ambas direcciones.
    propiedad del contenido. Enlazadas desde el footer de las 46 páginas del sitio
    (`scripts/inject-legal-links.py`, idempotente, mismo patrón que el de favicons).
 
-**Catálogo actual: 18 calculadoras + 18 guías + 6 landing pages de categoría + home + 404 + 2
-legales = 46 páginas**, todas en `sitemap.xml` (excepto la 404, que lleva `noindex`), auditoría en
+✅ **Calculadora Básica** (`/calculadoras/matematicas-avanzadas/calculadora-basica/`): 4 operaciones
+   + porcentaje, con evaluación **secuencial** (como una calculadora de bolsillo real —
+   `2+3×4` da `20`, no `14`), a diferencia de la científica que sí respeta la prioridad de
+   operaciones. Forma parte del catálogo normal (categoría Matemáticas) **y además** tiene una
+   tarjeta destacada arriba de todo en la home, a pedido del usuario. Lógica de evaluación
+   secuencial validada con 5 casos en Node antes de implementar (orden de operaciones, división
+   encadenada, cambio de operador a mitad de cuenta, división por cero, decimales) y confirmada en
+   el navegador.
+
+**Catálogo actual: 19 calculadoras + 18 guías + 6 landing pages de categoría + home + 404 + 2
+legales = 47 páginas**, todas en `sitemap.xml` (excepto la 404, que lleva `noindex`), auditoría en
 0 problemas.
 
 ✅ **Validación de JSON-LD** (`scripts/validate-jsonld.py`, no destructiva): parsea los 44 bloques

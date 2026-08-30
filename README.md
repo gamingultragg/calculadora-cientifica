@@ -309,6 +309,19 @@ legales = 46 páginas**, todas en `sitemap.xml` (excepto la 404, que lleva `noin
    **44/44 bloques válidos, 0 problemas** — protege los rich snippets de Google de errores de
    sintaxis invisibles a simple vista.
 
+✅ **Accesibilidad — contraste WCAG y navegación por teclado**:
+   - `scripts/check-contrast.py` calculó el contraste de la paleta en ambos temas contra AA (4.5:1).
+     Encontró un problema real: el color primario usado como texto de enlace sobre tarjetas en modo
+     oscuro daba 3,98:1 (por debajo del mínimo). Se separó en dos tokens —
+     `--color-primary` (fondos de botones, se queda igual) y `--color-primary-link` (texto/enlaces,
+     más claro en modo oscuro: `#60a5fa`) — vía `scripts/fix-link-contrast.py`, que redirigió los
+     420 usos de `text-[var(--color-primary)]` en las 47 páginas sin tocar los 49 usos de fondo de
+     botón ni los 43 anillos de foco. Resultado: **todos los pares texto/fondo pasan AA en ambos
+     temas** (el peor caso pasó de 3,98:1 a 5,75:1).
+   - `scripts/inject-skip-link.py` agregó un enlace "Saltar al contenido" (oculto hasta recibir foco
+     por teclado) en las 47 páginas, para no forzar a usuarios de teclado/lectores de pantalla a
+     tabular por todo el header en cada página.
+
 ## Deploy
 
 El sitio está en producción en **Cloudflare Pages**, conectado al repo de GitHub

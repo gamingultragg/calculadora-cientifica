@@ -6,6 +6,8 @@
 :root {
   --color-primary: #2563eb;
   --color-primary-dark: #1d4ed8;
+  /* Texto/enlaces: en modo claro es el mismo azul que los botones (ya pasa AA). */
+  --color-primary-link: #2563eb;
   --color-accent: #10b981;
   --color-danger: #e11d48;
   --color-warning: #d97706;
@@ -19,6 +21,10 @@
 html.dark {
   --color-primary: #3b82f6;
   --color-primary-dark: #60a5fa;
+  /* Texto/enlaces: en modo oscuro necesita ser más claro que --color-primary para
+     mantener 4.5:1 de contraste sobre tarjetas (WCAG AA) — el azul de los botones
+     (pensado para llevar texto blanco encima) queda demasiado apagado como texto. */
+  --color-primary-link: #60a5fa;
   --color-accent: #34d399;
   --color-danger: #fb7185;
   --color-warning: #fbbf24;

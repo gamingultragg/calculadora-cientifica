@@ -50,12 +50,13 @@
 </script>
 </head>
 <body class="min-h-screen font-sans antialiased">
+  <a href="#main-content" class="sr-only focus:not-sr-only focus:fixed focus:top-3 focus:left-3 focus:z-50 focus:px-4 focus:py-2 focus:rounded-lg focus:bg-[var(--color-primary)] focus:text-white focus:text-sm focus:font-semibold">Saltar al contenido</a>
 
   <header class="sticky top-0 z-40 backdrop-blur border-b border-[var(--color-border)] bg-[var(--color-bg)]/85">
     <div class="max-w-6xl mx-auto px-4 sm:px-6 h-16 flex items-center justify-between">
       <a href="/" class="flex items-center gap-2 font-display font-extrabold text-lg">
         <span class="w-8 h-8 rounded-lg bg-[var(--color-primary)] text-white flex items-center justify-center text-sm">∑</span>
-        Calculadora<span class="text-[var(--color-primary)]">Científica</span>
+        Calculadora<span class="text-[var(--color-primary-link)]">Científica</span>
       </a>
       <button data-theme-toggle type="button" aria-label="Cambiar tema claro/oscuro" class="w-10 h-10 rounded-full surface flex items-center justify-center hover:shadow-md transition-shadow">
         <span data-theme-icon>🌙</span>
@@ -63,10 +64,10 @@
     </div>
   </header>
 
-  <main class="max-w-6xl mx-auto px-4 sm:px-6 py-8">
+  <main id="main-content" class="max-w-6xl mx-auto px-4 sm:px-6 py-8">
     <nav aria-label="Breadcrumb" class="text-sm text-[var(--color-text-muted)] mb-4">
       <ol class="flex flex-wrap items-center gap-1">
-        <li><a href="/" class="hover:text-[var(--color-primary)]">Inicio</a></li>
+        <li><a href="/" class="hover:text-[var(--color-primary-link)]">Inicio</a></li>
         <li aria-hidden="true">/</li>
         <li class="text-[var(--color-text)] font-medium" aria-current="page">Guías</li>
       </ol>
@@ -84,7 +85,7 @@
         <span class="badge bg-blue-100 text-blue-700 dark:bg-blue-500/15 dark:text-blue-300">Matemáticas Avanzadas</span>
         <h2 class="mt-3 font-display font-semibold text-lg text-[var(--color-text)]">Cómo resolver una ecuación de segundo grado paso a paso</h2>
         <p class="mt-1.5 text-sm text-[var(--color-text-muted)] leading-relaxed">Fórmula cuadrática, discriminante, raíces reales y complejas, con ejemplos resueltos.</p>
-        <span class="mt-4 inline-flex items-center gap-1 text-sm font-semibold text-[var(--color-primary)]">
+        <span class="mt-4 inline-flex items-center gap-1 text-sm font-semibold text-[var(--color-primary-link)]">
           Leer guía
           <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M13 7l5 5m0 0l-5 5m5-5H6"/></svg>
         </span>
@@ -95,7 +96,7 @@
         <span class="badge bg-blue-100 text-blue-700 dark:bg-blue-500/15 dark:text-blue-300">Matemáticas Avanzadas</span>
         <h2 class="mt-3 font-display font-semibold text-lg text-[var(--color-text)]">Cómo calcular el determinante y la matriz inversa</h2>
         <p class="mt-1.5 text-sm text-[var(--color-text-muted)] leading-relaxed">Regla de Sarrus, matriz adjunta y ejemplos resueltos de 2×2 y 3×3.</p>
-        <span class="mt-4 inline-flex items-center gap-1 text-sm font-semibold text-[var(--color-primary)]">
+        <span class="mt-4 inline-flex items-center gap-1 text-sm font-semibold text-[var(--color-primary-link)]">
           Leer guía
           <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M13 7l5 5m0 0l-5 5m5-5H6"/></svg>
         </span>
@@ -106,7 +107,7 @@
         <span class="badge bg-violet-100 text-violet-700 dark:bg-violet-500/15 dark:text-violet-300">Estadística</span>
         <h2 class="mt-3 font-display font-semibold text-lg text-[var(--color-text)]">Cómo calcular la desviación estándar paso a paso</h2>
         <p class="mt-1.5 text-sm text-[var(--color-text-muted)] leading-relaxed">Muestral vs poblacional, con la fórmula y un ejemplo resuelto.</p>
-        <span class="mt-4 inline-flex items-center gap-1 text-sm font-semibold text-[var(--color-primary)]">
+        <span class="mt-4 inline-flex items-center gap-1 text-sm font-semibold text-[var(--color-primary-link)]">
           Leer guía
           <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M13 7l5 5m0 0l-5 5m5-5H6"/></svg>
         </span>
@@ -117,7 +118,7 @@
         <span class="badge bg-orange-100 text-orange-700 dark:bg-orange-500/15 dark:text-orange-300">Física</span>
         <h2 class="mt-3 font-display font-semibold text-lg text-[var(--color-text)]">Ley de Ohm explicada</h2>
         <p class="mt-1.5 text-sm text-[var(--color-text-muted)] leading-relaxed">Voltaje, corriente, resistencia y potencia, con ejemplos de circuitos.</p>
-        <span class="mt-4 inline-flex items-center gap-1 text-sm font-semibold text-[var(--color-primary)]">
+        <span class="mt-4 inline-flex items-center gap-1 text-sm font-semibold text-[var(--color-primary-link)]">
           Leer guía
           <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M13 7l5 5m0 0l-5 5m5-5H6"/></svg>
         </span>
@@ -128,7 +129,7 @@
         <span class="badge bg-green-100 text-green-700 dark:bg-green-500/15 dark:text-green-300">Química</span>
         <h2 class="mt-3 font-display font-semibold text-lg text-[var(--color-text)]">Cómo calcular el pH y el pOH de una solución</h2>
         <p class="mt-1.5 text-sm text-[var(--color-text-muted)] leading-relaxed">Fórmula, escala de acidez y un ejemplo resuelto paso a paso.</p>
-        <span class="mt-4 inline-flex items-center gap-1 text-sm font-semibold text-[var(--color-primary)]">
+        <span class="mt-4 inline-flex items-center gap-1 text-sm font-semibold text-[var(--color-primary-link)]">
           Leer guía
           <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M13 7l5 5m0 0l-5 5m5-5H6"/></svg>
         </span>
@@ -139,7 +140,7 @@
         <span class="badge bg-amber-100 text-amber-700 dark:bg-amber-500/15 dark:text-amber-300">Ingeniería</span>
         <h2 class="mt-3 font-display font-semibold text-lg text-[var(--color-text)]">Resistencias en serie vs paralelo</h2>
         <p class="mt-1.5 text-sm text-[var(--color-text-muted)] leading-relaxed">Diferencias, fórmulas y cuándo usar cada configuración.</p>
-        <span class="mt-4 inline-flex items-center gap-1 text-sm font-semibold text-[var(--color-primary)]">
+        <span class="mt-4 inline-flex items-center gap-1 text-sm font-semibold text-[var(--color-primary-link)]">
           Leer guía
           <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M13 7l5 5m0 0l-5 5m5-5H6"/></svg>
         </span>
@@ -150,7 +151,7 @@
         <span class="badge bg-teal-100 text-teal-700 dark:bg-teal-500/15 dark:text-teal-300">Finanzas</span>
         <h2 class="mt-3 font-display font-semibold text-lg text-[var(--color-text)]">Interés simple vs interés compuesto</h2>
         <p class="mt-1.5 text-sm text-[var(--color-text-muted)] leading-relaxed">Diferencias explicadas, con un ejemplo numérico comparativo.</p>
-        <span class="mt-4 inline-flex items-center gap-1 text-sm font-semibold text-[var(--color-primary)]">
+        <span class="mt-4 inline-flex items-center gap-1 text-sm font-semibold text-[var(--color-primary-link)]">
           Leer guía
           <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M13 7l5 5m0 0l-5 5m5-5H6"/></svg>
         </span>
@@ -161,7 +162,7 @@
         <span class="badge bg-blue-100 text-blue-700 dark:bg-blue-500/15 dark:text-blue-300">Matemáticas Avanzadas</span>
         <h2 class="mt-3 font-display font-semibold text-lg text-[var(--color-text)]">Grados vs radianes</h2>
         <p class="mt-1.5 text-sm text-[var(--color-text-muted)] leading-relaxed">Cómo convertir y cuándo usar cada unidad en trigonometría.</p>
-        <span class="mt-4 inline-flex items-center gap-1 text-sm font-semibold text-[var(--color-primary)]">
+        <span class="mt-4 inline-flex items-center gap-1 text-sm font-semibold text-[var(--color-primary-link)]">
           Leer guía
           <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M13 7l5 5m0 0l-5 5m5-5H6"/></svg>
         </span>
@@ -172,7 +173,7 @@
         <span class="badge bg-violet-100 text-violet-700 dark:bg-violet-500/15 dark:text-violet-300">Estadística</span>
         <h2 class="mt-3 font-display font-semibold text-lg text-[var(--color-text)]">Permutaciones vs combinaciones</h2>
         <p class="mt-1.5 text-sm text-[var(--color-text-muted)] leading-relaxed">Cómo saber cuál usar: el criterio del orden, con ejemplos.</p>
-        <span class="mt-4 inline-flex items-center gap-1 text-sm font-semibold text-[var(--color-primary)]">
+        <span class="mt-4 inline-flex items-center gap-1 text-sm font-semibold text-[var(--color-primary-link)]">
           Leer guía
           <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M13 7l5 5m0 0l-5 5m5-5H6"/></svg>
         </span>
@@ -183,7 +184,7 @@
         <span class="badge bg-orange-100 text-orange-700 dark:bg-orange-500/15 dark:text-orange-300">Física</span>
         <h2 class="mt-3 font-display font-semibold text-lg text-[var(--color-text)]">Fórmulas de MRU y MRUA</h2>
         <p class="mt-1.5 text-sm text-[var(--color-text-muted)] leading-relaxed">Movimiento rectilíneo uniforme y acelerado, con ejemplos resueltos.</p>
-        <span class="mt-4 inline-flex items-center gap-1 text-sm font-semibold text-[var(--color-primary)]">
+        <span class="mt-4 inline-flex items-center gap-1 text-sm font-semibold text-[var(--color-primary-link)]">
           Leer guía
           <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M13 7l5 5m0 0l-5 5m5-5H6"/></svg>
         </span>
@@ -194,7 +195,7 @@
         <span class="badge bg-green-100 text-green-700 dark:bg-green-500/15 dark:text-green-300">Química</span>
         <h2 class="mt-3 font-display font-semibold text-lg text-[var(--color-text)]">Cómo calcular la molaridad de una solución</h2>
         <p class="mt-1.5 text-sm text-[var(--color-text-muted)] leading-relaxed">Fórmula, moles desde la masa, y un ejemplo resuelto.</p>
-        <span class="mt-4 inline-flex items-center gap-1 text-sm font-semibold text-[var(--color-primary)]">
+        <span class="mt-4 inline-flex items-center gap-1 text-sm font-semibold text-[var(--color-primary-link)]">
           Leer guía
           <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M13 7l5 5m0 0l-5 5m5-5H6"/></svg>
         </span>
@@ -205,7 +206,7 @@
         <span class="badge bg-amber-100 text-amber-700 dark:bg-amber-500/15 dark:text-amber-300">Ingeniería</span>
         <h2 class="mt-3 font-display font-semibold text-lg text-[var(--color-text)]">Cómo convertir unidades de presión</h2>
         <p class="mt-1.5 text-sm text-[var(--color-text-muted)] leading-relaxed">Pa, bar, atm, psi y mmHg, con tabla de equivalencias.</p>
-        <span class="mt-4 inline-flex items-center gap-1 text-sm font-semibold text-[var(--color-primary)]">
+        <span class="mt-4 inline-flex items-center gap-1 text-sm font-semibold text-[var(--color-primary-link)]">
           Leer guía
           <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M13 7l5 5m0 0l-5 5m5-5H6"/></svg>
         </span>
@@ -216,7 +217,7 @@
         <span class="badge bg-teal-100 text-teal-700 dark:bg-teal-500/15 dark:text-teal-300">Finanzas</span>
         <h2 class="mt-3 font-display font-semibold text-lg text-[var(--color-text)]">Cómo se calcula la cuota de un préstamo</h2>
         <p class="mt-1.5 text-sm text-[var(--color-text-muted)] leading-relaxed">Sistema francés: fórmula, ejemplo resuelto y tasa nominal vs efectiva.</p>
-        <span class="mt-4 inline-flex items-center gap-1 text-sm font-semibold text-[var(--color-primary)]">
+        <span class="mt-4 inline-flex items-center gap-1 text-sm font-semibold text-[var(--color-primary-link)]">
           Leer guía
           <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M13 7l5 5m0 0l-5 5m5-5H6"/></svg>
         </span>
@@ -227,7 +228,7 @@
         <span class="badge bg-violet-100 text-violet-700 dark:bg-violet-500/15 dark:text-violet-300">Estadística</span>
         <h2 class="mt-3 font-display font-semibold text-lg text-[var(--color-text)]">Puntaje Z y la curva normal</h2>
         <p class="mt-1.5 text-sm text-[var(--color-text-muted)] leading-relaxed">La regla 68-95-99.7, probabilidad acumulada y un ejemplo resuelto.</p>
-        <span class="mt-4 inline-flex items-center gap-1 text-sm font-semibold text-[var(--color-primary)]">
+        <span class="mt-4 inline-flex items-center gap-1 text-sm font-semibold text-[var(--color-primary-link)]">
           Leer guía
           <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M13 7l5 5m0 0l-5 5m5-5H6"/></svg>
         </span>
@@ -238,7 +239,7 @@
         <span class="badge bg-orange-100 text-orange-700 dark:bg-orange-500/15 dark:text-orange-300">Física</span>
         <h2 class="mt-3 font-display font-semibold text-lg text-[var(--color-text)]">F=ma explicada</h2>
         <p class="mt-1.5 text-sm text-[var(--color-text-muted)] leading-relaxed">Masa vs peso, fuerza neta, y un ejemplo resuelto.</p>
-        <span class="mt-4 inline-flex items-center gap-1 text-sm font-semibold text-[var(--color-primary)]">
+        <span class="mt-4 inline-flex items-center gap-1 text-sm font-semibold text-[var(--color-primary-link)]">
           Leer guía
           <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M13 7l5 5m0 0l-5 5m5-5H6"/></svg>
         </span>
@@ -249,7 +250,7 @@
         <span class="badge bg-green-100 text-green-700 dark:bg-green-500/15 dark:text-green-300">Química</span>
         <h2 class="mt-3 font-display font-semibold text-lg text-[var(--color-text)]">Cómo hacer una dilución</h2>
         <p class="mt-1.5 text-sm text-[var(--color-text-muted)] leading-relaxed">Los pasos en la práctica, factor de dilución y un ejemplo resuelto.</p>
-        <span class="mt-4 inline-flex items-center gap-1 text-sm font-semibold text-[var(--color-primary)]">
+        <span class="mt-4 inline-flex items-center gap-1 text-sm font-semibold text-[var(--color-primary-link)]">
           Leer guía
           <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M13 7l5 5m0 0l-5 5m5-5H6"/></svg>
         </span>
@@ -260,7 +261,7 @@
         <span class="badge bg-amber-100 text-amber-700 dark:bg-amber-500/15 dark:text-amber-300">Ingeniería</span>
         <h2 class="mt-3 font-display font-semibold text-lg text-[var(--color-text)]">Ley de Hooke y elasticidad</h2>
         <p class="mt-1.5 text-sm text-[var(--color-text-muted)] leading-relaxed">Constante elástica, límite elástico y un ejemplo resuelto.</p>
-        <span class="mt-4 inline-flex items-center gap-1 text-sm font-semibold text-[var(--color-primary)]">
+        <span class="mt-4 inline-flex items-center gap-1 text-sm font-semibold text-[var(--color-primary-link)]">
           Leer guía
           <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M13 7l5 5m0 0l-5 5m5-5H6"/></svg>
         </span>
@@ -271,7 +272,7 @@
         <span class="badge bg-teal-100 text-teal-700 dark:bg-teal-500/15 dark:text-teal-300">Finanzas</span>
         <h2 class="mt-3 font-display font-semibold text-lg text-[var(--color-text)]">Cómo calcular porcentajes</h2>
         <p class="mt-1.5 text-sm text-[var(--color-text-muted)] leading-relaxed">Aumentos, descuentos, variación porcentual y el error más común.</p>
-        <span class="mt-4 inline-flex items-center gap-1 text-sm font-semibold text-[var(--color-primary)]">
+        <span class="mt-4 inline-flex items-center gap-1 text-sm font-semibold text-[var(--color-primary-link)]">
           Leer guía
           <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M13 7l5 5m0 0l-5 5m5-5H6"/></svg>
         </span>
@@ -281,8 +282,8 @@
 
   <footer class="border-t border-[var(--color-border)] mt-10">
     <div class="max-w-6xl mx-auto px-4 sm:px-6 py-10 text-sm text-[var(--color-text-muted)] flex flex-col sm:flex-row items-center justify-between gap-4">
-      <p>© 2026 Calculadora Científica · Hecho en Argentina 🇦🇷 · <a href="/privacidad/" class="hover:text-[var(--color-primary)]">Privacidad</a> · <a href="/terminos-de-uso/" class="hover:text-[var(--color-primary)]">Términos</a></p>
-      <a href="/" class="hover:text-[var(--color-primary)]">← Volver al inicio</a>
+      <p>© 2026 Calculadora Científica · Hecho en Argentina 🇦🇷 · <a href="/privacidad/" class="hover:text-[var(--color-primary-link)]">Privacidad</a> · <a href="/terminos-de-uso/" class="hover:text-[var(--color-primary-link)]">Términos</a></p>
+      <a href="/" class="hover:text-[var(--color-primary-link)]">← Volver al inicio</a>
     </div>
   </footer>
 </body>

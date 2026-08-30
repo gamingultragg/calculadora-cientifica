@@ -63,12 +63,13 @@
 </script>
 </head>
 <body class="min-h-screen font-sans antialiased">
+  <a href="#main-content" class="sr-only focus:not-sr-only focus:fixed focus:top-3 focus:left-3 focus:z-50 focus:px-4 focus:py-2 focus:rounded-lg focus:bg-[var(--color-primary)] focus:text-white focus:text-sm focus:font-semibold">Saltar al contenido</a>
 
   <header class="sticky top-0 z-40 backdrop-blur border-b border-[var(--color-border)] bg-[var(--color-bg)]/85">
     <div class="max-w-6xl mx-auto px-4 sm:px-6 h-16 flex items-center justify-between">
       <a href="/" class="flex items-center gap-2 font-display font-extrabold text-lg">
         <span class="w-8 h-8 rounded-lg bg-[var(--color-primary)] text-white flex items-center justify-center text-sm">∑</span>
-        Calculadora<span class="text-[var(--color-primary)]">Científica</span>
+        Calculadora<span class="text-[var(--color-primary-link)]">Científica</span>
       </a>
       <button data-theme-toggle type="button" aria-label="Cambiar tema claro/oscuro"
         class="w-10 h-10 rounded-full surface flex items-center justify-center hover:shadow-md transition-shadow">
@@ -77,12 +78,12 @@
     </div>
   </header>
 
-  <main class="max-w-3xl mx-auto px-4 sm:px-6 py-8">
+  <main id="main-content" class="max-w-3xl mx-auto px-4 sm:px-6 py-8">
     <nav aria-label="Breadcrumb" class="text-sm text-[var(--color-text-muted)] mb-4">
       <ol class="flex flex-wrap items-center gap-1">
-        <li><a href="/" class="hover:text-[var(--color-primary)]">Inicio</a></li>
+        <li><a href="/" class="hover:text-[var(--color-primary-link)]">Inicio</a></li>
         <li aria-hidden="true">/</li>
-        <li><a href="/guias/" class="hover:text-[var(--color-primary)]">Guías</a></li>
+        <li><a href="/guias/" class="hover:text-[var(--color-primary-link)]">Guías</a></li>
         <li aria-hidden="true">/</li>
         <li class="text-[var(--color-text)] font-medium" aria-current="page">Cómo se calcula la cuota de un préstamo</li>
       </ol>
@@ -150,16 +151,16 @@
     <section class="mt-10 surface rounded-2xl p-5 shadow-sm">
       <h2 class="font-display font-semibold text-lg mb-2">Calculadoras relacionadas</h2>
       <ul class="space-y-2 text-sm">
-        <li><a class="text-[var(--color-primary)] hover:underline" href="/calculadoras/finanzas/amortizacion-prestamos/">Amortización de Préstamos</a></li>
-        <li><a class="text-[var(--color-primary)] hover:underline" href="/calculadoras/finanzas/interes-compuesto/">Interés Compuesto</a></li>
+        <li><a class="text-[var(--color-primary-link)] hover:underline" href="/calculadoras/finanzas/amortizacion-prestamos/">Amortización de Préstamos</a></li>
+        <li><a class="text-[var(--color-primary-link)] hover:underline" href="/calculadoras/finanzas/interes-compuesto/">Interés Compuesto</a></li>
       </ul>
     </section>
   </main>
 
   <footer class="border-t border-[var(--color-border)] mt-10">
     <div class="max-w-6xl mx-auto px-4 sm:px-6 py-10 text-sm text-[var(--color-text-muted)] flex flex-col sm:flex-row items-center justify-between gap-4">
-      <p>© 2026 Calculadora Científica · Hecho en Argentina 🇦🇷 · <a href="/privacidad/" class="hover:text-[var(--color-primary)]">Privacidad</a> · <a href="/terminos-de-uso/" class="hover:text-[var(--color-primary)]">Términos</a></p>
-      <a href="/" class="hover:text-[var(--color-primary)]">← Volver al inicio</a>
+      <p>© 2026 Calculadora Científica · Hecho en Argentina 🇦🇷 · <a href="/privacidad/" class="hover:text-[var(--color-primary-link)]">Privacidad</a> · <a href="/terminos-de-uso/" class="hover:text-[var(--color-primary-link)]">Términos</a></p>
+      <a href="/" class="hover:text-[var(--color-primary-link)]">← Volver al inicio</a>
     </div>
   </footer>
 </body>

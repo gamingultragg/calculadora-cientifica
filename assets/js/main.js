@@ -38,7 +38,7 @@
       <h3 class="mt-3 font-display font-semibold text-lg text-[var(--color-text)]">${calc.title}</h3>
       <p class="mt-1.5 text-sm text-[var(--color-text-muted)] leading-relaxed">${calc.description}</p>
       <span class="mt-4 inline-flex items-center gap-1 text-sm font-semibold ${
-        isLive ? "text-[var(--color-primary)]" : "text-[var(--color-text-muted)]"
+        isLive ? "text-[var(--color-primary-link)]" : "text-[var(--color-text-muted)]"
       }">
         ${isLive ? "Abrir calculadora" : "Aviso pronto"}
         ${isLive ? '<svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M13 7l5 5m0 0l-5 5m5-5H6"/></svg>' : ""}
@@ -80,7 +80,16 @@
       const haystack = normalize(
         [calc.title, calc.description, CC_CATEGORIES[calc.category].label, ...(calc.keywords || [])].join(" ")
       );
-      return haystack.includes(query);
+      // Cada palabra buscada debe coincidir con el INICIO de alguna palabra del
+      // catálogo (así "iva" no trae "descriptiva"). Los términos con símbolos
+      // ("f=ma", "21%") se buscan como texto literal.
+      const words = haystack.split(/[^a-z0-9]+/).filter(Boolean);
+      return query
+        .split(/\s+/)
+        .filter(Boolean)
+        .every((token) =>
+          /[^a-z0-9]/.test(token) ? haystack.includes(token) : words.some((w) => w.startsWith(token))
+        );
     });
 
     filtered.sort((a, b) => categoryOrder.indexOf(a.category) - categoryOrder.indexOf(b.category));

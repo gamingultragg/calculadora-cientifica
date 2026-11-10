@@ -1,0 +1,11 @@
+{
+  "name": "calculadora-cientifica-css",
+  "private": true,
+  "description": "Compila el CSS de Tailwind a assets/css/tailwind.css (el sitio se sirve estático; este paso se corre a mano y el resultado se commitea).",
+  "scripts": {
+    "build": "tailwindcss -c tailwind.config.js -i input.css -o ../../assets/css/tailwind.css --minify"
+  },
+  "devDependencies": {
+    "tailwindcss": "3.4.17"
+  }
+}

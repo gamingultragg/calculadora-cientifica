@@ -388,6 +388,29 @@ en 3.68:1 — insuficiente incluso en blanco sólido). Se corrigió pasando el f
 subtítulo a `blue-100` opaco (en vez de `text-white/85` translúcido, para no depender del
 compositing de alpha en el muestreo de píxeles de Lighthouse). Accessibility pasó de 95 a 100.
 
+### CSS compilado (sin Tailwind CDN)
+
+Desde 2026-11-10 el sitio **ya no carga el Tailwind Play CDN**: el CSS se compila a
+`assets/css/tailwind.css` (~20 KB minificado, contra ~400 KB de JS que el CDN descargaba y
+ejecutaba en cada visita) y se enlaza después de `styles.css` (mismo orden de cascada que tenía el
+CDN). Sigue siendo HTML estático, sin build en Cloudflare: el CSS compilado se commitea.
+
+**Cada vez que se usen clases de Tailwind nuevas (en HTML o en JS), recompilar y commitear:**
+
+```bash
+cd tools/tailwind && npm install && npm run build
+```
+
+La herramienta vive en `tools/tailwind/` (Tailwind 3.4.17, `tailwind.config.js` con las rutas a
+escanear) y no en la raíz a propósito: un `package.json` en la raíz haría que Cloudflare Pages
+intente instalar dependencias en cada deploy. Páginas nuevas: copiar el `<head>` de una existente
+(ya trae el `<link>` a `tailwind.css`). `scripts/replace-tailwind-cdn.py` fue la migración única.
+
+Verificación de la migración: se compararon las propiedades CSS calculadas de **todos** los
+elementos de las 52 páginas, versión con CDN contra versión compilada, en modo claro y oscuro
+(~11.000 elementos): 0 diferencias (se excluyeron los nodos que inyecta AdSense, que descalibran
+una comparación elemento por elemento).
+
 ### Tarjetas pre-renderizadas (enlaces estáticos para Google)
 
 Las grillas de calculadoras de la home y de las 6 categorías se dibujan con JS desde

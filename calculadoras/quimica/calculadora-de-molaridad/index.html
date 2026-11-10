@@ -3,8 +3,8 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>Calculadora de Molaridad Online | Calculadora Científica</title>
-<meta name="description" content="Calculá molaridad, moles y volumen de una solución online, y moles a partir de la masa y la masa molar. Gratis, con fórmulas y validación de errores." />
+<title>Calculadora de Molaridad Online: Molaridad, Moles y Volumen | Calculadora Científica</title>
+<meta name="description" content="Calculá la molaridad de una solución, los moles de soluto o el volumen online, y pasá de masa a moles con la masa molar. Con desarrollo paso a paso. Gratis." />
 <link rel="canonical" href="https://www.calculadoracientifica.com.ar/calculadoras/quimica/calculadora-de-molaridad/" />
 <link rel="alternate" hreflang="es-AR" href="https://www.calculadoracientifica.com.ar/calculadoras/quimica/calculadora-de-molaridad/" />
 <link rel="alternate" hreflang="es" href="https://www.calculadoracientifica.com.ar/calculadoras/quimica/calculadora-de-molaridad/" />
@@ -16,8 +16,8 @@
 <meta property="og:type" content="website" />
 <meta property="og:locale" content="es_AR" />
 <meta property="og:site_name" content="Calculadora Científica" />
-<meta property="og:title" content="Calculadora de Molaridad" />
-<meta property="og:description" content="Molaridad, moles y volumen. Gratis y con fórmulas explicadas." />
+<meta property="og:title" content="Calculadora de Molaridad Online: Molaridad, Moles y Volumen" />
+<meta property="og:description" content="Calculá molaridad, moles de soluto y volumen con el desarrollo paso a paso. Gratis." />
 <meta property="og:url" content="https://www.calculadoracientifica.com.ar/calculadoras/quimica/calculadora-de-molaridad/" />
 <meta property="og:image" content="https://www.calculadoracientifica.com.ar/assets/img/og-image.png" />
 <meta property="og:image:width" content="1200" />
@@ -71,6 +71,16 @@
           "@type": "Question",
           "name": "¿Cómo obtengo los moles a partir de la masa?",
           "acceptedAnswer": { "@type": "Answer", "text": "n = masa / masa molar. La masa se expresa en gramos y la masa molar en gramos por mol (g/mol)." }
+        },
+        {
+          "@type": "Question",
+          "name": "¿Cómo se sacan los moles de soluto?",
+          "acceptedAnswer": { "@type": "Answer", "text": "Dividiendo la masa del soluto por su masa molar (n = masa / masa molar), o multiplicando la molaridad por el volumen en litros (n = M × V)." }
+        },
+        {
+          "@type": "Question",
+          "name": "¿Hay que usar el volumen del solvente o el de la solución?",
+          "acceptedAnswer": { "@type": "Answer", "text": "El de la solución completa, ya con el soluto disuelto, expresado en litros. Si tenés mililitros, dividí por 1000." }
         }
       ]
     }
@@ -108,6 +118,9 @@
     <h1 class="font-display font-extrabold text-2xl sm:text-3xl">Calculadora de Molaridad</h1>
     <p class="mt-2 text-[var(--color-text-muted)] max-w-2xl">
       Convertí entre molaridad, moles y volumen, o calculá los moles de una sustancia a partir de su masa.
+      Para sacar la molaridad: <span class="font-numeric">M = n / V</span> (moles de soluto sobre litros de solución).
+      ¿No sabés por dónde empezar? Mirá
+      <a class="text-[var(--color-primary-link)] hover:underline" href="/guias/como-calcular-molaridad/">cómo sacar la molaridad paso a paso</a>.
     </p>
 
     <div class="mt-6 inline-flex rounded-full surface p-1">
@@ -167,6 +180,11 @@
             <div>
               <h3 class="font-semibold text-[var(--color-text)] mb-1">Moles desde masa</h3>
               <p class="font-numeric text-[var(--color-text)]">n = masa / masa molar</p>
+              <p>También podés despejar los moles de la molaridad: <span class="font-numeric text-[var(--color-text)]">n = M × V</span>.</p>
+            </div>
+            <div>
+              <h3 class="font-semibold text-[var(--color-text)] mb-1">Masas molares frecuentes (g/mol)</h3>
+              <p class="font-numeric">NaCl 58,44 · NaOH 40,00 · HCl 36,46 · H₂SO₄ 98,08 · KCl 74,55 · glucosa 180,16</p>
             </div>
           </div>
         </details>

@@ -3,8 +3,8 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>Cómo se Calcula la Cuota de un Préstamo (Sistema Francés) | Calculadora Científica</title>
-<meta name="description" content="Guía completa sobre el sistema francés de amortización: la fórmula de la cuota fija, un ejemplo resuelto paso a paso, y por qué al principio se paga más interés que capital." />
+<title>Cálculo de la Cuota de un Préstamo: Fórmula del Sistema Francés | Calculadora Científica</title>
+<meta name="description" content="Cómo calcular la cuota fija de un préstamo con el sistema francés: fórmula, ejemplo resuelto, tabla de las primeras cuotas y la función PAGO de Excel." />
 <link rel="canonical" href="https://www.calculadoracientifica.com.ar/guias/como-calcular-cuota-de-prestamo/" />
 <link rel="alternate" hreflang="es-AR" href="https://www.calculadoracientifica.com.ar/guias/como-calcular-cuota-de-prestamo/" />
 <link rel="alternate" hreflang="es" href="https://www.calculadoracientifica.com.ar/guias/como-calcular-cuota-de-prestamo/" />
@@ -16,8 +16,8 @@
 <meta property="og:type" content="article" />
 <meta property="og:locale" content="es_AR" />
 <meta property="og:site_name" content="Calculadora Científica" />
-<meta property="og:title" content="Cómo se Calcula la Cuota de un Préstamo (Sistema Francés)" />
-<meta property="og:description" content="Fórmula de la cuota fija y un ejemplo resuelto paso a paso." />
+<meta property="og:title" content="Cálculo de la Cuota de un Préstamo: Fórmula del Sistema Francés" />
+<meta property="og:description" content="Fórmula de la cuota fija, ejemplo resuelto, tabla de cuotas y función PAGO de Excel." />
 <meta property="og:url" content="https://www.calculadoracientifica.com.ar/guias/como-calcular-cuota-de-prestamo/" />
 <meta property="og:image" content="https://www.calculadoracientifica.com.ar/assets/img/og-image.png" />
 <meta property="og:image:width" content="1200" />
@@ -43,13 +43,34 @@
   "@graph": [
     {
       "@type": "Article",
-      "headline": "Cómo se calcula la cuota de un préstamo (sistema francés)",
-      "description": "Guía completa sobre el sistema francés de amortización: la fórmula de la cuota fija, un ejemplo resuelto paso a paso, y por qué al principio se paga más interés que capital.",
+      "headline": "Cálculo de la cuota de un préstamo: fórmula del sistema francés",
+      "description": "Cómo calcular la cuota fija de un préstamo con el sistema francés: fórmula, ejemplo resuelto, tabla de las primeras cuotas y la función PAGO de Excel.",
       "author": { "@type": "Organization", "name": "Calculadora Científica" },
       "publisher": { "@type": "Organization", "name": "Calculadora Científica" },
       "mainEntityOfPage": "https://www.calculadoracientifica.com.ar/guias/como-calcular-cuota-de-prestamo/",
       "inLanguage": "es-AR",
-      "datePublished": "2026-08-30"
+      "datePublished": "2026-08-30",
+      "dateModified": "2026-11-10"
+    },
+    {
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "¿Cuál es la fórmula para calcular la cuota de un préstamo en el sistema francés?",
+          "acceptedAnswer": { "@type": "Answer", "text": "Cuota = P × i / (1 − (1 + i)^−N), donde P es el monto del préstamo, i la tasa de interés por período (tasa anual dividida por las cuotas por año) y N la cantidad total de cuotas." }
+        },
+        {
+          "@type": "Question",
+          "name": "¿Cómo calcular la cuota fija de un préstamo en Excel?",
+          "acceptedAnswer": { "@type": "Answer", "text": "Con la función PAGO: =PAGO(tasa; nper; va). Por ejemplo, para $100.000 al 1% mensual en 12 cuotas: =PAGO(1%;12;-100000) da $8.884,88." }
+        },
+        {
+          "@type": "Question",
+          "name": "¿Por qué en el sistema francés se paga más interés al principio?",
+          "acceptedAnswer": { "@type": "Answer", "text": "Porque el interés de cada mes se calcula sobre el saldo pendiente, que es máximo al comienzo. Como la cuota es fija, al inicio una parte menor amortiza capital y esa proporción crece a medida que baja el saldo." }
+        }
+      ]
     },
     {
       "@type": "BreadcrumbList",
@@ -91,12 +112,21 @@
     </nav>
 
     <article>
-      <h1 class="font-display font-extrabold text-2xl sm:text-3xl">Cómo se calcula la cuota de un préstamo (sistema francés)</h1>
+      <h1 class="font-display font-extrabold text-2xl sm:text-3xl">Cálculo de la cuota de un préstamo: fórmula del sistema francés</h1>
       <p class="mt-3 text-[var(--color-text-muted)] leading-relaxed">
         El sistema francés es el más usado en préstamos personales, hipotecarios y prendarios en
         Argentina y Latinoamérica: la cuota es siempre la misma, mes a mes, hasta terminar de pagar
         el préstamo. Esta guía muestra de dónde sale esa cuota.
       </p>
+
+      <div class="mt-5 rounded-2xl surface p-4 text-sm leading-relaxed">
+        <p class="font-semibold text-[var(--color-text)] mb-1">Respuesta rápida</p>
+        <p class="text-[var(--color-text-muted)]">
+          La cuota fija se calcula con <span class="font-numeric text-[var(--color-text)]">Cuota = P × i / (1 − (1 + i)^−N)</span>:
+          monto del préstamo (P), tasa por período (i) y cantidad de cuotas (N). Por ejemplo,
+          $100.000 al 1% mensual en 12 cuotas da una cuota de $8.884,88.
+        </p>
+      </div>
 
       <div class="mt-6 rounded-2xl surface p-4 flex items-center justify-between gap-3">
         <p class="text-sm">¿Preferís que lo calcule por vos?</p>
@@ -123,6 +153,37 @@
         <li>Interés total = 106.618,55 − 100.000 ≈ $6.618,55</li>
       </ol>
 
+      <h3 class="font-display font-semibold text-base mt-5 mb-2">Las primeras 3 cuotas del ejemplo</h3>
+      <div class="overflow-x-auto rounded-xl border border-[var(--color-border)]">
+        <table class="w-full text-sm min-w-[440px] font-numeric">
+          <thead>
+            <tr class="text-left text-[var(--color-text-muted)]">
+              <th class="px-3 py-2 font-semibold">Cuota</th>
+              <th class="px-3 py-2 font-semibold">Valor</th>
+              <th class="px-3 py-2 font-semibold">Interés</th>
+              <th class="px-3 py-2 font-semibold">Capital</th>
+              <th class="px-3 py-2 font-semibold">Saldo</th>
+            </tr>
+          </thead>
+          <tbody class="text-[var(--color-text-muted)]">
+            <tr class="border-t border-[var(--color-border)]"><td class="px-3 py-2">1</td><td class="px-3 py-2">8.884,88</td><td class="px-3 py-2">1.000,00</td><td class="px-3 py-2">7.884,88</td><td class="px-3 py-2">92.115,12</td></tr>
+            <tr class="border-t border-[var(--color-border)]"><td class="px-3 py-2">2</td><td class="px-3 py-2">8.884,88</td><td class="px-3 py-2">921,15</td><td class="px-3 py-2">7.963,73</td><td class="px-3 py-2">84.151,39</td></tr>
+            <tr class="border-t border-[var(--color-border)]"><td class="px-3 py-2">3</td><td class="px-3 py-2">8.884,88</td><td class="px-3 py-2">841,51</td><td class="px-3 py-2">8.043,37</td><td class="px-3 py-2">76.108,02</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <p class="mt-2 text-sm text-[var(--color-text-muted)]">
+        El interés de cada mes es el 1% del saldo anterior. La cuota no cambia, pero el capital que
+        amortiza crece mes a mes.
+      </p>
+
+      <h3 class="font-display font-semibold text-base mt-5 mb-1">Cómo calcular la cuota en Excel o Google Sheets</h3>
+      <p class="text-[var(--color-text-muted)] leading-relaxed">
+        Con la función <span class="font-numeric">PAGO</span>: <span class="font-numeric text-[var(--color-text)]">=PAGO(1%; 12; -100000)</span>
+        devuelve 8.884,88, el mismo resultado de la fórmula. Los argumentos son la tasa por período, la
+        cantidad de cuotas y el monto (en negativo para que la cuota salga positiva).
+      </p>
+
       <h2 class="font-display font-bold text-xl mt-8 mb-2">3. ¿Por qué al principio se paga "más interés"?</h2>
       <p class="text-[var(--color-text-muted)] leading-relaxed">
         Aunque la cuota es fija, la proporción de capital e interés que la componen cambia mes a
@@ -147,6 +208,22 @@
         <li>Confundir el monto del préstamo con el total que se termina pagando (que siempre es mayor, por el interés).</li>
         <li>Comparar dos préstamos solo por el valor de la cuota, sin mirar el plazo total ni la TEA.</li>
       </ul>
+
+      <h2 class="font-display font-bold text-xl mt-8 mb-2">Preguntas frecuentes</h2>
+      <dl class="space-y-4 text-[var(--color-text-muted)] leading-relaxed">
+        <div>
+          <dt class="font-semibold text-[var(--color-text)]">¿Cuál es la fórmula de la cuota en el sistema francés?</dt>
+          <dd>Cuota = P × i / (1 − (1 + i)^−N), con P el monto, i la tasa por período y N la cantidad de cuotas.</dd>
+        </div>
+        <div>
+          <dt class="font-semibold text-[var(--color-text)]">¿Cómo calculo la cuota fija en Excel?</dt>
+          <dd>Con <span class="font-numeric">=PAGO(tasa; nper; va)</span>. Para el ejemplo: <span class="font-numeric">=PAGO(1%;12;-100000)</span>.</dd>
+        </div>
+        <div>
+          <dt class="font-semibold text-[var(--color-text)]">¿Por qué al principio se paga más interés?</dt>
+          <dd>Porque el interés se calcula sobre el saldo pendiente, que es máximo al comienzo; con cuota fija, el capital amortizado crece con el tiempo.</dd>
+        </div>
+      </dl>
     </article>
 
     <section class="mt-10 surface rounded-2xl p-5 shadow-sm">

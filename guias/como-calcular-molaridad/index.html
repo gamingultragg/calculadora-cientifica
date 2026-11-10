@@ -3,8 +3,8 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>Cómo Calcular la Molaridad de una Solución Paso a Paso | Calculadora Científica</title>
-<meta name="description" content="Guía completa para calcular la molaridad de una solución química: fórmula, cómo obtener los moles a partir de la masa, y un ejemplo resuelto con sal de mesa." />
+<title>Cómo Sacar la Molaridad y los Moles de Soluto | Calculadora Científica</title>
+<meta name="description" content="Cómo sacar la molaridad de una solución: fórmula M = n/V, cómo calcular los moles de soluto desde la masa, y 3 ejemplos resueltos paso a paso." />
 <link rel="canonical" href="https://www.calculadoracientifica.com.ar/guias/como-calcular-molaridad/" />
 <link rel="alternate" hreflang="es-AR" href="https://www.calculadoracientifica.com.ar/guias/como-calcular-molaridad/" />
 <link rel="alternate" hreflang="es" href="https://www.calculadoracientifica.com.ar/guias/como-calcular-molaridad/" />
@@ -16,8 +16,8 @@
 <meta property="og:type" content="article" />
 <meta property="og:locale" content="es_AR" />
 <meta property="og:site_name" content="Calculadora Científica" />
-<meta property="og:title" content="Cómo Calcular la Molaridad de una Solución" />
-<meta property="og:description" content="Fórmula, moles desde la masa, y un ejemplo resuelto." />
+<meta property="og:title" content="Cómo Sacar la Molaridad y los Moles de Soluto" />
+<meta property="og:description" content="Fórmula M = n/V, moles desde la masa y 3 ejemplos resueltos paso a paso." />
 <meta property="og:url" content="https://www.calculadoracientifica.com.ar/guias/como-calcular-molaridad/" />
 <meta property="og:image" content="https://www.calculadoracientifica.com.ar/assets/img/og-image.png" />
 <meta property="og:image:width" content="1200" />
@@ -43,13 +43,39 @@
   "@graph": [
     {
       "@type": "Article",
-      "headline": "Cómo calcular la molaridad de una solución paso a paso",
-      "description": "Guía completa para calcular la molaridad de una solución química: fórmula, cómo obtener los moles a partir de la masa, y un ejemplo resuelto con sal de mesa.",
+      "headline": "Cómo sacar la molaridad y los moles de soluto, paso a paso",
+      "description": "Cómo sacar la molaridad de una solución: fórmula M = n/V, cómo calcular los moles de soluto desde la masa, y 3 ejemplos resueltos paso a paso.",
       "author": { "@type": "Organization", "name": "Calculadora Científica" },
       "publisher": { "@type": "Organization", "name": "Calculadora Científica" },
       "mainEntityOfPage": "https://www.calculadoracientifica.com.ar/guias/como-calcular-molaridad/",
       "inLanguage": "es-AR",
-      "datePublished": "2026-08-30"
+      "datePublished": "2026-08-30",
+      "dateModified": "2026-11-10"
+    },
+    {
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "¿Cómo se saca la molaridad de una solución?",
+          "acceptedAnswer": { "@type": "Answer", "text": "Se divide la cantidad de soluto en moles por el volumen total de la solución en litros: M = n / V. Si solo conocés la masa, primero convertís a moles con n = masa / masa molar." }
+        },
+        {
+          "@type": "Question",
+          "name": "¿Cómo se calculan los moles de soluto?",
+          "acceptedAnswer": { "@type": "Answer", "text": "Dividí la masa del soluto en gramos por su masa molar en g/mol: n = masa / masa molar. También podés despejarlos de la molaridad: n = M × V." }
+        },
+        {
+          "@type": "Question",
+          "name": "¿Cómo se calcula la masa de soluto para preparar una solución de cierta molaridad?",
+          "acceptedAnswer": { "@type": "Answer", "text": "Primero calculás los moles necesarios con n = M × V y después los pasás a gramos con masa = n × masa molar. Por ejemplo, para 2 L de NaOH 0,1 M: n = 0,2 mol y masa = 0,2 × 40 = 8 g." }
+        },
+        {
+          "@type": "Question",
+          "name": "¿Qué diferencia hay entre molaridad y molalidad?",
+          "acceptedAnswer": { "@type": "Answer", "text": "La molaridad (M) son moles de soluto por litro de solución. La molalidad (m) son moles de soluto por kilogramo de solvente. La molaridad cambia con la temperatura porque el volumen se dilata; la molalidad no." }
+        }
+      ]
     },
     {
       "@type": "HowTo",
@@ -100,12 +126,22 @@
     </nav>
 
     <article>
-      <h1 class="font-display font-extrabold text-2xl sm:text-3xl">Cómo calcular la molaridad de una solución paso a paso</h1>
+      <h1 class="font-display font-extrabold text-2xl sm:text-3xl">Cómo sacar la molaridad de una solución: fórmula y ejemplos paso a paso</h1>
       <p class="mt-3 text-[var(--color-text-muted)] leading-relaxed">
         La molaridad es la forma más común de expresar la concentración de una solución en química.
-        Esta guía muestra cómo calcularla desde cero, incluyendo cómo obtener los moles cuando solo
-        tenés la masa del soluto.
+        Esta guía muestra cómo sacarla desde cero, incluyendo cómo calcular los moles de soluto
+        cuando solo tenés la masa.
       </p>
+
+      <div class="mt-5 rounded-2xl surface p-4 text-sm leading-relaxed">
+        <p class="font-semibold text-[var(--color-text)] mb-1">Respuesta rápida</p>
+        <p class="text-[var(--color-text-muted)]">
+          Para sacar la molaridad, dividí los <strong class="text-[var(--color-text)]">moles de soluto</strong>
+          por el <strong class="text-[var(--color-text)]">volumen de la solución en litros</strong>:
+          <span class="font-numeric text-[var(--color-text)]">M = n / V</span>. Si tenés gramos y no moles,
+          primero hacé <span class="font-numeric text-[var(--color-text)]">n = masa / masa molar</span>.
+        </p>
+      </div>
 
       <div class="mt-6 rounded-2xl surface p-4 flex items-center justify-between gap-3">
         <p class="text-sm">¿Preferís que lo calcule por vos?</p>
@@ -122,17 +158,42 @@
         solvente) en litros.
       </p>
 
-      <h2 class="font-display font-bold text-xl mt-8 mb-2">2. Cuando no conocés los moles: partí de la masa</h2>
+      <h2 class="font-display font-bold text-xl mt-8 mb-2">2. Cómo sacar los moles de soluto</h2>
       <p class="text-[var(--color-text-muted)] leading-relaxed">
         Casi nunca vas a pesar "moles" directamente — vas a pesar gramos. Para convertir masa a moles:
       </p>
       <p class="font-numeric text-center my-3 text-[var(--color-text)]">n = masa (g) / masa molar (g/mol)</p>
       <p class="text-[var(--color-text-muted)] leading-relaxed">
         La masa molar es la suma de las masas atómicas de todos los átomos de la fórmula, y se
-        encuentra en la tabla periódica (o en el envase del reactivo).
+        encuentra en la tabla periódica (o en el envase del reactivo). Y si ya conocés la molaridad
+        y el volumen, los moles salen despejando la fórmula:
       </p>
+      <p class="font-numeric text-center my-3 text-[var(--color-text)]">n = M × V</p>
 
-      <h2 class="font-display font-bold text-xl mt-8 mb-2">3. Ejemplo resuelto</h2>
+      <h3 class="font-display font-semibold text-base mt-5 mb-2">Masas molares de uso frecuente</h3>
+      <div class="overflow-x-auto rounded-xl border border-[var(--color-border)]">
+        <table class="w-full text-sm min-w-[320px]">
+          <thead>
+            <tr class="text-left text-[var(--color-text-muted)]">
+              <th class="px-3 py-2 font-semibold">Sustancia</th>
+              <th class="px-3 py-2 font-semibold">Fórmula</th>
+              <th class="px-3 py-2 font-semibold font-numeric">Masa molar (g/mol)</th>
+            </tr>
+          </thead>
+          <tbody class="text-[var(--color-text-muted)]">
+            <tr class="border-t border-[var(--color-border)]"><td class="px-3 py-2">Cloruro de sodio (sal de mesa)</td><td class="px-3 py-2 font-numeric">NaCl</td><td class="px-3 py-2 font-numeric">58,44</td></tr>
+            <tr class="border-t border-[var(--color-border)]"><td class="px-3 py-2">Hidróxido de sodio</td><td class="px-3 py-2 font-numeric">NaOH</td><td class="px-3 py-2 font-numeric">40,00</td></tr>
+            <tr class="border-t border-[var(--color-border)]"><td class="px-3 py-2">Ácido clorhídrico</td><td class="px-3 py-2 font-numeric">HCl</td><td class="px-3 py-2 font-numeric">36,46</td></tr>
+            <tr class="border-t border-[var(--color-border)]"><td class="px-3 py-2">Ácido sulfúrico</td><td class="px-3 py-2 font-numeric">H₂SO₄</td><td class="px-3 py-2 font-numeric">98,08</td></tr>
+            <tr class="border-t border-[var(--color-border)]"><td class="px-3 py-2">Cloruro de potasio</td><td class="px-3 py-2 font-numeric">KCl</td><td class="px-3 py-2 font-numeric">74,55</td></tr>
+            <tr class="border-t border-[var(--color-border)]"><td class="px-3 py-2">Glucosa</td><td class="px-3 py-2 font-numeric">C₆H₁₂O₆</td><td class="px-3 py-2 font-numeric">180,16</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <h2 class="font-display font-bold text-xl mt-8 mb-2">3. Ejemplos resueltos</h2>
+
+      <h3 class="font-display font-semibold text-base mt-4 mb-1">Ejemplo 1: molaridad desde la masa</h3>
       <p class="text-[var(--color-text-muted)] leading-relaxed">
         ¿Qué molaridad tiene una solución preparada con 11,7 g de NaCl (masa molar ≈ 58,44 g/mol)
         disueltos hasta completar 500 mL (0,5 L) de solución?
@@ -140,6 +201,25 @@
       <ol class="list-decimal list-inside space-y-1 text-[var(--color-text-muted)] font-numeric">
         <li>n = 11,7 / 58,44 ≈ 0,2 mol</li>
         <li>M = 0,2 / 0,5 = 0,4 mol/L</li>
+      </ol>
+
+      <h3 class="font-display font-semibold text-base mt-5 mb-1">Ejemplo 2: ácido sulfúrico en 250 mL</h3>
+      <p class="text-[var(--color-text-muted)] leading-relaxed">
+        Se disuelven 4,9 g de H₂SO₄ (98,08 g/mol) hasta tener 250 mL de solución. ¿Cuál es la molaridad?
+      </p>
+      <ol class="list-decimal list-inside space-y-1 text-[var(--color-text-muted)] font-numeric">
+        <li>Pasar mL a litros: 250 mL = 0,25 L</li>
+        <li>n = 4,9 / 98,08 ≈ 0,05 mol</li>
+        <li>M = 0,05 / 0,25 = 0,2 mol/L</li>
+      </ol>
+
+      <h3 class="font-display font-semibold text-base mt-5 mb-1">Ejemplo 3: cuántos gramos pesar para preparar una solución</h3>
+      <p class="text-[var(--color-text-muted)] leading-relaxed">
+        ¿Cuántos gramos de NaOH (40,00 g/mol) hacen falta para preparar 2 L de solución 0,1 M?
+      </p>
+      <ol class="list-decimal list-inside space-y-1 text-[var(--color-text-muted)] font-numeric">
+        <li>n = M × V = 0,1 × 2 = 0,2 mol</li>
+        <li>masa = n × masa molar = 0,2 × 40,00 = 8 g</li>
       </ol>
 
       <h2 class="font-display font-bold text-xl mt-8 mb-2">4. Errores comunes</h2>
@@ -153,7 +233,29 @@
       <p class="text-[var(--color-text-muted)] leading-relaxed">
         Si tu solución es un ácido o una base fuerte, la concentración molar de H⁺ u OH⁻ te permite
         calcular directamente el pH con la <a class="text-[var(--color-primary-link)] hover:underline" href="/calculadoras/quimica/calculadora-de-ph/">calculadora de pH y pOH</a>.
+        Y si a partir de una solución concentrada necesitás preparar una más diluida, mirá
+        <a class="text-[var(--color-primary-link)] hover:underline" href="/guias/como-hacer-una-dilucion/">cómo hacer una dilución</a>.
       </p>
+
+      <h2 class="font-display font-bold text-xl mt-8 mb-2">Preguntas frecuentes</h2>
+      <dl class="space-y-4 text-[var(--color-text-muted)] leading-relaxed">
+        <div>
+          <dt class="font-semibold text-[var(--color-text)]">¿Cómo se saca la molaridad de una solución?</dt>
+          <dd>Dividiendo los moles de soluto por el volumen total de la solución en litros: M = n / V.</dd>
+        </div>
+        <div>
+          <dt class="font-semibold text-[var(--color-text)]">¿Cómo se calculan los moles de soluto?</dt>
+          <dd>Dividiendo la masa en gramos por la masa molar: n = masa / masa molar. O despejándolos de la molaridad: n = M × V.</dd>
+        </div>
+        <div>
+          <dt class="font-semibold text-[var(--color-text)]">¿Cómo calculo cuántos gramos necesito para preparar una solución?</dt>
+          <dd>Calculá los moles con n = M × V y pasalos a gramos multiplicando por la masa molar (ver el ejemplo 3).</dd>
+        </div>
+        <div>
+          <dt class="font-semibold text-[var(--color-text)]">¿Qué diferencia hay entre molaridad y molalidad?</dt>
+          <dd>La molaridad (M) son moles por litro de <em>solución</em>; la molalidad (m) son moles por kilogramo de <em>solvente</em>. La molaridad varía con la temperatura porque el volumen se dilata; la molalidad no.</dd>
+        </div>
+      </dl>
     </article>
 
     <section class="mt-10 surface rounded-2xl p-5 shadow-sm">

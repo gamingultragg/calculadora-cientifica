@@ -3,8 +3,8 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>Orden de Operaciones vs. Cálculo Secuencial: Por Qué 2+3×4 Da Resultados Distintos | Calculadora Científica</title>
-<meta name="description" content="Por qué una calculadora básica y una científica pueden dar resultados distintos para la misma cuenta. Orden de operaciones (PEMDAS) explicado con ejemplos." />
+<title>Orden de Operaciones (PEMDAS): Por Qué 2+3×4 Da 14 o 20 | Calculadora Científica</title>
+<meta name="description" content="Orden de las operaciones matemáticas explicado con ejemplos: jerarquía de operaciones, paréntesis y potencias, y por qué una calculadora simple da otro resultado." />
 <link rel="canonical" href="https://www.calculadoracientifica.com.ar/guias/orden-de-operaciones-vs-calculo-secuencial/" />
 <link rel="alternate" hreflang="es-AR" href="https://www.calculadoracientifica.com.ar/guias/orden-de-operaciones-vs-calculo-secuencial/" />
 <link rel="alternate" hreflang="es" href="https://www.calculadoracientifica.com.ar/guias/orden-de-operaciones-vs-calculo-secuencial/" />
@@ -16,8 +16,8 @@
 <meta property="og:type" content="article" />
 <meta property="og:locale" content="es_AR" />
 <meta property="og:site_name" content="Calculadora Científica" />
-<meta property="og:title" content="Orden de Operaciones vs. Cálculo Secuencial" />
-<meta property="og:description" content="Por qué 2 + 3 × 4 no siempre da lo mismo, explicado con ejemplos." />
+<meta property="og:title" content="Orden de Operaciones (PEMDAS): Por Qué 2+3×4 Da 14 o 20" />
+<meta property="og:description" content="Jerarquía de operaciones explicada con ejemplos, y por qué una calculadora simple da otro resultado." />
 <meta property="og:url" content="https://www.calculadoracientifica.com.ar/guias/orden-de-operaciones-vs-calculo-secuencial/" />
 <meta property="og:image" content="https://www.calculadoracientifica.com.ar/assets/img/og-image.png" />
 <meta property="og:image:width" content="1200" />
@@ -44,7 +44,8 @@
     {
       "@type": "Article",
       "headline": "Orden de operaciones vs. cálculo secuencial: por qué 2+3×4 da resultados distintos",
-      "description": "Por qué una calculadora básica y una científica pueden dar resultados distintos para la misma cuenta. Orden de operaciones (PEMDAS) explicado con ejemplos.",
+      "description": "Orden de las operaciones matemáticas explicado con ejemplos: jerarquía de operaciones, paréntesis y potencias, y por qué una calculadora simple da otro resultado.",
+      "dateModified": "2026-11-10",
       "author": { "@type": "Organization", "name": "Calculadora Científica" },
       "publisher": { "@type": "Organization", "name": "Calculadora Científica" },
       "mainEntityOfPage": "https://www.calculadoracientifica.com.ar/guias/orden-de-operaciones-vs-calculo-secuencial/",
@@ -68,6 +69,11 @@
           "@type": "Question",
           "name": "¿Qué significa PEMDAS?",
           "acceptedAnswer": { "@type": "Answer", "text": "Es una regla mnemotécnica para recordar el orden de prioridad: Paréntesis, Exponentes, Multiplicación y División (de izquierda a derecha), y Adición y Sustracción (de izquierda a derecha). En español también se usa la sigla PAPOMUDAS." }
+        },
+        {
+          "@type": "Question",
+          "name": "¿Cómo se resuelven operaciones combinadas paso a paso?",
+          "acceptedAnswer": { "@type": "Answer", "text": "Primero se resuelven los paréntesis, después las potencias y raíces, luego multiplicaciones y divisiones de izquierda a derecha, y al final sumas y restas de izquierda a derecha. Por ejemplo, 6 + 2 × (5 − 3)² ÷ 4 = 6 + 2 × 4 ÷ 4 = 6 + 8 ÷ 4 = 6 + 2 = 8." }
         }
       ]
     },
@@ -155,6 +161,17 @@
         resultado correcto según la matemática estándar es <strong class="text-[var(--color-text)]">14</strong>,
         no 20.
       </p>
+
+      <h3 class="font-display font-semibold text-base mt-5 mb-1">Un ejemplo con paréntesis y potencias</h3>
+      <p class="text-[var(--color-text-muted)] leading-relaxed">
+        Resolvamos <span class="font-numeric">6 + 2 × (5 − 3)² ÷ 4</span> siguiendo la jerarquía:
+      </p>
+      <ol class="list-decimal list-inside space-y-1 text-[var(--color-text-muted)] font-numeric">
+        <li>Paréntesis: (5 − 3) = 2 → 6 + 2 × 2² ÷ 4</li>
+        <li>Potencia: 2² = 4 → 6 + 2 × 4 ÷ 4</li>
+        <li>Multiplicación y división, de izquierda a derecha: 2 × 4 = 8, y 8 ÷ 4 = 2 → 6 + 2</li>
+        <li>Suma: 6 + 2 = 8</li>
+      </ol>
 
       <h2 class="font-display font-bold text-xl mt-8 mb-2">3. ¿Cuál calculadora usar?</h2>
       <p class="text-[var(--color-text-muted)] leading-relaxed">

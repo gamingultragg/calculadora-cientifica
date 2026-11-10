@@ -404,10 +404,16 @@ un ID de unidad en `SLOTS`.
 | `cat` | categorías: debajo de la grilla | 250 px |
 
 Sin anuncios en páginas legales, "Sobre nosotros", 404 ni el índice de guías. El anuncio se pide
-con carga diferida (400 px antes de entrar en pantalla). **Para activarlos:** crear una unidad
-display responsive por tipo en AdSense, pegar los IDs en `SLOTS` y **apagar "Anuncios
-automáticos"** en AdSense (si no, Google sigue inyectando anuncios por su cuenta, como se vio al
-comparar páginas: nodos `ins`/`aswift_*` en guías, privacidad y "Sobre nosotros").
+con carga diferida (400 px antes de entrar en pantalla) y, si AdSense no lo llena
+(`data-ad-status="unfilled"`), el contenedor se oculta solo.
+
+**Estado (2026-11-10):** las 4 unidades display (adaptables) ya están creadas en AdSense
+(`calculadoras` 8844192446, `guias` 4200359527, `home` 5593332249, `categorias` 4144519200) y sus IDs
+cargados en `SLOTS`, pero `ENABLED = false` en `ads.js`. Los anuncios automáticos ya estaban
+DESACTIVADOS en AdSense. **Para encenderlos:** cuando AdSense > Sitios muestre el sitio como
+"Listo" (hoy "Preparando"; pendientes de la cuenta: datos de pago/identidad y que Google vuelva a
+revisar `ads.txt`, que está bien servido en ambos dominios), poner `ENABLED = true` y commitear.
+Encenderlos antes solo mostraría el espacio un instante y lo ocultaría.
 
 ### CSS compilado (sin Tailwind CDN)
 

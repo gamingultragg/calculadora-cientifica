@@ -388,6 +388,16 @@ en 3.68:1 — insuficiente incluso en blanco sólido). Se corrigió pasando el f
 subtítulo a `blue-100` opaco (en vez de `text-white/85` translúcido, para no depender del
 compositing de alpha en el muestreo de píxeles de Lighthouse). Accessibility pasó de 95 a 100.
 
+### Tarjetas pre-renderizadas (enlaces estáticos para Google)
+
+Las grillas de calculadoras de la home y de las 6 categorías se dibujan con JS desde
+`calculators-data.js`, pero además se **pre-renderizan en el HTML** con
+`scripts/prerender-cards.py` (entre los marcadores `CC-PRERENDER`), para que Google vea los
+enlaces sin ejecutar JS (en Search Console había 42 páginas "descubiertas, sin indexar" y la home
+tenía un solo enlace estático a una calculadora). **Cada vez que se agregue o cambie una
+calculadora en `calculators-data.js`, correr `python scripts/prerender-cards.py`** y commitear.
+El script es idempotente y el JS redibuja las mismas tarjetas, así que no hay salto visual.
+
 ### Sobre la migración a framework con build
 
 Evalué lanzar la migración a Astro/Next en esta iteración (fase 2 de la sección 1.1) y decidí

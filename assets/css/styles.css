@@ -162,3 +162,21 @@ details.help-accordion[open] .chevron {
   background-color: var(--color-border);
   border-radius: 9999px;
 }
+
+/* ------------------------------------------------------------------ */
+/* Anuncios (ver assets/js/ads.js). Ocultos hasta que haya un ID de    */
+/* unidad configurado; al mostrarse reservan altura para no mover el   */
+/* contenido cuando carga el anuncio (CLS).                            */
+/* ------------------------------------------------------------------ */
+.cc-ad { display: block; margin-top: 1.5rem; }
+.cc-ad[hidden] { display: none; }
+.cc-ad-label {
+  font-size: 0.6875rem;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--color-text-muted);
+  margin: 0 0 0.25rem;
+}
+.cc-ad-slot { min-height: 250px; }
+.cc-ad[data-ad="calc"] .cc-ad-slot,
+.cc-ad[data-ad="guide"] .cc-ad-slot { min-height: 280px; }

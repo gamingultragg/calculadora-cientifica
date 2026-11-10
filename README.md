@@ -388,6 +388,27 @@ en 3.68:1 — insuficiente incluso en blanco sólido). Se corrigió pasando el f
 subtítulo a `blue-100` opaco (en vez de `text-white/85` translúcido, para no depender del
 compositing de alpha en el muestreo de píxeles de Lighthouse). Accessibility pasó de 95 a 100.
 
+### Ubicaciones de anuncios (AdSense)
+
+El script de AdSense (`ca-pub-7274131858034505`) está en el `<head>` de todas las páginas y
+`ads.txt` en la raíz. Las ubicaciones propias están preparadas pero **apagadas**: contenedores
+`<aside class="cc-ad" data-ad="...">` (47 páginas, colocados con `scripts/inject-ad-slots.py`) que
+nacen ocultos y sin ocupar espacio, y `assets/js/ads.js`, que solo muestra uno cuando su tipo tiene
+un ID de unidad en `SLOTS`.
+
+| Tipo | Dónde | Reserva |
+|---|---|---|
+| `calc` | calculadoras: columna derecha, debajo de la ayuda (en mobile, al final, lejos del teclado) | 280 px |
+| `guide` | guías: al final del artículo, antes de "relacionadas" | 280 px |
+| `home` | home: entre la grilla de calculadoras y las guías | 250 px |
+| `cat` | categorías: debajo de la grilla | 250 px |
+
+Sin anuncios en páginas legales, "Sobre nosotros", 404 ni el índice de guías. El anuncio se pide
+con carga diferida (400 px antes de entrar en pantalla). **Para activarlos:** crear una unidad
+display responsive por tipo en AdSense, pegar los IDs en `SLOTS` y **apagar "Anuncios
+automáticos"** en AdSense (si no, Google sigue inyectando anuncios por su cuenta, como se vio al
+comparar páginas: nodos `ins`/`aswift_*` en guías, privacidad y "Sobre nosotros").
+
 ### CSS compilado (sin Tailwind CDN)
 
 Desde 2026-11-10 el sitio **ya no carga el Tailwind Play CDN**: el CSS se compila a

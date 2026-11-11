@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="es-AR">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Calculadora de Promedio de Notas: Simple y Ponderado | Calculadora Científica</title>
+<meta name="description" content="Calculá tu promedio de notas, simple o ponderado (cada nota con su peso), y descubrí qué nota necesitás en el próximo examen para llegar al promedio que querés. Gratis." />
+<link rel="canonical" href="https://www.calculadoracientifica.com.ar/calculadoras/estadistica/calculadora-de-promedio-de-notas/" />
+<link rel="alternate" hreflang="es-AR" href="https://www.calculadoracientifica.com.ar/calculadoras/estadistica/calculadora-de-promedio-de-notas/" />
+<link rel="alternate" hreflang="es" href="https://www.calculadoracientifica.com.ar/calculadoras/estadistica/calculadora-de-promedio-de-notas/" />
+<link rel="icon" type="image/svg+xml" href="/assets/img/favicon.svg" />
+<link rel="icon" type="image/png" sizes="32x32" href="/assets/img/favicon-32.png" />
+<link rel="icon" type="image/png" sizes="16x16" href="/assets/img/favicon-16.png" />
+<link rel="apple-touch-icon" href="/assets/img/apple-touch-icon.png" />
+
+<meta property="og:type" content="website" />
+<meta property="og:locale" content="es_AR" />
+<meta property="og:site_name" content="Calculadora Científica" />
+<meta property="og:title" content="Calculadora de Promedio de Notas" />
+<meta property="og:description" content="Promedio simple o ponderado y qué nota necesitás para llegar a tu objetivo. Gratis." />
+<meta property="og:url" content="https://www.calculadoracientifica.com.ar/calculadoras/estadistica/calculadora-de-promedio-de-notas/" />
+<meta property="og:image" content="https://www.calculadoracientifica.com.ar/assets/img/og-image.png" />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="630" />
+<meta name="twitter:image" content="https://www.calculadoracientifica.com.ar/assets/img/og-image.png" />
+<meta name="twitter:card" content="summary_large_image" />
+
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Roboto+Mono:wght@400;500;700&display=swap" rel="stylesheet" />
+
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7274131858034505" crossorigin="anonymous"></script>
+<link rel="stylesheet" href="/assets/css/styles.css" />
+<link rel="stylesheet" href="/assets/css/tailwind.css" />
+<script src="/assets/js/theme.js"></script>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "SoftwareApplication",
+      "name": "Calculadora de Promedio de Notas",
+      "applicationCategory": "EducationalApplication",
+      "operatingSystem": "Web",
+      "url": "https://www.calculadoracientifica.com.ar/calculadoras/estadistica/calculadora-de-promedio-de-notas/",
+      "description": "Calcula el promedio simple o ponderado de una lista de notas y la nota que hace falta sacar para llegar a un promedio objetivo.",
+      "offers": {
+        "@type": "Offer",
+        "price": "0",
+        "priceCurrency": "ARS"
+      },
+      "inLanguage": "es-AR"
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Inicio",
+          "item": "https://www.calculadoracientifica.com.ar/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Estadística",
+          "item": "https://www.calculadoracientifica.com.ar/calculadoras/estadistica/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "Calculadora de Promedio de Notas",
+          "item": "https://www.calculadoracientifica.com.ar/calculadoras/estadistica/calculadora-de-promedio-de-notas/"
+        }
+      ]
+    },
+    {
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "¿Cómo se calcula el promedio de notas?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Se suman todas las notas y se divide por la cantidad de notas. Con 7, 8 y 6: (7 + 8 + 6) / 3 = 7."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "¿Cómo se calcula un promedio ponderado?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Se multiplica cada nota por su peso, se suman esos productos y se divide por la suma de los pesos. Con 8 (peso 40%) y 6 (peso 60%): (8 × 40 + 6 × 60) / 100 = 6,8."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "¿Cómo sé qué nota necesito para llegar a un promedio?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Se despeja la nota que falta: multiplicás el promedio objetivo por la cantidad total de notas (o por el peso total), restás lo que ya acumulaste y dividís por el peso de la nota que falta."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "¿Qué pasa si los pesos no suman 100%?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "El promedio ponderado se calcula igual, dividiendo por la suma real de los pesos. La calculadora te avisa cuando no llegan a 100% para que revises si falta alguna nota."
+          }
+        }
+      ]
+    }
+  ]
+}
+</script>
+</head>
+<body class="min-h-screen font-sans antialiased">
+  <a href="#main-content" class="sr-only focus:not-sr-only focus:fixed focus:top-3 focus:left-3 focus:z-50 focus:px-4 focus:py-2 focus:rounded-lg focus:bg-[var(--color-primary)] focus:text-white focus:text-sm focus:font-semibold">Saltar al contenido</a>
+
+  <header class="sticky top-0 z-40 backdrop-blur border-b border-[var(--color-border)] bg-[var(--color-bg)]/85">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 h-16 flex items-center justify-between">
+      <a href="/" class="flex items-center gap-2 font-display font-extrabold text-lg">
+        <span class="w-8 h-8 rounded-lg bg-[var(--color-primary)] text-white flex items-center justify-center text-sm">∑</span>
+        Calculadora<span class="text-[var(--color-primary-link)]">Científica</span>
+      </a>
+      <button data-theme-toggle type="button" aria-label="Cambiar tema claro/oscuro"
+        class="w-10 h-10 rounded-full surface flex items-center justify-center hover:shadow-md transition-shadow">
+        <span data-theme-icon>🌙</span>
+      </button>
+    </div>
+  </header>
+
+  <main id="main-content" class="max-w-6xl mx-auto px-4 sm:px-6 py-8">
+    <nav aria-label="Breadcrumb" class="text-sm text-[var(--color-text-muted)] mb-4">
+      <ol class="flex flex-wrap items-center gap-1">
+        <li><a href="/" class="hover:text-[var(--color-primary-link)]">Inicio</a></li>
+        <li aria-hidden="true">/</li>
+        <li><a href="/calculadoras/estadistica/" class="hover:text-[var(--color-primary-link)]">Estadística</a></li>
+        <li aria-hidden="true">/</li>
+        <li class="text-[var(--color-text)] font-medium" aria-current="page">Calculadora de Promedio de Notas</li>
+      </ol>
+    </nav>
+
+    <h1 class="font-display font-extrabold text-2xl sm:text-3xl">Calculadora de Promedio de Notas</h1>
+    <p class="mt-2 text-[var(--color-text-muted)] max-w-2xl">
+      Cargá tus notas y obtené el promedio. Si cada nota tiene un peso distinto (parciales, trabajos prácticos, final), activá el modo ponderado. También te calcula qué nota necesitás para llegar al promedio que querés.
+    </p>
+
+    <div class="mt-6 grid grid-cols-1 lg:grid-cols-[420px_1fr] gap-6 items-start">
+      <section class="surface rounded-2xl p-5 shadow-sm">
+        <div id="err" class="hidden alert-error rounded-lg px-3 py-2 text-sm mb-4" role="alert" aria-live="polite"></div>
+        <div class="space-y-4">
+          <label class="flex items-center gap-2 text-sm font-medium">
+            <input id="pn-weighted" type="checkbox" class="w-4 h-4" />
+            Cada nota tiene un peso distinto (promedio ponderado)
+          </label>
+          <div id="pn-rows" class="space-y-2"></div>
+          <button id="pn-add" type="button" class="text-sm font-semibold text-[var(--color-primary-link)] hover:underline">+ Agregar otra nota</button>
+
+          <div class="pt-3 border-t border-[var(--color-border)] space-y-3">
+            <p class="text-sm font-semibold">¿Qué nota necesito? <span class="font-normal text-[var(--color-text-muted)]">(opcional)</span></p>
+        <div>
+          <label for="pn-target" class="block text-sm font-medium mb-1">Promedio que querés lograr</label>
+          <input id="pn-target" type="text" inputmode="decimal" placeholder="Ej: 7" class="w-full rounded-xl surface px-3 py-2.5 font-numeric focus:outline-none focus:ring-2 focus:ring-[var(--color-primary)]" />
+        </div>
+            <div id="pn-remaining-wrap" class="hidden">
+              <label for="pn-remaining" class="block text-sm font-medium mb-1">Peso de la nota que falta (%)</label>
+              <input id="pn-remaining" type="text" inputmode="decimal" placeholder="Ej: 40" class="w-full rounded-xl surface px-3 py-2.5 font-numeric focus:outline-none focus:ring-2 focus:ring-[var(--color-primary)]" />
+            </div>
+        <div>
+          <label for="pn-max" class="block text-sm font-medium mb-1">Nota máxima de tu escala — opcional</label>
+          <input id="pn-max" type="text" inputmode="decimal" placeholder="Ej: 10" class="w-full rounded-xl surface px-3 py-2.5 font-numeric focus:outline-none focus:ring-2 focus:ring-[var(--color-primary)]" />
+        </div>
+          </div>
+          <button id="pn-solve" type="button" class="calc-btn calc-btn--op w-full py-2.5">Calcular promedio</button>
+        </div>
+      </section>
+
+      <section class="space-y-4">
+        <section id="pn-result-panel" class="hidden surface rounded-2xl p-5 shadow-sm">
+          <h2 class="font-display font-semibold text-lg mb-3">Resultado</h2>
+          <p class="text-sm text-[var(--color-text-muted)]">Tu promedio</p>
+          <p id="pn-average" class="font-numeric text-4xl font-bold text-[var(--color-primary-link)]">—</p>
+          <p id="pn-detail" class="mt-2 text-sm text-[var(--color-text-muted)]"></p>
+          <p id="pn-need" class="hidden mt-4 rounded-xl surface p-3 text-sm"></p>
+        </section>
+
+        <details class="help-accordion surface rounded-2xl p-5 shadow-sm" open>
+          <summary class="flex items-center justify-between font-display font-semibold text-lg">
+            Ayuda y Fórmulas Teóricas
+            <svg class="chevron w-5 h-5 text-[var(--color-text-muted)]" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7"/></svg>
+          </summary>
+          <div class="mt-4 space-y-4 text-sm leading-relaxed text-[var(--color-text-muted)]">
+            <div>
+              <h3 class="font-semibold text-[var(--color-text)] mb-1">Promedio simple</h3>
+              <p class="font-numeric text-[var(--color-text)]">promedio = (n₁ + n₂ + … + nₖ) / k</p>
+              <p>Se suman todas las notas y se divide por la cantidad. Ejemplo: 7, 8 y 6 → 21 / 3 = 7.</p>
+            </div>
+            <div>
+              <h3 class="font-semibold text-[var(--color-text)] mb-1">Promedio ponderado</h3>
+              <p class="font-numeric text-[var(--color-text)]">promedio = Σ (nota × peso) / Σ pesos</p>
+              <p>Cada nota se multiplica por su peso. Ejemplo: 8 con peso 40% y 6 con peso 60% → (8 × 40 + 6 × 60) / 100 = 6,8.</p>
+            </div>
+            <div>
+              <h3 class="font-semibold text-[var(--color-text)] mb-1">¿Qué nota necesito?</h3>
+              <p class="font-numeric text-[var(--color-text)]">nota necesaria = (objetivo × (Σ pesos + peso restante) − Σ nota × peso) / peso restante</p>
+              <p>Si no usás pesos, la nota que falta cuenta igual que las demás. Cada institución define cómo redondea y qué promedio mínimo exige: usá este resultado como referencia.</p>
+            </div>
+          </div>
+        </details>
+
+        <section class="surface rounded-2xl p-5 shadow-sm">
+          <h2 class="font-display font-semibold text-lg mb-3">Preguntas frecuentes</h2>
+          <div class="text-sm">
+      <dl class="space-y-4 text-[var(--color-text-muted)] leading-relaxed">
+        <div>
+          <dt class="font-semibold text-[var(--color-text)]">¿Cómo se calcula el promedio de notas?</dt>
+          <dd>Se suman todas las notas y se divide por la cantidad de notas. Con 7, 8 y 6: (7 + 8 + 6) / 3 = 7.</dd>
+        </div>
+        <div>
+          <dt class="font-semibold text-[var(--color-text)]">¿Cómo se calcula un promedio ponderado?</dt>
+          <dd>Se multiplica cada nota por su peso, se suman esos productos y se divide por la suma de los pesos. Con 8 (peso 40%) y 6 (peso 60%): (8 × 40 + 6 × 60) / 100 = 6,8.</dd>
+        </div>
+        <div>
+          <dt class="font-semibold text-[var(--color-text)]">¿Cómo sé qué nota necesito para llegar a un promedio?</dt>
+          <dd>Se despeja la nota que falta: multiplicás el promedio objetivo por la cantidad total de notas (o por el peso total), restás lo que ya acumulaste y dividís por el peso de la nota que falta.</dd>
+        </div>
+        <div>
+          <dt class="font-semibold text-[var(--color-text)]">¿Qué pasa si los pesos no suman 100%?</dt>
+          <dd>El promedio ponderado se calcula igual, dividiendo por la suma real de los pesos. La calculadora te avisa cuando no llegan a 100% para que revises si falta alguna nota.</dd>
+        </div>
+      </dl>
+          </div>
+        </section>
+
+        <section class="surface rounded-2xl p-5 shadow-sm">
+          <h2 class="font-display font-semibold text-lg mb-2">Calculadoras relacionadas</h2>
+          <ul class="space-y-2 text-sm">
+            <li><a class="text-[var(--color-primary-link)] hover:underline" href="/calculadoras/estadistica/calculadora-estadistica-descriptiva/">Estadística Descriptiva</a></li>
+            <li><a class="text-[var(--color-primary-link)] hover:underline" href="/calculadoras/finanzas/calculadora-de-porcentajes/">Calculadora de Porcentajes</a></li>
+            <li><a class="text-[var(--color-primary-link)] hover:underline" href="/calculadoras/matematicas-avanzadas/calculadora-basica/">Calculadora Básica</a></li>
+          </ul>
+        </section>
+
+        <section class="surface rounded-2xl p-5 shadow-sm">
+          <h2 class="font-display font-semibold text-lg mb-2">¿Querés entender el "por qué"?</h2>
+          <p class="text-sm text-[var(--color-text-muted)] mb-3">Leé la guía completa: promedio simple, promedio ponderado, y cómo saber qué nota necesitás para aprobar o llegar a tu objetivo.</p>
+          <a class="text-[var(--color-primary-link)] hover:underline text-sm font-semibold" href="/guias/como-calcular-promedio-de-notas/">Cómo calcular el promedio de notas →</a>
+        </section>
+
+        <aside class="cc-ad" data-ad="calc" aria-label="Publicidad" hidden>
+          <p class="cc-ad-label">Publicidad</p>
+          <div class="cc-ad-slot"></div>
+        </aside>
+</section>
+    </div>
+  </main>
+
+  <footer class="border-t border-[var(--color-border)] mt-10">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 py-10 text-sm text-[var(--color-text-muted)] flex flex-col sm:flex-row items-center justify-between gap-4">
+      <p>© 2026 Calculadora Científica · Hecho en Argentina 🇦🇷 · <a href="/sobre-nosotros/" class="hover:text-[var(--color-primary-link)]">Sobre Nosotros</a> · <a href="/privacidad/" class="hover:text-[var(--color-primary-link)]">Privacidad</a> · <a href="/terminos-de-uso/" class="hover:text-[var(--color-primary-link)]">Términos</a></p>
+      <a href="/" class="hover:text-[var(--color-primary-link)]">← Volver al inicio</a>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+  <!-- Cloudflare Web Analytics --><script type='module' src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "62cded9cafa8475a9f6f875888b918b9"}'></script><!-- End Cloudflare Web Analytics -->
+<a href="/" id="back-to-home" aria-label="Ir al inicio del sitio"
+  class="fixed bottom-6 right-6 z-40 w-11 h-11 rounded-full surface shadow-lg hidden lg:flex items-center justify-center transition-all duration-200 hover:shadow-xl">
+  <svg class="w-5 h-5 text-[var(--color-text)]" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+    <path stroke-linecap="round" stroke-linejoin="round" d="M3 9.5L12 3l9 6.5M5 9.5V20a1 1 0 001 1h4v-6h4v6h4a1 1 0 001-1V9.5"/>
+  </svg>
+</a>
+<button id="back-to-top" type="button" aria-label="Volver al inicio de la página"
+  class="fixed bottom-20 right-6 z-40 w-11 h-11 rounded-full bg-[var(--color-primary)] text-white shadow-lg hidden lg:flex items-center justify-center opacity-0 pointer-events-none translate-y-2 transition-all duration-200 hover:brightness-110">
+  <svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5">
+    <path stroke-linecap="round" stroke-linejoin="round" d="M5 15l7-7 7 7"/>
+  </svg>
+</button>
+<script src="/assets/js/ads.js" defer></script>
+<script src="/assets/js/back-to-top.js"></script>
+</body>
+</html>

@@ -223,6 +223,37 @@
     <priority>0.9</priority>
   </url>
 
+  <url>
+    <loc>https://www.calculadoracientifica.com.ar/calculadoras/vida-diaria/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.calculadoracientifica.com.ar/calculadoras/vida-diaria/calculadora-de-edad-y-fechas/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://www.calculadoracientifica.com.ar/calculadoras/vida-diaria/calculadora-de-imc/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://www.calculadoracientifica.com.ar/calculadoras/vida-diaria/conversor-de-cocina/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://www.calculadoracientifica.com.ar/calculadoras/vida-diaria/calculadora-de-horas-trabajadas/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://www.calculadoracientifica.com.ar/calculadoras/vida-diaria/calculadora-de-propina/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+
   <!-- Guías -->
   <url>
     <loc>https://www.calculadoracientifica.com.ar/guias/</loc>
@@ -404,6 +435,32 @@
   </url>
   <url>
     <loc>https://www.calculadoracientifica.com.ar/guias/conversion-de-temperatura-celsius-fahrenheit-kelvin/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <url>
+    <loc>https://www.calculadoracientifica.com.ar/guias/como-calcular-la-edad-y-los-dias-entre-fechas/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://www.calculadoracientifica.com.ar/guias/como-calcular-el-imc/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://www.calculadoracientifica.com.ar/guias/equivalencias-de-cocina-tazas-cucharadas-y-gramos/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://www.calculadoracientifica.com.ar/guias/como-calcular-horas-trabajadas-y-horas-extra/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://www.calculadoracientifica.com.ar/guias/como-calcular-la-propina-y-dividir-la-cuenta/</loc>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>

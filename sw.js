@@ -2,7 +2,7 @@
  * Estrategia: precarga del sitio (páginas + CSS + JS) para que funcione sin conexión;
  * red primero con respaldo en caché; tipografías de Google en caché "stale-while-revalidate".
  * No intercepta anuncios, analítica ni nada de otros orígenes (salvo las tipografías). */
-const VERSION = "210bcbea42";
+const VERSION = "c3bac44a62";
 const CACHE = "cc-" + VERSION;
 const FONTS = "cc-fonts-v1";
 const PRECACHE = [
@@ -49,6 +49,12 @@ const PRECACHE = [
  "/calculadoras/fisica/energia-cinetica-y-potencial/",
  "/calculadoras/estadistica/regresion-lineal/",
  "/calculadoras/ingenieria/conversor-de-temperatura/",
+ "/calculadoras/vida-diaria/",
+ "/calculadoras/vida-diaria/calculadora-de-edad-y-fechas/",
+ "/calculadoras/vida-diaria/calculadora-de-imc/",
+ "/calculadoras/vida-diaria/conversor-de-cocina/",
+ "/calculadoras/vida-diaria/calculadora-de-horas-trabajadas/",
+ "/calculadoras/vida-diaria/calculadora-de-propina/",
  "/guias/",
  "/guias/orden-de-operaciones-vs-calculo-secuencial/",
  "/guias/como-resolver-ecuaciones-de-segundo-grado/",
@@ -85,6 +91,11 @@ const PRECACHE = [
  "/guias/energia-cinetica-y-potencial-explicada/",
  "/guias/regresion-lineal-y-correlacion/",
  "/guias/conversion-de-temperatura-celsius-fahrenheit-kelvin/",
+ "/guias/como-calcular-la-edad-y-los-dias-entre-fechas/",
+ "/guias/como-calcular-el-imc/",
+ "/guias/equivalencias-de-cocina-tazas-cucharadas-y-gramos/",
+ "/guias/como-calcular-horas-trabajadas-y-horas-extra/",
+ "/guias/como-calcular-la-propina-y-dividir-la-cuenta/",
  "/sobre-nosotros/",
  "/privacidad/",
  "/terminos-de-uso/",
@@ -140,7 +151,12 @@ const PRECACHE = [
  "/calculadoras/quimica/calculadora-de-masa-molar/script.js",
  "/calculadoras/quimica/calculadora-de-molaridad/script.js",
  "/calculadoras/quimica/calculadora-de-moles/script.js",
- "/calculadoras/quimica/calculadora-de-ph/script.js"
+ "/calculadoras/quimica/calculadora-de-ph/script.js",
+ "/calculadoras/vida-diaria/calculadora-de-edad-y-fechas/script.js",
+ "/calculadoras/vida-diaria/calculadora-de-horas-trabajadas/script.js",
+ "/calculadoras/vida-diaria/calculadora-de-imc/script.js",
+ "/calculadoras/vida-diaria/calculadora-de-propina/script.js",
+ "/calculadoras/vida-diaria/conversor-de-cocina/script.js"
 ];
 
 self.addEventListener("install", (event) => {

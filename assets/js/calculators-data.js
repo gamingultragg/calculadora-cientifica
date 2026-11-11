@@ -46,6 +46,13 @@ const CC_CATEGORIES = {
     slug: "finanzas",
     description: "Interés simple y compuesto, préstamos con sistema francés, plazo fijo, IVA, porcentajes y aguinaldo.",
   },
+  vida: {
+    label: "Vida Diaria",
+    color: "pink",
+    slug: "vida-diaria",
+    description:
+      "Edad y fechas, IMC, conversor de cocina, horas trabajadas y propina: cálculos del día a día, rápidos y sin vueltas.",
+  },
 };
 
 const CC_CALCULATORS = [
@@ -366,6 +373,51 @@ const CC_CALCULATORS = [
     category: "ingenieria",
     keywords: ["temperatura", "celsius", "fahrenheit", "kelvin", "grados", "conversor", "rankine"],
     url: "/calculadoras/ingenieria/conversor-de-temperatura/",
+    status: "live",
+  },
+  {
+    id: "calculadora-de-edad-y-fechas",
+    title: "Calculadora de Edad y Fechas",
+    description: "Edad exacta, días entre dos fechas (con días hábiles) y qué fecha será dentro de X tiempo.",
+    category: "vida",
+    keywords: ["edad", "fechas", "dias entre fechas", "cumpleanos", "fecha de nacimiento", "dias habiles", "sumar dias", "calendario"],
+    url: "/calculadoras/vida-diaria/calculadora-de-edad-y-fechas/",
+    status: "live",
+  },
+  {
+    id: "calculadora-de-imc",
+    title: "Calculadora de IMC",
+    description: "Índice de masa corporal, categoría de la OMS y rango de peso saludable para tu altura.",
+    category: "vida",
+    keywords: ["imc", "indice de masa corporal", "peso", "altura", "peso ideal", "peso saludable", "obesidad", "bajo peso"],
+    url: "/calculadoras/vida-diaria/calculadora-de-imc/",
+    status: "live",
+  },
+  {
+    id: "conversor-de-cocina",
+    title: "Conversor de Cocina",
+    description: "Tazas, cucharadas, cucharaditas, ml y gramos de 15 ingredientes comunes.",
+    category: "vida",
+    keywords: ["cocina", "tazas", "cucharadas", "gramos", "harina", "azucar", "equivalencias", "receta", "medidas"],
+    url: "/calculadoras/vida-diaria/conversor-de-cocina/",
+    status: "live",
+  },
+  {
+    id: "calculadora-de-horas-trabajadas",
+    title: "Calculadora de Horas Trabajadas",
+    description: "Horas entre entrada y salida, descanso, turnos nocturnos, horas extra y valor de la hora.",
+    category: "vida",
+    keywords: ["horas trabajadas", "horas extra", "entrada", "salida", "turno nocturno", "jornada", "sueldo por hora", "fichaje"],
+    url: "/calculadoras/vida-diaria/calculadora-de-horas-trabajadas/",
+    status: "live",
+  },
+  {
+    id: "calculadora-de-propina",
+    title: "Calculadora de Propina y División de la Cuenta",
+    description: "Propina, total y cuánto paga cada persona, con redondeo hacia arriba.",
+    category: "vida",
+    keywords: ["propina", "dividir la cuenta", "restaurante", "cuenta", "personas", "10%", "cubierto"],
+    url: "/calculadoras/vida-diaria/calculadora-de-propina/",
     status: "live",
   },
 ];

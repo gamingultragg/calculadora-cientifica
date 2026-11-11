@@ -49,6 +49,12 @@ CATS = {
         meta="Calculadoras financieras online y gratis para Argentina: interés simple y compuesto, préstamos (sistema francés), plazo fijo, IVA, porcentajes y aguinaldo.",
         text="Calculá cuánto rinde un plazo fijo, cuánto pagás de cuota, cuánto es el IVA o el aguinaldo que te corresponde. Las calculadoras usan las convenciones argentinas (año de 365 días, alícuotas de IVA vigentes) y explican cada fórmula.",
         guides=["como-calcular-un-plazo-fijo-tna-y-tea", "como-calcular-cuota-de-prestamo", "interes-simple-vs-compuesto", "como-calcular-el-aguinaldo", "como-calcular-iva", "como-calcular-porcentajes"]),
+    "vida-diaria": dict(
+        key="vida", label="Vida Diaria",
+        desc="Edad y fechas, IMC, conversor de cocina, horas trabajadas y propina: cálculos del día a día, rápidos y sin vueltas.",
+        meta="Calculadoras de vida diaria online y gratis: edad y días entre fechas, IMC, conversor de cocina, horas trabajadas y propina.",
+        text="Las cuentas que aparecen todos los días: cuántos años y días tenés, cuál es tu IMC, cuántos gramos es una taza de harina, cuántas horas trabajaste o cuánto paga cada uno en la mesa.",
+        guides=["como-calcular-la-edad-y-los-dias-entre-fechas", "como-calcular-el-imc", "equivalencias-de-cocina-tazas-cucharadas-y-gramos", "como-calcular-horas-trabajadas-y-horas-extra", "como-calcular-la-propina-y-dividir-la-cuenta"]),
 }
 
 

@@ -185,3 +185,84 @@ test("Conversor de temperatura", () => {
   near(t.convert(0, "k").c, -273.15);
   assert.throws(() => t.convert(-300, "c"));
 });
+
+test("Edad y fechas", () => {
+  const f = load("vida-diaria/calculadora-de-edad-y-fechas");
+  const P = f.parseISO;
+  const d1 = f.dateDiff(P("2024-01-31"), P("2024-03-01"));
+  assert.deepEqual([d1.years, d1.months, d1.days, d1.totalDays], [0, 1, 1, 30]);
+  const d2 = f.dateDiff(P("2000-02-29"), P("2026-11-10"));
+  assert.equal(d2.years, 26);
+  assert.equal(f.dateDiff(P("2026-01-01"), P("2026-12-31")).totalDays, 364);
+  assert.equal(f.dateDiff(P("2026-11-02"), P("2026-11-09")).weekdays, 5); // lunes a lunes
+  assert.equal(f.dateDiff(P("2026-12-31"), P("2026-01-01")).swapped, true);
+  const a = f.ageInfo(P("1990-05-15"), P("2026-11-10"));
+  assert.deepEqual([a.years, a.months, a.days], [36, 5, 26]);
+  assert.equal(a.nextBirthday.y, 2027);
+  assert.equal(a.daysToBirthday, 186);
+  assert.equal(f.ageInfo(P("1990-11-10"), P("2026-11-10")).daysToBirthday, 0);
+  assert.equal(f.ageInfo(P("2000-02-29"), P("2026-11-10")).nextBirthday.d, 28);
+  assert.deepEqual(f.addToDate(P("2026-01-31"), 1, "meses"), { y: 2026, m: 2, d: 28 });
+  assert.deepEqual(f.addToDate(P("2026-11-10"), 90, "dias"), { y: 2027, m: 2, d: 8 });
+  assert.deepEqual(f.addToDate(P("2026-03-31"), -1, "meses"), { y: 2026, m: 2, d: 28 });
+  assert.deepEqual(f.addToDate(P("2024-02-29"), 1, "anios"), { y: 2025, m: 2, d: 28 });
+  assert.equal(f.weekdayName(P("2026-11-10")), "martes");
+  assert.throws(() => P("2026-02-30"));
+  assert.throws(() => f.ageInfo(P("2030-01-01"), P("2026-11-10")));
+});
+
+test("IMC", () => {
+  const i = load("vida-diaria/calculadora-de-imc");
+  near(i.bmi(70, 1.75), 22.857, 1e-3);
+  assert.equal(i.category(22.9), "Peso normal");
+  assert.equal(i.category(18.4), "Bajo peso");
+  assert.equal(i.category(25), "Sobrepeso");
+  assert.equal(i.category(31), "Obesidad grado I");
+  assert.equal(i.category(45), "Obesidad grado III");
+  near(i.toKg(154.32, "lb"), 70, 0.01);
+  near(i.toMeters(175, "cm"), 1.75);
+  const r = i.healthyRange(1.75);
+  near(r.min, 56.66, 0.01);
+  near(r.max, 76.26, 0.01);
+});
+
+test("Conversor de cocina", () => {
+  const c = load("vida-diaria/conversor-de-cocina");
+  near(c.toMl(1, "taza", 240, 1), 240);
+  near(c.toMl(2, "cda", 240, 1), 30);
+  near(c.toMl(200, "g", 240, c.INGREDIENTS.azucar.density), 238.1, 0.1);
+  const all = c.allUnits(240, 240, c.INGREDIENTS.harina.density);
+  near(all.cda, 16);
+  near(all.taza, 1);
+  near(all.g, 127.2, 0.1);
+  near(c.toMl(1, "kg", 240, 1), 1000);
+});
+
+test("Horas trabajadas", () => {
+  const h = load("vida-diaria/calculadora-de-horas-trabajadas");
+  assert.equal(h.parseTime("08:30"), 510);
+  assert.equal(h.workedMinutes(h.parseTime("09:00"), h.parseTime("18:00"), 60), 480);
+  assert.equal(h.workedMinutes(h.parseTime("22:00"), h.parseTime("06:00"), 0), 480); // cruza medianoche
+  assert.equal(h.hhmm(495), "8:15");
+  const r = h.summarize({ perDayMin: 600, days: 5, normalHours: 8, rate: 1000, surchargePct: 50 });
+  near(r.totalDecimal, 50);
+  near(r.regularMin, 2400);
+  near(r.extraMin, 600);
+  near(r.pay, 40 * 1000 + 10 * 1000 * 1.5);
+  assert.throws(() => h.parseTime("25:00"));
+  assert.throws(() => h.workedMinutes(0, 60, 120));
+});
+
+test("Propina y división de cuenta", () => {
+  const p = load("vida-diaria/calculadora-de-propina");
+  const r = p.split(10000, 10, 4, 0);
+  near(r.tip, 1000);
+  near(r.total, 11000);
+  near(r.perPerson, 2750);
+  const q = p.split(10000, 10, 3, 100);
+  near(q.perPerson, 3700);
+  near(q.collected, 11100);
+  near(q.extra, 100);
+  near(p.split(5000, 0, 1, 0).perPerson, 5000);
+  assert.throws(() => p.split(100, 10, 0, 0));
+});

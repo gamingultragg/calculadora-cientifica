@@ -33,6 +33,7 @@ COLORS = {
     "green": "bg-green-100 text-green-700 dark:bg-green-500/15 dark:text-green-300",
     "amber": "bg-amber-100 text-amber-700 dark:bg-amber-500/15 dark:text-amber-300",
     "teal": "bg-teal-100 text-teal-700 dark:bg-teal-500/15 dark:text-teal-300",
+    "pink": "bg-pink-100 text-pink-700 dark:bg-pink-500/15 dark:text-pink-300",
 }
 ARROW = (
     '<svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">'

@@ -17,6 +17,7 @@
     green: "bg-green-100 text-green-700 dark:bg-green-500/15 dark:text-green-300",
     amber: "bg-amber-100 text-amber-700 dark:bg-amber-500/15 dark:text-amber-300",
     teal: "bg-teal-100 text-teal-700 dark:bg-teal-500/15 dark:text-teal-300",
+    pink: "bg-pink-100 text-pink-700 dark:bg-pink-500/15 dark:text-pink-300",
   };
 
   function cardTemplate(calc) {
@@ -38,6 +39,10 @@
     return a;
   }
 
+  // Las tarjetas ya vienen pre-renderizadas en el HTML (ver scripts/prerender-cards.py, útil para el
+  // buscador y para quienes no ejecutan JS). Se vuelven a dibujar desde el catálogo, reemplazando las
+  // anteriores, para que nunca queden duplicadas.
+  grid.textContent = "";
   calcs
     .filter((c) => c.status === "live")
     .forEach((calc) => grid.appendChild(cardTemplate(calc)));

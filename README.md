@@ -309,8 +309,8 @@ enlazada en ambas direcciones.
    y en el sitemap, solo dejó de listarse en la grilla/buscador y en la categoría Matemáticas;
    se accede por el banner destacado o por URL directa.
 
-**Catálogo actual (2026-11-10): 35 calculadoras + 35 guías + 6 landing
-pages de categoría + home + 404 + sobre-nosotros + 2 legales = 83 páginas**, todas en `sitemap.xml`
+**Catálogo actual (2026-11-10): 40 calculadoras + 40 guías + 6 landing
+pages de categoría + home + 404 + sobre-nosotros + 2 legales = 94 páginas**, todas en `sitemap.xml`
 (excepto la 404, que lleva `noindex`), auditoría en 0 problemas.
 
 ✅ **Validación de JSON-LD** (`scripts/validate-jsonld.py`, no destructiva): parsea los 44 bloques
@@ -540,3 +540,14 @@ registraron con `scripts/register-batch-3.py`. Orden para sumar un lote nuevo: g
 - **Revisión móvil (375 px) de las 82 URLs:** se corrigió un desborde horizontal (campo + botón "Agregar" en estadística
   descriptiva y resistencias, regla `.flex-1 { min-width: 0 }`), objetivos táctiles chicos (resúmenes del acordeón de
   ayuda, botones de texto, historial) y el rótulo "Publicidad" (12 px). Las guías no tenían problemas.
+
+## Lote 5 y categoría "Vida Diaria" (2026-11-11)
+
+- **Categoría nueva `vida` (slug `vida-diaria`, color rosa):** edad y fechas, IMC, conversor de cocina, horas trabajadas y
+  propina/división de cuenta, cada una con su guía (`build-batch-5.py`, `build-batch-5-guides.py`, `register-batch-5.py`).
+  La página de categoría se creó a partir de la de Finanzas; para otra categoría nueva: agregarla en `calculators-data.js`
+  (CC_CATEGORIES), en los mapas de color de `main.js`, `category.js` y `prerender-cards.py`, en el filtro de la home y en
+  `enrich-categories.py`.
+- **Bug corregido:** `category.js` agregaba las tarjetas sin borrar las pre-renderizadas, por lo que en las páginas de
+  categoría se veían duplicadas. Ahora reemplaza el contenido.
+- 21 pruebas de lógica (`node --test tools/tests/logic.test.js`); las de fechas cubren años bisiestos, fin de mes y 29/2.

@@ -379,9 +379,8 @@ Actualizado 2026-11-10.
 - [x] ~~Mejoras de producto: PWA instalable y offline, botón "copiar resultado", historial local
   y teclado físico en la científica~~ — hechas 2026-11-10 (ver "PWA y offline" y "Copiar
   resultado e historial").
-- [ ] **Enviar mails como `contacto@calculadoracientifica.com.ar`** desde Gmail: hace falta una
-  contraseña de aplicación de Google y usar `smtp.gmail.com:587` (Cloudflare Email Routing solo
-  recibe).
+- [x] ~~Enviar mails como `contacto@calculadoracientifica.com.ar` desde Gmail~~ — hecho 2026-11-10
+  (alias verificado con SMTP de Gmail y contraseña de aplicación; responde desde la misma dirección).
 - [ ] **Plan de difusión** (artifact "Plan de Difusión"): grupos de docentes, foros de dudas,
   Reddit con cuidado, directorios, un video del "orden de operaciones".
 - [ ] **Performance:** Lighthouse mobile quedó en 74 por los scripts de Google (~380 KiB). Si

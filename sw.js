@@ -2,7 +2,7 @@
  * Estrategia: precarga del sitio (páginas + CSS + JS) para que funcione sin conexión;
  * red primero con respaldo en caché; tipografías de Google en caché "stale-while-revalidate".
  * No intercepta anuncios, analítica ni nada de otros orígenes (salvo las tipografías). */
-const VERSION = "2eacadc32b";
+const VERSION = "839c7cc4bf";
 const CACHE = "cc-" + VERSION;
 const FONTS = "cc-fonts-v1";
 const PRECACHE = [
@@ -38,6 +38,11 @@ const PRECACHE = [
  "/calculadoras/matematicas-avanzadas/regla-de-tres/",
  "/calculadoras/finanzas/calculadora-de-interes-simple/",
  "/calculadoras/matematicas-avanzadas/mcd-y-mcm/",
+ "/calculadoras/matematicas-avanzadas/calculadora-de-fracciones/",
+ "/calculadoras/matematicas-avanzadas/teorema-de-pitagoras/",
+ "/calculadoras/matematicas-avanzadas/conversor-de-bases-numericas/",
+ "/calculadoras/finanzas/calculadora-de-aguinaldo/",
+ "/calculadoras/quimica/calculadora-de-gases-ideales/",
  "/guias/",
  "/guias/orden-de-operaciones-vs-calculo-secuencial/",
  "/guias/como-resolver-ecuaciones-de-segundo-grado/",
@@ -63,6 +68,11 @@ const PRECACHE = [
  "/guias/como-calcular-promedio-de-notas/",
  "/guias/regla-de-tres-simple-y-compuesta/",
  "/guias/como-calcular-mcd-y-mcm/",
+ "/guias/como-operar-con-fracciones/",
+ "/guias/teorema-de-pitagoras-explicado/",
+ "/guias/como-calcular-el-aguinaldo/",
+ "/guias/ley-de-los-gases-ideales/",
+ "/guias/como-convertir-binario-decimal-y-hexadecimal/",
  "/sobre-nosotros/",
  "/privacidad/",
  "/terminos-de-uso/",
@@ -88,6 +98,7 @@ const PRECACHE = [
  "/calculadoras/estadistica/distribucion-normal/script.js",
  "/calculadoras/estadistica/permutaciones-y-combinaciones/script.js",
  "/calculadoras/finanzas/amortizacion-prestamos/script.js",
+ "/calculadoras/finanzas/calculadora-de-aguinaldo/script.js",
  "/calculadoras/finanzas/calculadora-de-interes-simple/script.js",
  "/calculadoras/finanzas/calculadora-de-iva/script.js",
  "/calculadoras/finanzas/calculadora-de-porcentajes/script.js",
@@ -100,11 +111,15 @@ const PRECACHE = [
  "/calculadoras/ingenieria/resistencias-serie-paralelo/script.js",
  "/calculadoras/matematicas-avanzadas/calculadora-basica/script.js",
  "/calculadoras/matematicas-avanzadas/calculadora-cientifica-online/script.js",
+ "/calculadoras/matematicas-avanzadas/calculadora-de-fracciones/script.js",
  "/calculadoras/matematicas-avanzadas/calculadora-matrices/script.js",
+ "/calculadoras/matematicas-avanzadas/conversor-de-bases-numericas/script.js",
  "/calculadoras/matematicas-avanzadas/ecuaciones-segundo-grado/script.js",
  "/calculadoras/matematicas-avanzadas/mcd-y-mcm/script.js",
  "/calculadoras/matematicas-avanzadas/regla-de-tres/script.js",
+ "/calculadoras/matematicas-avanzadas/teorema-de-pitagoras/script.js",
  "/calculadoras/quimica/calculadora-de-diluciones/script.js",
+ "/calculadoras/quimica/calculadora-de-gases-ideales/script.js",
  "/calculadoras/quimica/calculadora-de-masa-molar/script.js",
  "/calculadoras/quimica/calculadora-de-molaridad/script.js",
  "/calculadoras/quimica/calculadora-de-ph/script.js"

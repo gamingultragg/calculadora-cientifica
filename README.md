@@ -309,7 +309,7 @@ enlazada en ambas direcciones.
    y en el sitemap, solo dejó de listarse en la grilla/buscador y en la categoría Matemáticas;
    se accede por el banner destacado o por URL directa.
 
-**Catálogo actual: 19 calculadoras listadas (+ 1 destacada solo vía banner) + 20 guías + 6 landing
+**Catálogo actual (2026-11-10): 29 calculadoras + 29 guías + 6 landing
 pages de categoría + home + 404 + sobre-nosotros + 2 legales = 51 páginas**, todas en `sitemap.xml`
 (excepto la 404, que lleva `noindex`), auditoría en 0 problemas.
 
@@ -507,3 +507,11 @@ de seguridad con costo y riesgo mucho menores.
   recarga, click en el resultado lo inserta), teclado físico con coma decimal, atajos de letras
   (s c t l n r p e a) y sin pisar Ctrl+C/Ctrl+R. Tras `=`, un número nuevo empieza de cero y un
   operador sigue con el resultado.
+
+## Lote 3 (2026-11-10)
+
+Fracciones, Teorema de Pitágoras, Conversor de bases numéricas, Aguinaldo (SAC) y Gases ideales,
+cada una con su guía. Se generaron con `scripts/build-batch-3.py` y `build-batch-3-guides.py` y se
+registraron con `scripts/register-batch-3.py`. Orden para sumar un lote nuevo: generadores →
+`register-batch-N.py` → `prerender-cards.py` → `inject-pwa-and-copy.py` → `cd tools/tailwind && npm run build`
+→ `build-sw.py` → QA (`audit-links`, `validate-jsonld`, `validate-sitemap`, `check-contrast`).

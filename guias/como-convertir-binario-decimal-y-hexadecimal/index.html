@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html lang="es-AR">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Cómo Convertir Binario, Decimal y Hexadecimal: Métodos y Ejemplos | Calculadora Científica</title>
+<meta name="description" content="Cómo pasar números entre binario, decimal, octal y hexadecimal con divisiones sucesivas y suma de potencias, con tabla de equivalencias y ejemplos resueltos paso a paso." />
+<link rel="canonical" href="https://www.calculadoracientifica.com.ar/guias/como-convertir-binario-decimal-y-hexadecimal/" />
+<link rel="alternate" hreflang="es-AR" href="https://www.calculadoracientifica.com.ar/guias/como-convertir-binario-decimal-y-hexadecimal/" />
+<link rel="alternate" hreflang="es" href="https://www.calculadoracientifica.com.ar/guias/como-convertir-binario-decimal-y-hexadecimal/" />
+<link rel="icon" type="image/svg+xml" href="/assets/img/favicon.svg" />
+<link rel="icon" type="image/png" sizes="32x32" href="/assets/img/favicon-32.png" />
+<link rel="icon" type="image/png" sizes="16x16" href="/assets/img/favicon-16.png" />
+<link rel="apple-touch-icon" href="/assets/img/apple-touch-icon.png" />
+<link rel="manifest" href="/manifest.webmanifest" />
+<meta name="theme-color" content="#2563eb" />
+
+<meta property="og:type" content="article" />
+<meta property="og:locale" content="es_AR" />
+<meta property="og:site_name" content="Calculadora Científica" />
+<meta property="og:title" content="Cómo convertir entre binario, decimal y hexadecimal" />
+<meta property="og:description" content="Conversión entre bases numéricas con ejemplos, tabla de equivalencias y los errores a evitar." />
+<meta property="og:url" content="https://www.calculadoracientifica.com.ar/guias/como-convertir-binario-decimal-y-hexadecimal/" />
+<meta property="og:image" content="https://www.calculadoracientifica.com.ar/assets/img/og-image.png" />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="630" />
+<meta name="twitter:image" content="https://www.calculadoracientifica.com.ar/assets/img/og-image.png" />
+<meta name="twitter:card" content="summary_large_image" />
+
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Roboto+Mono:wght@400;500;700&display=swap" rel="stylesheet" />
+
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7274131858034505" crossorigin="anonymous"></script>
+<link rel="stylesheet" href="/assets/css/styles.css" />
+<link rel="stylesheet" href="/assets/css/tailwind.css" />
+<script src="/assets/js/theme.js"></script>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Article",
+      "headline": "Cómo convertir entre binario, decimal y hexadecimal",
+      "description": "Cómo pasar números entre binario, decimal, octal y hexadecimal con divisiones sucesivas y suma de potencias, con tabla de equivalencias y ejemplos resueltos paso a paso.",
+      "author": {
+        "@type": "Organization",
+        "name": "Calculadora Científica"
+      },
+      "publisher": {
+        "@type": "Organization",
+        "name": "Calculadora Científica"
+      },
+      "mainEntityOfPage": "https://www.calculadoracientifica.com.ar/guias/como-convertir-binario-decimal-y-hexadecimal/",
+      "inLanguage": "es-AR",
+      "datePublished": "2026-11-10",
+      "dateModified": "2026-11-10"
+    },
+    {
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "¿Cómo se pasa de decimal a binario?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Dividiendo por 2 hasta llegar a 0 y leyendo los restos de abajo hacia arriba: 13 = 1101."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "¿Cómo se pasa de binario a decimal?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Sumando cada bit multiplicado por 2 elevado a su posición: 1101₂ = 8 + 4 + 0 + 1 = 13."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "¿Cómo se pasa de binario a hexadecimal?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Agrupando los bits de a 4 desde la derecha y traduciendo cada grupo a un dígito hexadecimal."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "¿Qué valores representan las letras A-F?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "A = 10, B = 11, C = 12, D = 13, E = 14 y F = 15."
+          }
+        }
+      ]
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Inicio",
+          "item": "https://www.calculadoracientifica.com.ar/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Guías",
+          "item": "https://www.calculadoracientifica.com.ar/guias/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "Cómo convertir entre binario, decimal y hexadecimal",
+          "item": "https://www.calculadoracientifica.com.ar/guias/como-convertir-binario-decimal-y-hexadecimal/"
+        }
+      ]
+    }
+  ]
+}
+</script>
+</head>
+<body class="min-h-screen font-sans antialiased">
+  <a href="#main-content" class="sr-only focus:not-sr-only focus:fixed focus:top-3 focus:left-3 focus:z-50 focus:px-4 focus:py-2 focus:rounded-lg focus:bg-[var(--color-primary)] focus:text-white focus:text-sm focus:font-semibold">Saltar al contenido</a>
+
+  <header class="sticky top-0 z-40 backdrop-blur border-b border-[var(--color-border)] bg-[var(--color-bg)]/85">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 h-16 flex items-center justify-between">
+      <a href="/" class="flex items-center gap-2 font-display font-extrabold text-lg">
+        <span class="w-8 h-8 rounded-lg bg-[var(--color-primary)] text-white flex items-center justify-center text-sm">∑</span>
+        Calculadora<span class="text-[var(--color-primary-link)]">Científica</span>
+      </a>
+      <button data-theme-toggle type="button" aria-label="Cambiar tema claro/oscuro"
+        class="w-10 h-10 rounded-full surface flex items-center justify-center hover:shadow-md transition-shadow">
+        <span data-theme-icon>🌙</span>
+      </button>
+    </div>
+  </header>
+
+  <main id="main-content" class="max-w-3xl mx-auto px-4 sm:px-6 py-8">
+    <nav aria-label="Breadcrumb" class="text-sm text-[var(--color-text-muted)] mb-4">
+      <ol class="flex flex-wrap items-center gap-1">
+        <li><a href="/" class="hover:text-[var(--color-primary-link)]">Inicio</a></li>
+        <li aria-hidden="true">/</li>
+        <li><a href="/guias/" class="hover:text-[var(--color-primary-link)]">Guías</a></li>
+        <li aria-hidden="true">/</li>
+        <li class="text-[var(--color-text)] font-medium" aria-current="page">Cómo convertir entre binario, decimal y hexadecimal</li>
+      </ol>
+    </nav>
+
+    <article>
+      <h1 class="font-display font-extrabold text-2xl sm:text-3xl">Cómo convertir entre binario, decimal y hexadecimal</h1>
+      <p class="mt-3 text-[var(--color-text-muted)] leading-relaxed">
+        Pasar un número de una base a otra se reduce a dos métodos: dividir sucesivamente por la base o sumar potencias. Con una tabla de 16 equivalencias y un truco para binario y hexadecimal, tenés todo lo necesario.
+      </p>
+
+      <div class="mt-5 rounded-2xl surface p-4 text-sm leading-relaxed">
+        <p class="font-semibold text-[var(--color-text)] mb-1">Respuesta rápida</p>
+        <p class="text-[var(--color-text-muted)]">Decimal → otra base: dividir por la base y leer los restos de abajo hacia arriba. Otra base → decimal: sumar cada dígito × base elevada a su posición. Binario ↔ hexadecimal: agrupar de a 4 bits.</p>
+      </div>
+
+      <div class="mt-6 rounded-2xl surface p-4 flex items-center justify-between gap-3">
+        <p class="text-sm">¿Preferís que lo calcule por vos?</p>
+        <a href="/calculadoras/matematicas-avanzadas/conversor-de-bases-numericas/" class="calc-btn calc-btn--op px-4 py-2 text-sm whitespace-nowrap">Abrir conversor</a>
+      </div>
+
+      <h2 class="font-display font-bold text-xl mt-8 mb-2">1. Qué es una base</h2>
+
+      <p class="text-[var(--color-text-muted)] leading-relaxed">
+        Un sistema de numeración posicional usa una cantidad fija de símbolos, la <strong class="text-[var(--color-text)]">base</strong>. En decimal (base 10) se usan los dígitos 0 a 9; en binario (base 2), 0 y 1; en octal (base 8), 0 a 7; y en hexadecimal (base 16), 0 a 9 y las letras A a F. Cada posición vale una potencia de la base.
+      </p>
+
+      <div class="mt-3 overflow-x-auto rounded-xl border border-[var(--color-border)]">
+        <table class="w-full text-sm min-w-[360px] font-numeric">
+          <thead><tr class="text-left text-[var(--color-text-muted)]"><th class="px-3 py-2 font-semibold">Decimal</th><th class="px-3 py-2 font-semibold">Binario</th><th class="px-3 py-2 font-semibold">Octal</th><th class="px-3 py-2 font-semibold">Hexadecimal</th></tr></thead>
+          <tbody class="text-[var(--color-text-muted)]">
+            <tr class="border-t border-[var(--color-border)]"><td class="px-3 py-2">0</td><td class="px-3 py-2">0000</td><td class="px-3 py-2">0</td><td class="px-3 py-2">0</td></tr>
+            <tr class="border-t border-[var(--color-border)]"><td class="px-3 py-2">1</td><td class="px-3 py-2">0001</td><td class="px-3 py-2">1</td><td class="px-3 py-2">1</td></tr>
+            <tr class="border-t border-[var(--color-border)]"><td class="px-3 py-2">2</td><td class="px-3 py-2">0010</td><td class="px-3 py-2">2</td><td class="px-3 py-2">2</td></tr>
+            <tr class="border-t border-[var(--color-border)]"><td class="px-3 py-2">3</td><td class="px-3 py-2">0011</td><td class="px-3 py-2">3</td><td class="px-3 py-2">3</td></tr>
+            <tr class="border-t border-[var(--color-border)]"><td class="px-3 py-2">4</td><td class="px-3 py-2">0100</td><td class="px-3 py-2">4</td><td class="px-3 py-2">4</td></tr>
+            <tr class="border-t border-[var(--color-border)]"><td class="px-3 py-2">5</td><td class="px-3 py-2">0101</td><td class="px-3 py-2">5</td><td class="px-3 py-2">5</td></tr>
+            <tr class="border-t border-[var(--color-border)]"><td class="px-3 py-2">6</td><td class="px-3 py-2">0110</td><td class="px-3 py-2">6</td><td class="px-3 py-2">6</td></tr>
+            <tr class="border-t border-[var(--color-border)]"><td class="px-3 py-2">7</td><td class="px-3 py-2">0111</td><td class="px-3 py-2">7</td><td class="px-3 py-2">7</td></tr>
+            <tr class="border-t border-[var(--color-border)]"><td class="px-3 py-2">8</td><td class="px-3 py-2">1000</td><td class="px-3 py-2">10</td><td class="px-3 py-2">8</td></tr>
+            <tr class="border-t border-[var(--color-border)]"><td class="px-3 py-2">9</td><td class="px-3 py-2">1001</td><td class="px-3 py-2">11</td><td class="px-3 py-2">9</td></tr>
+            <tr class="border-t border-[var(--color-border)]"><td class="px-3 py-2">10</td><td class="px-3 py-2">1010</td><td class="px-3 py-2">12</td><td class="px-3 py-2">A</td></tr>
+            <tr class="border-t border-[var(--color-border)]"><td class="px-3 py-2">11</td><td class="px-3 py-2">1011</td><td class="px-3 py-2">13</td><td class="px-3 py-2">B</td></tr>
+            <tr class="border-t border-[var(--color-border)]"><td class="px-3 py-2">12</td><td class="px-3 py-2">1100</td><td class="px-3 py-2">14</td><td class="px-3 py-2">C</td></tr>
+            <tr class="border-t border-[var(--color-border)]"><td class="px-3 py-2">13</td><td class="px-3 py-2">1101</td><td class="px-3 py-2">15</td><td class="px-3 py-2">D</td></tr>
+            <tr class="border-t border-[var(--color-border)]"><td class="px-3 py-2">14</td><td class="px-3 py-2">1110</td><td class="px-3 py-2">16</td><td class="px-3 py-2">E</td></tr>
+            <tr class="border-t border-[var(--color-border)]"><td class="px-3 py-2">15</td><td class="px-3 py-2">1111</td><td class="px-3 py-2">17</td><td class="px-3 py-2">F</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <h2 class="font-display font-bold text-xl mt-8 mb-2">2. De decimal a otra base: divisiones sucesivas</h2>
+
+      <p class="text-[var(--color-text-muted)] leading-relaxed">
+        Se divide el número por la base, se anota el resto y se repite con el cociente hasta llegar a 0. Los restos, leídos <strong class="text-[var(--color-text)]">de abajo hacia arriba</strong>, son el resultado.
+      </p>
+
+      <ol class="list-decimal list-inside space-y-1 text-[var(--color-text-muted)] font-numeric">
+        <li>13 ÷ 2 = 6, resto 1</li>
+        <li>6 ÷ 2 = 3, resto 0</li>
+        <li>3 ÷ 2 = 1, resto 1</li>
+        <li>1 ÷ 2 = 0, resto 1</li>
+        <li>Leyendo de abajo hacia arriba: 13 = 1101₂</li>
+      </ol>
+
+      <p class="text-[var(--color-text-muted)] leading-relaxed">
+        Para hexadecimal se divide por 16. Ejemplo con 2024: 2024 ÷ 16 = 126 resto 8; 126 ÷ 16 = 7 resto 14 (E); 7 ÷ 16 = 0 resto 7 → 2024 = <strong class="text-[var(--color-text)]">7E8</strong>₁₆.
+      </p>
+
+      <h2 class="font-display font-bold text-xl mt-8 mb-2">3. De otra base a decimal: suma de potencias</h2>
+
+      <p class="text-[var(--color-text-muted)] leading-relaxed">
+        Cada dígito se multiplica por la base elevada a su posición (empezando en 0 por la derecha) y se suma.
+      </p>
+
+      <ol class="list-decimal list-inside space-y-1 text-[var(--color-text-muted)] font-numeric">
+        <li>1101₂ = 1·2³ + 1·2² + 0·2¹ + 1·2⁰ = 8 + 4 + 0 + 1 = 13</li>
+        <li>7E8₁₆ = 7·16² + 14·16 + 8 = 1792 + 224 + 8 = 2024</li>
+      </ol>
+
+      <h2 class="font-display font-bold text-xl mt-8 mb-2">4. Binario ↔ hexadecimal y octal, sin pasar por decimal</h2>
+
+      <p class="text-[var(--color-text-muted)] leading-relaxed">
+        Como 16 = 2⁴, cada dígito hexadecimal equivale a 4 bits; como 8 = 2³, cada dígito octal equivale a 3 bits. Se agrupa y se traduce:
+      </p>
+
+      <ol class="list-decimal list-inside space-y-1 text-[var(--color-text-muted)] font-numeric">
+        <li>11111101000₂ → se agrupa de a 4 desde la derecha: 0111 | 1110 | 1000</li>
+        <li>0111 = 7, 1110 = E, 1000 = 8 → 7E8₁₆</li>
+        <li>Agrupando de a 3: 011 | 111 | 101 | 000 → 3750₈</li>
+      </ol>
+
+      <h2 class="font-display font-bold text-xl mt-8 mb-2">5. El caso del 255</h2>
+
+      <p class="text-[var(--color-text-muted)] leading-relaxed">
+        255 en binario es 11111111 (ocho unos), en octal 377 y en hexadecimal FF. Es el mayor valor que entra en un byte, y por eso aparece en colores (#FF0000 es rojo puro) y en direcciones de red.
+      </p>
+
+      <h2 class="font-display font-bold text-xl mt-8 mb-2">6. Errores comunes</h2>
+
+      <ul class="list-disc list-inside space-y-1 text-[var(--color-text-muted)]">
+        <li>Leer los restos de arriba hacia abajo en lugar de al revés.</li>
+        <li>Empezar a contar las posiciones en 1 en vez de en 0.</li>
+        <li>Usar un dígito que no existe en la base (un 2 en binario, un 8 en octal).</li>
+        <li>Confundir las letras hexadecimales: A = 10, B = 11, C = 12, D = 13, E = 14, F = 15.</li>
+      </ul>
+
+      <h2 class="font-display font-bold text-xl mt-8 mb-2">Preguntas frecuentes</h2>
+      <dl class="space-y-4 text-[var(--color-text-muted)] leading-relaxed">
+        <div>
+          <dt class="font-semibold text-[var(--color-text)]">¿Cómo se pasa de decimal a binario?</dt>
+          <dd>Dividiendo por 2 hasta llegar a 0 y leyendo los restos de abajo hacia arriba: 13 = 1101.</dd>
+        </div>
+        <div>
+          <dt class="font-semibold text-[var(--color-text)]">¿Cómo se pasa de binario a decimal?</dt>
+          <dd>Sumando cada bit multiplicado por 2 elevado a su posición: 1101₂ = 8 + 4 + 0 + 1 = 13.</dd>
+        </div>
+        <div>
+          <dt class="font-semibold text-[var(--color-text)]">¿Cómo se pasa de binario a hexadecimal?</dt>
+          <dd>Agrupando los bits de a 4 desde la derecha y traduciendo cada grupo a un dígito hexadecimal.</dd>
+        </div>
+        <div>
+          <dt class="font-semibold text-[var(--color-text)]">¿Qué valores representan las letras A-F?</dt>
+          <dd>A = 10, B = 11, C = 12, D = 13, E = 14 y F = 15.</dd>
+        </div>
+      </dl>
+    </article>
+
+    <section class="mt-10 surface rounded-2xl p-5 shadow-sm">
+      <h2 class="font-display font-semibold text-lg mb-2">Calculadoras relacionadas</h2>
+      <ul class="space-y-2 text-sm">
+        <li><a class="text-[var(--color-primary-link)] hover:underline" href="/calculadoras/matematicas-avanzadas/conversor-de-bases-numericas/">Conversor de Bases Numéricas</a></li>
+        <li><a class="text-[var(--color-primary-link)] hover:underline" href="/calculadoras/matematicas-avanzadas/calculadora-cientifica-online/">Calculadora Científica Online</a></li>
+        <li><a class="text-[var(--color-primary-link)] hover:underline" href="/calculadoras/matematicas-avanzadas/mcd-y-mcm/">Calculadora de MCD y MCM</a></li>
+      </ul>
+    </section>
+  </main>
+
+  <footer class="border-t border-[var(--color-border)] mt-10">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 py-10 text-sm text-[var(--color-text-muted)] flex flex-col sm:flex-row items-center justify-between gap-4">
+      <p>© 2026 Calculadora Científica · Hecho en Argentina 🇦🇷 · <a href="/sobre-nosotros/" class="hover:text-[var(--color-primary-link)]">Sobre Nosotros</a> · <a href="/privacidad/" class="hover:text-[var(--color-primary-link)]">Privacidad</a> · <a href="/terminos-de-uso/" class="hover:text-[var(--color-primary-link)]">Términos</a></p>
+      <a href="/" class="hover:text-[var(--color-primary-link)]">← Volver al inicio</a>
+    </div>
+  </footer>
+  <!-- Cloudflare Web Analytics --><script type='module' src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "62cded9cafa8475a9f6f875888b918b9"}'></script><!-- End Cloudflare Web Analytics -->
+<a href="/" id="back-to-home" aria-label="Ir al inicio del sitio"
+  class="fixed bottom-6 right-6 z-40 w-11 h-11 rounded-full surface shadow-lg hidden lg:flex items-center justify-center transition-all duration-200 hover:shadow-xl">
+  <svg class="w-5 h-5 text-[var(--color-text)]" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+    <path stroke-linecap="round" stroke-linejoin="round" d="M3 9.5L12 3l9 6.5M5 9.5V20a1 1 0 001 1h4v-6h4v6h4a1 1 0 001-1V9.5"/>
+  </svg>
+</a>
+<button id="back-to-top" type="button" aria-label="Volver al inicio de la página"
+  class="fixed bottom-20 right-6 z-40 w-11 h-11 rounded-full bg-[var(--color-primary)] text-white shadow-lg hidden lg:flex items-center justify-center opacity-0 pointer-events-none translate-y-2 transition-all duration-200 hover:brightness-110">
+  <svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5">
+    <path stroke-linecap="round" stroke-linejoin="round" d="M5 15l7-7 7 7"/>
+  </svg>
+</button>
+<script src="/assets/js/back-to-top.js"></script>
+<script src="/assets/js/pwa.js" defer></script>
+</body>
+</html>

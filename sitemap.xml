@@ -166,6 +166,32 @@
     <priority>0.9</priority>
   </url>
 
+  <url>
+    <loc>https://www.calculadoracientifica.com.ar/calculadoras/matematicas-avanzadas/calculadora-de-fracciones/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://www.calculadoracientifica.com.ar/calculadoras/matematicas-avanzadas/teorema-de-pitagoras/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://www.calculadoracientifica.com.ar/calculadoras/matematicas-avanzadas/conversor-de-bases-numericas/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://www.calculadoracientifica.com.ar/calculadoras/finanzas/calculadora-de-aguinaldo/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://www.calculadoracientifica.com.ar/calculadoras/quimica/calculadora-de-gases-ideales/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+
   <!-- Guías -->
   <url>
     <loc>https://www.calculadoracientifica.com.ar/guias/</loc>
@@ -290,6 +316,32 @@
   </url>
   <url>
     <loc>https://www.calculadoracientifica.com.ar/guias/como-calcular-mcd-y-mcm/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <url>
+    <loc>https://www.calculadoracientifica.com.ar/guias/como-operar-con-fracciones/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://www.calculadoracientifica.com.ar/guias/teorema-de-pitagoras-explicado/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://www.calculadoracientifica.com.ar/guias/como-calcular-el-aguinaldo/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://www.calculadoracientifica.com.ar/guias/ley-de-los-gases-ideales/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://www.calculadoracientifica.com.ar/guias/como-convertir-binario-decimal-y-hexadecimal/</loc>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>

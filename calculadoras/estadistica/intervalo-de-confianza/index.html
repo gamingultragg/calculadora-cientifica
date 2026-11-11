@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="es-AR">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Calculadora de Intervalo de Confianza para la Media (z y t) | Calculadora Científica</title>
+<meta name="description" content="Calculá el intervalo de confianza para la media al 90, 95 o 99 % con la distribución normal o t de Student, el margen de error y su interpretación. Gratis." />
+<link rel="canonical" href="https://www.calculadoracientifica.com.ar/calculadoras/estadistica/intervalo-de-confianza/" />
+<link rel="alternate" hreflang="es-AR" href="https://www.calculadoracientifica.com.ar/calculadoras/estadistica/intervalo-de-confianza/" />
+<link rel="alternate" hreflang="es" href="https://www.calculadoracientifica.com.ar/calculadoras/estadistica/intervalo-de-confianza/" />
+<link rel="icon" type="image/svg+xml" href="/assets/img/favicon.svg" />
+<link rel="icon" type="image/png" sizes="32x32" href="/assets/img/favicon-32.png" />
+<link rel="icon" type="image/png" sizes="16x16" href="/assets/img/favicon-16.png" />
+<link rel="apple-touch-icon" href="/assets/img/apple-touch-icon.png" />
+<link rel="manifest" href="/manifest.webmanifest" />
+<meta name="theme-color" content="#2563eb" />
+
+<meta property="og:type" content="website" />
+<meta property="og:locale" content="es_AR" />
+<meta property="og:site_name" content="Calculadora Científica" />
+<meta property="og:title" content="Calculadora de Intervalo de Confianza" />
+<meta property="og:description" content="Intervalo de confianza de la media con z o t de Student. Gratis." />
+<meta property="og:url" content="https://www.calculadoracientifica.com.ar/calculadoras/estadistica/intervalo-de-confianza/" />
+<meta property="og:image" content="https://www.calculadoracientifica.com.ar/assets/img/og-image.png" />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="630" />
+<meta name="twitter:image" content="https://www.calculadoracientifica.com.ar/assets/img/og-image.png" />
+<meta name="twitter:card" content="summary_large_image" />
+
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Roboto+Mono:wght@400;500;700&display=swap" rel="stylesheet" />
+
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7274131858034505" crossorigin="anonymous"></script>
+<link rel="stylesheet" href="/assets/css/styles.css" />
+<link rel="stylesheet" href="/assets/css/tailwind.css" />
+<script src="/assets/js/theme.js"></script>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "SoftwareApplication",
+      "name": "Calculadora de Intervalo de Confianza para la Media",
+      "applicationCategory": "EducationalApplication",
+      "operatingSystem": "Web",
+      "url": "https://www.calculadoracientifica.com.ar/calculadoras/estadistica/intervalo-de-confianza/",
+      "description": "Calcula el intervalo de confianza para la media de una población a partir de la media muestral, el desvío estándar y el tamaño de la muestra, usando la distribución normal o la t de Student según corresponda.",
+      "offers": {
+        "@type": "Offer",
+        "price": "0",
+        "priceCurrency": "ARS"
+      },
+      "inLanguage": "es-AR"
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Inicio",
+          "item": "https://www.calculadoracientifica.com.ar/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Estadística",
+          "item": "https://www.calculadoracientifica.com.ar/calculadoras/estadistica/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "Calculadora de Intervalo de Confianza para la Media",
+          "item": "https://www.calculadoracientifica.com.ar/calculadoras/estadistica/intervalo-de-confianza/"
+        }
+      ]
+    },
+    {
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "¿Cómo se calcula el intervalo de confianza de la media?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "x̄ ± c·s/√n. Con media 50, desvío 10, n = 100 y 95 %: 50 ± 1,96 × 1 = [48,04 ; 51,96]."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "¿Cuándo uso t de Student y cuándo z?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "z cuando el desvío poblacional es conocido o n > 30; t cuando solo tenés el desvío de la muestra y n ≤ 30."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "¿Qué significa un nivel de confianza del 95 %?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Que el método usado captura la media verdadera en el 95 % de las muestras posibles."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "¿Cómo achico el intervalo?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Aumentando el tamaño de la muestra o bajando el nivel de confianza."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "¿Qué es el margen de error?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "La mitad del ancho del intervalo: c·s/√n."
+          }
+        }
+      ]
+    }
+  ]
+}
+</script>
+</head>
+<body class="min-h-screen font-sans antialiased">
+  <a href="#main-content" class="sr-only focus:not-sr-only focus:fixed focus:top-3 focus:left-3 focus:z-50 focus:px-4 focus:py-2 focus:rounded-lg focus:bg-[var(--color-primary)] focus:text-white focus:text-sm focus:font-semibold">Saltar al contenido</a>
+
+  <header class="sticky top-0 z-40 backdrop-blur border-b border-[var(--color-border)] bg-[var(--color-bg)]/85">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 h-16 flex items-center justify-between">
+      <a href="/" class="flex items-center gap-2 font-display font-extrabold text-lg">
+        <span class="w-8 h-8 rounded-lg bg-[var(--color-primary)] text-white flex items-center justify-center text-sm">∑</span>
+        Calculadora<span class="text-[var(--color-primary-link)]">Científica</span>
+      </a>
+      <button data-theme-toggle type="button" aria-label="Cambiar tema claro/oscuro"
+        class="w-10 h-10 rounded-full surface flex items-center justify-center hover:shadow-md transition-shadow">
+        <span data-theme-icon>🌙</span>
+      </button>
+    </div>
+  </header>
+
+  <main id="main-content" class="max-w-6xl mx-auto px-4 sm:px-6 py-8">
+    <nav aria-label="Breadcrumb" class="text-sm text-[var(--color-text-muted)] mb-4">
+      <ol class="flex flex-wrap items-center gap-1">
+        <li><a href="/" class="hover:text-[var(--color-primary-link)]">Inicio</a></li>
+        <li aria-hidden="true">/</li>
+        <li><a href="/calculadoras/estadistica/" class="hover:text-[var(--color-primary-link)]">Estadística</a></li>
+        <li aria-hidden="true">/</li>
+        <li class="text-[var(--color-text)] font-medium" aria-current="page">Calculadora de Intervalo de Confianza para la Media</li>
+      </ol>
+    </nav>
+
+    <h1 class="font-display font-extrabold text-2xl sm:text-3xl">Calculadora de Intervalo de Confianza para la Media</h1>
+    <p class="mt-2 text-[var(--color-text-muted)] max-w-2xl">
+      Ingresá la media de tu muestra, el desvío estándar, el tamaño de la muestra y el nivel de confianza: obtenés el margen de error y el intervalo donde estará la media verdadera de la población.
+    </p>
+
+    <div class="mt-6 grid grid-cols-1 lg:grid-cols-[420px_1fr] gap-6 items-start">
+      <section class="surface rounded-2xl p-5 shadow-sm">
+        <div id="err" class="hidden alert-error rounded-lg px-3 py-2 text-sm mb-4" role="alert" aria-live="polite"></div>
+        <div class="space-y-4">
+        <div id="ic-w-mean">
+          <label for="ic-mean" class="block text-sm font-medium mb-1">Media de la muestra (x̄)</label>
+          <input id="ic-mean" type="text" inputmode="decimal" placeholder="Ej: 50" data-kind="num" data-label="Media de la muestra (x̄)" data-rule="any" class="w-full rounded-xl surface px-3 py-2.5 font-numeric focus:outline-none focus:ring-2 focus:ring-[var(--color-primary)]" />
+        </div>
+        <div id="ic-w-sd">
+          <label for="ic-sd" class="block text-sm font-medium mb-1">Desvío estándar</label>
+          <input id="ic-sd" type="text" inputmode="decimal" placeholder="Ej: 10" data-kind="num" data-label="Desvío estándar" data-rule="pos" class="w-full rounded-xl surface px-3 py-2.5 font-numeric focus:outline-none focus:ring-2 focus:ring-[var(--color-primary)]" />
+        </div>
+        <div id="ic-w-n">
+          <label for="ic-n" class="block text-sm font-medium mb-1">Tamaño de la muestra (n)</label>
+          <input id="ic-n" type="text" inputmode="decimal" placeholder="Ej: 25" data-kind="num" data-label="Tamaño de la muestra (n)" data-rule="int" class="w-full rounded-xl surface px-3 py-2.5 font-numeric focus:outline-none focus:ring-2 focus:ring-[var(--color-primary)]" />
+        </div>
+        <div id="ic-w-level">
+          <label for="ic-level" class="block text-sm font-medium mb-1">Nivel de confianza</label>
+          <select id="ic-level" data-kind="sel" data-label="Nivel de confianza" class="w-full rounded-xl surface px-3 py-2.5 focus:outline-none focus:ring-2 focus:ring-[var(--color-primary)]"><option value="90">90 %</option><option value="95" selected>95 %</option><option value="99">99 %</option></select>
+        </div>
+        <div id="ic-w-sdtype">
+          <label for="ic-sdtype" class="block text-sm font-medium mb-1">El desvío estándar es…</label>
+          <select id="ic-sdtype" data-kind="sel" data-label="El desvío estándar es…" class="w-full rounded-xl surface px-3 py-2.5 focus:outline-none focus:ring-2 focus:ring-[var(--color-primary)]"><option value="muestral">Muestral (de tus datos)</option><option value="poblacional">Poblacional (conocido)</option></select>
+        </div>
+          <div class="flex flex-wrap gap-2" aria-label="Ejemplos"><button type="button" data-ex="mean=50;sd=10;n=25;level=95;sdtype=muestral" class="px-3 py-1.5 rounded-full surface text-xs font-semibold font-numeric hover:shadow-md transition-shadow">n = 25, media 50, desvío 10</button><button type="button" data-ex="mean=50;sd=10;n=100;level=95;sdtype=muestral" class="px-3 py-1.5 rounded-full surface text-xs font-semibold font-numeric hover:shadow-md transition-shadow">n = 100, media 50, desvío 10</button></div>
+          <button id="ic-solve" type="button" class="calc-btn calc-btn--op w-full py-2.5">Calcular</button>
+        </div>
+      </section>
+
+      <section class="space-y-4">
+        <section id="ic-result-panel" class="hidden surface rounded-2xl p-5 shadow-sm">
+          <h2 class="font-display font-semibold text-lg mb-3">Resultado</h2>
+          <p id="ic-label" class="text-sm text-[var(--color-text-muted)]"></p>
+          <p id="ic-main" class="font-numeric text-3xl font-bold text-[var(--color-primary-link)] break-words">—</p>
+          <div id="ic-lines" class="mt-3 text-sm text-[var(--color-text-muted)] space-y-1"></div>
+          <div id="ic-extra" class="mt-3 text-sm text-[var(--color-text-muted)]"></div>
+        </section>
+
+        <details class="help-accordion surface rounded-2xl p-5 shadow-sm" open>
+          <summary class="flex items-center justify-between font-display font-semibold text-lg">
+            Ayuda y Fórmulas Teóricas
+            <svg class="chevron w-5 h-5 text-[var(--color-text-muted)]" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7"/></svg>
+          </summary>
+          <div class="mt-4 space-y-4 text-sm leading-relaxed text-[var(--color-text-muted)]">
+            <div>
+              <h3 class="font-semibold text-[var(--color-text)] mb-1">La fórmula</h3>
+              <p class="font-numeric text-[var(--color-text)]">x̄ ± c · s/√n</p><p>x̄ es la media muestral, s el desvío, n el tamaño y c el valor crítico: z si el desvío poblacional es conocido o la muestra es grande (n &gt; 30), y t de Student con n − 1 grados de libertad si el desvío es muestral y n ≤ 30.</p>
+            </div>
+            <div>
+              <h3 class="font-semibold text-[var(--color-text)] mb-1">Valores críticos z</h3>
+              <p>90 % → 1,645 · 95 % → 1,960 · 99 % → 2,576.</p>
+            </div>
+            <div>
+              <h3 class="font-semibold text-[var(--color-text)] mb-1">Cómo se interpreta</h3>
+              <p>Un intervalo del 95 % significa que, si repetiras el muestreo muchas veces, el 95 % de los intervalos construidos así contendrían a la media verdadera. No es la probabilidad de que la media esté dentro de este intervalo en particular.</p>
+            </div>
+          </div>
+        </details>
+
+        <section class="surface rounded-2xl p-5 shadow-sm">
+          <h2 class="font-display font-semibold text-lg mb-3">Preguntas frecuentes</h2>
+          <div class="text-sm">
+      <dl class="space-y-4 text-[var(--color-text-muted)] leading-relaxed">
+        <div>
+          <dt class="font-semibold text-[var(--color-text)]">¿Cómo se calcula el intervalo de confianza de la media?</dt>
+          <dd>x̄ ± c·s/√n. Con media 50, desvío 10, n = 100 y 95 %: 50 ± 1,96 × 1 = [48,04 ; 51,96].</dd>
+        </div>
+        <div>
+          <dt class="font-semibold text-[var(--color-text)]">¿Cuándo uso t de Student y cuándo z?</dt>
+          <dd>z cuando el desvío poblacional es conocido o n &gt; 30; t cuando solo tenés el desvío de la muestra y n ≤ 30.</dd>
+        </div>
+        <div>
+          <dt class="font-semibold text-[var(--color-text)]">¿Qué significa un nivel de confianza del 95 %?</dt>
+          <dd>Que el método usado captura la media verdadera en el 95 % de las muestras posibles.</dd>
+        </div>
+        <div>
+          <dt class="font-semibold text-[var(--color-text)]">¿Cómo achico el intervalo?</dt>
+          <dd>Aumentando el tamaño de la muestra o bajando el nivel de confianza.</dd>
+        </div>
+        <div>
+          <dt class="font-semibold text-[var(--color-text)]">¿Qué es el margen de error?</dt>
+          <dd>La mitad del ancho del intervalo: c·s/√n.</dd>
+        </div>
+      </dl>
+          </div>
+        </section>
+
+        <section class="surface rounded-2xl p-5 shadow-sm">
+          <h2 class="font-display font-semibold text-lg mb-2">Calculadoras relacionadas</h2>
+          <ul class="space-y-2 text-sm">
+            <li><a class="text-[var(--color-primary-link)] hover:underline" href="/calculadoras/estadistica/tamano-de-muestra/">Tamaño de Muestra</a></li>
+            <li><a class="text-[var(--color-primary-link)] hover:underline" href="/calculadoras/estadistica/calculadora-estadistica-descriptiva/">Estadística Descriptiva</a></li>
+            <li><a class="text-[var(--color-primary-link)] hover:underline" href="/calculadoras/estadistica/distribucion-normal/">Distribución Normal</a></li>
+          </ul>
+        </section>
+
+        <section class="surface rounded-2xl p-5 shadow-sm">
+          <h2 class="font-display font-semibold text-lg mb-2">¿Querés entender el "por qué"?</h2>
+          <p class="text-sm text-[var(--color-text-muted)] mb-3">Leé la guía completa: la fórmula, z vs t de Student, cómo interpretarlo y un ejemplo resuelto.</p>
+          <a class="text-[var(--color-primary-link)] hover:underline text-sm font-semibold" href="/guias/intervalo-de-confianza-explicado/">El intervalo de confianza explicado →</a>
+        </section>
+      </section>
+    </div>
+  </main>
+
+  <footer class="border-t border-[var(--color-border)] mt-10">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 py-10 text-sm text-[var(--color-text-muted)] flex flex-col sm:flex-row items-center justify-between gap-4">
+      <p>© 2026 Calculadora Científica · Hecho en Argentina 🇦🇷 · <a href="/sobre-nosotros/" class="hover:text-[var(--color-primary-link)]">Sobre Nosotros</a> · <a href="/privacidad/" class="hover:text-[var(--color-primary-link)]">Privacidad</a> · <a href="/terminos-de-uso/" class="hover:text-[var(--color-primary-link)]">Términos</a></p>
+      <a href="/" class="hover:text-[var(--color-primary-link)]">← Volver al inicio</a>
+    </div>
+  </footer>
+
+  <script src="/assets/js/calc-simple.js"></script>
+  <script src="script.js"></script>
+  <!-- Cloudflare Web Analytics --><script type='module' src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "62cded9cafa8475a9f6f875888b918b9"}'></script><!-- End Cloudflare Web Analytics -->
+<a href="/" id="back-to-home" aria-label="Ir al inicio del sitio"
+  class="fixed bottom-6 right-6 z-40 w-11 h-11 rounded-full surface shadow-lg hidden lg:flex items-center justify-center transition-all duration-200 hover:shadow-xl">
+  <svg class="w-5 h-5 text-[var(--color-text)]" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+    <path stroke-linecap="round" stroke-linejoin="round" d="M3 9.5L12 3l9 6.5M5 9.5V20a1 1 0 001 1h4v-6h4v6h4a1 1 0 001-1V9.5"/>
+  </svg>
+</a>
+<button id="back-to-top" type="button" aria-label="Volver al inicio de la página"
+  class="fixed bottom-20 right-6 z-40 w-11 h-11 rounded-full bg-[var(--color-primary)] text-white shadow-lg hidden lg:flex items-center justify-center opacity-0 pointer-events-none translate-y-2 transition-all duration-200 hover:brightness-110">
+  <svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5">
+    <path stroke-linecap="round" stroke-linejoin="round" d="M5 15l7-7 7 7"/>
+  </svg>
+</button>
+<script src="/assets/js/back-to-top.js"></script>
+<script src="/assets/js/pwa.js" defer></script>
+<script src="/assets/js/copy-result.js" defer></script>
+</body>
+</html>

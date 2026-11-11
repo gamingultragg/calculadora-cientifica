@@ -357,3 +357,106 @@ test("Consumo eléctrico", () => {
   near(c.dailyKwh(1500, 2, 1), 3);
   near(c.dailyKwh(60, 5, 4), 1.2);
 });
+
+test("Sistemas de ecuaciones", () => {
+  const s = load("matematicas-avanzadas/sistemas-de-ecuaciones");
+  const r = s.solve2(2, 1, 5, 1, -1, 1);
+  near(r.x, 2);
+  near(r.y, 1);
+  assert.equal(s.solve2(1, 2, 3, 2, 4, 6).det, 0);
+  const t = s.solve3([[2, 1, -1], [-3, -1, 2], [-2, 1, 2]], [8, -11, -3]);
+  near(t.x, 2);
+  near(t.y, 3);
+  near(t.z, -1);
+  assert.equal(s.solve3([[1, 2, 3], [2, 4, 6], [1, 0, 1]], [1, 2, 3]).det, 0);
+});
+
+test("Números primos", () => {
+  const p = load("matematicas-avanzadas/numeros-primos");
+  assert.equal(p.isPrime(2), true);
+  assert.equal(p.isPrime(97), true);
+  assert.equal(p.isPrime(1), false);
+  assert.equal(p.isPrime(100), false);
+  assert.equal(p.isPrime(999999999989), true);
+  assert.deepEqual([...p.factorize(360)], [[2, 3], [3, 2], [5, 1]]);
+  assert.equal(p.divisorCount(p.factorize(360)), 24);
+  assert.equal(p.nextPrime(100), 101);
+  assert.equal(p.prevPrime(100), 97);
+  assert.equal(p.prevPrime(2), null);
+});
+
+test("Progresiones", () => {
+  const p = load("matematicas-avanzadas/progresiones-aritmeticas-y-geometricas");
+  const a = p.arithmetic(3, 4, 10);
+  near(a.an, 39);
+  near(a.sn, 210);
+  const g = p.geometric(2, 3, 5);
+  near(g.an, 162);
+  near(g.sn, 242);
+  near(p.geometric(1, 0.5, 10).infinite, 2);
+  assert.equal(p.geometric(5, 1, 4).sn, 20);
+  assert.equal(p.geometric(1, 2, 3).infinite, null);
+});
+
+test("Resolución de triángulos", () => {
+  const t = load("matematicas-avanzadas/resolucion-de-triangulos");
+  const r = t.fromSSS(3, 4, 5);
+  near(r.C, 90, 1e-9);
+  near(r.area, 6);
+  near(r.A + r.B + r.C, 180, 1e-9);
+  const s = t.fromSAS(5, 7, 60);
+  near(s.c, Math.sqrt(25 + 49 - 35), 1e-9);
+  const a = t.fromASA(40, 60, 10);
+  near(a.C, 80);
+  near(a.a, 10 * Math.sin(40 * Math.PI / 180) / Math.sin(80 * Math.PI / 180), 1e-9);
+  assert.throws(() => t.fromSSS(1, 2, 10));
+  assert.throws(() => t.fromASA(100, 90, 5));
+});
+
+test("Números romanos", () => {
+  const r = load("matematicas-avanzadas/conversor-de-numeros-romanos");
+  assert.equal(r.toRoman(1994), "MCMXCIV");
+  assert.equal(r.toRoman(3999), "MMMCMXCIX");
+  assert.equal(r.toRoman(4), "IV");
+  assert.equal(r.fromRoman("MCMXCIV"), 1994);
+  assert.equal(r.fromRoman("xiv"), 14);
+  assert.throws(() => r.fromRoman("IIII"));
+  assert.throws(() => r.fromRoman("VX"));
+  assert.throws(() => r.toRoman(0));
+  assert.throws(() => r.toRoman(4000));
+});
+
+test("Distribución binomial", () => {
+  const b = load("estadistica/distribucion-binomial");
+  near(b.pmf(10, 0.5, 5), 0.24609375, 1e-9);
+  const r = b.binomial(10, 0.5, 5);
+  near(r.cdf, 0.623046875, 1e-9);
+  near(r.ge, 0.623046875, 1e-9);
+  near(r.mean, 5);
+  near(r.sd, Math.sqrt(2.5), 1e-12);
+  near(b.binomial(20, 0.3, 6).exact, 0.19163898, 1e-7);
+  near(b.pmf(5, 0, 0), 1);
+  near(b.pmf(5, 1, 5), 1);
+  const big = b.binomial(1000, 0.5, 500);
+  near(big.exact, 0.0252250181, 1e-8);
+});
+
+test("Intervalo de confianza", () => {
+  const i = load("estadistica/intervalo-de-confianza");
+  assert.equal(i.critical(95, 10, true).value, 2.262);
+  assert.equal(i.critical(95, 50, true).value, 1.96);
+  assert.equal(i.critical(99, 8, false).value, 2.576);
+  const r = i.interval(50, 10, 100, 95, false);
+  near(r.margin, 1.96, 1e-9);
+  near(r.lower, 48.04, 1e-9);
+  near(r.upper, 51.96, 1e-9);
+  assert.throws(() => i.critical(80, 10, false));
+});
+
+test("Tamaño de muestra", () => {
+  const t = load("estadistica/tamano-de-muestra");
+  assert.equal(t.sampleSize(95, 5, 50, 0).n, 385);
+  assert.equal(t.sampleSize(95, 5, 50, 1000).n, 278);
+  assert.equal(t.sampleSize(99, 3, 50, 0).n, 1844);
+  assert.equal(t.sampleSize(90, 10, 50, 0).n, 68);
+});

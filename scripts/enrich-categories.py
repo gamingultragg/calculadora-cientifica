@@ -16,15 +16,13 @@ CATS = {
         desc="Calculadora científica y básica, ecuaciones de segundo grado, matrices, fracciones, regla de tres, MCD y MCM, teorema de Pitágoras, bases numéricas y áreas y volúmenes, con desarrollo paso a paso.",
         meta="Calculadoras de matemática online y gratis: científica, fracciones, ecuaciones, matrices, regla de tres, MCD y MCM, Pitágoras, bases numéricas y áreas y volúmenes.",
         text="Resolvé desde una cuenta simple hasta un sistema de álgebra lineal. Cada calculadora muestra el desarrollo paso a paso y viene con una guía que explica el método, para que no solo obtengas el resultado sino que entiendas cómo se llega a él.",
-        guides=["como-operar-con-fracciones", "regla-de-tres-simple-y-compuesta", "como-calcular-mcd-y-mcm", "teorema-de-pitagoras-explicado",
-                "como-calcular-areas-y-volumenes", "como-convertir-binario-decimal-y-hexadecimal", "como-resolver-ecuaciones-de-segundo-grado",
-                "determinante-y-matriz-inversa", "grados-y-radianes", "orden-de-operaciones-vs-calculo-secuencial"]),
+        guides=["como-operar-con-fracciones", "regla-de-tres-simple-y-compuesta", "como-calcular-mcd-y-mcm", "teorema-de-pitagoras-explicado", "como-calcular-areas-y-volumenes", "como-convertir-binario-decimal-y-hexadecimal", "como-resolver-ecuaciones-de-segundo-grado", "determinante-y-matriz-inversa", "grados-y-radianes", "orden-de-operaciones-vs-calculo-secuencial", "como-resolver-sistemas-de-ecuaciones", "como-saber-si-un-numero-es-primo", "progresiones-aritmeticas-y-geometricas", "teorema-del-seno-y-del-coseno", "como-leer-y-escribir-numeros-romanos"]),
     "estadistica": dict(
         key="estadistica", label="Estadística",
         desc="Estadística descriptiva, promedio de notas, distribución normal, permutaciones y combinaciones y regresión lineal, para cátedras, tesis e informes.",
         meta="Calculadoras de estadística online y gratis: estadística descriptiva, promedio de notas, distribución normal, combinatoria y regresión lineal.",
         text="Herramientas para analizar datos y resolver problemas de probabilidad y combinatoria: media, mediana, desvío estándar, puntaje Z, permutaciones, combinaciones y la recta de regresión con su correlación.",
-        guides=["como-calcular-desviacion-estandar", "puntaje-z-y-curva-normal", "permutaciones-vs-combinaciones", "como-calcular-promedio-de-notas", "regresion-lineal-y-correlacion"]),
+        guides=["como-calcular-desviacion-estandar", "puntaje-z-y-curva-normal", "permutaciones-vs-combinaciones", "como-calcular-promedio-de-notas", "regresion-lineal-y-correlacion", "distribucion-binomial-explicada", "intervalo-de-confianza-explicado", "como-calcular-el-tamano-de-una-muestra"]),
     "fisica": dict(
         key="fisica", label="Física",
         desc="Cinemática (MRU y MRUA), segunda ley de Newton, ley de Ohm y energía cinética y potencial, con fórmulas explicadas.",

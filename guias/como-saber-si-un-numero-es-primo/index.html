@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="es-AR">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Cómo Saber si un Número es Primo: Criterios y Factorización | Calculadora Científica</title>
+<meta name="description" content="Cómo saber si un número es primo con criterios de divisibilidad y la prueba hasta la raíz cuadrada, cómo factorizar un número y la lista de los primos hasta 50." />
+<link rel="canonical" href="https://www.calculadoracientifica.com.ar/guias/como-saber-si-un-numero-es-primo/" />
+<link rel="alternate" hreflang="es-AR" href="https://www.calculadoracientifica.com.ar/guias/como-saber-si-un-numero-es-primo/" />
+<link rel="alternate" hreflang="es" href="https://www.calculadoracientifica.com.ar/guias/como-saber-si-un-numero-es-primo/" />
+<link rel="icon" type="image/svg+xml" href="/assets/img/favicon.svg" />
+<link rel="icon" type="image/png" sizes="32x32" href="/assets/img/favicon-32.png" />
+<link rel="icon" type="image/png" sizes="16x16" href="/assets/img/favicon-16.png" />
+<link rel="apple-touch-icon" href="/assets/img/apple-touch-icon.png" />
+<link rel="manifest" href="/manifest.webmanifest" />
+<meta name="theme-color" content="#2563eb" />
+
+<meta property="og:type" content="article" />
+<meta property="og:locale" content="es_AR" />
+<meta property="og:site_name" content="Calculadora Científica" />
+<meta property="og:title" content="Cómo saber si un número es primo" />
+<meta property="og:description" content="Primos: criterios de divisibilidad, prueba hasta la raíz y factorización." />
+<meta property="og:url" content="https://www.calculadoracientifica.com.ar/guias/como-saber-si-un-numero-es-primo/" />
+<meta property="og:image" content="https://www.calculadoracientifica.com.ar/assets/img/og-image.png" />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="630" />
+<meta name="twitter:image" content="https://www.calculadoracientifica.com.ar/assets/img/og-image.png" />
+<meta name="twitter:card" content="summary_large_image" />
+
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Roboto+Mono:wght@400;500;700&display=swap" rel="stylesheet" />
+
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7274131858034505" crossorigin="anonymous"></script>
+<link rel="stylesheet" href="/assets/css/styles.css" />
+<link rel="stylesheet" href="/assets/css/tailwind.css" />
+<script src="/assets/js/theme.js"></script>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Article",
+      "headline": "Cómo saber si un número es primo",
+      "description": "Cómo saber si un número es primo con criterios de divisibilidad y la prueba hasta la raíz cuadrada, cómo factorizar un número y la lista de los primos hasta 50.",
+      "author": {
+        "@type": "Organization",
+        "name": "Calculadora Científica"
+      },
+      "publisher": {
+        "@type": "Organization",
+        "name": "Calculadora Científica"
+      },
+      "mainEntityOfPage": "https://www.calculadoracientifica.com.ar/guias/como-saber-si-un-numero-es-primo/",
+      "inLanguage": "es-AR",
+      "datePublished": "2026-11-10",
+      "dateModified": "2026-11-10"
+    },
+    {
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "¿Cómo sé si un número es primo?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Probá dividirlo por los primos hasta su raíz cuadrada; si ninguno lo divide, es primo."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "¿El 1 es primo?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "No: tiene un solo divisor."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "¿Cuál es el único primo par?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "El 2."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "¿Cómo se factoriza un número?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Dividiéndolo sucesivamente por primos: 360 = 2³ × 3² × 5."
+          }
+        }
+      ]
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Inicio",
+          "item": "https://www.calculadoracientifica.com.ar/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Guías",
+          "item": "https://www.calculadoracientifica.com.ar/guias/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "Cómo saber si un número es primo",
+          "item": "https://www.calculadoracientifica.com.ar/guias/como-saber-si-un-numero-es-primo/"
+        }
+      ]
+    }
+  ]
+}
+</script>
+</head>
+<body class="min-h-screen font-sans antialiased">
+  <a href="#main-content" class="sr-only focus:not-sr-only focus:fixed focus:top-3 focus:left-3 focus:z-50 focus:px-4 focus:py-2 focus:rounded-lg focus:bg-[var(--color-primary)] focus:text-white focus:text-sm focus:font-semibold">Saltar al contenido</a>
+
+  <header class="sticky top-0 z-40 backdrop-blur border-b border-[var(--color-border)] bg-[var(--color-bg)]/85">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 h-16 flex items-center justify-between">
+      <a href="/" class="flex items-center gap-2 font-display font-extrabold text-lg">
+        <span class="w-8 h-8 rounded-lg bg-[var(--color-primary)] text-white flex items-center justify-center text-sm">∑</span>
+        Calculadora<span class="text-[var(--color-primary-link)]">Científica</span>
+      </a>
+      <button data-theme-toggle type="button" aria-label="Cambiar tema claro/oscuro"
+        class="w-10 h-10 rounded-full surface flex items-center justify-center hover:shadow-md transition-shadow">
+        <span data-theme-icon>🌙</span>
+      </button>
+    </div>
+  </header>
+
+  <main id="main-content" class="max-w-3xl mx-auto px-4 sm:px-6 py-8">
+    <nav aria-label="Breadcrumb" class="text-sm text-[var(--color-text-muted)] mb-4">
+      <ol class="flex flex-wrap items-center gap-1">
+        <li><a href="/" class="hover:text-[var(--color-primary-link)]">Inicio</a></li>
+        <li aria-hidden="true">/</li>
+        <li><a href="/guias/" class="hover:text-[var(--color-primary-link)]">Guías</a></li>
+        <li aria-hidden="true">/</li>
+        <li class="text-[var(--color-text)] font-medium" aria-current="page">Cómo saber si un número es primo</li>
+      </ol>
+    </nav>
+
+    <article>
+      <h1 class="font-display font-extrabold text-2xl sm:text-3xl">Cómo saber si un número es primo</h1>
+      <p class="mt-3 text-[var(--color-text-muted)] leading-relaxed">
+        Los números primos son los ladrillos de todos los enteros. Saber reconocerlos y factorizar un número es la base para simplificar fracciones, calcular el MCD y el MCM y hasta para la criptografía.
+      </p>
+
+      <div class="mt-5 rounded-2xl surface p-4 text-sm leading-relaxed">
+        <p class="font-semibold text-[var(--color-text)] mb-1">Respuesta rápida</p>
+        <p class="text-[var(--color-text-muted)]">Un número es primo si solo se divide por 1 y por sí mismo. Alcanza con probar los divisores primos hasta su raíz cuadrada.</p>
+      </div>
+
+      <div class="mt-6 rounded-2xl surface p-4 flex items-center justify-between gap-3">
+        <p class="text-sm">¿Preferís que lo calcule por vos?</p>
+        <a href="/calculadoras/matematicas-avanzadas/numeros-primos/" class="calc-btn calc-btn--op px-4 py-2 text-sm whitespace-nowrap">Abrir calculadora</a>
+      </div>
+
+      <h2 class="font-display font-bold text-xl mt-8 mb-2">1. Qué es un primo</h2>
+
+      <p class="text-[var(--color-text-muted)] leading-relaxed">
+        Un entero mayor que 1 con exactamente dos divisores: 1 y él mismo. Los primos hasta 50 son 2, 3, 5, 7, 11, 13, 17, 19, 23, 29, 31, 37, 41, 43 y 47. El 2 es el único primo par y el 1 no es primo.
+      </p>
+
+      <h2 class="font-display font-bold text-xl mt-8 mb-2">2. Criterios de divisibilidad</h2>
+
+      <div class="mt-3 overflow-x-auto rounded-xl border border-[var(--color-border)]">
+        <table class="w-full text-sm min-w-[360px] font-numeric">
+          <thead><tr class="text-left text-[var(--color-text-muted)]"><th class="px-3 py-2 font-semibold">Divisor</th><th class="px-3 py-2 font-semibold">Criterio</th></tr></thead>
+          <tbody class="text-[var(--color-text-muted)]">
+            <tr class="border-t border-[var(--color-border)]"><td class="px-3 py-2">2</td><td class="px-3 py-2">Termina en cifra par</td></tr>
+            <tr class="border-t border-[var(--color-border)]"><td class="px-3 py-2">3</td><td class="px-3 py-2">La suma de sus cifras es múltiplo de 3</td></tr>
+            <tr class="border-t border-[var(--color-border)]"><td class="px-3 py-2">5</td><td class="px-3 py-2">Termina en 0 o 5</td></tr>
+            <tr class="border-t border-[var(--color-border)]"><td class="px-3 py-2">9</td><td class="px-3 py-2">La suma de sus cifras es múltiplo de 9</td></tr>
+            <tr class="border-t border-[var(--color-border)]"><td class="px-3 py-2">11</td><td class="px-3 py-2">Diferencia entre la suma de cifras en posiciones pares e impares es múltiplo de 11</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <h2 class="font-display font-bold text-xl mt-8 mb-2">3. La prueba hasta la raíz cuadrada</h2>
+
+      <p class="text-[var(--color-text-muted)] leading-relaxed">
+        Si un número n tiene un divisor mayor que √n, también tiene uno menor. Entonces basta probar los primos hasta √n.
+      </p>
+
+      <ol class="list-decimal list-inside space-y-1 text-[var(--color-text-muted)] font-numeric">
+        <li>¿97 es primo? √97 ≈ 9,8</li>
+        <li>Probamos 2, 3, 5 y 7: ninguno lo divide</li>
+        <li>97 es primo</li>
+      </ol>
+
+      <h2 class="font-display font-bold text-xl mt-8 mb-2">4. Factorizar un número compuesto</h2>
+
+      <ol class="list-decimal list-inside space-y-1 text-[var(--color-text-muted)] font-numeric">
+        <li>360 ÷ 2 = 180 · 180 ÷ 2 = 90 · 90 ÷ 2 = 45</li>
+        <li>45 ÷ 3 = 15 · 15 ÷ 3 = 5 · 5 ÷ 5 = 1</li>
+        <li>360 = 2³ × 3² × 5</li>
+      </ol>
+
+      <p class="text-[var(--color-text-muted)] leading-relaxed">
+        La cantidad de divisores es el producto de (exponentes + 1): (3+1)(2+1)(1+1) = 24.
+      </p>
+
+      <h2 class="font-display font-bold text-xl mt-8 mb-2">5. La criba de Eratóstenes</h2>
+
+      <p class="text-[var(--color-text-muted)] leading-relaxed">
+        Para listar todos los primos hasta N: se escriben los números del 2 al N, se tacha todo múltiplo de 2 (menos el 2), después de 3 (menos el 3), de 5, y así con cada número que queda sin tachar. Los que sobreviven son primos.
+      </p>
+
+      <h2 class="font-display font-bold text-xl mt-8 mb-2">6. Para qué sirven</h2>
+
+      <ul class="list-disc list-inside space-y-1 text-[var(--color-text-muted)]">
+        <li>Simplificar fracciones y calcular el MCD y el MCM.</li>
+        <li>Criptografía: la seguridad de muchas comunicaciones depende de lo difícil que es factorizar números enormes.</li>
+        <li>Ejemplo curioso: 1001 = 7 × 11 × 13.</li>
+      </ul>
+
+      <h2 class="font-display font-bold text-xl mt-8 mb-2">Preguntas frecuentes</h2>
+      <dl class="space-y-4 text-[var(--color-text-muted)] leading-relaxed">
+        <div>
+          <dt class="font-semibold text-[var(--color-text)]">¿Cómo sé si un número es primo?</dt>
+          <dd>Probá dividirlo por los primos hasta su raíz cuadrada; si ninguno lo divide, es primo.</dd>
+        </div>
+        <div>
+          <dt class="font-semibold text-[var(--color-text)]">¿El 1 es primo?</dt>
+          <dd>No: tiene un solo divisor.</dd>
+        </div>
+        <div>
+          <dt class="font-semibold text-[var(--color-text)]">¿Cuál es el único primo par?</dt>
+          <dd>El 2.</dd>
+        </div>
+        <div>
+          <dt class="font-semibold text-[var(--color-text)]">¿Cómo se factoriza un número?</dt>
+          <dd>Dividiéndolo sucesivamente por primos: 360 = 2³ × 3² × 5.</dd>
+        </div>
+      </dl>
+    </article>
+
+    <section class="mt-10 surface rounded-2xl p-5 shadow-sm">
+      <h2 class="font-display font-semibold text-lg mb-2">Calculadoras relacionadas</h2>
+      <ul class="space-y-2 text-sm">
+        <li><a class="text-[var(--color-primary-link)] hover:underline" href="/calculadoras/matematicas-avanzadas/numeros-primos/">Calculadora de Números Primos</a></li>
+        <li><a class="text-[var(--color-primary-link)] hover:underline" href="/calculadoras/matematicas-avanzadas/mcd-y-mcm/">Calculadora de MCD y MCM</a></li>
+        <li><a class="text-[var(--color-primary-link)] hover:underline" href="/guias/como-calcular-mcd-y-mcm/">Guía: cómo calcular el MCD y el MCM</a></li>
+      </ul>
+    </section>
+  </main>
+
+  <footer class="border-t border-[var(--color-border)] mt-10">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 py-10 text-sm text-[var(--color-text-muted)] flex flex-col sm:flex-row items-center justify-between gap-4">
+      <p>© 2026 Calculadora Científica · Hecho en Argentina 🇦🇷 · <a href="/sobre-nosotros/" class="hover:text-[var(--color-primary-link)]">Sobre Nosotros</a> · <a href="/privacidad/" class="hover:text-[var(--color-primary-link)]">Privacidad</a> · <a href="/terminos-de-uso/" class="hover:text-[var(--color-primary-link)]">Términos</a></p>
+      <a href="/" class="hover:text-[var(--color-primary-link)]">← Volver al inicio</a>
+    </div>
+  </footer>
+  <!-- Cloudflare Web Analytics --><script type='module' src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "62cded9cafa8475a9f6f875888b918b9"}'></script><!-- End Cloudflare Web Analytics -->
+<a href="/" id="back-to-home" aria-label="Ir al inicio del sitio"
+  class="fixed bottom-6 right-6 z-40 w-11 h-11 rounded-full surface shadow-lg hidden lg:flex items-center justify-center transition-all duration-200 hover:shadow-xl">
+  <svg class="w-5 h-5 text-[var(--color-text)]" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+    <path stroke-linecap="round" stroke-linejoin="round" d="M3 9.5L12 3l9 6.5M5 9.5V20a1 1 0 001 1h4v-6h4v6h4a1 1 0 001-1V9.5"/>
+  </svg>
+</a>
+<button id="back-to-top" type="button" aria-label="Volver al inicio de la página"
+  class="fixed bottom-20 right-6 z-40 w-11 h-11 rounded-full bg-[var(--color-primary)] text-white shadow-lg hidden lg:flex items-center justify-center opacity-0 pointer-events-none translate-y-2 transition-all duration-200 hover:brightness-110">
+  <svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5">
+    <path stroke-linecap="round" stroke-linejoin="round" d="M5 15l7-7 7 7"/>
+  </svg>
+</button>
+<script src="/assets/js/back-to-top.js"></script>
+<script src="/assets/js/pwa.js" defer></script>
+</body>
+</html>

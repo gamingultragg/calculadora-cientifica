@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<html lang="es-AR">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Calculadora de Sistemas de Ecuaciones Lineales 2×2 y 3×3 (Cramer) | Calculadora Científica</title>
+<meta name="description" content="Resolvé sistemas de dos o tres ecuaciones lineales con la regla de Cramer: valores de x, y, z, determinante y verificación. Gratis y con el método explicado." />
+<link rel="canonical" href="https://www.calculadoracientifica.com.ar/calculadoras/matematicas-avanzadas/sistemas-de-ecuaciones/" />
+<link rel="alternate" hreflang="es-AR" href="https://www.calculadoracientifica.com.ar/calculadoras/matematicas-avanzadas/sistemas-de-ecuaciones/" />
+<link rel="alternate" hreflang="es" href="https://www.calculadoracientifica.com.ar/calculadoras/matematicas-avanzadas/sistemas-de-ecuaciones/" />
+<link rel="icon" type="image/svg+xml" href="/assets/img/favicon.svg" />
+<link rel="icon" type="image/png" sizes="32x32" href="/assets/img/favicon-32.png" />
+<link rel="icon" type="image/png" sizes="16x16" href="/assets/img/favicon-16.png" />
+<link rel="apple-touch-icon" href="/assets/img/apple-touch-icon.png" />
+<link rel="manifest" href="/manifest.webmanifest" />
+<meta name="theme-color" content="#2563eb" />
+
+<meta property="og:type" content="website" />
+<meta property="og:locale" content="es_AR" />
+<meta property="og:site_name" content="Calculadora Científica" />
+<meta property="og:title" content="Calculadora de Sistemas de Ecuaciones" />
+<meta property="og:description" content="Sistemas lineales 2×2 y 3×3 por la regla de Cramer. Gratis." />
+<meta property="og:url" content="https://www.calculadoracientifica.com.ar/calculadoras/matematicas-avanzadas/sistemas-de-ecuaciones/" />
+<meta property="og:image" content="https://www.calculadoracientifica.com.ar/assets/img/og-image.png" />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="630" />
+<meta name="twitter:image" content="https://www.calculadoracientifica.com.ar/assets/img/og-image.png" />
+<meta name="twitter:card" content="summary_large_image" />
+
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Roboto+Mono:wght@400;500;700&display=swap" rel="stylesheet" />
+
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7274131858034505" crossorigin="anonymous"></script>
+<link rel="stylesheet" href="/assets/css/styles.css" />
+<link rel="stylesheet" href="/assets/css/tailwind.css" />
+<script src="/assets/js/theme.js"></script>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "SoftwareApplication",
+      "name": "Calculadora de Sistemas de Ecuaciones 2×2 y 3×3",
+      "applicationCategory": "EducationalApplication",
+      "operatingSystem": "Web",
+      "url": "https://www.calculadoracientifica.com.ar/calculadoras/matematicas-avanzadas/sistemas-de-ecuaciones/",
+      "description": "Resuelve sistemas de ecuaciones lineales de 2×2 y 3×3 con la regla de Cramer, mostrando el determinante, los valores de las incógnitas y la verificación.",
+      "offers": {
+        "@type": "Offer",
+        "price": "0",
+        "priceCurrency": "ARS"
+      },
+      "inLanguage": "es-AR"
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Inicio",
+          "item": "https://www.calculadoracientifica.com.ar/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Matemáticas Avanzadas",
+          "item": "https://www.calculadoracientifica.com.ar/calculadoras/matematicas-avanzadas/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "Calculadora de Sistemas de Ecuaciones 2×2 y 3×3",
+          "item": "https://www.calculadoracientifica.com.ar/calculadoras/matematicas-avanzadas/sistemas-de-ecuaciones/"
+        }
+      ]
+    },
+    {
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "¿Cómo se resuelve un sistema de ecuaciones 2×2?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Con sustitución, igualación, reducción o la regla de Cramer: x = Δₓ/Δ e y = Δᵧ/Δ, con Δ = a₁b₂ − a₂b₁. Para 2x + y = 5 y x − y = 1: Δ = −3, x = 2, y = 1."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "¿Qué pasa si el determinante es 0?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "El sistema no tiene solución única: puede ser incompatible (rectas paralelas) o tener infinitas soluciones (ecuaciones equivalentes)."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "¿Cómo se resuelve un sistema 3×3?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Con la regla de Cramer (cuatro determinantes de 3×3), el método de Gauss o sustitución sucesiva."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "¿Y si una ecuación no tiene una de las incógnitas?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Su coeficiente vale 0: dejá el campo vacío."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "¿Sirve para sistemas no lineales?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "No: solo para ecuaciones lineales (sin potencias ni productos de incógnitas)."
+          }
+        }
+      ]
+    }
+  ]
+}
+</script>
+</head>
+<body class="min-h-screen font-sans antialiased">
+  <a href="#main-content" class="sr-only focus:not-sr-only focus:fixed focus:top-3 focus:left-3 focus:z-50 focus:px-4 focus:py-2 focus:rounded-lg focus:bg-[var(--color-primary)] focus:text-white focus:text-sm focus:font-semibold">Saltar al contenido</a>
+
+  <header class="sticky top-0 z-40 backdrop-blur border-b border-[var(--color-border)] bg-[var(--color-bg)]/85">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 h-16 flex items-center justify-between">
+      <a href="/" class="flex items-center gap-2 font-display font-extrabold text-lg">
+        <span class="w-8 h-8 rounded-lg bg-[var(--color-primary)] text-white flex items-center justify-center text-sm">∑</span>
+        Calculadora<span class="text-[var(--color-primary-link)]">Científica</span>
+      </a>
+      <button data-theme-toggle type="button" aria-label="Cambiar tema claro/oscuro"
+        class="w-10 h-10 rounded-full surface flex items-center justify-center hover:shadow-md transition-shadow">
+        <span data-theme-icon>🌙</span>
+      </button>
+    </div>
+  </header>
+
+  <main id="main-content" class="max-w-6xl mx-auto px-4 sm:px-6 py-8">
+    <nav aria-label="Breadcrumb" class="text-sm text-[var(--color-text-muted)] mb-4">
+      <ol class="flex flex-wrap items-center gap-1">
+        <li><a href="/" class="hover:text-[var(--color-primary-link)]">Inicio</a></li>
+        <li aria-hidden="true">/</li>
+        <li><a href="/calculadoras/matematicas-avanzadas/" class="hover:text-[var(--color-primary-link)]">Matemáticas Avanzadas</a></li>
+        <li aria-hidden="true">/</li>
+        <li class="text-[var(--color-text)] font-medium" aria-current="page">Calculadora de Sistemas de Ecuaciones 2×2 y 3×3</li>
+      </ol>
+    </nav>
+
+    <h1 class="font-display font-extrabold text-2xl sm:text-3xl">Calculadora de Sistemas de Ecuaciones 2×2 y 3×3</h1>
+    <p class="mt-2 text-[var(--color-text-muted)] max-w-2xl">
+      Ingresá los coeficientes de cada ecuación (los vacíos valen 0) y obtené el valor de x, y (y z) con la regla de Cramer, el determinante del sistema y la verificación del resultado.
+    </p>
+
+    <div class="mt-6 grid grid-cols-1 lg:grid-cols-[420px_1fr] gap-6 items-start">
+      <section class="surface rounded-2xl p-5 shadow-sm">
+        <div id="err" class="hidden alert-error rounded-lg px-3 py-2 text-sm mb-4" role="alert" aria-live="polite"></div>
+        <div class="space-y-4">
+        <div id="se-w-size">
+          <label for="se-size" class="block text-sm font-medium mb-1">Tamaño del sistema</label>
+          <select id="se-size" data-kind="sel" data-label="Tamaño del sistema" class="w-full rounded-xl surface px-3 py-2.5 focus:outline-none focus:ring-2 focus:ring-[var(--color-primary)]"><option value="2">2 ecuaciones con 2 incógnitas</option><option value="3">3 ecuaciones con 3 incógnitas</option></select>
+        </div>
+        <div class="grid grid-cols-4 gap-2">
+        <div id="se-w-a1">
+          <label for="se-a1" class="block text-sm font-medium mb-1">x</label>
+          <input id="se-a1" type="text" inputmode="decimal" placeholder="0" data-kind="num" data-label="x" data-rule="any" data-opt data-def="0" class="w-full rounded-xl surface px-3 py-2.5 font-numeric focus:outline-none focus:ring-2 focus:ring-[var(--color-primary)]" />
+        </div>
+        <div id="se-w-b1">
+          <label for="se-b1" class="block text-sm font-medium mb-1">y</label>
+          <input id="se-b1" type="text" inputmode="decimal" placeholder="0" data-kind="num" data-label="y" data-rule="any" data-opt data-def="0" class="w-full rounded-xl surface px-3 py-2.5 font-numeric focus:outline-none focus:ring-2 focus:ring-[var(--color-primary)]" />
+        </div>
+        <div id="se-w-c1" data-when="size=3">
+          <label for="se-c1" class="block text-sm font-medium mb-1">z</label>
+          <input id="se-c1" type="text" inputmode="decimal" placeholder="0" data-kind="num" data-label="z" data-rule="any" data-opt data-def="0" class="w-full rounded-xl surface px-3 py-2.5 font-numeric focus:outline-none focus:ring-2 focus:ring-[var(--color-primary)]" />
+        </div>
+        <div id="se-w-d1">
+          <label for="se-d1" class="block text-sm font-medium mb-1">= término indep.</label>
+          <input id="se-d1" type="text" inputmode="decimal" placeholder="0" data-kind="num" data-label="= término indep." data-rule="any" data-opt data-def="0" class="w-full rounded-xl surface px-3 py-2.5 font-numeric focus:outline-none focus:ring-2 focus:ring-[var(--color-primary)]" />
+        </div>
+        </div>
+        <div class="grid grid-cols-4 gap-2">
+        <div id="se-w-a2">
+          <label for="se-a2" class="block text-sm font-medium mb-1">x</label>
+          <input id="se-a2" type="text" inputmode="decimal" placeholder="0" data-kind="num" data-label="x" data-rule="any" data-opt data-def="0" class="w-full rounded-xl surface px-3 py-2.5 font-numeric focus:outline-none focus:ring-2 focus:ring-[var(--color-primary)]" />
+        </div>
+        <div id="se-w-b2">
+          <label for="se-b2" class="block text-sm font-medium mb-1">y</label>
+          <input id="se-b2" type="text" inputmode="decimal" placeholder="0" data-kind="num" data-label="y" data-rule="any" data-opt data-def="0" class="w-full rounded-xl surface px-3 py-2.5 font-numeric focus:outline-none focus:ring-2 focus:ring-[var(--color-primary)]" />
+        </div>
+        <div id="se-w-c2" data-when="size=3">
+          <label for="se-c2" class="block text-sm font-medium mb-1">z</label>
+          <input id="se-c2" type="text" inputmode="decimal" placeholder="0" data-kind="num" data-label="z" data-rule="any" data-opt data-def="0" class="w-full rounded-xl surface px-3 py-2.5 font-numeric focus:outline-none focus:ring-2 focus:ring-[var(--color-primary)]" />
+        </div>
+        <div id="se-w-d2">
+          <label for="se-d2" class="block text-sm font-medium mb-1">= término indep.</label>
+          <input id="se-d2" type="text" inputmode="decimal" placeholder="0" data-kind="num" data-label="= término indep." data-rule="any" data-opt data-def="0" class="w-full rounded-xl surface px-3 py-2.5 font-numeric focus:outline-none focus:ring-2 focus:ring-[var(--color-primary)]" />
+        </div>
+        </div>
+        <div class="grid grid-cols-4 gap-2">
+        <div id="se-w-a3" data-when="size=3">
+          <label for="se-a3" class="block text-sm font-medium mb-1">x</label>
+          <input id="se-a3" type="text" inputmode="decimal" placeholder="0" data-kind="num" data-label="x" data-rule="any" data-opt data-def="0" class="w-full rounded-xl surface px-3 py-2.5 font-numeric focus:outline-none focus:ring-2 focus:ring-[var(--color-primary)]" />
+        </div>
+        <div id="se-w-b3" data-when="size=3">
+          <label for="se-b3" class="block text-sm font-medium mb-1">y</label>
+          <input id="se-b3" type="text" inputmode="decimal" placeholder="0" data-kind="num" data-label="y" data-rule="any" data-opt data-def="0" class="w-full rounded-xl surface px-3 py-2.5 font-numeric focus:outline-none focus:ring-2 focus:ring-[var(--color-primary)]" />
+        </div>
+        <div id="se-w-c3" data-when="size=3">
+          <label for="se-c3" class="block text-sm font-medium mb-1">z</label>
+          <input id="se-c3" type="text" inputmode="decimal" placeholder="0" data-kind="num" data-label="z" data-rule="any" data-opt data-def="0" class="w-full rounded-xl surface px-3 py-2.5 font-numeric focus:outline-none focus:ring-2 focus:ring-[var(--color-primary)]" />
+        </div>
+        <div id="se-w-d3" data-when="size=3">
+          <label for="se-d3" class="block text-sm font-medium mb-1">= término indep.</label>
+          <input id="se-d3" type="text" inputmode="decimal" placeholder="0" data-kind="num" data-label="= término indep." data-rule="any" data-opt data-def="0" class="w-full rounded-xl surface px-3 py-2.5 font-numeric focus:outline-none focus:ring-2 focus:ring-[var(--color-primary)]" />
+        </div>
+        </div>
+          <div class="flex flex-wrap gap-2" aria-label="Ejemplos"><button type="button" data-ex="size=2;a1=2;b1=1;d1=5;a2=1;b2=-1;d2=1" class="px-3 py-1.5 rounded-full surface text-xs font-semibold font-numeric hover:shadow-md transition-shadow">2x + y = 5 · x − y = 1</button><button type="button" data-ex="size=3;a1=2;b1=1;c1=-1;d1=8;a2=-3;b2=-1;c2=2;d2=-11;a3=-2;b3=1;c3=2;d3=-3" class="px-3 py-1.5 rounded-full surface text-xs font-semibold font-numeric hover:shadow-md transition-shadow">Sistema 3×3</button></div>
+          <button id="se-solve" type="button" class="calc-btn calc-btn--op w-full py-2.5">Calcular</button>
+          <p class="text-xs text-[var(--color-text-muted)]">Escribí cada ecuación como a·x + b·y + c·z = d. En un sistema 2×2 se usan solo las dos primeras filas.</p>
+        </div>
+      </section>
+
+      <section class="space-y-4">
+        <section id="se-result-panel" class="hidden surface rounded-2xl p-5 shadow-sm">
+          <h2 class="font-display font-semibold text-lg mb-3">Resultado</h2>
+          <p id="se-label" class="text-sm text-[var(--color-text-muted)]"></p>
+          <p id="se-main" class="font-numeric text-3xl font-bold text-[var(--color-primary-link)] break-words">—</p>
+          <div id="se-lines" class="mt-3 text-sm text-[var(--color-text-muted)] space-y-1"></div>
+          <div id="se-extra" class="mt-3 text-sm text-[var(--color-text-muted)]"></div>
+        </section>
+
+        <details class="help-accordion surface rounded-2xl p-5 shadow-sm" open>
+          <summary class="flex items-center justify-between font-display font-semibold text-lg">
+            Ayuda y Fórmulas Teóricas
+            <svg class="chevron w-5 h-5 text-[var(--color-text-muted)]" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7"/></svg>
+          </summary>
+          <div class="mt-4 space-y-4 text-sm leading-relaxed text-[var(--color-text-muted)]">
+            <div>
+              <h3 class="font-semibold text-[var(--color-text)] mb-1">Regla de Cramer</h3>
+              <p class="font-numeric text-[var(--color-text)]">x = Δₓ / Δ &nbsp;·&nbsp; y = Δᵧ / Δ &nbsp;·&nbsp; z = Δ_z / Δ</p><p>Δ es el determinante de la matriz de coeficientes y Δₓ, Δᵧ, Δ_z son los determinantes que resultan de reemplazar la columna de x, y o z por los términos independientes.</p>
+            </div>
+            <div>
+              <h3 class="font-semibold text-[var(--color-text)] mb-1">Sistema 2×2</h3>
+              <p class="font-numeric text-[var(--color-text)]">Δ = a₁·b₂ − a₂·b₁</p><p>Si Δ ≠ 0 hay una única solución. Si Δ = 0, el sistema es incompatible (sin solución) o compatible indeterminado (infinitas soluciones).</p>
+            </div>
+            <div>
+              <h3 class="font-semibold text-[var(--color-text)] mb-1">Verificación</h3>
+              <p>Reemplazá los valores obtenidos en cada ecuación: tienen que dar el término independiente. La calculadora lo muestra en el sistema 2×2.</p>
+            </div>
+          </div>
+        </details>
+
+        <section class="surface rounded-2xl p-5 shadow-sm">
+          <h2 class="font-display font-semibold text-lg mb-3">Preguntas frecuentes</h2>
+          <div class="text-sm">
+      <dl class="space-y-4 text-[var(--color-text-muted)] leading-relaxed">
+        <div>
+          <dt class="font-semibold text-[var(--color-text)]">¿Cómo se resuelve un sistema de ecuaciones 2×2?</dt>
+          <dd>Con sustitución, igualación, reducción o la regla de Cramer: x = Δₓ/Δ e y = Δᵧ/Δ, con Δ = a₁b₂ − a₂b₁. Para 2x + y = 5 y x − y = 1: Δ = −3, x = 2, y = 1.</dd>
+        </div>
+        <div>
+          <dt class="font-semibold text-[var(--color-text)]">¿Qué pasa si el determinante es 0?</dt>
+          <dd>El sistema no tiene solución única: puede ser incompatible (rectas paralelas) o tener infinitas soluciones (ecuaciones equivalentes).</dd>
+        </div>
+        <div>
+          <dt class="font-semibold text-[var(--color-text)]">¿Cómo se resuelve un sistema 3×3?</dt>
+          <dd>Con la regla de Cramer (cuatro determinantes de 3×3), el método de Gauss o sustitución sucesiva.</dd>
+        </div>
+        <div>
+          <dt class="font-semibold text-[var(--color-text)]">¿Y si una ecuación no tiene una de las incógnitas?</dt>
+          <dd>Su coeficiente vale 0: dejá el campo vacío.</dd>
+        </div>
+        <div>
+          <dt class="font-semibold text-[var(--color-text)]">¿Sirve para sistemas no lineales?</dt>
+          <dd>No: solo para ecuaciones lineales (sin potencias ni productos de incógnitas).</dd>
+        </div>
+      </dl>
+          </div>
+        </section>
+
+        <section class="surface rounded-2xl p-5 shadow-sm">
+          <h2 class="font-display font-semibold text-lg mb-2">Calculadoras relacionadas</h2>
+          <ul class="space-y-2 text-sm">
+            <li><a class="text-[var(--color-primary-link)] hover:underline" href="/calculadoras/matematicas-avanzadas/calculadora-matrices/">Calculadora de Matrices</a></li>
+            <li><a class="text-[var(--color-primary-link)] hover:underline" href="/calculadoras/matematicas-avanzadas/ecuaciones-segundo-grado/">Ecuaciones de Segundo Grado</a></li>
+            <li><a class="text-[var(--color-primary-link)] hover:underline" href="/calculadoras/matematicas-avanzadas/regla-de-tres/">Regla de Tres</a></li>
+          </ul>
+        </section>
+
+        <section class="surface rounded-2xl p-5 shadow-sm">
+          <h2 class="font-display font-semibold text-lg mb-2">¿Querés entender el "por qué"?</h2>
+          <p class="text-sm text-[var(--color-text-muted)] mb-3">Leé la guía completa: sustitución, igualación, reducción y regla de Cramer con ejemplos resueltos.</p>
+          <a class="text-[var(--color-primary-link)] hover:underline text-sm font-semibold" href="/guias/como-resolver-sistemas-de-ecuaciones/">Cómo resolver sistemas de ecuaciones →</a>
+        </section>
+      </section>
+    </div>
+  </main>
+
+  <footer class="border-t border-[var(--color-border)] mt-10">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 py-10 text-sm text-[var(--color-text-muted)] flex flex-col sm:flex-row items-center justify-between gap-4">
+      <p>© 2026 Calculadora Científica · Hecho en Argentina 🇦🇷 · <a href="/sobre-nosotros/" class="hover:text-[var(--color-primary-link)]">Sobre Nosotros</a> · <a href="/privacidad/" class="hover:text-[var(--color-primary-link)]">Privacidad</a> · <a href="/terminos-de-uso/" class="hover:text-[var(--color-primary-link)]">Términos</a></p>
+      <a href="/" class="hover:text-[var(--color-primary-link)]">← Volver al inicio</a>
+    </div>
+  </footer>
+
+  <script src="/assets/js/calc-simple.js"></script>
+  <script src="script.js"></script>
+  <!-- Cloudflare Web Analytics --><script type='module' src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "62cded9cafa8475a9f6f875888b918b9"}'></script><!-- End Cloudflare Web Analytics -->
+<a href="/" id="back-to-home" aria-label="Ir al inicio del sitio"
+  class="fixed bottom-6 right-6 z-40 w-11 h-11 rounded-full surface shadow-lg hidden lg:flex items-center justify-center transition-all duration-200 hover:shadow-xl">
+  <svg class="w-5 h-5 text-[var(--color-text)]" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+    <path stroke-linecap="round" stroke-linejoin="round" d="M3 9.5L12 3l9 6.5M5 9.5V20a1 1 0 001 1h4v-6h4v6h4a1 1 0 001-1V9.5"/>
+  </svg>
+</a>
+<button id="back-to-top" type="button" aria-label="Volver al inicio de la página"
+  class="fixed bottom-20 right-6 z-40 w-11 h-11 rounded-full bg-[var(--color-primary)] text-white shadow-lg hidden lg:flex items-center justify-center opacity-0 pointer-events-none translate-y-2 transition-all duration-200 hover:brightness-110">
+  <svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5">
+    <path stroke-linecap="round" stroke-linejoin="round" d="M5 15l7-7 7 7"/>
+  </svg>
+</button>
+<script src="/assets/js/back-to-top.js"></script>
+<script src="/assets/js/pwa.js" defer></script>
+<script src="/assets/js/copy-result.js" defer></script>
+</body>
+</html>

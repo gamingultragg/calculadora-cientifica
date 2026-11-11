@@ -2,7 +2,7 @@
  * Estrategia: precarga del sitio (páginas + CSS + JS) para que funcione sin conexión;
  * red primero con respaldo en caché; tipografías de Google en caché "stale-while-revalidate".
  * No intercepta anuncios, analítica ni nada de otros orígenes (salvo las tipografías). */
-const VERSION = "389ad810c4";
+const VERSION = "f3932593e0";
 const CACHE = "cc-" + VERSION;
 const FONTS = "cc-fonts-v1";
 const PRECACHE = [
@@ -66,6 +66,14 @@ const PRECACHE = [
  "/calculadoras/hogar-y-construccion/calculadora-de-ladrillos/",
  "/calculadoras/hogar-y-construccion/calculadora-de-hormigon/",
  "/calculadoras/hogar-y-construccion/calculadora-de-consumo-electrico/",
+ "/calculadoras/matematicas-avanzadas/sistemas-de-ecuaciones/",
+ "/calculadoras/matematicas-avanzadas/numeros-primos/",
+ "/calculadoras/matematicas-avanzadas/progresiones-aritmeticas-y-geometricas/",
+ "/calculadoras/matematicas-avanzadas/resolucion-de-triangulos/",
+ "/calculadoras/matematicas-avanzadas/conversor-de-numeros-romanos/",
+ "/calculadoras/estadistica/distribucion-binomial/",
+ "/calculadoras/estadistica/intervalo-de-confianza/",
+ "/calculadoras/estadistica/tamano-de-muestra/",
  "/guias/",
  "/guias/orden-de-operaciones-vs-calculo-secuencial/",
  "/guias/como-resolver-ecuaciones-de-segundo-grado/",
@@ -117,6 +125,14 @@ const PRECACHE = [
  "/guias/cuantos-ladrillos-necesito-por-m2/",
  "/guias/como-calcular-el-hormigon-de-una-losa/",
  "/guias/como-calcular-el-consumo-electrico/",
+ "/guias/como-resolver-sistemas-de-ecuaciones/",
+ "/guias/como-saber-si-un-numero-es-primo/",
+ "/guias/progresiones-aritmeticas-y-geometricas/",
+ "/guias/teorema-del-seno-y-del-coseno/",
+ "/guias/como-leer-y-escribir-numeros-romanos/",
+ "/guias/distribucion-binomial-explicada/",
+ "/guias/intervalo-de-confianza-explicado/",
+ "/guias/como-calcular-el-tamano-de-una-muestra/",
  "/sobre-nosotros/",
  "/privacidad/",
  "/terminos-de-uso/",
@@ -140,9 +156,12 @@ const PRECACHE = [
  "/assets/js/theme.js",
  "/calculadoras/estadistica/calculadora-de-promedio-de-notas/script.js",
  "/calculadoras/estadistica/calculadora-estadistica-descriptiva/script.js",
+ "/calculadoras/estadistica/distribucion-binomial/script.js",
  "/calculadoras/estadistica/distribucion-normal/script.js",
+ "/calculadoras/estadistica/intervalo-de-confianza/script.js",
  "/calculadoras/estadistica/permutaciones-y-combinaciones/script.js",
  "/calculadoras/estadistica/regresion-lineal/script.js",
+ "/calculadoras/estadistica/tamano-de-muestra/script.js",
  "/calculadoras/finanzas/amortizacion-prestamos/script.js",
  "/calculadoras/finanzas/calculadora-de-aguinaldo/script.js",
  "/calculadoras/finanzas/calculadora-de-ajuste-de-alquiler/script.js",
@@ -174,9 +193,14 @@ const PRECACHE = [
  "/calculadoras/matematicas-avanzadas/calculadora-de-fracciones/script.js",
  "/calculadoras/matematicas-avanzadas/calculadora-matrices/script.js",
  "/calculadoras/matematicas-avanzadas/conversor-de-bases-numericas/script.js",
+ "/calculadoras/matematicas-avanzadas/conversor-de-numeros-romanos/script.js",
  "/calculadoras/matematicas-avanzadas/ecuaciones-segundo-grado/script.js",
  "/calculadoras/matematicas-avanzadas/mcd-y-mcm/script.js",
+ "/calculadoras/matematicas-avanzadas/numeros-primos/script.js",
+ "/calculadoras/matematicas-avanzadas/progresiones-aritmeticas-y-geometricas/script.js",
  "/calculadoras/matematicas-avanzadas/regla-de-tres/script.js",
+ "/calculadoras/matematicas-avanzadas/resolucion-de-triangulos/script.js",
+ "/calculadoras/matematicas-avanzadas/sistemas-de-ecuaciones/script.js",
  "/calculadoras/matematicas-avanzadas/teorema-de-pitagoras/script.js",
  "/calculadoras/quimica/calculadora-de-diluciones/script.js",
  "/calculadoras/quimica/calculadora-de-gases-ideales/script.js",

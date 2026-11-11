@@ -48,13 +48,19 @@ CATS = {
         desc="Interés simple y compuesto, préstamos con sistema francés, plazo fijo, IVA, porcentajes y aguinaldo.",
         meta="Calculadoras financieras online y gratis para Argentina: interés simple y compuesto, préstamos (sistema francés), plazo fijo, IVA, porcentajes y aguinaldo.",
         text="Calculá cuánto rinde un plazo fijo, cuánto pagás de cuota, cuánto es el IVA o el aguinaldo que te corresponde. Las calculadoras usan las convenciones argentinas (año de 365 días, alícuotas de IVA vigentes) y explican cada fórmula.",
-        guides=["como-calcular-un-plazo-fijo-tna-y-tea", "como-calcular-cuota-de-prestamo", "interes-simple-vs-compuesto", "como-calcular-el-aguinaldo", "como-calcular-iva", "como-calcular-porcentajes"]),
+        guides=["cuotas-o-contado-como-saber-cual-conviene", "como-calcular-un-plazo-fijo-tna-y-tea", "como-calcular-cuota-de-prestamo", "como-calcular-la-inflacion-acumulada", "como-calcular-el-ajuste-de-un-alquiler", "diferencia-entre-margen-y-markup", "como-calcular-descuentos-sucesivos", "interes-simple-vs-compuesto", "como-calcular-el-aguinaldo", "como-calcular-iva", "como-calcular-porcentajes"]),
     "vida-diaria": dict(
         key="vida", label="Vida Diaria",
         desc="Edad y fechas, IMC, conversor de cocina, horas trabajadas y propina: cálculos del día a día, rápidos y sin vueltas.",
         meta="Calculadoras de vida diaria online y gratis: edad y días entre fechas, IMC, conversor de cocina, horas trabajadas y propina.",
         text="Las cuentas que aparecen todos los días: cuántos años y días tenés, cuál es tu IMC, cuántos gramos es una taza de harina, cuántas horas trabajaste o cuánto paga cada uno en la mesa.",
         guides=["como-calcular-la-edad-y-los-dias-entre-fechas", "como-calcular-el-imc", "equivalencias-de-cocina-tazas-cucharadas-y-gramos", "como-calcular-horas-trabajadas-y-horas-extra", "como-calcular-la-propina-y-dividir-la-cuenta"]),
+    "hogar-y-construccion": dict(
+        key="hogar", label="Hogar y Construcción",
+        desc="Cerámicos, pintura, ladrillos, hormigón y consumo eléctrico: cálculos de materiales y gastos del hogar.",
+        meta="Calculadoras de hogar y construcción online y gratis: cerámicos, pintura, ladrillos, hormigón y consumo eléctrico, con cantidades y costos.",
+        text="Cuántos cerámicos, litros de pintura, ladrillos o metros cúbicos de hormigón comprar para tu obra o refacción, y cuánto cuesta usar cada artefacto de la casa. Las cantidades son estimaciones: para estructuras, consultá siempre a un profesional.",
+        guides=["cuantos-ceramicos-necesito", "cuanta-pintura-necesito", "cuantos-ladrillos-necesito-por-m2", "como-calcular-el-hormigon-de-una-losa", "como-calcular-el-consumo-electrico"]),
 }
 
 

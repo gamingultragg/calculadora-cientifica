@@ -266,3 +266,94 @@ test("Propina y división de cuenta", () => {
   near(p.split(5000, 0, 1, 0).perPerson, 5000);
   assert.throws(() => p.split(100, 10, 0, 0));
 });
+
+test("Cuotas vs contado", () => {
+  const c = load("finanzas/cuotas-vs-contado");
+  // 6 cuotas de 20.000 para un precio de contado de 100.000: tasa implícita ≈ 5,47 % mensual
+  const i = c.implicitRate(100000, 20000, 6);
+  near(c.presentValue(20000, 6, i), 100000, 0.01);
+  near(i, 0.0547, 1e-3);
+  near(c.implicitRate(120000, 10000, 12), 0, 1e-6);
+  assert.ok(c.implicitRate(100000, 8000, 12) < 0);
+  assert.throws(() => c.implicitRate(100000, 1000, 6));
+  near(c.presentValue(1000, 3, 0), 3000);
+});
+
+test("Inflación acumulada", () => {
+  const f = load("finanzas/calculadora-de-inflacion-acumulada");
+  const r = f.accumulate(f.parseRates("10 10"));
+  near(r.cumulative, 0.21);
+  near(r.monthlyGeo, 0.1, 1e-12);
+  near(f.accumulate([2, 3, 4]).cumulative, 1.02 * 1.03 * 1.04 - 1, 1e-12);
+  assert.deepEqual(f.parseRates("4,2 3.5;2%"), [4.2, 3.5, 2]);
+  assert.throws(() => f.parseRates("abc"));
+  assert.throws(() => f.parseRates(""));
+});
+
+test("Ajuste de alquiler", () => {
+  const a = load("finanzas/calculadora-de-ajuste-de-alquiler");
+  near(a.byIndex(100000, 1.5, 1.8), 120000);
+  near(a.byPercent(100000, 25), 125000);
+});
+
+test("Margen y markup", () => {
+  const m = load("finanzas/calculadora-de-margen-y-markup");
+  near(m.priceFromMargin(60, 40), 100);
+  near(m.priceFromMarkup(60, 50), 90);
+  const r = m.fromPrices(60, 100);
+  near(r.margin, 0.4);
+  near(r.markup, 2 / 3, 1e-12);
+  assert.throws(() => m.priceFromMargin(60, 100));
+});
+
+test("Descuentos sucesivos", () => {
+  const d = load("finanzas/descuentos-sucesivos");
+  const r = d.sequential(1000, d.parseDiscounts("20 10 5"));
+  near(r.final, 684);
+  near(r.totalPct, 0.316);
+  near(r.sumPct, 0.35);
+  assert.throws(() => d.parseDiscounts("100"));
+  assert.throws(() => d.parseDiscounts("x"));
+});
+
+test("Cerámicos", () => {
+  const c = load("hogar-y-construccion/calculadora-de-ceramicos");
+  const t = c.tiles(20, 60, 60, 10);
+  assert.equal(t.pieces, 62);
+  near(t.buyArea, 62 * 0.36, 1e-9);
+  assert.equal(c.tiles(10, 30, 30, 0).pieces, 112);
+});
+
+test("Pintura", () => {
+  const p = load("hogar-y-construccion/calculadora-de-pintura");
+  const a = p.paintArea(4, 3, 2.6, 3, true);
+  near(a.walls, 2 * 7 * 2.6 - 3);
+  near(a.ceilingArea, 12);
+  near(p.liters(50, 2, 10), 10);
+  const c = p.cans(9);
+  assert.ok(c.total >= 9 && c.total <= 10);
+  assert.deepEqual([p.cans(20).c20, p.cans(20).total], [1, 20]);
+});
+
+test("Ladrillos", () => {
+  const l = load("hogar-y-construccion/calculadora-de-ladrillos");
+  near(l.perM2(33, 18, 1.5), 10000 / (34.5 * 19.5), 1e-9);
+  const r = l.bricks(10, 33, 18, 1.5, 5);
+  assert.equal(r.total, Math.ceil(10 * 10000 / (34.5 * 19.5) * 1.05 - 1e-9));
+});
+
+test("Hormigón", () => {
+  const h = load("hogar-y-construccion/calculadora-de-hormigon");
+  near(h.volumeSlab(5, 4, 12), 2.4);
+  near(h.volumeColumns(25, 25, 3, 4), 0.75);
+  const m = h.materials(2, "H17");
+  near(m.cementKg, 660);
+  assert.equal(m.bags, 14);
+  near(m.sand, 1.04);
+});
+
+test("Consumo eléctrico", () => {
+  const c = load("hogar-y-construccion/calculadora-de-consumo-electrico");
+  near(c.dailyKwh(1500, 2, 1), 3);
+  near(c.dailyKwh(60, 5, 4), 1.2);
+});

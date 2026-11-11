@@ -123,7 +123,7 @@ def faq_html(faqs, tag="dl"):
 
 
 def calc_page(*, slug, cat_slug, cat_label, name, page_title, desc, og_title, og_desc, schema_desc,
-              intro, top_html="", form_html, result_html, help_html, related, guide, faqs, extra_scripts=""):
+              intro, top_html="", form_html, result_html, help_html, related, guide, faqs, extra_scripts="", pre_scripts=""):
     """related: [(href, label)]; guide: (href, titulo, texto del bloque)."""
     url = f"/calculadoras/{cat_slug}/{slug}/"
     jsonld = {
@@ -214,7 +214,7 @@ def calc_page(*, slug, cat_slug, cat_label, name, page_title, desc, og_title, og
 
   {FOOTER}
 
-  <script src="script.js"></script>
+{pre_scripts}  <script src="script.js"></script>
 {extra_scripts}  {BEACON}
 {FLOATING}
 </body>

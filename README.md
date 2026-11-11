@@ -309,8 +309,8 @@ enlazada en ambas direcciones.
    y en el sitemap, solo dejó de listarse en la grilla/buscador y en la categoría Matemáticas;
    se accede por el banner destacado o por URL directa.
 
-**Catálogo actual (2026-11-10): 40 calculadoras + 40 guías + 6 landing
-pages de categoría + home + 404 + sobre-nosotros + 2 legales = 94 páginas**, todas en `sitemap.xml`
+**Catálogo actual (2026-11-10): 50 calculadoras + 50 guías + 6 landing
+pages de categoría + home + 404 + sobre-nosotros + 2 legales = 115 páginas**, todas en `sitemap.xml`
 (excepto la 404, que lleva `noindex`), auditoría en 0 problemas.
 
 ✅ **Validación de JSON-LD** (`scripts/validate-jsonld.py`, no destructiva): parsea los 44 bloques
@@ -551,3 +551,16 @@ registraron con `scripts/register-batch-3.py`. Orden para sumar un lote nuevo: g
 - **Bug corregido:** `category.js` agregaba las tarjetas sin borrar las pre-renderizadas, por lo que en las páginas de
   categoría se veían duplicadas. Ahora reemplaza el contenido.
 - 21 pruebas de lógica (`node --test tools/tests/logic.test.js`); las de fechas cubren años bisiestos, fin de mes y 29/2.
+
+## Lote 6 y motor común `calc-simple.js` (2026-11-11)
+
+- **Motor común:** `assets/js/calc-simple.js` lee, valida y muestra el resultado de calculadoras "campos → resultado". El HTML
+  (generado con `scripts/spec_lib.py`) declara cada campo con `data-kind`, `data-label`, `data-rule` (`pos|nonneg|any|int`),
+  `data-opt`/`data-def` y `data-when="campo=a|b"` (visibilidad según un selector); cada calculadora solo aporta
+  `CCSimple.mount({prefix, compute(v, h)})` en su `script.js`, y exporta su lógica con `module.exports` para las pruebas.
+  Las páginas incluyen el motor con `pre_scripts=ENGINE` de `calc_page`. Para una calculadora nueva copiar el patrón de
+  `build-batch-6.py`.
+- **Lote 6:** Finanzas (cuotas vs contado, inflación acumulada, ajuste de alquiler, margen y markup, descuentos sucesivos) y
+  categoría nueva **Hogar y Construcción** (`scripts/add-category.py` automatiza el alta de una categoría): cerámicos, pintura,
+  ladrillos, hormigón y consumo eléctrico, cada una con su guía (`build-batch-6*.py`, `register-batch-6.py`).
+- 31 pruebas de lógica.

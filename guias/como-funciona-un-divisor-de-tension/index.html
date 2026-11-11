@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="es-AR">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Divisor de Tensión: Fórmula, Ejemplos y Limitaciones | Calculadora Científica</title>
+<meta name="description" content="Qué es un divisor de tensión resistivo, la fórmula Vout = Vin·R2/(R1+R2), cómo elegir las resistencias para una tensión deseada, ejemplos resueltos y por qué no sirve para alimentar cargas." />
+<link rel="canonical" href="https://www.calculadoracientifica.com.ar/guias/como-funciona-un-divisor-de-tension/" />
+<link rel="alternate" hreflang="es-AR" href="https://www.calculadoracientifica.com.ar/guias/como-funciona-un-divisor-de-tension/" />
+<link rel="alternate" hreflang="es" href="https://www.calculadoracientifica.com.ar/guias/como-funciona-un-divisor-de-tension/" />
+<link rel="icon" type="image/svg+xml" href="/assets/img/favicon.svg" />
+<link rel="icon" type="image/png" sizes="32x32" href="/assets/img/favicon-32.png" />
+<link rel="icon" type="image/png" sizes="16x16" href="/assets/img/favicon-16.png" />
+<link rel="apple-touch-icon" href="/assets/img/apple-touch-icon.png" />
+<link rel="manifest" href="/manifest.webmanifest" />
+<meta name="theme-color" content="#2563eb" />
+
+<meta property="og:type" content="article" />
+<meta property="og:locale" content="es_AR" />
+<meta property="og:site_name" content="Calculadora Científica" />
+<meta property="og:title" content="Cómo funciona un divisor de tensión" />
+<meta property="og:description" content="Divisor de tensión: fórmula, ejemplos y limitaciones." />
+<meta property="og:url" content="https://www.calculadoracientifica.com.ar/guias/como-funciona-un-divisor-de-tension/" />
+<meta property="og:image" content="https://www.calculadoracientifica.com.ar/assets/img/og-image.png" />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="630" />
+<meta name="twitter:image" content="https://www.calculadoracientifica.com.ar/assets/img/og-image.png" />
+<meta name="twitter:card" content="summary_large_image" />
+
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Roboto+Mono:wght@400;500;700&display=swap" rel="stylesheet" />
+
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7274131858034505" crossorigin="anonymous"></script>
+<link rel="stylesheet" href="/assets/css/styles.css" />
+<link rel="stylesheet" href="/assets/css/tailwind.css" />
+<script src="/assets/js/theme.js"></script>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Article",
+      "headline": "Cómo funciona un divisor de tensión",
+      "description": "Qué es un divisor de tensión resistivo, la fórmula Vout = Vin·R2/(R1+R2), cómo elegir las resistencias para una tensión deseada, ejemplos resueltos y por qué no sirve para alimentar cargas.",
+      "author": {
+        "@type": "Organization",
+        "name": "Calculadora Científica"
+      },
+      "publisher": {
+        "@type": "Organization",
+        "name": "Calculadora Científica"
+      },
+      "mainEntityOfPage": "https://www.calculadoracientifica.com.ar/guias/como-funciona-un-divisor-de-tension/",
+      "inLanguage": "es-AR",
+      "datePublished": "2026-11-10",
+      "dateModified": "2026-11-10"
+    },
+    {
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "¿Cómo se calcula un divisor de tensión?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Vout = Vin·R2/(R1 + R2)."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "¿Cómo elijo las resistencias?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Fijá R1 y calculá R2 = Vout·R1/(Vin − Vout); usá el valor comercial más cercano."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "¿Puedo alimentar un circuito con un divisor?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Solo si consume muy poca corriente."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "¿Qué corriente circula?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "I = Vin/(R1 + R2)."
+          }
+        }
+      ]
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Inicio",
+          "item": "https://www.calculadoracientifica.com.ar/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Guías",
+          "item": "https://www.calculadoracientifica.com.ar/guias/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "Cómo funciona un divisor de tensión",
+          "item": "https://www.calculadoracientifica.com.ar/guias/como-funciona-un-divisor-de-tension/"
+        }
+      ]
+    }
+  ]
+}
+</script>
+</head>
+<body class="min-h-screen font-sans antialiased">
+  <a href="#main-content" class="sr-only focus:not-sr-only focus:fixed focus:top-3 focus:left-3 focus:z-50 focus:px-4 focus:py-2 focus:rounded-lg focus:bg-[var(--color-primary)] focus:text-white focus:text-sm focus:font-semibold">Saltar al contenido</a>
+
+  <header class="sticky top-0 z-40 backdrop-blur border-b border-[var(--color-border)] bg-[var(--color-bg)]/85">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 h-16 flex items-center justify-between">
+      <a href="/" class="flex items-center gap-2 font-display font-extrabold text-lg">
+        <span class="w-8 h-8 rounded-lg bg-[var(--color-primary)] text-white flex items-center justify-center text-sm">∑</span>
+        Calculadora<span class="text-[var(--color-primary-link)]">Científica</span>
+      </a>
+      <button data-theme-toggle type="button" aria-label="Cambiar tema claro/oscuro"
+        class="w-10 h-10 rounded-full surface flex items-center justify-center hover:shadow-md transition-shadow">
+        <span data-theme-icon>🌙</span>
+      </button>
+    </div>
+  </header>
+
+  <main id="main-content" class="max-w-3xl mx-auto px-4 sm:px-6 py-8">
+    <nav aria-label="Breadcrumb" class="text-sm text-[var(--color-text-muted)] mb-4">
+      <ol class="flex flex-wrap items-center gap-1">
+        <li><a href="/" class="hover:text-[var(--color-primary-link)]">Inicio</a></li>
+        <li aria-hidden="true">/</li>
+        <li><a href="/guias/" class="hover:text-[var(--color-primary-link)]">Guías</a></li>
+        <li aria-hidden="true">/</li>
+        <li class="text-[var(--color-text)] font-medium" aria-current="page">Cómo funciona un divisor de tensión</li>
+      </ol>
+    </nav>
+
+    <article>
+      <h1 class="font-display font-extrabold text-2xl sm:text-3xl">Cómo funciona un divisor de tensión</h1>
+      <p class="mt-3 text-[var(--color-text-muted)] leading-relaxed">
+        Un divisor de tensión son dos resistencias en serie que "reparten" una tensión. Se usa para adaptar niveles (5 V a 3,3 V), leer sensores y polarizar circuitos.
+      </p>
+
+      <div class="mt-5 rounded-2xl surface p-4 text-sm leading-relaxed">
+        <p class="font-semibold text-[var(--color-text)] mb-1">Respuesta rápida</p>
+        <p class="text-[var(--color-text-muted)]">Vout = Vin · R2 / (R1 + R2). Para una Vout deseada: R2 = Vout · R1 / (Vin − Vout).</p>
+      </div>
+
+      <div class="mt-6 rounded-2xl surface p-4 flex items-center justify-between gap-3">
+        <p class="text-sm">¿Preferís que lo calcule por vos?</p>
+        <a href="/calculadoras/ingenieria/divisor-de-tension/" class="calc-btn calc-btn--op px-4 py-2 text-sm whitespace-nowrap">Abrir calculadora</a>
+      </div>
+
+      <h2 class="font-display font-bold text-xl mt-8 mb-2">1. La idea</h2>
+
+      <p class="text-[var(--color-text-muted)] leading-relaxed">
+        Por dos resistencias en serie circula la misma corriente I = Vin / (R1 + R2). La tensión en cada una es I × su resistencia, así que la tensión se reparte en proporción a las resistencias. La salida se toma sobre R2.
+      </p>
+
+      <p class="font-numeric text-center my-3 text-[var(--color-text)]">Vout = Vin · R2 / (R1 + R2)</p>
+
+      <h2 class="font-display font-bold text-xl mt-8 mb-2">2. Ejemplo directo</h2>
+
+      <ol class="list-decimal list-inside space-y-1 text-[var(--color-text-muted)] font-numeric">
+        <li>Vin = 12 V, R1 = 1 kΩ y R2 = 2 kΩ</li>
+        <li>Vout = 12 × 2000 / 3000 = 8 V</li>
+        <li>Corriente: 12 / 3000 = 4 mA</li>
+      </ol>
+
+      <h2 class="font-display font-bold text-xl mt-8 mb-2">3. Elegir R2 para una tensión deseada</h2>
+
+      <ol class="list-decimal list-inside space-y-1 text-[var(--color-text-muted)] font-numeric">
+        <li>Pasar de 5 V a 3,3 V con R1 = 1 kΩ</li>
+        <li>R2 = 3,3 × 1000 / (5 − 3,3) = 1.941 Ω</li>
+        <li>Se usa el valor comercial cercano (1,8 kΩ o 2 kΩ) y se verifica la salida</li>
+      </ol>
+
+      <h2 class="font-display font-bold text-xl mt-8 mb-2">4. Limitaciones</h2>
+
+      <ul class="list-disc list-inside space-y-1 text-[var(--color-text-muted)]">
+        <li>La fórmula supone que la salida no alimenta nada. Una carga en paralelo con R2 baja la tensión.</li>
+        <li>Para que el efecto de la carga sea despreciable, su resistencia debe ser al menos diez veces mayor que R2.</li>
+        <li>El divisor disipa potencia siempre, aunque no haya carga.</li>
+        <li>No sirve para alimentar circuitos que consumen corriente: para eso se usa un regulador.</li>
+      </ul>
+
+      <h2 class="font-display font-bold text-xl mt-8 mb-2">5. Usos típicos</h2>
+
+      <ul class="list-disc list-inside space-y-1 text-[var(--color-text-muted)]">
+        <li>Adaptar señales de 5 V a 3,3 V.</li>
+        <li>Leer sensores resistivos (termistores, LDR) con un conversor analógico-digital.</li>
+        <li>Polarizar transistores y amplificadores.</li>
+        <li>Medir tensiones altas con un instrumento de rango chico.</li>
+      </ul>
+
+      <h2 class="font-display font-bold text-xl mt-8 mb-2">Preguntas frecuentes</h2>
+      <dl class="space-y-4 text-[var(--color-text-muted)] leading-relaxed">
+        <div>
+          <dt class="font-semibold text-[var(--color-text)]">¿Cómo se calcula un divisor de tensión?</dt>
+          <dd>Vout = Vin·R2/(R1 + R2).</dd>
+        </div>
+        <div>
+          <dt class="font-semibold text-[var(--color-text)]">¿Cómo elijo las resistencias?</dt>
+          <dd>Fijá R1 y calculá R2 = Vout·R1/(Vin − Vout); usá el valor comercial más cercano.</dd>
+        </div>
+        <div>
+          <dt class="font-semibold text-[var(--color-text)]">¿Puedo alimentar un circuito con un divisor?</dt>
+          <dd>Solo si consume muy poca corriente.</dd>
+        </div>
+        <div>
+          <dt class="font-semibold text-[var(--color-text)]">¿Qué corriente circula?</dt>
+          <dd>I = Vin/(R1 + R2).</dd>
+        </div>
+      </dl>
+    </article>
+
+    <section class="mt-10 surface rounded-2xl p-5 shadow-sm">
+      <h2 class="font-display font-semibold text-lg mb-2">Calculadoras relacionadas</h2>
+      <ul class="space-y-2 text-sm">
+        <li><a class="text-[var(--color-primary-link)] hover:underline" href="/calculadoras/ingenieria/divisor-de-tension/">Calculadora de Divisor de Tensión</a></li>
+        <li><a class="text-[var(--color-primary-link)] hover:underline" href="/calculadoras/fisica/ley-de-ohm/">Ley de Ohm</a></li>
+        <li><a class="text-[var(--color-primary-link)] hover:underline" href="/guias/ley-de-ohm-explicada/">Guía: la ley de Ohm</a></li>
+      </ul>
+    </section>
+  </main>
+
+  <footer class="border-t border-[var(--color-border)] mt-10">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 py-10 text-sm text-[var(--color-text-muted)] flex flex-col sm:flex-row items-center justify-between gap-4">
+      <p>© 2026 Calculadora Científica · Hecho en Argentina 🇦🇷 · <a href="/sobre-nosotros/" class="hover:text-[var(--color-primary-link)]">Sobre Nosotros</a> · <a href="/privacidad/" class="hover:text-[var(--color-primary-link)]">Privacidad</a> · <a href="/terminos-de-uso/" class="hover:text-[var(--color-primary-link)]">Términos</a></p>
+      <a href="/" class="hover:text-[var(--color-primary-link)]">← Volver al inicio</a>
+    </div>
+  </footer>
+  <!-- Cloudflare Web Analytics --><script type='module' src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "62cded9cafa8475a9f6f875888b918b9"}'></script><!-- End Cloudflare Web Analytics -->
+<a href="/" id="back-to-home" aria-label="Ir al inicio del sitio"
+  class="fixed bottom-6 right-6 z-40 w-11 h-11 rounded-full surface shadow-lg hidden lg:flex items-center justify-center transition-all duration-200 hover:shadow-xl">
+  <svg class="w-5 h-5 text-[var(--color-text)]" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+    <path stroke-linecap="round" stroke-linejoin="round" d="M3 9.5L12 3l9 6.5M5 9.5V20a1 1 0 001 1h4v-6h4v6h4a1 1 0 001-1V9.5"/>
+  </svg>
+</a>
+<button id="back-to-top" type="button" aria-label="Volver al inicio de la página"
+  class="fixed bottom-20 right-6 z-40 w-11 h-11 rounded-full bg-[var(--color-primary)] text-white shadow-lg hidden lg:flex items-center justify-center opacity-0 pointer-events-none translate-y-2 transition-all duration-200 hover:brightness-110">
+  <svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5">
+    <path stroke-linecap="round" stroke-linejoin="round" d="M5 15l7-7 7 7"/>
+  </svg>
+</button>
+<script src="/assets/js/back-to-top.js"></script>
+<script src="/assets/js/pwa.js" defer></script>
+</body>
+</html>

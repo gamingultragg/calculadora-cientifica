@@ -460,3 +460,89 @@ test("Tamaño de muestra", () => {
   assert.equal(t.sampleSize(99, 3, 50, 0).n, 1844);
   assert.equal(t.sampleSize(90, 10, 50, 0).n, 68);
 });
+
+test("Caída libre y tiro oblicuo", () => {
+  const c = load("fisica/caida-libre-y-tiro-oblicuo");
+  const f = c.freeFall(5, 9.81);
+  near(f.time, Math.sqrt(10 / 9.81), 1e-12);
+  near(f.speed, 9.81 * f.time, 1e-12);
+  const p = c.projectile(20, 45, 0, 9.81);
+  near(p.range, (20 * 20) / 9.81, 1e-9); // sen(90°) = 1
+  near(p.maxHeight, (20 * Math.sin(Math.PI / 4)) ** 2 / (2 * 9.81), 1e-9);
+  near(p.impactSpeed, 20, 1e-9);
+  const q = c.projectile(10, 0, 20, 9.81); // lanzamiento horizontal desde 20 m
+  near(q.time, Math.sqrt(40 / 9.81), 1e-9);
+  near(q.range, 10 * q.time, 1e-9);
+});
+
+test("Trabajo y potencia", () => {
+  const t = load("fisica/trabajo-y-potencia");
+  near(t.work(100, 5, 0), 500);
+  near(t.work(100, 5, 60), 250, 1e-9);
+  near(t.work(100, 5, 90), 0, 1e-9);
+  near(t.work(50, 2, 180), -100, 1e-9);
+  near(t.power(500, 10), 50);
+});
+
+test("Estequiometría y reactivo limitante", () => {
+  const s = load("quimica/estequiometria-y-reactivo-limitante");
+  // N2 + 3 H2 -> 2 NH3: 28 g de N2 (28 g/mol) -> 2 mol de NH3 = 34,06 g
+  const p = s.product(28, 28, 1, 2, 17.03, 100);
+  near(p.nB, 2);
+  near(p.theoretical, 34.06, 1e-9);
+  near(s.product(28, 28, 1, 2, 17.03, 50).actual, 17.03, 1e-9);
+  // 10 g de H2 y 28 g de N2: H2 = 4,96 mol (extent 1,65) ; N2 = 1 mol (extent 1) -> limita N2
+  const l = s.limiting({ mass: 28, molar: 28, coef: 1 }, { mass: 10, molar: 2.016, coef: 3 }, { coef: 2, molar: 17.03 });
+  assert.equal(l.limiting, "A");
+  near(l.nP, 2, 1e-9);
+  assert.equal(l.excessName, "B");
+  near(l.excessMoles, 10 / 2.016 - 3, 1e-9);
+});
+
+test("Balanceo de ecuaciones químicas", () => {
+  const b = load("quimica/balanceo-de-ecuaciones-quimicas");
+  assert.deepEqual(b.balance("H2 + O2 -> H2O").coeffs, [2, 1, 2]);
+  assert.deepEqual(b.balance("C3H8 + O2 -> CO2 + H2O").coeffs, [1, 5, 3, 4]);
+  assert.deepEqual(b.balance("Fe + O2 -> Fe2O3").coeffs, [4, 3, 2]);
+  assert.deepEqual(b.balance("Ca(OH)2 + H3PO4 -> Ca3(PO4)2 + H2O").coeffs, [3, 2, 1, 6]);
+  assert.deepEqual(b.balance("KMnO4 + HCl -> KCl + MnCl2 + H2O + Cl2").coeffs, [2, 16, 2, 2, 8, 5]);
+  assert.equal(b.format(b.balance("H2 + O2 -> H2O")), "2 H₂ + O₂ → 2 H₂O");
+  assert.deepEqual([...b.parseFormula("CuSO4·5H2O")], [["Cu", 1], ["S", 1], ["O", 9], ["H", 10]]);
+  assert.throws(() => b.balance("H2 -> O2"));
+  assert.throws(() => b.balance("sin flecha"));
+  assert.throws(() => b.parseFormula("h2o"));
+});
+
+test("Código de colores de resistencias", () => {
+  const r = load("ingenieria/codigo-de-colores-de-resistencias");
+  const a = r.resistorValue(["marron", "negro"], "rojo", "dorado"); // 10 × 100 = 1 kΩ ±5 %
+  near(a.ohms, 1000);
+  near(a.min, 950);
+  near(a.max, 1050);
+  near(r.resistorValue(["amarillo", "violeta"], "naranja", "dorado").ohms, 47000);
+  near(r.resistorValue(["rojo", "rojo", "negro"], "marron", "marron").ohms, 2200);
+  near(r.resistorValue(["verde", "azul"], "dorado", "plateado").ohms, 5.6, 1e-9);
+  assert.equal(r.format(4700), "4,7 kΩ");
+  assert.equal(r.format(2200000), "2,2 MΩ");
+  assert.equal(r.format(330), "330 Ω");
+});
+
+test("Divisor de tensión", () => {
+  const d = load("ingenieria/divisor-de-tension");
+  near(d.vout(12, 1000, 2000), 8);
+  near(d.r2For(12, 8, 1000), 2000);
+  assert.throws(() => d.r2For(5, 6, 1000));
+});
+
+test("Resistencia para LED", () => {
+  const l = load("ingenieria/resistencia-para-led");
+  const r = l.ledResistor(5, 2, 20);
+  near(r.r, 150);
+  near(r.power, 0.06);
+  assert.equal(l.nextE12(150), 150);
+  assert.equal(l.nextE12(160), 180);
+  assert.equal(l.nextE12(1000), 1000);
+  assert.equal(l.nextE12(1900), 2200);
+  assert.equal(l.nextE12(9000), 10000);
+  assert.throws(() => l.ledResistor(1.5, 2, 20));
+});

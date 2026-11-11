@@ -309,8 +309,8 @@ enlazada en ambas direcciones.
    y en el sitemap, solo dejó de listarse en la grilla/buscador y en la categoría Matemáticas;
    se accede por el banner destacado o por URL directa.
 
-**Catálogo actual (2026-11-10): 58 calculadoras + 58 guías + 6 landing
-pages de categoría + home + 404 + sobre-nosotros + 2 legales = 131 páginas**, todas en `sitemap.xml`
+**Catálogo actual (2026-11-10): 65 calculadoras + 65 guías + 6 landing
+pages de categoría + home + 404 + sobre-nosotros + 2 legales = 145 páginas**, todas en `sitemap.xml`
 (excepto la 404, que lleva `noindex`), auditoría en 0 problemas.
 
 ✅ **Validación de JSON-LD** (`scripts/validate-jsonld.py`, no destructiva): parsea los 44 bloques
@@ -571,3 +571,9 @@ Matemática (sistemas de ecuaciones, números primos, progresiones, resolución 
 (binomial, intervalo de confianza, tamaño de muestra), con el motor `calc-simple.js` (`build-batch-7a*.py`).
 `scripts/make-register.py N spec.json` genera el `register-batch-N.py` de un lote a partir de una especificación JSON
 (calculadoras, tarjetas de guías, guías por categoría). 39 pruebas de lógica.
+
+## Lote 7b (2026-11-11)
+
+Física (caída libre y tiro oblicuo, trabajo y potencia), Química (estequiometría y reactivo limitante, balanceo de ecuaciones por
+método algebraico con fracciones exactas), Ingeniería (código de colores de resistencias, divisor de tensión, resistencia para LED).
+`build-batch-7b.py` genera páginas y guías en un solo script. 46 pruebas de lógica.

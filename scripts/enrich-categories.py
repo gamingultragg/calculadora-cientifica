@@ -28,19 +28,19 @@ CATS = {
         desc="Cinemática (MRU y MRUA), segunda ley de Newton, ley de Ohm y energía cinética y potencial, con fórmulas explicadas.",
         meta="Calculadoras de física online y gratis: cinemática MRU y MRUA, leyes de Newton y Ohm, energía cinética y potencial, con fórmulas.",
         text="Calculadoras para los temas centrales de física general: movimiento, fuerza, electricidad y energía. Todas despejan la incógnita que necesites y muestran la fórmula que usan.",
-        guides=["formulas-de-mru-y-mrua", "segunda-ley-de-newton-explicada", "ley-de-ohm-explicada", "energia-cinetica-y-potencial-explicada"]),
+        guides=["formulas-de-mru-y-mrua", "segunda-ley-de-newton-explicada", "ley-de-ohm-explicada", "energia-cinetica-y-potencial-explicada", "caida-libre-y-tiro-oblicuo-explicados", "trabajo-y-potencia-mecanica"]),
     "quimica": dict(
         key="quimica", label="Química",
         desc="pH y pOH, molaridad, diluciones, masa molar, moles y gases ideales para química general y analítica.",
         meta="Calculadoras de química online y gratis: pH y pOH, molaridad, diluciones, masa molar, moles y gases ideales, con fórmulas y paso a paso.",
         text="Todo lo que se usa en las prácticas de química general: concentración de soluciones, masa molar de una fórmula, cantidad de sustancia en moles y la ecuación de los gases ideales.",
-        guides=["como-calcular-molaridad", "como-calcular-moles", "como-calcular-masa-molar", "como-calcular-ph-y-poh", "como-hacer-una-dilucion", "ley-de-los-gases-ideales"]),
+        guides=["como-calcular-molaridad", "como-calcular-moles", "como-calcular-masa-molar", "como-calcular-ph-y-poh", "como-hacer-una-dilucion", "ley-de-los-gases-ideales", "estequiometria-y-reactivo-limitante-paso-a-paso", "como-balancear-ecuaciones-quimicas"]),
     "ingenieria": dict(
         key="ingenieria", label="Ingeniería",
         desc="Conversión de unidades técnicas y de temperatura, ley de Hooke y resistencias en serie y paralelo.",
         meta="Calculadoras de ingeniería online y gratis: conversor de unidades técnicas y de temperatura, ley de Hooke y resistencias en serie y paralelo.",
         text="Herramientas de uso diario en taller, obra y laboratorio: conversión de presión, caudal, torque y temperatura, cálculo de elasticidad de un resorte y resistencia equivalente de un circuito.",
-        guides=["conversion-de-unidades-de-presion", "conversion-de-temperatura-celsius-fahrenheit-kelvin", "ley-de-hooke-y-elasticidad", "resistencias-serie-vs-paralelo"]),
+        guides=["conversion-de-unidades-de-presion", "conversion-de-temperatura-celsius-fahrenheit-kelvin", "ley-de-hooke-y-elasticidad", "resistencias-serie-vs-paralelo", "como-leer-el-codigo-de-colores-de-resistencias", "como-funciona-un-divisor-de-tension", "que-resistencia-poner-a-un-led"]),
     "finanzas": dict(
         key="finanzas", label="Finanzas",
         desc="Interés simple y compuesto, préstamos con sistema francés, plazo fijo, IVA, porcentajes y aguinaldo.",

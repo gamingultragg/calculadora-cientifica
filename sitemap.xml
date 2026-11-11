@@ -351,6 +351,42 @@
     <priority>0.9</priority>
   </url>
 
+  <url>
+    <loc>https://www.calculadoracientifica.com.ar/calculadoras/fisica/caida-libre-y-tiro-oblicuo/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://www.calculadoracientifica.com.ar/calculadoras/fisica/trabajo-y-potencia/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://www.calculadoracientifica.com.ar/calculadoras/quimica/estequiometria-y-reactivo-limitante/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://www.calculadoracientifica.com.ar/calculadoras/quimica/balanceo-de-ecuaciones-quimicas/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://www.calculadoracientifica.com.ar/calculadoras/ingenieria/codigo-de-colores-de-resistencias/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://www.calculadoracientifica.com.ar/calculadoras/ingenieria/divisor-de-tension/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://www.calculadoracientifica.com.ar/calculadoras/ingenieria/resistencia-para-led/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+
   <!-- Guías -->
   <url>
     <loc>https://www.calculadoracientifica.com.ar/guias/</loc>
@@ -650,6 +686,42 @@
   </url>
   <url>
     <loc>https://www.calculadoracientifica.com.ar/guias/como-calcular-el-tamano-de-una-muestra/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <url>
+    <loc>https://www.calculadoracientifica.com.ar/guias/caida-libre-y-tiro-oblicuo-explicados/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://www.calculadoracientifica.com.ar/guias/trabajo-y-potencia-mecanica/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://www.calculadoracientifica.com.ar/guias/estequiometria-y-reactivo-limitante-paso-a-paso/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://www.calculadoracientifica.com.ar/guias/como-balancear-ecuaciones-quimicas/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://www.calculadoracientifica.com.ar/guias/como-leer-el-codigo-de-colores-de-resistencias/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://www.calculadoracientifica.com.ar/guias/como-funciona-un-divisor-de-tension/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://www.calculadoracientifica.com.ar/guias/que-resistencia-poner-a-un-led/</loc>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>

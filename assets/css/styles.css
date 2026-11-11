@@ -266,3 +266,8 @@ details.help-accordion > summary { min-height: 2.75rem; }
 .cc-hist-list { margin: 0.25rem 0 0.5rem; padding: 0; list-style: none; }
 .cc-hist-list .cc-history-res { cursor: default; }
 @media print { .cc-hist-box { display: none !important; } }
+
+/* Favoritas (favorites.js) */
+.cc-fav-x { background: none; border: 0; cursor: pointer; font-size: 1.1rem; line-height: 1; width: 2rem; height: 2rem; border-radius: 9999px; color: var(--color-text-muted); }
+.cc-fav-x:hover { background: rgba(220, 38, 38, 0.12); color: #dc2626; }
+@media print { #cc-favs { display: none !important; } }

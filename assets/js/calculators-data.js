@@ -661,4 +661,13 @@ const CC_CALCULATORS = [
     url: "/calculadoras/matematicas-avanzadas/graficador-de-funciones/",
     status: "live",
   },
+  {
+    id: "calculadora-de-calorias-y-metabolismo-basal",
+    title: "Calorías y Metabolismo Basal",
+    description: "Tu TMB y las calorías diarias para mantener, bajar o subir de peso.",
+    category: "vida",
+    keywords: ["calorias", "metabolismo basal", "tmb", "calorias diarias", "dieta", "bajar de peso", "mifflin"],
+    url: "/calculadoras/vida-diaria/calculadora-de-calorias-y-metabolismo-basal/",
+    status: "live",
+  },
 ];

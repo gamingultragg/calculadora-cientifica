@@ -57,6 +57,44 @@
     return `${f}${r > 0 ? ", positiva" : r < 0 ? ", negativa" : ""}`;
   }
 
+  // Gráfico de dispersión con la recta ajustada (canvas, sin dependencias).
+  function drawChart(xs, ys, r) {
+    const canvas = $("rl-canvas");
+    if (!canvas) return;
+    const dpr = window.devicePixelRatio || 1;
+    const W = canvas.clientWidth, H = canvas.clientHeight;
+    canvas.width = Math.round(W * dpr);
+    canvas.height = Math.round(H * dpr);
+    const ctx = canvas.getContext("2d");
+    ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+    ctx.clearRect(0, 0, W, H);
+    const css = (n, d) => getComputedStyle(document.documentElement).getPropertyValue(n).trim() || d;
+    const grid = css("--color-border", "#e2e8f0"), text = css("--color-text-muted", "#64748b");
+    const pad = { l: 44, r: 12, t: 12, b: 28 };
+    const span = (a) => { const lo = Math.min(...a), hi = Math.max(...a); const d = (hi - lo) || Math.abs(hi) || 1; return [lo - d * 0.08, hi + d * 0.08]; };
+    const [x0, x1] = span(xs), [y0, y1] = span(ys.concat([r.intercept + r.slope * Math.min(...xs), r.intercept + r.slope * Math.max(...xs)]));
+    const px = (x) => pad.l + ((x - x0) / (x1 - x0)) * (W - pad.l - pad.r);
+    const py = (y) => H - pad.b - ((y - y0) / (y1 - y0)) * (H - pad.t - pad.b);
+    ctx.font = "11px 'Roboto Mono', monospace";
+    ctx.fillStyle = text;
+    ctx.strokeStyle = grid;
+    ctx.lineWidth = 1;
+    for (let i = 0; i <= 4; i++) {
+      const gx = x0 + ((x1 - x0) * i) / 4, gy = y0 + ((y1 - y0) * i) / 4;
+      ctx.beginPath(); ctx.moveTo(px(gx), pad.t); ctx.lineTo(px(gx), H - pad.b); ctx.stroke();
+      ctx.beginPath(); ctx.moveTo(pad.l, py(gy)); ctx.lineTo(W - pad.r, py(gy)); ctx.stroke();
+      ctx.textAlign = "center"; ctx.fillText(fmt(gx, 3), px(gx), H - 10);
+      ctx.textAlign = "right"; ctx.fillText(fmt(gy, 3), pad.l - 5, py(gy) + 4);
+    }
+    // recta de regresión
+    const lx0 = Math.min(...xs), lx1 = Math.max(...xs);
+    ctx.strokeStyle = "#dc2626"; ctx.lineWidth = 2;
+    ctx.beginPath(); ctx.moveTo(px(lx0), py(r.intercept + r.slope * lx0)); ctx.lineTo(px(lx1), py(r.intercept + r.slope * lx1)); ctx.stroke();
+    // puntos
+    ctx.fillStyle = "#2563eb";
+    xs.forEach((x, i) => { ctx.beginPath(); ctx.arc(px(x), py(ys[i]), 4, 0, Math.PI * 2); ctx.fill(); });
+  }
+
   function calculate() {
     errorEl.classList.add("hidden");
     $("rl-data").classList.remove("field-error");
@@ -88,6 +126,7 @@
       }
       $("rl-lines").innerHTML = lines.join("");
       panel.classList.remove("hidden");
+      drawChart(data.xs, data.ys, r);
     } catch (err) {
       errorEl.textContent = err.message;
       errorEl.classList.remove("hidden");

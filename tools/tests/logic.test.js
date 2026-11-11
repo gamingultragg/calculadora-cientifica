@@ -587,3 +587,11 @@ test("Graficador: ceros", () => {
   assert.equal(g.zeros(g.compile("x^2+1"), -10, 10).length, 0);
   assert.equal(g.zeros(g.compile("1/x"), -10, 10).length, 0);
 });
+
+test("Calorías y metabolismo basal", () => {
+  const c = load("vida-diaria/calculadora-de-calorias-y-metabolismo-basal");
+  near(c.bmr("hombre", 70, 175, 30), 1648.75);
+  near(c.bmr("mujer", 60, 165, 30), 1320.25);
+  near(c.maintenance(1648.75, "moderado"), 2555.5625, 1e-9);
+  near(c.maintenance(1000, "sedentario"), 1200);
+});

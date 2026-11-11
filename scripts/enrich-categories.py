@@ -52,7 +52,7 @@ CATS = {
         desc="Edad y fechas, IMC, conversor de cocina, horas trabajadas y propina: cálculos del día a día, rápidos y sin vueltas.",
         meta="Calculadoras de vida diaria online y gratis: edad y días entre fechas, IMC, conversor de cocina, horas trabajadas y propina.",
         text="Las cuentas que aparecen todos los días: cuántos años y días tenés, cuál es tu IMC, cuántos gramos es una taza de harina, cuántas horas trabajaste o cuánto paga cada uno en la mesa.",
-        guides=["como-calcular-la-edad-y-los-dias-entre-fechas", "como-calcular-el-imc", "equivalencias-de-cocina-tazas-cucharadas-y-gramos", "como-calcular-horas-trabajadas-y-horas-extra", "como-calcular-la-propina-y-dividir-la-cuenta"]),
+        guides=["como-calcular-la-edad-y-los-dias-entre-fechas", "como-calcular-el-imc", "equivalencias-de-cocina-tazas-cucharadas-y-gramos", "como-calcular-horas-trabajadas-y-horas-extra", "como-calcular-la-propina-y-dividir-la-cuenta", "como-calcular-el-metabolismo-basal-y-las-calorias-diarias"]),
     "hogar-y-construccion": dict(
         key="hogar", label="Hogar y Construcción",
         desc="Cerámicos, pintura, ladrillos, hormigón y consumo eléctrico: cálculos de materiales y gastos del hogar.",

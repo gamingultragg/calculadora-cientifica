@@ -2,7 +2,7 @@
  * Estrategia: precarga del sitio (páginas + CSS + JS) para que funcione sin conexión;
  * red primero con respaldo en caché; tipografías de Google en caché "stale-while-revalidate".
  * No intercepta anuncios, analítica ni nada de otros orígenes (salvo las tipografías). */
-const VERSION = "0621cd497c";
+const VERSION = "907c210cb1";
 const CACHE = "cc-" + VERSION;
 const FONTS = "cc-fonts-v1";
 const PRECACHE = [
@@ -82,6 +82,7 @@ const PRECACHE = [
  "/calculadoras/ingenieria/divisor-de-tension/",
  "/calculadoras/ingenieria/resistencia-para-led/",
  "/calculadoras/matematicas-avanzadas/graficador-de-funciones/",
+ "/calculadoras/vida-diaria/calculadora-de-calorias-y-metabolismo-basal/",
  "/guias/",
  "/guias/orden-de-operaciones-vs-calculo-secuencial/",
  "/guias/como-resolver-ecuaciones-de-segundo-grado/",
@@ -149,6 +150,7 @@ const PRECACHE = [
  "/guias/como-funciona-un-divisor-de-tension/",
  "/guias/que-resistencia-poner-a-un-led/",
  "/guias/como-graficar-una-funcion/",
+ "/guias/como-calcular-el-metabolismo-basal-y-las-calorias-diarias/",
  "/sobre-nosotros/",
  "/privacidad/",
  "/terminos-de-uso/",
@@ -167,6 +169,7 @@ const PRECACHE = [
  "/assets/js/calculators-data.js",
  "/assets/js/category.js",
  "/assets/js/copy-result.js",
+ "/assets/js/favorites.js",
  "/assets/js/main.js",
  "/assets/js/pwa.js",
  "/assets/js/theme.js",
@@ -232,6 +235,7 @@ const PRECACHE = [
  "/calculadoras/quimica/calculadora-de-moles/script.js",
  "/calculadoras/quimica/calculadora-de-ph/script.js",
  "/calculadoras/quimica/estequiometria-y-reactivo-limitante/script.js",
+ "/calculadoras/vida-diaria/calculadora-de-calorias-y-metabolismo-basal/script.js",
  "/calculadoras/vida-diaria/calculadora-de-edad-y-fechas/script.js",
  "/calculadoras/vida-diaria/calculadora-de-horas-trabajadas/script.js",
  "/calculadoras/vida-diaria/calculadora-de-imc/script.js",

@@ -309,8 +309,8 @@ enlazada en ambas direcciones.
    y en el sitemap, solo dejó de listarse en la grilla/buscador y en la categoría Matemáticas;
    se accede por el banner destacado o por URL directa.
 
-**Catálogo actual (2026-11-10): 66 calculadoras + 66 guías + 6 landing
-pages de categoría + home + 404 + sobre-nosotros + 2 legales = 147 páginas**, todas en `sitemap.xml`
+**Catálogo actual (2026-11-10): 67 calculadoras + 67 guías + 6 landing
+pages de categoría + home + 404 + sobre-nosotros + 2 legales = 149 páginas**, todas en `sitemap.xml`
 (excepto la 404, que lleva `noindex`), auditoría en 0 problemas.
 
 ✅ **Validación de JSON-LD** (`scripts/validate-jsonld.py`, no destructiva): parsea los 44 bloques
@@ -584,3 +584,11 @@ método algebraico con fracciones exactas), Ingeniería (código de colores de r
 (descenso recursivo, multiplicación implícita, funciones en español e inglés) y búsqueda de ceros por bisección. Zoom con
 rueda/botones, desplazamiento arrastrando y enlace compartible (`?gf-f1=…`). El lienzo se redimensiona al mostrarse el panel
 (mide 0 mientras está oculto). Generado por `scripts/build-graficador.py`. 48 pruebas de lógica.
+
+## Calorías, gráfico de regresión y favoritas (2026-11-11)
+
+- **Calorías y metabolismo basal** (Vida Diaria, `build-batch-9.py`): Mifflin-St Jeor + factor de actividad, con avisos de salud.
+- **Regresión lineal:** ahora dibuja el diagrama de dispersión y la recta ajustada en un canvas.
+- **Favoritas** (`assets/js/favorites.js`): botón ☆/★ en cada calculadora y bloque "Tus favoritas" en la home, en `localStorage`
+  (`cc-favs`, hasta 12). Lo inyecta `inject-pwa-and-copy.py` en la home y en `calculadoras/<cat>/<slug>/index.html`.
+- 49 pruebas de lógica.

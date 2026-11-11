@@ -531,3 +531,12 @@ registraron con `scripts/register-batch-3.py`. Orden para sumar un lote nuevo: g
   cambios a un `script.js`). Al sumar una calculadora nueva, exportar la lógica con `module.exports` y agregar su prueba.
 - **AdSense y velocidad:** el `<script async>` de AdSense se dejó estático a propósito mientras el sitio está en revisión
   (Google necesita verlo en el HTML). Cuando esté aprobado se puede diferir su carga para recuperar puntaje de Lighthouse.
+
+## Historial por calculadora y revisión en celular (2026-11-11)
+
+- **Historial local:** `copy-result.js` guarda, en `localStorage` (`cc-hist:<ruta>`), los últimos 8 cálculos de cada
+  calculadora con panel de resultado (espera 1,5 s de resultado estable para no guardar cada tecla). Se restauran con un
+  clic (`applyParams` con `reset`). Se omite en las calculadoras con filas dinámicas (`NO_HISTORY` en el script).
+- **Revisión móvil (375 px) de las 82 URLs:** se corrigió un desborde horizontal (campo + botón "Agregar" en estadística
+  descriptiva y resistencias, regla `.flex-1 { min-width: 0 }`), objetivos táctiles chicos (resúmenes del acordeón de
+  ayuda, botones de texto, historial) y el rótulo "Publicidad" (12 px). Las guías no tenían problemas.

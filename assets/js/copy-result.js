@@ -88,13 +88,20 @@
     return location.origin + location.pathname + (qs ? "?" + qs : "");
   }
 
-  // Completa los campos a partir de ?id=valor y ejecuta el cálculo. Solo toca campos que ya existen
-  // (value/checked): nunca inserta HTML.
-  function applyQueryParams() {
-    const params = new URLSearchParams(location.search);
+  // Completa los campos a partir de pares [id, valor] y ejecuta el cálculo. Solo toca campos que ya
+  // existen (value/checked): nunca inserta HTML. Con `reset`, vacía los campos de texto que no vienen.
+  function applyParams(entries, { reset = false, maxLen = 200 } = {}) {
+    const given = new Map(entries);
+    if (reset) {
+      document.querySelectorAll(FIELD_SELECTOR).forEach((el) => {
+        if (SKIP_TYPES.has(el.type) || el.tagName === "SELECT" || given.has(el.id)) return;
+        if (el.type === "checkbox") el.checked = false;
+        else if (el.value) el.value = "";
+      });
+    }
     let applied = 0;
-    params.forEach((value, id) => {
-      if (value.length > 200) return;
+    given.forEach((value, id) => {
+      if (String(value).length > maxLen) return;
       const el = document.getElementById(id);
       if (!el || !el.matches(FIELD_SELECTOR) || SKIP_TYPES.has(el.type)) return;
       if (el.type === "checkbox") {
@@ -116,6 +123,122 @@
     else if (form && typeof form.requestSubmit === "function") form.requestSubmit();
   }
 
+  function applyQueryParams() {
+    applyParams(new URLSearchParams(location.search).entries());
+  }
+
+  // ---- Historial local (últimos cálculos de esta calculadora, solo en este navegador) ----------
+  // Se omite en las calculadoras con filas dinámicas, donde los campos no se pueden restaurar solos.
+  const NO_HISTORY = /(calculadora-de-promedio-de-notas|resistencias-serie-paralelo|calculadora-estadistica-descriptiva|calculadora-matrices|regla-de-tres)/;
+  const HIST_MAX = 8;
+  const HIST_KEY = "cc-hist:" + location.pathname;
+
+  function collectFields(maxLen = 2000) {
+    const o = {};
+    document.querySelectorAll(FIELD_SELECTOR).forEach((el) => {
+      if (SKIP_TYPES.has(el.type)) return;
+      if (el.type === "checkbox") {
+        if (el.checked) o[el.id] = "1";
+        return;
+      }
+      const v = String(el.value || "").trim();
+      if (v && v.length <= maxLen) o[el.id] = v;
+    });
+    return o;
+  }
+
+  function loadHistory() {
+    try {
+      const list = JSON.parse(localStorage.getItem(HIST_KEY) || "[]");
+      return Array.isArray(list) ? list.filter((e) => e && e.f && typeof e.r === "string").slice(0, HIST_MAX) : [];
+    } catch {
+      return [];
+    }
+  }
+  function saveHistory(list) {
+    try {
+      localStorage.setItem(HIST_KEY, JSON.stringify(list));
+    } catch {
+      /* sin almacenamiento: el historial dura solo mientras la página está abierta */
+    }
+  }
+
+  function resultSummary(panel) {
+    const main = panel.querySelector('[id$="-main"], [id$="-result"], [id$="-cuota"], [id$="-total"]');
+    let t = main ? main.textContent : (panel.innerText || "").split("\n").slice(1).join(" ");
+    t = t.replace(/\s+/g, " ").trim();
+    return t.length > 70 ? t.slice(0, 67) + "…" : t;
+  }
+  function inputsSummary(fields) {
+    const vals = Object.entries(fields)
+      .filter(([id]) => document.getElementById(id) && document.getElementById(id).tagName !== "SELECT")
+      .map(([, v]) => v.replace(/\s+/g, " "));
+    const t = vals.slice(0, 3).join(" · ");
+    return t.length > 60 ? t.slice(0, 57) + "…" : t || "(sin datos)";
+  }
+
+  function setupHistory(panel, anchor) {
+    if (NO_HISTORY.test(location.pathname) || document.querySelector(".cc-hist-box")) return;
+    const box = document.createElement("details");
+    box.className = "cc-hist-box";
+    box.hidden = true;
+    const summary = document.createElement("summary");
+    const list = document.createElement("ul");
+    list.className = "cc-hist-list";
+    const clear = document.createElement("button");
+    clear.type = "button";
+    clear.className = "cc-copy";
+    clear.textContent = "Borrar historial";
+    box.append(summary, list, clear);
+    anchor.insertAdjacentElement("afterend", box);
+
+    function render() {
+      const items = loadHistory();
+      box.hidden = items.length === 0;
+      summary.textContent = `Historial de esta calculadora (${items.length})`;
+      list.textContent = "";
+      items.forEach((e) => {
+        const li = document.createElement("li");
+        li.className = "cc-history-item";
+        const use = document.createElement("button");
+        use.type = "button";
+        use.className = "cc-history-expr";
+        use.textContent = inputsSummary(e.f);
+        use.title = "Volver a cargar estos datos";
+        use.addEventListener("click", () => applyParams(Object.entries(e.f), { reset: true, maxLen: 2000 }));
+        const res = document.createElement("span");
+        res.className = "cc-history-res";
+        res.textContent = "→ " + e.r;
+        li.append(use, res);
+        list.append(li);
+      });
+    }
+
+    let timer;
+    function record() {
+      if (panel.classList.contains("hidden")) return;
+      const fields = collectFields();
+      const r = resultSummary(panel);
+      if (!r || !Object.keys(fields).length) return;
+      let items = loadHistory();
+      const key = JSON.stringify(fields);
+      items = items.filter((e) => JSON.stringify(e.f) !== key);
+      items.unshift({ f: fields, r, t: Date.now() });
+      saveHistory(items.slice(0, HIST_MAX));
+      render();
+    }
+    // Esperamos a que el resultado se "asiente" (las calculadoras en vivo recalculan en cada tecla).
+    new MutationObserver(() => {
+      clearTimeout(timer);
+      timer = setTimeout(record, 1500);
+    }).observe(panel, { childList: true, subtree: true, characterData: true, attributes: true, attributeFilter: ["class"] });
+    clear.addEventListener("click", () => {
+      saveHistory([]);
+      render();
+    });
+    render();
+  }
+
   // ---- Paneles de resultado --------------------------------------------------------------
   function makeButton(label, aria) {
     const btn = document.createElement("button");
@@ -135,6 +258,7 @@
     const print = makeButton("Imprimir", "Imprimir o guardar el resultado como PDF");
     row.append(copy, link, print);
     panel.insertAdjacentElement("afterend", row);
+    setupHistory(panel, row);
     wire(copy, () => panel.innerText || panel.textContent);
     wire(link, shareUrl);
     print.addEventListener("click", () => window.print());

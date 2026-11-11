@@ -171,7 +171,7 @@ details.help-accordion[open] .chevron {
 .cc-ad { display: block; margin-top: 1.5rem; }
 .cc-ad[hidden] { display: none; }
 .cc-ad-label {
-  font-size: 0.6875rem;
+  font-size: 0.75rem;
   letter-spacing: 0.06em;
   text-transform: uppercase;
   color: var(--color-text-muted);
@@ -250,3 +250,19 @@ kbd {
   a { text-decoration: none; }
   main::after { content: "calculadoracientifica.com.ar"; display: block; margin-top: 1rem; font-size: 0.8rem; color: #555; }
 }
+
+/* ------------------------------------------------------------------
+   Móvil: evitar desbordes y mejorar objetivos táctiles (revisión 2026-11-10)
+   ------------------------------------------------------------------ */
+.flex-1 { min-width: 0; } /* un input flex-1 no debe empujar al botón fuera de la pantalla */
+details.help-accordion > summary { min-height: 2.75rem; }
+#ed-clear, #rs-clear, #eq-clear, #pn-add, #cv-swap { min-height: 2rem; padding: 0.35rem 0.6rem; }
+.cc-history-expr, .cc-history-res { min-height: 2rem; padding: 0.3rem 0.4rem; }
+
+/* Historial local de las calculadoras (copy-result.js) */
+.cc-hist-box { margin-top: 0.5rem; border: 1px solid var(--color-border); border-radius: 0.75rem; padding: 0.5rem 0.75rem; font-size: 0.8125rem; }
+.cc-hist-box[hidden] { display: none; }
+.cc-hist-box > summary { cursor: pointer; font-weight: 600; min-height: 2rem; display: flex; align-items: center; }
+.cc-hist-list { margin: 0.25rem 0 0.5rem; padding: 0; list-style: none; }
+.cc-hist-list .cc-history-res { cursor: default; }
+@media print { .cc-hist-box { display: none !important; } }

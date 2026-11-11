@@ -309,8 +309,8 @@ enlazada en ambas direcciones.
    y en el sitemap, solo dejó de listarse en la grilla/buscador y en la categoría Matemáticas;
    se accede por el banner destacado o por URL directa.
 
-**Catálogo actual (2026-11-10): 65 calculadoras + 65 guías + 6 landing
-pages de categoría + home + 404 + sobre-nosotros + 2 legales = 145 páginas**, todas en `sitemap.xml`
+**Catálogo actual (2026-11-10): 66 calculadoras + 66 guías + 6 landing
+pages de categoría + home + 404 + sobre-nosotros + 2 legales = 147 páginas**, todas en `sitemap.xml`
 (excepto la 404, que lleva `noindex`), auditoría en 0 problemas.
 
 ✅ **Validación de JSON-LD** (`scripts/validate-jsonld.py`, no destructiva): parsea los 44 bloques
@@ -577,3 +577,10 @@ Matemática (sistemas de ecuaciones, números primos, progresiones, resolución 
 Física (caída libre y tiro oblicuo, trabajo y potencia), Química (estequiometría y reactivo limitante, balanceo de ecuaciones por
 método algebraico con fracciones exactas), Ingeniería (código de colores de resistencias, divisor de tensión, resistencia para LED).
 `build-batch-7b.py` genera páginas y guías en un solo script. 46 pruebas de lógica.
+
+## Graficador de funciones (2026-11-11)
+
+`calculadoras/matematicas-avanzadas/graficador-de-funciones/`: UI propia (canvas), con un analizador de expresiones sin `eval`
+(descenso recursivo, multiplicación implícita, funciones en español e inglés) y búsqueda de ceros por bisección. Zoom con
+rueda/botones, desplazamiento arrastrando y enlace compartible (`?gf-f1=…`). El lienzo se redimensiona al mostrarse el panel
+(mide 0 mientras está oculto). Generado por `scripts/build-graficador.py`. 48 pruebas de lógica.

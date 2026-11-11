@@ -546,3 +546,44 @@ test("Resistencia para LED", () => {
   assert.equal(l.nextE12(9000), 10000);
   assert.throws(() => l.ledResistor(1.5, 2, 20));
 });
+
+test("Graficador: analizador de expresiones", () => {
+  const g = load("matematicas-avanzadas/graficador-de-funciones");
+  const f = (src, x) => g.compile(src)(x);
+  near(f("x^2-4", 3), 5);
+  near(f("2x+1", 4), 9);
+  near(f("-x^2", 3), -9);
+  near(f("2^-1", 0), 0.5);
+  near(f("(x+1)(x-1)", 3), 8);
+  near(f("sen(pi/2)", 0), 1);
+  near(f("sin(x)^2+cos(x)^2", 1.3), 1, 1e-12);
+  near(f("sqrt(x)+abs(-2)", 9), 5);
+  near(f("ln(e)", 0), 1);
+  near(f("log(1000)", 0), 3);
+  near(f("log2(8)", 0), 3);
+  near(f("2sen(x)", Math.PI / 2), 2, 1e-12);
+  near(f("x(x+1)", 3), 12);
+  near(f("1,5x", 2), 3);
+  near(f("3 * 4 / 2", 0), 6);
+  near(f("2^3^2", 0), 512);
+  assert.equal(f("1/x", 0), Infinity);
+  assert.throws(() => g.compile("x+"));
+  assert.throws(() => g.compile("(x+1"));
+  assert.throws(() => g.compile("foo(x)"));
+  assert.throws(() => g.compile("sin x"));
+  assert.throws(() => g.compile("x $ 2"));
+  assert.throws(() => g.compile(""));
+});
+
+test("Graficador: ceros", () => {
+  const g = load("matematicas-avanzadas/graficador-de-funciones");
+  const z = g.zeros(g.compile("x^2-4"), -10, 10);
+  assert.equal(z.length, 2);
+  near(z[0], -2, 1e-6);
+  near(z[1], 2, 1e-6);
+  const s = g.zeros(g.compile("sin(x)"), 0, 10);
+  assert.equal(s.length, 4); // 0, π, 2π, 3π
+  near(s[1], Math.PI, 1e-6);
+  assert.equal(g.zeros(g.compile("x^2+1"), -10, 10).length, 0);
+  assert.equal(g.zeros(g.compile("1/x"), -10, 10).length, 0);
+});

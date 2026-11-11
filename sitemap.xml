@@ -387,6 +387,12 @@
     <priority>0.9</priority>
   </url>
 
+  <url>
+    <loc>https://www.calculadoracientifica.com.ar/calculadoras/matematicas-avanzadas/graficador-de-funciones/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+
   <!-- Guías -->
   <url>
     <loc>https://www.calculadoracientifica.com.ar/guias/</loc>
@@ -722,6 +728,12 @@
   </url>
   <url>
     <loc>https://www.calculadoracientifica.com.ar/guias/que-resistencia-poner-a-un-led/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <url>
+    <loc>https://www.calculadoracientifica.com.ar/guias/como-graficar-una-funcion/</loc>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>

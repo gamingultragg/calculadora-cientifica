@@ -652,4 +652,13 @@ const CC_CALCULATORS = [
     url: "/calculadoras/ingenieria/resistencia-para-led/",
     status: "live",
   },
+  {
+    id: "graficador-de-funciones",
+    title: "Graficador de Funciones Online",
+    description: "Graficá hasta 3 funciones con zoom, ceros y evaluación en x.",
+    category: "matematicas",
+    keywords: ["graficador", "graficar funciones", "grafico de funciones", "funcion", "f(x)", "parabola", "raices", "ceros", "curva"],
+    url: "/calculadoras/matematicas-avanzadas/graficador-de-funciones/",
+    status: "live",
+  },
 ];

@@ -12,39 +12,39 @@ const CC_CATEGORIES = {
     color: "blue",
     slug: "matematicas-avanzadas",
     description:
-      "Calculadora científica, ecuaciones de segundo grado y álgebra de matrices, con desarrollo paso a paso.",
+      "Calculadora científica y básica, ecuaciones de segundo grado, matrices, fracciones, regla de tres, MCD y MCM, teorema de Pitágoras, bases numéricas y áreas y volúmenes, con desarrollo paso a paso.",
   },
   estadistica: {
     label: "Estadística",
     color: "violet",
     slug: "estadistica",
     description:
-      "Estadística descriptiva y herramientas de análisis de datos para cátedras, tesis e informes.",
+      "Estadística descriptiva, promedio de notas, distribución normal, permutaciones y combinaciones y regresión lineal, para cátedras, tesis e informes.",
   },
   fisica: {
     label: "Física",
     color: "orange",
     slug: "fisica",
     description:
-      "Cinemática, movimiento rectilíneo uniforme y uniformemente acelerado, con fórmulas explicadas.",
+      "Cinemática (MRU y MRUA), segunda ley de Newton, ley de Ohm y energía cinética y potencial, con fórmulas explicadas.",
   },
   quimica: {
     label: "Química",
     color: "green",
     slug: "quimica",
-    description: "pH, pOH y concentración de iones para química general y analítica.",
+    description: "pH y pOH, molaridad, diluciones, masa molar, moles y gases ideales para química general y analítica.",
   },
   ingenieria: {
     label: "Ingeniería",
     color: "amber",
     slug: "ingenieria",
-    description: "Conversión de unidades técnicas: longitud, masa, presión, caudal y torque.",
+    description: "Conversión de unidades técnicas y de temperatura, ley de Hooke y resistencias en serie y paralelo.",
   },
   finanzas: {
     label: "Finanzas",
     color: "teal",
     slug: "finanzas",
-    description: "Interés compuesto, capitalización y proyección de ahorros e inversiones.",
+    description: "Interés simple y compuesto, préstamos con sistema francés, plazo fijo, IVA, porcentajes y aguinaldo.",
   },
 };
 

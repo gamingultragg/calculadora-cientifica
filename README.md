@@ -310,7 +310,7 @@ enlazada en ambas direcciones.
    se accede por el banner destacado o por URL directa.
 
 **Catálogo actual (2026-11-10): 29 calculadoras + 29 guías + 6 landing
-pages de categoría + home + 404 + sobre-nosotros + 2 legales = 51 páginas**, todas en `sitemap.xml`
+pages de categoría + home + 404 + sobre-nosotros + 2 legales = 71 páginas**, todas en `sitemap.xml`
 (excepto la 404, que lleva `noindex`), auditoría en 0 problemas.
 
 ✅ **Validación de JSON-LD** (`scripts/validate-jsonld.py`, no destructiva): parsea los 44 bloques

@@ -204,7 +204,7 @@ details.help-accordion[open] .chevron {
 .cc-copy--ok { border-color: #16a34a; color: #15803d; }
 html.dark .cc-copy--ok { color: #4ade80; border-color: #4ade80; }
 .cc-copy[hidden], .cc-copy-row[hidden] { display: none; }
-.cc-copy-row { display: flex; justify-content: flex-end; margin-top: 0.5rem; }
+.cc-copy-row { display: flex; flex-wrap: wrap; justify-content: flex-end; gap: 0.5rem; margin-top: 0.5rem; }
 
 .cc-history-item {
   display: flex;
@@ -236,4 +236,17 @@ kbd {
   border-radius: 0.25rem;
   font-family: "Roboto Mono", ui-monospace, monospace;
   font-size: 0.7rem;
+}
+
+/* ------------------------------------------------------------------
+   Impresión / "Guardar como PDF": solo el contenido útil, en blanco y negro
+   ------------------------------------------------------------------ */
+@media print {
+  header, footer, nav, aside, .cc-ad, .cc-copy-row, .fixed, #back-to-top,
+  details.help-accordion, [data-theme-toggle], .no-print { display: none !important; }
+  html, body { background: #fff !important; color: #000 !important; }
+  .surface { box-shadow: none !important; border: 1px solid #999 !important; background: #fff !important; break-inside: avoid; }
+  * { color: #000 !important; }
+  a { text-decoration: none; }
+  main::after { content: "calculadoracientifica.com.ar"; display: block; margin-top: 1rem; font-size: 0.8rem; color: #555; }
 }

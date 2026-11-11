@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="es-AR">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Conversión de Temperatura: Celsius, Fahrenheit y Kelvin con Fórmulas | Calculadora Científica</title>
+<meta name="description" content="Fórmulas para convertir entre grados Celsius, Fahrenheit, Kelvin y Rankine, con ejemplos resueltos, tabla de referencia y un truco para estimar de cabeza." />
+<link rel="canonical" href="https://www.calculadoracientifica.com.ar/guias/conversion-de-temperatura-celsius-fahrenheit-kelvin/" />
+<link rel="alternate" hreflang="es-AR" href="https://www.calculadoracientifica.com.ar/guias/conversion-de-temperatura-celsius-fahrenheit-kelvin/" />
+<link rel="alternate" hreflang="es" href="https://www.calculadoracientifica.com.ar/guias/conversion-de-temperatura-celsius-fahrenheit-kelvin/" />
+<link rel="icon" type="image/svg+xml" href="/assets/img/favicon.svg" />
+<link rel="icon" type="image/png" sizes="32x32" href="/assets/img/favicon-32.png" />
+<link rel="icon" type="image/png" sizes="16x16" href="/assets/img/favicon-16.png" />
+<link rel="apple-touch-icon" href="/assets/img/apple-touch-icon.png" />
+<link rel="manifest" href="/manifest.webmanifest" />
+<meta name="theme-color" content="#2563eb" />
+
+<meta property="og:type" content="article" />
+<meta property="og:locale" content="es_AR" />
+<meta property="og:site_name" content="Calculadora Científica" />
+<meta property="og:title" content="Cómo convertir entre Celsius, Fahrenheit y Kelvin" />
+<meta property="og:description" content="Fórmulas de conversión de temperatura con ejemplos y tabla de referencia." />
+<meta property="og:url" content="https://www.calculadoracientifica.com.ar/guias/conversion-de-temperatura-celsius-fahrenheit-kelvin/" />
+<meta property="og:image" content="https://www.calculadoracientifica.com.ar/assets/img/og-image.png" />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="630" />
+<meta name="twitter:image" content="https://www.calculadoracientifica.com.ar/assets/img/og-image.png" />
+<meta name="twitter:card" content="summary_large_image" />
+
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Roboto+Mono:wght@400;500;700&display=swap" rel="stylesheet" />
+
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7274131858034505" crossorigin="anonymous"></script>
+<link rel="stylesheet" href="/assets/css/styles.css" />
+<link rel="stylesheet" href="/assets/css/tailwind.css" />
+<script src="/assets/js/theme.js"></script>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Article",
+      "headline": "Cómo convertir entre Celsius, Fahrenheit y Kelvin",
+      "description": "Fórmulas para convertir entre grados Celsius, Fahrenheit, Kelvin y Rankine, con ejemplos resueltos, tabla de referencia y un truco para estimar de cabeza.",
+      "author": {
+        "@type": "Organization",
+        "name": "Calculadora Científica"
+      },
+      "publisher": {
+        "@type": "Organization",
+        "name": "Calculadora Científica"
+      },
+      "mainEntityOfPage": "https://www.calculadoracientifica.com.ar/guias/conversion-de-temperatura-celsius-fahrenheit-kelvin/",
+      "inLanguage": "es-AR",
+      "datePublished": "2026-11-10",
+      "dateModified": "2026-11-10"
+    },
+    {
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "¿Cómo se pasa de Celsius a Fahrenheit?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "°F = °C × 9/5 + 32. 100 °C son 212 °F."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "¿Cómo se pasa de Fahrenheit a Celsius?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "°C = (°F − 32) × 5/9. 98,6 °F son 37 °C."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "¿Cómo se pasa de Celsius a Kelvin?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Sumando 273,15: 25 °C son 298,15 K."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "¿En qué temperatura coinciden Celsius y Fahrenheit?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "En −40: −40 °C = −40 °F."
+          }
+        }
+      ]
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Inicio",
+          "item": "https://www.calculadoracientifica.com.ar/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Guías",
+          "item": "https://www.calculadoracientifica.com.ar/guias/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "Cómo convertir entre Celsius, Fahrenheit y Kelvin",
+          "item": "https://www.calculadoracientifica.com.ar/guias/conversion-de-temperatura-celsius-fahrenheit-kelvin/"
+        }
+      ]
+    }
+  ]
+}
+</script>
+</head>
+<body class="min-h-screen font-sans antialiased">
+  <a href="#main-content" class="sr-only focus:not-sr-only focus:fixed focus:top-3 focus:left-3 focus:z-50 focus:px-4 focus:py-2 focus:rounded-lg focus:bg-[var(--color-primary)] focus:text-white focus:text-sm focus:font-semibold">Saltar al contenido</a>
+
+  <header class="sticky top-0 z-40 backdrop-blur border-b border-[var(--color-border)] bg-[var(--color-bg)]/85">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 h-16 flex items-center justify-between">
+      <a href="/" class="flex items-center gap-2 font-display font-extrabold text-lg">
+        <span class="w-8 h-8 rounded-lg bg-[var(--color-primary)] text-white flex items-center justify-center text-sm">∑</span>
+        Calculadora<span class="text-[var(--color-primary-link)]">Científica</span>
+      </a>
+      <button data-theme-toggle type="button" aria-label="Cambiar tema claro/oscuro"
+        class="w-10 h-10 rounded-full surface flex items-center justify-center hover:shadow-md transition-shadow">
+        <span data-theme-icon>🌙</span>
+      </button>
+    </div>
+  </header>
+
+  <main id="main-content" class="max-w-3xl mx-auto px-4 sm:px-6 py-8">
+    <nav aria-label="Breadcrumb" class="text-sm text-[var(--color-text-muted)] mb-4">
+      <ol class="flex flex-wrap items-center gap-1">
+        <li><a href="/" class="hover:text-[var(--color-primary-link)]">Inicio</a></li>
+        <li aria-hidden="true">/</li>
+        <li><a href="/guias/" class="hover:text-[var(--color-primary-link)]">Guías</a></li>
+        <li aria-hidden="true">/</li>
+        <li class="text-[var(--color-text)] font-medium" aria-current="page">Cómo convertir entre Celsius, Fahrenheit y Kelvin</li>
+      </ol>
+    </nav>
+
+    <article>
+      <h1 class="font-display font-extrabold text-2xl sm:text-3xl">Cómo convertir entre Celsius, Fahrenheit y Kelvin</h1>
+      <p class="mt-3 text-[var(--color-text-muted)] leading-relaxed">
+        Pasar de una escala de temperatura a otra es una cuenta de una línea, pero es fácil equivocarse con el orden de las operaciones. Acá están las fórmulas, ejemplos y una tabla de referencia para controlar tus resultados.
+      </p>
+
+      <div class="mt-5 rounded-2xl surface p-4 text-sm leading-relaxed">
+        <p class="font-semibold text-[var(--color-text)] mb-1">Respuesta rápida</p>
+        <p class="text-[var(--color-text-muted)]">°F = °C × 9/5 + 32; °C = (°F − 32) × 5/9; K = °C + 273,15. El agua hierve a 100 °C = 212 °F = 373,15 K.</p>
+      </div>
+
+      <div class="mt-6 rounded-2xl surface p-4 flex items-center justify-between gap-3">
+        <p class="text-sm">¿Preferís que lo calcule por vos?</p>
+        <a href="/calculadoras/ingenieria/conversor-de-temperatura/" class="calc-btn calc-btn--op px-4 py-2 text-sm whitespace-nowrap">Abrir conversor</a>
+      </div>
+
+      <h2 class="font-display font-bold text-xl mt-8 mb-2">1. Las cuatro escalas</h2>
+
+      <ul class="list-disc list-inside space-y-1 text-[var(--color-text-muted)]">
+        <li><strong class="text-[var(--color-text)]">Celsius (°C):</strong> el agua se congela a 0 °C y hierve a 100 °C. La usa casi todo el mundo.</li>
+        <li><strong class="text-[var(--color-text)]">Fahrenheit (°F):</strong> el agua se congela a 32 °F y hierve a 212 °F. La usan Estados Unidos y algunos países más.</li>
+        <li><strong class="text-[var(--color-text)]">Kelvin (K):</strong> escala absoluta del sistema internacional; parte del cero absoluto.</li>
+        <li><strong class="text-[var(--color-text)]">Rankine (°R):</strong> escala absoluta con grados del tamaño de los Fahrenheit.</li>
+      </ul>
+
+      <h2 class="font-display font-bold text-xl mt-8 mb-2">2. Las fórmulas</h2>
+
+      <div class="mt-3 overflow-x-auto rounded-xl border border-[var(--color-border)]">
+        <table class="w-full text-sm min-w-[360px] font-numeric">
+          <thead><tr class="text-left text-[var(--color-text-muted)]"><th class="px-3 py-2 font-semibold">De → A</th><th class="px-3 py-2 font-semibold">Fórmula</th></tr></thead>
+          <tbody class="text-[var(--color-text-muted)]">
+            <tr class="border-t border-[var(--color-border)]"><td class="px-3 py-2">°C → °F</td><td class="px-3 py-2">°F = °C × 9/5 + 32</td></tr>
+            <tr class="border-t border-[var(--color-border)]"><td class="px-3 py-2">°F → °C</td><td class="px-3 py-2">°C = (°F − 32) × 5/9</td></tr>
+            <tr class="border-t border-[var(--color-border)]"><td class="px-3 py-2">°C → K</td><td class="px-3 py-2">K = °C + 273,15</td></tr>
+            <tr class="border-t border-[var(--color-border)]"><td class="px-3 py-2">K → °C</td><td class="px-3 py-2">°C = K − 273,15</td></tr>
+            <tr class="border-t border-[var(--color-border)]"><td class="px-3 py-2">°F → °R</td><td class="px-3 py-2">°R = °F + 459,67</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <h2 class="font-display font-bold text-xl mt-8 mb-2">3. Ejemplos</h2>
+
+      <ol class="list-decimal list-inside space-y-1 text-[var(--color-text-muted)] font-numeric">
+        <li>25 °C → °F: 25 × 9/5 + 32 = 77 °F</li>
+        <li>98,6 °F → °C: (98,6 − 32) × 5/9 = 37 °C</li>
+        <li>300 K → °C: 300 − 273,15 = 26,85 °C</li>
+        <li>−40 °C → °F: −40 × 9/5 + 32 = −40 °F (único punto donde coinciden)</li>
+      </ol>
+
+      <h2 class="font-display font-bold text-xl mt-8 mb-2">4. Tabla de referencia</h2>
+
+      <div class="mt-3 overflow-x-auto rounded-xl border border-[var(--color-border)]">
+        <table class="w-full text-sm min-w-[360px] font-numeric">
+          <thead><tr class="text-left text-[var(--color-text-muted)]"><th class="px-3 py-2 font-semibold">Situación</th><th class="px-3 py-2 font-semibold">°C</th><th class="px-3 py-2 font-semibold">°F</th><th class="px-3 py-2 font-semibold">K</th></tr></thead>
+          <tbody class="text-[var(--color-text-muted)]">
+            <tr class="border-t border-[var(--color-border)]"><td class="px-3 py-2">Agua se congela</td><td class="px-3 py-2">0</td><td class="px-3 py-2">32</td><td class="px-3 py-2">273,15</td></tr>
+            <tr class="border-t border-[var(--color-border)]"><td class="px-3 py-2">Día templado</td><td class="px-3 py-2">20</td><td class="px-3 py-2">68</td><td class="px-3 py-2">293,15</td></tr>
+            <tr class="border-t border-[var(--color-border)]"><td class="px-3 py-2">Cuerpo humano</td><td class="px-3 py-2">37</td><td class="px-3 py-2">98,6</td><td class="px-3 py-2">310,15</td></tr>
+            <tr class="border-t border-[var(--color-border)]"><td class="px-3 py-2">Agua hierve</td><td class="px-3 py-2">100</td><td class="px-3 py-2">212</td><td class="px-3 py-2">373,15</td></tr>
+            <tr class="border-t border-[var(--color-border)]"><td class="px-3 py-2">Cero absoluto</td><td class="px-3 py-2">−273,15</td><td class="px-3 py-2">−459,67</td><td class="px-3 py-2">0</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <h2 class="font-display font-bold text-xl mt-8 mb-2">5. Un truco para estimar de cabeza</h2>
+
+      <p class="text-[var(--color-text-muted)] leading-relaxed">
+        Para pasar de Celsius a Fahrenheit en forma aproximada, duplicá y sumá 30: 25 °C → 25 × 2 + 30 = 80 °F (el valor exacto es 77 °F). Para volver, restá 30 y dividí por 2. Sirve para temperaturas del clima, no para cálculos científicos.
+      </p>
+
+      <h2 class="font-display font-bold text-xl mt-8 mb-2">6. Errores comunes</h2>
+
+      <ul class="list-disc list-inside space-y-1 text-[var(--color-text-muted)]">
+        <li>Olvidar restar 32 antes de multiplicar al pasar de Fahrenheit a Celsius.</li>
+        <li>Usar °C en fórmulas de física que piden temperatura absoluta (como la ley de los gases ideales): hay que pasarla a kelvin.</li>
+        <li>Escribir "grados Kelvin": el nombre correcto es kelvin, sin la palabra "grados".</li>
+      </ul>
+
+      <h2 class="font-display font-bold text-xl mt-8 mb-2">Preguntas frecuentes</h2>
+      <dl class="space-y-4 text-[var(--color-text-muted)] leading-relaxed">
+        <div>
+          <dt class="font-semibold text-[var(--color-text)]">¿Cómo se pasa de Celsius a Fahrenheit?</dt>
+          <dd>°F = °C × 9/5 + 32. 100 °C son 212 °F.</dd>
+        </div>
+        <div>
+          <dt class="font-semibold text-[var(--color-text)]">¿Cómo se pasa de Fahrenheit a Celsius?</dt>
+          <dd>°C = (°F − 32) × 5/9. 98,6 °F son 37 °C.</dd>
+        </div>
+        <div>
+          <dt class="font-semibold text-[var(--color-text)]">¿Cómo se pasa de Celsius a Kelvin?</dt>
+          <dd>Sumando 273,15: 25 °C son 298,15 K.</dd>
+        </div>
+        <div>
+          <dt class="font-semibold text-[var(--color-text)]">¿En qué temperatura coinciden Celsius y Fahrenheit?</dt>
+          <dd>En −40: −40 °C = −40 °F.</dd>
+        </div>
+      </dl>
+    </article>
+
+    <section class="mt-10 surface rounded-2xl p-5 shadow-sm">
+      <h2 class="font-display font-semibold text-lg mb-2">Calculadoras relacionadas</h2>
+      <ul class="space-y-2 text-sm">
+        <li><a class="text-[var(--color-primary-link)] hover:underline" href="/calculadoras/ingenieria/conversor-de-temperatura/">Conversor de Temperatura</a></li>
+        <li><a class="text-[var(--color-primary-link)] hover:underline" href="/calculadoras/ingenieria/conversor-de-unidades/">Conversor de Unidades Técnicas</a></li>
+        <li><a class="text-[var(--color-primary-link)] hover:underline" href="/guias/ley-de-los-gases-ideales/">Guía: la ley de los gases ideales</a></li>
+      </ul>
+    </section>
+  </main>
+
+  <footer class="border-t border-[var(--color-border)] mt-10">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 py-10 text-sm text-[var(--color-text-muted)] flex flex-col sm:flex-row items-center justify-between gap-4">
+      <p>© 2026 Calculadora Científica · Hecho en Argentina 🇦🇷 · <a href="/sobre-nosotros/" class="hover:text-[var(--color-primary-link)]">Sobre Nosotros</a> · <a href="/privacidad/" class="hover:text-[var(--color-primary-link)]">Privacidad</a> · <a href="/terminos-de-uso/" class="hover:text-[var(--color-primary-link)]">Términos</a></p>
+      <a href="/" class="hover:text-[var(--color-primary-link)]">← Volver al inicio</a>
+    </div>
+  </footer>
+  <!-- Cloudflare Web Analytics --><script type='module' src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "62cded9cafa8475a9f6f875888b918b9"}'></script><!-- End Cloudflare Web Analytics -->
+<a href="/" id="back-to-home" aria-label="Ir al inicio del sitio"
+  class="fixed bottom-6 right-6 z-40 w-11 h-11 rounded-full surface shadow-lg hidden lg:flex items-center justify-center transition-all duration-200 hover:shadow-xl">
+  <svg class="w-5 h-5 text-[var(--color-text)]" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+    <path stroke-linecap="round" stroke-linejoin="round" d="M3 9.5L12 3l9 6.5M5 9.5V20a1 1 0 001 1h4v-6h4v6h4a1 1 0 001-1V9.5"/>
+  </svg>
+</a>
+<button id="back-to-top" type="button" aria-label="Volver al inicio de la página"
+  class="fixed bottom-20 right-6 z-40 w-11 h-11 rounded-full bg-[var(--color-primary)] text-white shadow-lg hidden lg:flex items-center justify-center opacity-0 pointer-events-none translate-y-2 transition-all duration-200 hover:brightness-110">
+  <svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5">
+    <path stroke-linecap="round" stroke-linejoin="round" d="M5 15l7-7 7 7"/>
+  </svg>
+</button>
+<script src="/assets/js/back-to-top.js"></script>
+<script src="/assets/js/pwa.js" defer></script>
+</body>
+</html>

@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="es-AR">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Regresión Lineal y Correlación: Cómo Calcular la Recta, r y R² | Calculadora Científica</title>
+<meta name="description" content="Cómo calcular la recta de regresión por mínimos cuadrados, el coeficiente de correlación r y R², con un ejemplo resuelto paso a paso, interpretación y errores comunes." />
+<link rel="canonical" href="https://www.calculadoracientifica.com.ar/guias/regresion-lineal-y-correlacion/" />
+<link rel="alternate" hreflang="es-AR" href="https://www.calculadoracientifica.com.ar/guias/regresion-lineal-y-correlacion/" />
+<link rel="alternate" hreflang="es" href="https://www.calculadoracientifica.com.ar/guias/regresion-lineal-y-correlacion/" />
+<link rel="icon" type="image/svg+xml" href="/assets/img/favicon.svg" />
+<link rel="icon" type="image/png" sizes="32x32" href="/assets/img/favicon-32.png" />
+<link rel="icon" type="image/png" sizes="16x16" href="/assets/img/favicon-16.png" />
+<link rel="apple-touch-icon" href="/assets/img/apple-touch-icon.png" />
+<link rel="manifest" href="/manifest.webmanifest" />
+<meta name="theme-color" content="#2563eb" />
+
+<meta property="og:type" content="article" />
+<meta property="og:locale" content="es_AR" />
+<meta property="og:site_name" content="Calculadora Científica" />
+<meta property="og:title" content="Regresión lineal y correlación" />
+<meta property="og:description" content="Recta de regresión, r y R² con ejemplo resuelto paso a paso." />
+<meta property="og:url" content="https://www.calculadoracientifica.com.ar/guias/regresion-lineal-y-correlacion/" />
+<meta property="og:image" content="https://www.calculadoracientifica.com.ar/assets/img/og-image.png" />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="630" />
+<meta name="twitter:image" content="https://www.calculadoracientifica.com.ar/assets/img/og-image.png" />
+<meta name="twitter:card" content="summary_large_image" />
+
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Roboto+Mono:wght@400;500;700&display=swap" rel="stylesheet" />
+
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7274131858034505" crossorigin="anonymous"></script>
+<link rel="stylesheet" href="/assets/css/styles.css" />
+<link rel="stylesheet" href="/assets/css/tailwind.css" />
+<script src="/assets/js/theme.js"></script>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Article",
+      "headline": "Regresión lineal y correlación: cómo calcularlas e interpretarlas",
+      "description": "Cómo calcular la recta de regresión por mínimos cuadrados, el coeficiente de correlación r y R², con un ejemplo resuelto paso a paso, interpretación y errores comunes.",
+      "author": {
+        "@type": "Organization",
+        "name": "Calculadora Científica"
+      },
+      "publisher": {
+        "@type": "Organization",
+        "name": "Calculadora Científica"
+      },
+      "mainEntityOfPage": "https://www.calculadoracientifica.com.ar/guias/regresion-lineal-y-correlacion/",
+      "inLanguage": "es-AR",
+      "datePublished": "2026-11-10",
+      "dateModified": "2026-11-10"
+    },
+    {
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "¿Cómo se calcula la recta de regresión?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Con la pendiente b = (n·Σxy − Σx·Σy)/(n·Σx² − (Σx)²) y la ordenada a = ȳ − b·x̄."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "¿Qué significa r = 0,9?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Una correlación lineal positiva muy fuerte: cuando x aumenta, y tiende a aumentar casi en línea recta."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "¿Qué indica R²?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "La proporción de la variación de y que explica la recta. R² = 0,81 es un 81 %."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "¿Correlación es causalidad?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "No: que dos variables se muevan juntas no prueba que una cause la otra."
+          }
+        }
+      ]
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Inicio",
+          "item": "https://www.calculadoracientifica.com.ar/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Guías",
+          "item": "https://www.calculadoracientifica.com.ar/guias/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "Regresión lineal y correlación",
+          "item": "https://www.calculadoracientifica.com.ar/guias/regresion-lineal-y-correlacion/"
+        }
+      ]
+    }
+  ]
+}
+</script>
+</head>
+<body class="min-h-screen font-sans antialiased">
+  <a href="#main-content" class="sr-only focus:not-sr-only focus:fixed focus:top-3 focus:left-3 focus:z-50 focus:px-4 focus:py-2 focus:rounded-lg focus:bg-[var(--color-primary)] focus:text-white focus:text-sm focus:font-semibold">Saltar al contenido</a>
+
+  <header class="sticky top-0 z-40 backdrop-blur border-b border-[var(--color-border)] bg-[var(--color-bg)]/85">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 h-16 flex items-center justify-between">
+      <a href="/" class="flex items-center gap-2 font-display font-extrabold text-lg">
+        <span class="w-8 h-8 rounded-lg bg-[var(--color-primary)] text-white flex items-center justify-center text-sm">∑</span>
+        Calculadora<span class="text-[var(--color-primary-link)]">Científica</span>
+      </a>
+      <button data-theme-toggle type="button" aria-label="Cambiar tema claro/oscuro"
+        class="w-10 h-10 rounded-full surface flex items-center justify-center hover:shadow-md transition-shadow">
+        <span data-theme-icon>🌙</span>
+      </button>
+    </div>
+  </header>
+
+  <main id="main-content" class="max-w-3xl mx-auto px-4 sm:px-6 py-8">
+    <nav aria-label="Breadcrumb" class="text-sm text-[var(--color-text-muted)] mb-4">
+      <ol class="flex flex-wrap items-center gap-1">
+        <li><a href="/" class="hover:text-[var(--color-primary-link)]">Inicio</a></li>
+        <li aria-hidden="true">/</li>
+        <li><a href="/guias/" class="hover:text-[var(--color-primary-link)]">Guías</a></li>
+        <li aria-hidden="true">/</li>
+        <li class="text-[var(--color-text)] font-medium" aria-current="page">Regresión lineal y correlación</li>
+      </ol>
+    </nav>
+
+    <article>
+      <h1 class="font-display font-extrabold text-2xl sm:text-3xl">Regresión lineal y correlación: cómo calcularlas e interpretarlas</h1>
+      <p class="mt-3 text-[var(--color-text-muted)] leading-relaxed">
+        La regresión lineal es una de las herramientas estadísticas más usadas: describe cuánto cambia una variable cuando cambia otra y permite predecir. Esta guía la resuelve a mano con un ejemplo y te enseña a leer r y R².
+      </p>
+
+      <div class="mt-5 rounded-2xl surface p-4 text-sm leading-relaxed">
+        <p class="font-semibold text-[var(--color-text)] mb-1">Respuesta rápida</p>
+        <p class="text-[var(--color-text-muted)]">Pendiente b = (n·Σxy − Σx·Σy) / (n·Σx² − (Σx)²); ordenada a = ȳ − b·x̄; recta y = a + b·x. r va de −1 a 1 y R² = r² es la proporción de variación explicada.</p>
+      </div>
+
+      <div class="mt-6 rounded-2xl surface p-4 flex items-center justify-between gap-3">
+        <p class="text-sm">¿Preferís que lo calcule por vos?</p>
+        <a href="/calculadoras/estadistica/regresion-lineal/" class="calc-btn calc-btn--op px-4 py-2 text-sm whitespace-nowrap">Abrir calculadora</a>
+      </div>
+
+      <h2 class="font-display font-bold text-xl mt-8 mb-2">1. Qué hace la regresión lineal</h2>
+
+      <p class="text-[var(--color-text-muted)] leading-relaxed">
+        Dado un conjunto de pares (x, y), busca la recta y = a + b·x que mejor se ajusta a los puntos. Se usa para describir la relación entre dos variables y para hacer predicciones. "Mejor" significa que minimiza la suma de los cuadrados de los errores verticales (<strong class="text-[var(--color-text)]">mínimos cuadrados</strong>).
+      </p>
+
+      <h2 class="font-display font-bold text-xl mt-8 mb-2">2. Las fórmulas</h2>
+
+      <p class="font-numeric text-center my-3 text-[var(--color-text)]">b = (n·Σxy − Σx·Σy) / (n·Σx² − (Σx)²)</p>
+
+      <p class="font-numeric text-center my-3 text-[var(--color-text)]">a = ȳ − b · x̄</p>
+
+      <p class="text-[var(--color-text-muted)] leading-relaxed">
+        b es la pendiente (cuánto cambia y por cada unidad de x) y a es la ordenada al origen (el valor de y cuando x = 0).
+      </p>
+
+      <h2 class="font-display font-bold text-xl mt-8 mb-2">3. Ejemplo resuelto</h2>
+
+      <p class="text-[var(--color-text-muted)] leading-relaxed">
+        Datos: (1, 2), (2, 3), (3, 5), (4, 4), (5, 6).
+      </p>
+
+      <div class="mt-3 overflow-x-auto rounded-xl border border-[var(--color-border)]">
+        <table class="w-full text-sm min-w-[360px] font-numeric">
+          <thead><tr class="text-left text-[var(--color-text-muted)]"><th class="px-3 py-2 font-semibold">x</th><th class="px-3 py-2 font-semibold">y</th><th class="px-3 py-2 font-semibold">x·y</th><th class="px-3 py-2 font-semibold">x²</th><th class="px-3 py-2 font-semibold">y²</th></tr></thead>
+          <tbody class="text-[var(--color-text-muted)]">
+            <tr class="border-t border-[var(--color-border)]"><td class="px-3 py-2">1</td><td class="px-3 py-2">2</td><td class="px-3 py-2">2</td><td class="px-3 py-2">1</td><td class="px-3 py-2">4</td></tr>
+            <tr class="border-t border-[var(--color-border)]"><td class="px-3 py-2">2</td><td class="px-3 py-2">3</td><td class="px-3 py-2">6</td><td class="px-3 py-2">4</td><td class="px-3 py-2">9</td></tr>
+            <tr class="border-t border-[var(--color-border)]"><td class="px-3 py-2">3</td><td class="px-3 py-2">5</td><td class="px-3 py-2">15</td><td class="px-3 py-2">9</td><td class="px-3 py-2">25</td></tr>
+            <tr class="border-t border-[var(--color-border)]"><td class="px-3 py-2">4</td><td class="px-3 py-2">4</td><td class="px-3 py-2">16</td><td class="px-3 py-2">16</td><td class="px-3 py-2">16</td></tr>
+            <tr class="border-t border-[var(--color-border)]"><td class="px-3 py-2">5</td><td class="px-3 py-2">6</td><td class="px-3 py-2">30</td><td class="px-3 py-2">25</td><td class="px-3 py-2">36</td></tr>
+            <tr class="border-t border-[var(--color-border)]"><td class="px-3 py-2">Σ = 15</td><td class="px-3 py-2">Σ = 20</td><td class="px-3 py-2">Σ = 69</td><td class="px-3 py-2">Σ = 55</td><td class="px-3 py-2">Σ = 90</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <ol class="list-decimal list-inside space-y-1 text-[var(--color-text-muted)] font-numeric">
+        <li>b = (5 × 69 − 15 × 20) / (5 × 55 − 15²) = (345 − 300) / (275 − 225) = 45 / 50 = 0,9</li>
+        <li>x̄ = 3 e ȳ = 4 → a = 4 − 0,9 × 3 = 1,3</li>
+        <li>Recta: y = 1,3 + 0,9·x</li>
+        <li>Predicción para x = 6: y = 1,3 + 0,9 × 6 = 6,7</li>
+      </ol>
+
+      <h2 class="font-display font-bold text-xl mt-8 mb-2">4. Coeficiente de correlación r</h2>
+
+      <p class="font-numeric text-center my-3 text-[var(--color-text)]">r = (n·Σxy − Σx·Σy) / √[(n·Σx² − (Σx)²)(n·Σy² − (Σy)²)]</p>
+
+      <p class="text-[var(--color-text-muted)] leading-relaxed">
+        Con los datos anteriores: r = 45 / √(50 × 50) = 0,9. Va de −1 a 1. Una guía orientativa para el valor absoluto: menos de 0,2 casi nula; de 0,2 a 0,4 débil; de 0,4 a 0,7 moderada; de 0,7 a 0,9 fuerte; más de 0,9 muy fuerte.
+      </p>
+
+      <h2 class="font-display font-bold text-xl mt-8 mb-2">5. R²: cuánto explica la recta</h2>
+
+      <p class="text-[var(--color-text-muted)] leading-relaxed">
+        R² = r² = 0,81: la recta explica el 81 % de la variación de y; el 19 % restante depende de otros factores o del azar.
+      </p>
+
+      <h2 class="font-display font-bold text-xl mt-8 mb-2">6. Errores comunes</h2>
+
+      <ul class="list-disc list-inside space-y-1 text-[var(--color-text-muted)]">
+        <li>Extrapolar muy lejos del rango de datos.</li>
+        <li>Interpretar correlación como causalidad.</li>
+        <li>Ajustar una recta a datos que claramente siguen una curva: conviene mirar el gráfico antes.</li>
+        <li>Dejarse engañar por un solo dato extremo (outlier), que puede cambiar mucho la pendiente.</li>
+      </ul>
+
+      <h2 class="font-display font-bold text-xl mt-8 mb-2">Preguntas frecuentes</h2>
+      <dl class="space-y-4 text-[var(--color-text-muted)] leading-relaxed">
+        <div>
+          <dt class="font-semibold text-[var(--color-text)]">¿Cómo se calcula la recta de regresión?</dt>
+          <dd>Con la pendiente b = (n·Σxy − Σx·Σy)/(n·Σx² − (Σx)²) y la ordenada a = ȳ − b·x̄.</dd>
+        </div>
+        <div>
+          <dt class="font-semibold text-[var(--color-text)]">¿Qué significa r = 0,9?</dt>
+          <dd>Una correlación lineal positiva muy fuerte: cuando x aumenta, y tiende a aumentar casi en línea recta.</dd>
+        </div>
+        <div>
+          <dt class="font-semibold text-[var(--color-text)]">¿Qué indica R²?</dt>
+          <dd>La proporción de la variación de y que explica la recta. R² = 0,81 es un 81 %.</dd>
+        </div>
+        <div>
+          <dt class="font-semibold text-[var(--color-text)]">¿Correlación es causalidad?</dt>
+          <dd>No: que dos variables se muevan juntas no prueba que una cause la otra.</dd>
+        </div>
+      </dl>
+    </article>
+
+    <section class="mt-10 surface rounded-2xl p-5 shadow-sm">
+      <h2 class="font-display font-semibold text-lg mb-2">Calculadoras relacionadas</h2>
+      <ul class="space-y-2 text-sm">
+        <li><a class="text-[var(--color-primary-link)] hover:underline" href="/calculadoras/estadistica/regresion-lineal/">Calculadora de Regresión Lineal</a></li>
+        <li><a class="text-[var(--color-primary-link)] hover:underline" href="/calculadoras/estadistica/calculadora-estadistica-descriptiva/">Estadística Descriptiva</a></li>
+        <li><a class="text-[var(--color-primary-link)] hover:underline" href="/guias/como-calcular-desviacion-estandar/">Guía: cómo calcular la desviación estándar</a></li>
+      </ul>
+    </section>
+  </main>
+
+  <footer class="border-t border-[var(--color-border)] mt-10">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 py-10 text-sm text-[var(--color-text-muted)] flex flex-col sm:flex-row items-center justify-between gap-4">
+      <p>© 2026 Calculadora Científica · Hecho en Argentina 🇦🇷 · <a href="/sobre-nosotros/" class="hover:text-[var(--color-primary-link)]">Sobre Nosotros</a> · <a href="/privacidad/" class="hover:text-[var(--color-primary-link)]">Privacidad</a> · <a href="/terminos-de-uso/" class="hover:text-[var(--color-primary-link)]">Términos</a></p>
+      <a href="/" class="hover:text-[var(--color-primary-link)]">← Volver al inicio</a>
+    </div>
+  </footer>
+  <!-- Cloudflare Web Analytics --><script type='module' src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "62cded9cafa8475a9f6f875888b918b9"}'></script><!-- End Cloudflare Web Analytics -->
+<a href="/" id="back-to-home" aria-label="Ir al inicio del sitio"
+  class="fixed bottom-6 right-6 z-40 w-11 h-11 rounded-full surface shadow-lg hidden lg:flex items-center justify-center transition-all duration-200 hover:shadow-xl">
+  <svg class="w-5 h-5 text-[var(--color-text)]" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+    <path stroke-linecap="round" stroke-linejoin="round" d="M3 9.5L12 3l9 6.5M5 9.5V20a1 1 0 001 1h4v-6h4v6h4a1 1 0 001-1V9.5"/>
+  </svg>
+</a>
+<button id="back-to-top" type="button" aria-label="Volver al inicio de la página"
+  class="fixed bottom-20 right-6 z-40 w-11 h-11 rounded-full bg-[var(--color-primary)] text-white shadow-lg hidden lg:flex items-center justify-center opacity-0 pointer-events-none translate-y-2 transition-all duration-200 hover:brightness-110">
+  <svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5">
+    <path stroke-linecap="round" stroke-linejoin="round" d="M5 15l7-7 7 7"/>
+  </svg>
+</button>
+<script src="/assets/js/back-to-top.js"></script>
+<script src="/assets/js/pwa.js" defer></script>
+</body>
+</html>

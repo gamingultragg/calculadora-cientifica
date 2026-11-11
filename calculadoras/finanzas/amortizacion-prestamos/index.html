@@ -3,8 +3,8 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>Calculadora de Amortización de Préstamos Online | Calculadora Científica</title>
-<meta name="description" content="Calculá la cuota fija de un préstamo (sistema francés) online: cuota mensual, total pagado e interés total, con desarrollo paso a paso, gratis." />
+<title>Calculadora de Préstamos (Sistema Francés): Cuota y Tabla de Amortización | Calculadora Científica</title>
+<meta name="description" content="Calculá la cuota fija de un préstamo con el sistema francés y mirá la tabla de amortización cuota por cuota: interés, capital y saldo. Con TNA, total pagado y paso a paso. Gratis." />
 <link rel="canonical" href="https://www.calculadoracientifica.com.ar/calculadoras/finanzas/amortizacion-prestamos/" />
 <link rel="alternate" hreflang="es-AR" href="https://www.calculadoracientifica.com.ar/calculadoras/finanzas/amortizacion-prestamos/" />
 <link rel="alternate" hreflang="es" href="https://www.calculadoracientifica.com.ar/calculadoras/finanzas/amortizacion-prestamos/" />
@@ -120,7 +120,7 @@
               class="w-full rounded-xl surface px-3 py-2.5 font-numeric focus:outline-none focus:ring-2 focus:ring-[var(--color-primary)]" />
           </div>
           <div>
-            <label for="am-rate" class="block text-sm font-medium mb-1">Tasa de interés nominal anual (%)</label>
+            <label for="am-rate" class="block text-sm font-medium mb-1">Tasa de interés nominal anual, TNA (%)</label>
             <input id="am-rate" type="text" inputmode="decimal" placeholder="Ej: 60"
               class="w-full rounded-xl surface px-3 py-2.5 font-numeric focus:outline-none focus:ring-2 focus:ring-[var(--color-primary)]" />
           </div>
@@ -160,6 +160,18 @@
             </div>
           </div>
           <ol id="am-steps" class="space-y-2 text-sm font-numeric leading-relaxed"></ol>
+
+          <details class="mt-5 rounded-xl border border-[var(--color-border)] p-3 text-sm">
+            <summary class="cursor-pointer font-semibold">Tabla de amortización (cuota por cuota)</summary>
+            <p class="mt-2 text-[var(--color-text-muted)]">En el sistema francés la cuota es fija: al principio casi todo es interés y, con el tiempo, cada cuota amortiza más capital.</p>
+            <div class="mt-3 overflow-x-auto scroll-thin">
+              <table class="w-full min-w-[420px] font-numeric text-right">
+                <thead><tr class="text-[var(--color-text-muted)]"><th class="px-2 py-1.5 text-left font-semibold">N.°</th><th class="px-2 py-1.5 font-semibold">Cuota</th><th class="px-2 py-1.5 font-semibold">Interés</th><th class="px-2 py-1.5 font-semibold">Capital</th><th class="px-2 py-1.5 font-semibold">Saldo</th></tr></thead>
+                <tbody id="am-table"></tbody>
+              </table>
+            </div>
+            <p id="am-table-note" class="mt-2 text-xs text-[var(--color-text-muted)]"></p>
+          </details>
         </section>
 
         <details class="help-accordion surface rounded-2xl p-5 shadow-sm" open>
@@ -180,6 +192,7 @@
           <h2 class="font-display font-semibold text-lg mb-2">Calculadoras relacionadas</h2>
           <ul class="space-y-2 text-sm">
             <li><a class="text-[var(--color-primary-link)] hover:underline" href="/calculadoras/finanzas/interes-compuesto/">Interés Compuesto</a></li>
+            <li><a class="text-[var(--color-primary-link)] hover:underline" href="/calculadoras/finanzas/calculadora-de-plazo-fijo/">Calculadora de Plazo Fijo y Tasas</a></li>
             <li><a class="text-[var(--color-primary-link)] hover:underline" href="/calculadoras/matematicas-avanzadas/calculadora-cientifica-online/">Calculadora Científica Online</a></li>
           </ul>
         </section>

@@ -309,8 +309,8 @@ enlazada en ambas direcciones.
    y en el sitemap, solo dejó de listarse en la grilla/buscador y en la categoría Matemáticas;
    se accede por el banner destacado o por URL directa.
 
-**Catálogo actual (2026-11-10): 29 calculadoras + 29 guías + 6 landing
-pages de categoría + home + 404 + sobre-nosotros + 2 legales = 71 páginas**, todas en `sitemap.xml`
+**Catálogo actual (2026-11-10): 35 calculadoras + 35 guías + 6 landing
+pages de categoría + home + 404 + sobre-nosotros + 2 legales = 83 páginas**, todas en `sitemap.xml`
 (excepto la 404, que lleva `noindex`), auditoría en 0 problemas.
 
 ✅ **Validación de JSON-LD** (`scripts/validate-jsonld.py`, no destructiva): parsea los 44 bloques
@@ -515,3 +515,19 @@ cada una con su guía. Se generaron con `scripts/build-batch-3.py` y `build-batc
 registraron con `scripts/register-batch-3.py`. Orden para sumar un lote nuevo: generadores →
 `register-batch-N.py` → `prerender-cards.py` → `inject-pwa-and-copy.py` → `cd tools/tailwind && npm run build`
 → `build-sw.py` → QA (`audit-links`, `validate-jsonld`, `validate-sitemap`, `check-contrast`).
+
+## Lote 4 (2026-11-10) y mejoras de producto
+
+- **Lote 4, elegido con las consultas reales de Search Console:** moles (la gente busca "moles de soluto"),
+  plazo fijo con TNA/TEA, áreas y volúmenes, energía cinética y potencial, regresión lineal y conversor
+  de temperatura, cada una con su guía (`build-batch-4.py`, `build-batch-4-guides.py`, `register-batch-4.py`).
+- **Tabla de amortización** (cuota por cuota) en la calculadora de préstamos, y título/descripción
+  orientados a "sistema francés" (consultas: cálculo de cuota sistema francés, etc.).
+- **Enlace compartible:** el botón "Copiar enlace" de cada calculadora genera una URL con los valores
+  (`?is-capital=100000&is-tasa=24…`); al abrirla se completan los campos y se calcula solo
+  (`applyQueryParams` en `assets/js/copy-result.js`; usa los `id` de los campos, así que los `id` no se pueden renombrar a la ligera).
+- **Imprimir / PDF:** botón "Imprimir" y estilos `@media print` en `styles.css`.
+- **Pruebas automáticas de la lógica:** `node --test tools/tests/logic.test.js` (16 pruebas; correrlas antes de commitear
+  cambios a un `script.js`). Al sumar una calculadora nueva, exportar la lógica con `module.exports` y agregar su prueba.
+- **AdSense y velocidad:** el `<script async>` de AdSense se dejó estático a propósito mientras el sitio está en revisión
+  (Google necesita verlo en el HTML). Cuando esté aprobado se puede diferir su carga para recuperar puntaje de Lighthouse.

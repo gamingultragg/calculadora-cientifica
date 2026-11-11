@@ -2,7 +2,7 @@
  * Estrategia: precarga del sitio (páginas + CSS + JS) para que funcione sin conexión;
  * red primero con respaldo en caché; tipografías de Google en caché "stale-while-revalidate".
  * No intercepta anuncios, analítica ni nada de otros orígenes (salvo las tipografías). */
-const VERSION = "839c7cc4bf";
+const VERSION = "a9aac86047";
 const CACHE = "cc-" + VERSION;
 const FONTS = "cc-fonts-v1";
 const PRECACHE = [
@@ -43,6 +43,12 @@ const PRECACHE = [
  "/calculadoras/matematicas-avanzadas/conversor-de-bases-numericas/",
  "/calculadoras/finanzas/calculadora-de-aguinaldo/",
  "/calculadoras/quimica/calculadora-de-gases-ideales/",
+ "/calculadoras/quimica/calculadora-de-moles/",
+ "/calculadoras/finanzas/calculadora-de-plazo-fijo/",
+ "/calculadoras/matematicas-avanzadas/calculadora-de-areas-y-volumenes/",
+ "/calculadoras/fisica/energia-cinetica-y-potencial/",
+ "/calculadoras/estadistica/regresion-lineal/",
+ "/calculadoras/ingenieria/conversor-de-temperatura/",
  "/guias/",
  "/guias/orden-de-operaciones-vs-calculo-secuencial/",
  "/guias/como-resolver-ecuaciones-de-segundo-grado/",
@@ -73,6 +79,12 @@ const PRECACHE = [
  "/guias/como-calcular-el-aguinaldo/",
  "/guias/ley-de-los-gases-ideales/",
  "/guias/como-convertir-binario-decimal-y-hexadecimal/",
+ "/guias/como-calcular-moles/",
+ "/guias/como-calcular-un-plazo-fijo-tna-y-tea/",
+ "/guias/como-calcular-areas-y-volumenes/",
+ "/guias/energia-cinetica-y-potencial-explicada/",
+ "/guias/regresion-lineal-y-correlacion/",
+ "/guias/conversion-de-temperatura-celsius-fahrenheit-kelvin/",
  "/sobre-nosotros/",
  "/privacidad/",
  "/terminos-de-uso/",
@@ -97,20 +109,25 @@ const PRECACHE = [
  "/calculadoras/estadistica/calculadora-estadistica-descriptiva/script.js",
  "/calculadoras/estadistica/distribucion-normal/script.js",
  "/calculadoras/estadistica/permutaciones-y-combinaciones/script.js",
+ "/calculadoras/estadistica/regresion-lineal/script.js",
  "/calculadoras/finanzas/amortizacion-prestamos/script.js",
  "/calculadoras/finanzas/calculadora-de-aguinaldo/script.js",
  "/calculadoras/finanzas/calculadora-de-interes-simple/script.js",
  "/calculadoras/finanzas/calculadora-de-iva/script.js",
+ "/calculadoras/finanzas/calculadora-de-plazo-fijo/script.js",
  "/calculadoras/finanzas/calculadora-de-porcentajes/script.js",
  "/calculadoras/finanzas/interes-compuesto/script.js",
  "/calculadoras/fisica/cinematica-mru-mrua/script.js",
+ "/calculadoras/fisica/energia-cinetica-y-potencial/script.js",
  "/calculadoras/fisica/ley-de-ohm/script.js",
  "/calculadoras/fisica/segunda-ley-de-newton/script.js",
+ "/calculadoras/ingenieria/conversor-de-temperatura/script.js",
  "/calculadoras/ingenieria/conversor-de-unidades/script.js",
  "/calculadoras/ingenieria/ley-de-hooke/script.js",
  "/calculadoras/ingenieria/resistencias-serie-paralelo/script.js",
  "/calculadoras/matematicas-avanzadas/calculadora-basica/script.js",
  "/calculadoras/matematicas-avanzadas/calculadora-cientifica-online/script.js",
+ "/calculadoras/matematicas-avanzadas/calculadora-de-areas-y-volumenes/script.js",
  "/calculadoras/matematicas-avanzadas/calculadora-de-fracciones/script.js",
  "/calculadoras/matematicas-avanzadas/calculadora-matrices/script.js",
  "/calculadoras/matematicas-avanzadas/conversor-de-bases-numericas/script.js",
@@ -122,6 +139,7 @@ const PRECACHE = [
  "/calculadoras/quimica/calculadora-de-gases-ideales/script.js",
  "/calculadoras/quimica/calculadora-de-masa-molar/script.js",
  "/calculadoras/quimica/calculadora-de-molaridad/script.js",
+ "/calculadoras/quimica/calculadora-de-moles/script.js",
  "/calculadoras/quimica/calculadora-de-ph/script.js"
 ];
 

@@ -66,6 +66,31 @@
     return value;
   }
 
+  // Tabla de amortización: interés = saldo × i; capital = cuota − interés; la última cuota cierra el saldo en 0.
+  const TABLE_MAX_ROWS = 600;
+  function renderTable(principal, i, cuota, N) {
+    const body = document.getElementById("am-table");
+    const note = document.getElementById("am-table-note");
+    body.textContent = "";
+    let balance = principal;
+    const shown = Math.min(N, TABLE_MAX_ROWS);
+    for (let k = 1; k <= shown; k++) {
+      const interest = balance * i;
+      const capital = k === N ? balance : cuota - interest;
+      balance = Math.max(0, balance - capital);
+      const tr = document.createElement("tr");
+      tr.className = "border-t border-[var(--color-border)]";
+      [k, fmtMoney(k === N ? interest + capital : cuota), fmtMoney(interest), fmtMoney(capital), fmtMoney(balance)].forEach((v, idx) => {
+        const td = document.createElement("td");
+        td.className = "px-2 py-1.5" + (idx === 0 ? " text-left" : "");
+        td.textContent = v;
+        tr.appendChild(td);
+      });
+      body.appendChild(tr);
+    }
+    note.textContent = N > shown ? `Se muestran las primeras ${shown} de ${N} cuotas.` : "";
+  }
+
   form.addEventListener("submit", (e) => {
     e.preventDefault();
     clearError();
@@ -106,6 +131,8 @@
       addStep(`Cuota = ${fmtMoney(principal)} × ${fmt0(i)} / (1 − (1 + ${fmt0(i)})^−${N}) = <strong class="text-[var(--color-primary)]">${fmtMoney(cuota)}</strong>`);
       addStep(`Total pagado = ${fmtMoney(cuota)} × ${N} = <strong class="text-[var(--color-primary)]">${fmtMoney(total)}</strong>`);
       addStep(`Interés total = ${fmtMoney(total)} − ${fmtMoney(principal)} = <strong class="text-[var(--color-danger)]">${fmtMoney(interes)}</strong>`);
+
+      renderTable(principal, i, cuota, N);
 
       out.cuota.textContent = fmtMoney(cuota);
       out.total.textContent = fmtMoney(total);

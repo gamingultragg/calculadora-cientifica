@@ -175,12 +175,16 @@
   });
 
   window.addEventListener("keydown", (e) => {
+    // No pisamos atajos del navegador (Ctrl+C…) ni lo que se escribe en otros campos.
+    if (e.ctrlKey || e.metaKey || e.altKey || e.isComposing) return;
+    const t = e.target;
+    if (t && (t.isContentEditable || /^(INPUT|TEXTAREA|SELECT)$/.test(t.tagName))) return;
     const key = e.key;
-    if (/[0-9]/.test(key)) {
+    if (/^[0-9]$/.test(key)) {
       handleAction("digit", key);
       return;
     }
-    if (key === ".") {
+    if (key === "." || key === ",") {
       handleAction("decimal");
       return;
     }

@@ -30,7 +30,8 @@ FLOATING = """<a href="/" id="back-to-home" aria-label="Ir al inicio del sitio"
     <path stroke-linecap="round" stroke-linejoin="round" d="M5 15l7-7 7 7"/>
   </svg>
 </button>
-<script src="/assets/js/back-to-top.js"></script>"""
+<script src="/assets/js/back-to-top.js"></script>
+<script src="/assets/js/pwa.js" defer></script>"""
 SKIP = ('<a href="#main-content" class="sr-only focus:not-sr-only focus:fixed focus:top-3 focus:left-3 '
         'focus:z-50 focus:px-4 focus:py-2 focus:rounded-lg focus:bg-[var(--color-primary)] '
         'focus:text-white focus:text-sm focus:font-semibold">Saltar al contenido</a>')
@@ -74,6 +75,8 @@ def head(url, title, desc, og_title, og_desc, og_type, jsonld):
 <link rel="icon" type="image/png" sizes="32x32" href="/assets/img/favicon-32.png" />
 <link rel="icon" type="image/png" sizes="16x16" href="/assets/img/favicon-16.png" />
 <link rel="apple-touch-icon" href="/assets/img/apple-touch-icon.png" />
+<link rel="manifest" href="/manifest.webmanifest" />
+<meta name="theme-color" content="#2563eb" />
 
 <meta property="og:type" content="{og_type}" />
 <meta property="og:locale" content="es_AR" />

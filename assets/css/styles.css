@@ -180,3 +180,60 @@ details.help-accordion[open] .chevron {
 .cc-ad-slot { min-height: 250px; }
 .cc-ad[data-ad="calc"] .cc-ad-slot,
 .cc-ad[data-ad="guide"] .cc-ad-slot { min-height: 280px; }
+
+/* ------------------------------------------------------------------
+   Botón "Copiar resultado" (copy-result.js) e historial de la científica
+   ------------------------------------------------------------------ */
+.cc-copy {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  padding: 0.3rem 0.7rem;
+  border: 1px solid var(--color-border);
+  border-radius: 0.5rem;
+  background: transparent;
+  color: var(--color-primary-link);
+  font-size: 0.75rem;
+  font-weight: 600;
+  line-height: 1.25rem;
+  cursor: pointer;
+  transition: background-color 0.15s, border-color 0.15s;
+}
+.cc-copy:hover { background: var(--color-surface-2, rgba(37, 99, 235, 0.08)); border-color: var(--color-primary-link); }
+.cc-copy:focus-visible { outline: 2px solid var(--color-primary-link); outline-offset: 2px; }
+.cc-copy--ok { border-color: #16a34a; color: #15803d; }
+html.dark .cc-copy--ok { color: #4ade80; border-color: #4ade80; }
+.cc-copy[hidden], .cc-copy-row[hidden] { display: none; }
+.cc-copy-row { display: flex; justify-content: flex-end; margin-top: 0.5rem; }
+
+.cc-history-item {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 0.75rem;
+  padding-bottom: 0.35rem;
+  border-bottom: 1px dashed var(--color-border);
+}
+.cc-history-item:last-child { border-bottom: 0; }
+.cc-history-expr, .cc-history-res {
+  background: none;
+  border: 0;
+  padding: 0.1rem 0.2rem;
+  border-radius: 0.25rem;
+  cursor: pointer;
+  font-family: "Roboto Mono", ui-monospace, monospace;
+  font-size: 0.85rem;
+  text-align: left;
+  color: var(--color-text-muted);
+  overflow-wrap: anywhere;
+}
+.cc-history-res { font-weight: 700; color: var(--color-text); text-align: right; flex-shrink: 0; max-width: 55%; }
+.cc-history-expr:hover, .cc-history-res:hover { background: rgba(37, 99, 235, 0.1); color: var(--color-primary-link); }
+kbd {
+  padding: 0 0.3rem;
+  border: 1px solid var(--color-border);
+  border-bottom-width: 2px;
+  border-radius: 0.25rem;
+  font-family: "Roboto Mono", ui-monospace, monospace;
+  font-size: 0.7rem;
+}

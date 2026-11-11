@@ -217,6 +217,7 @@
     expr: "",
     angleMode: "DEG",
     memory: 0,
+    justEvaluated: false, // tras "=", un número/función nuevo empieza de cero; un operador sigue con el resultado
   };
 
   const exprEl = document.getElementById("cc-expr");
@@ -267,8 +268,93 @@
     btn.addEventListener("click", () => handleAction(btn.dataset.action, btn.dataset.value));
   });
 
+  // ------------------------------------------------------- historial --
+  // Se guarda solo en este navegador (localStorage). Máximo 30 cálculos.
+  const HISTORY_KEY = "cc-sci-history";
+  const HISTORY_MAX = 30;
+  const historyEl = document.getElementById("cc-history");
+  const historyEmptyEl = document.getElementById("cc-history-empty");
+  const historyClearBtn = document.getElementById("cc-history-clear");
+  let history = [];
+  try {
+    const saved = JSON.parse(localStorage.getItem(HISTORY_KEY) || "[]");
+    if (Array.isArray(saved)) history = saved.filter((h) => h && typeof h.expr === "string" && typeof h.res === "string").slice(0, HISTORY_MAX);
+  } catch {
+    history = [];
+  }
+
+  function saveHistory() {
+    try {
+      localStorage.setItem(HISTORY_KEY, JSON.stringify(history));
+    } catch {
+      // Sin almacenamiento (modo privado, etc.): el historial dura solo mientras la página está abierta.
+    }
+  }
+
+  function pushHistory(expr, value) {
+    // "raw" es el valor sin formato (punto decimal) para poder reutilizarlo en una cuenta nueva.
+    const entry = { expr, res: formatNumber(value), raw: String(value) };
+    if (history[0] && history[0].expr === entry.expr && history[0].raw === entry.raw) return;
+    history.unshift(entry);
+    history = history.slice(0, HISTORY_MAX);
+    saveHistory();
+    renderHistory();
+  }
+
+  function renderHistory() {
+    if (!historyEl) return;
+    historyEl.textContent = "";
+    history.forEach((h) => {
+      const li = document.createElement("li");
+      li.className = "cc-history-item";
+      const useExpr = document.createElement("button");
+      useExpr.type = "button";
+      useExpr.className = "cc-history-expr";
+      useExpr.textContent = toDisplay(h.expr);
+      useExpr.title = "Volver a cargar esta cuenta";
+      useExpr.addEventListener("click", () => {
+        clearError();
+        state.expr = h.expr;
+        state.justEvaluated = false;
+        render();
+        tryLivePreview();
+      });
+      const useRes = document.createElement("button");
+      useRes.type = "button";
+      useRes.className = "cc-history-res";
+      useRes.textContent = "= " + h.res;
+      useRes.title = "Usar este resultado en la cuenta actual";
+      useRes.addEventListener("click", () => {
+        clearError();
+        if (state.justEvaluated) state.expr = "";
+        state.justEvaluated = false;
+        state.expr += h.raw;
+        render();
+        tryLivePreview();
+      });
+      li.append(useExpr, useRes);
+      historyEl.append(li);
+    });
+    if (historyEmptyEl) historyEmptyEl.hidden = history.length > 0;
+    if (historyClearBtn) historyClearBtn.hidden = history.length === 0;
+  }
+
+  if (historyClearBtn) {
+    historyClearBtn.addEventListener("click", () => {
+      history = [];
+      saveHistory();
+      renderHistory();
+    });
+  }
+
+  const STARTS_NEW = new Set(["digit", "func", "mr"]);
+
   function handleAction(action, value) {
     clearError();
+    // Después de "=": un número o función nuevo reemplaza el resultado; un operador lo continúa.
+    const startsNew = state.justEvaluated && (STARTS_NEW.has(action) || (action === "insert" && /^(\(|pi|e|\.)$/.test(value)));
+    if (startsNew) state.expr = "";
+    if (action !== "equals") state.justEvaluated = false;
     switch (action) {
       case "digit":
         state.expr += value;
@@ -281,6 +367,7 @@
         break;
       case "clear":
         state.expr = "";
+        state.justEvaluated = false;
         resultEl.textContent = "0";
         break;
       case "backspace":
@@ -311,6 +398,8 @@
           if (!state.expr) break;
           const value = evaluate(state.expr);
           resultEl.textContent = formatNumber(value);
+          pushHistory(state.expr, value);
+          state.justEvaluated = true;
           // El expr interno queda en formato numérico "crudo" (punto decimal) para
           // que el motor de parseo lo pueda seguir usando en la próxima operación.
           state.expr = String(value);
@@ -333,14 +422,43 @@
     return String(state.memory);
   }
 
-  // Soporte de teclado
+  // Soporte de teclado físico
+  const LETTER_SHORTCUTS = {
+    s: ["func", "sin("],
+    c: ["func", "cos("],
+    t: ["func", "tan("],
+    l: ["func", "log("],
+    n: ["func", "ln("],
+    r: ["func", "sqrt("],
+    p: ["insert", "pi"],
+    e: ["insert", "e"],
+    a: ["toggle-angle"],
+  };
+
   window.addEventListener("keydown", (e) => {
+    // No pisamos atajos del navegador (Ctrl+C, Ctrl+R…) ni lo que se escribe en otros campos.
+    if (e.ctrlKey || e.metaKey || e.altKey || e.isComposing) return;
+    const t = e.target;
+    if (t && (t.isContentEditable || /^(INPUT|TEXTAREA|SELECT)$/.test(t.tagName))) return;
+
     const key = e.key;
-    if (/[0-9.]/.test(key)) {
+    if (/^[0-9]$/.test(key)) {
+      e.preventDefault();
       handleAction("digit", key);
       return;
     }
-    if (["+", "-", "*", "/", "^", "(", ")", "!"].includes(key)) {
+    if (key === "." || key === ",") {
+      e.preventDefault();
+      handleAction("digit", ".");
+      return;
+    }
+    if (key === "x" || key === "X" || key === "*") {
+      e.preventDefault();
+      handleAction("insert", "*");
+      return;
+    }
+    if (["+", "-", "/", "^", "(", ")", "!"].includes(key)) {
+      e.preventDefault();
       handleAction("insert", key);
       return;
     }
@@ -350,14 +468,21 @@
       return;
     }
     if (key === "Backspace") {
+      e.preventDefault();
       handleAction("backspace");
       return;
     }
-    if (key === "Escape") {
+    if (key === "Escape" || key === "Delete") {
       handleAction("clear");
       return;
     }
+    const sc = LETTER_SHORTCUTS[key.toLowerCase()];
+    if (sc && key.length === 1) {
+      e.preventDefault();
+      handleAction(sc[0], sc[1]);
+    }
   });
 
+  renderHistory();
   render();
 })();

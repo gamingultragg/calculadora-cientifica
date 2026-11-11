@@ -374,12 +374,11 @@ Actualizado 2026-11-10.
   `indexacion-cola.md` (archivo local, no versionado). Revisar el avance en Indexación > Páginas.
 
 **Por hacer (en orden de prioridad)**
-- [ ] **Calculadoras nuevas, cada una con su guía:** masa molar de una fórmula (complementa
-  molaridad, la guía más vista), promedio de notas / ponderado, regla de tres, interés simple,
-  MCD y MCM.
-- [ ] **Mejoras de producto:** PWA instalable y offline (manifest + service worker), botón
-  "copiar resultado", historial local en la científica, entrada por teclado físico en la
-  científica.
+- [x] ~~Calculadoras nuevas con su guía (masa molar, promedio de notas, regla de tres, interés
+  simple, MCD y MCM)~~ — hechas 2026-11-10 (24 calculadoras, 24 guías).
+- [x] ~~Mejoras de producto: PWA instalable y offline, botón "copiar resultado", historial local
+  y teclado físico en la científica~~ — hechas 2026-11-10 (ver "PWA y offline" y "Copiar
+  resultado e historial").
 - [ ] **Enviar mails como `contacto@calculadoracientifica.com.ar`** desde Gmail: hace falta una
   contraseña de aplicación de Google y usar `smtp.gmail.com:587` (Cloudflare Email Routing solo
   recibe).
@@ -488,3 +487,24 @@ proyecto a este tamaño, pero es una decisión que vale la pena tomar mirando el
 va a seguir creciendo? ¿dónde se va a hospedar?) en vez de ejecutarla de una sola pasada sin
 supervisión. Mientras tanto, la auditoría de integridad de este punto cumple un rol similar de red
 de seguridad con costo y riesgo mucho menores.
+
+## PWA y offline
+
+- `manifest.webmanifest` + íconos `assets/img/pwa-*.png` (`scripts/generate-pwa-icons.py`).
+- `sw.js` se **genera** con `python scripts/build-sw.py` desde `scripts/sw-template.js`: precarga
+  todas las páginas del sitemap + CSS/JS/íconos (≈100 archivos) y usa red-primero con respaldo en
+  caché. La versión es un hash del contenido, así que cada cambio publica un SW nuevo.
+  **Correr `build-sw.py` siempre al final, antes de commitear.**
+- `assets/js/pwa.js` registra el SW y muestra "Instalar app" en el pie cuando el navegador lo ofrece.
+- `scripts/inject-pwa-and-copy.py` (idempotente) agrega manifest, `theme-color`, `pwa.js` y
+  `copy-result.js` a todas las páginas; `page_templates.py` ya incluye manifest y `pwa.js`.
+
+## Copiar resultado e historial
+
+- `assets/js/copy-result.js`: botón bajo cada panel `*-result-panel` (visible solo con resultado) y
+  botones `data-copy-target="<id>"` (científica y básica). Páginas nuevas con panel de resultado:
+  correr `inject-pwa-and-copy.py`.
+- Científica: historial en `localStorage` (`cc-sci-history`, 30 cálculos; click en la cuenta la
+  recarga, click en el resultado lo inserta), teclado físico con coma decimal, atajos de letras
+  (s c t l n r p e a) y sin pisar Ctrl+C/Ctrl+R. Tras `=`, un número nuevo empieza de cero y un
+  operador sigue con el resultado.

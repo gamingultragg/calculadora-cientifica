@@ -12,6 +12,8 @@
 <link rel="icon" type="image/png" sizes="32x32" href="/assets/img/favicon-32.png" />
 <link rel="icon" type="image/png" sizes="16x16" href="/assets/img/favicon-16.png" />
 <link rel="apple-touch-icon" href="/assets/img/apple-touch-icon.png" />
+<link rel="manifest" href="/manifest.webmanifest" />
+<meta name="theme-color" content="#2563eb" />
 
 <meta property="og:type" content="website" />
 <meta property="og:locale" content="es_AR" />
@@ -122,6 +124,9 @@
           <div id="bc-expr" class="text-sm text-[var(--color-text-muted)] min-h-[1.25rem] break-all">&nbsp;</div>
           <div id="bc-result" class="text-4xl font-bold mt-1 break-all" aria-live="polite">0</div>
         </div>
+        <div class="flex justify-end mb-3">
+          <button type="button" class="cc-copy" data-copy-target="bc-result" data-copy-label="Copiar resultado">Copiar resultado</button>
+        </div>
 
         <div class="grid grid-cols-4 gap-2">
           <button class="calc-btn calc-btn--danger" data-action="clear">AC</button>
@@ -227,5 +232,7 @@
 </button>
 <script src="/assets/js/ads.js" defer></script>
 <script src="/assets/js/back-to-top.js"></script>
+<script src="/assets/js/pwa.js" defer></script>
+<script src="/assets/js/copy-result.js" defer></script>
 </body>
 </html>

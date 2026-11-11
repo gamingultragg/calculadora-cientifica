@@ -359,6 +359,35 @@ pages de categoría + home + 404 + sobre-nosotros + 2 legales = 51 páginas**, t
    proyecto; resultado actual: **46 URLs, 0 problemas**, servido en producción con
    `content-type: application/xml`.
 
+## Pendientes
+
+Actualizado 2026-11-10.
+
+**Esperando a terceros**
+- [ ] **AdSense: esperar que el sitio pase de "Preparando" a "Listo"** (AdSense > Sitios; llega
+  un email). La cuenta ya está completa (datos de pago cargados, sitio conectado, anuncios
+  automáticos desactivados, 4 unidades creadas). Cuando diga "Listo": poner `ENABLED = true` en
+  `assets/js/ads.js`, commitear y verificar en producción que los anuncios aparezcan donde
+  corresponde y sin saltos de layout. Ver "Ubicaciones de anuncios".
+- [ ] **Search Console: indexación.** 9 páginas indexadas y 42 "Descubierta, sin indexar". La
+  tarea programada `indexacion-search-console` (diaria, 10:14) pide ~8 URLs por día desde
+  `indexacion-cola.md` (archivo local, no versionado). Revisar el avance en Indexación > Páginas.
+
+**Por hacer (en orden de prioridad)**
+- [ ] **Calculadoras nuevas, cada una con su guía:** masa molar de una fórmula (complementa
+  molaridad, la guía más vista), promedio de notas / ponderado, regla de tres, interés simple,
+  MCD y MCM.
+- [ ] **Mejoras de producto:** PWA instalable y offline (manifest + service worker), botón
+  "copiar resultado", historial local en la científica, entrada por teclado físico en la
+  científica.
+- [ ] **Enviar mails como `contacto@calculadoracientifica.com.ar`** desde Gmail: hace falta una
+  contraseña de aplicación de Google y usar `smtp.gmail.com:587` (Cloudflare Email Routing solo
+  recibe).
+- [ ] **Plan de difusión** (artifact "Plan de Difusión"): grupos de docentes, foros de dudas,
+  Reddit con cuidado, directorios, un video del "orden de operaciones".
+- [ ] **Performance:** Lighthouse mobile quedó en 74 por los scripts de Google (~380 KiB). Si
+  molesta, cargar `adsbygoogle.js` de forma diferida en lugar de en el `<head>`.
+
 ## Deploy
 
 El sitio está en producción en **Cloudflare Pages**, conectado al repo de GitHub

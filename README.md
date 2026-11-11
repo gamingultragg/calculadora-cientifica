@@ -592,3 +592,10 @@ rueda/botones, desplazamiento arrastrando y enlace compartible (`?gf-f1=…`). E
 - **Favoritas** (`assets/js/favorites.js`): botón ☆/★ en cada calculadora y bloque "Tus favoritas" en la home, en `localStorage`
   (`cc-favs`, hasta 12). Lo inyecta `inject-pwa-and-copy.py` en la home y en `calculadoras/<cat>/<slug>/index.html`.
 - 49 pruebas de lógica.
+
+## Ejercicios para practicar (2026-11-11)
+
+`scripts/add-exercises.py` inserta (idempotente, entre marcadores `CC-EXERCISES`) 3 ejercicios con solución desplegable en 16
+guías de uso frecuente. Las respuestas se verificaron con cálculos independientes antes de cargarlas. Para sumar otra guía,
+agregarla al diccionario `EX` del script. Revisión móvil (375 px) de las 148 URLs del sitemap, también con resultado a la vista:
+sin desbordes.

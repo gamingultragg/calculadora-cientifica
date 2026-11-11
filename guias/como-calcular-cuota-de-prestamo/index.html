@@ -208,6 +208,34 @@
         <li>Comparar dos préstamos solo por el valor de la cuota, sin mirar el plazo total ni la TEA.</li>
       </ul>
 
+      <!-- CC-EXERCISES:START -->
+      <h2 class="font-display font-bold text-xl mt-8 mb-2">Ejercicios para practicar</h2>
+      <p class="text-[var(--color-text-muted)] leading-relaxed">Probá resolverlos vos y después abrí la solución para comparar.</p>
+      <ol class="list-decimal list-inside space-y-4 mt-3">
+        <li>
+          <p class="text-[var(--color-text-muted)] leading-relaxed">Un préstamo de $500.000 se paga en 3 cuotas mensuales con una tasa del 2 % mensual (sistema francés). ¿De cuánto es la cuota?</p>
+          <details class="mt-1">
+            <summary class="cursor-pointer text-sm font-semibold text-[var(--color-primary-link)] min-h-[2rem] flex items-center">Ver la solución</summary>
+            <p class="text-[var(--color-text-muted)] leading-relaxed mt-1">Cuota = P·i / (1 − (1 + i)<sup>−n</sup>) = 500.000 × 0,02 / (1 − 1,02<sup>−3</sup>) = 10.000 / 0,057678 = <strong>$173.377</strong>.</p>
+          </details>
+        </li>
+        <li>
+          <p class="text-[var(--color-text-muted)] leading-relaxed">En el ejercicio anterior, ¿cuánto se paga en total y cuánto es de interés?</p>
+          <details class="mt-1">
+            <summary class="cursor-pointer text-sm font-semibold text-[var(--color-primary-link)] min-h-[2rem] flex items-center">Ver la solución</summary>
+            <p class="text-[var(--color-text-muted)] leading-relaxed mt-1">Total = 173.377 × 3 = $520.132. Interés = 520.132 − 500.000 = <strong>$20.132</strong>.</p>
+          </details>
+        </li>
+        <li>
+          <p class="text-[var(--color-text-muted)] leading-relaxed">¿Cuánto del primer pago es interés?</p>
+          <details class="mt-1">
+            <summary class="cursor-pointer text-sm font-semibold text-[var(--color-primary-link)] min-h-[2rem] flex items-center">Ver la solución</summary>
+            <p class="text-[var(--color-text-muted)] leading-relaxed mt-1">Interés del primer mes = saldo × tasa = 500.000 × 0,02 = <strong>$10.000</strong>; el resto de la cuota (163.377) amortiza capital.</p>
+          </details>
+        </li>
+      </ol>
+      <!-- CC-EXERCISES:END -->
+
       <h2 class="font-display font-bold text-xl mt-8 mb-2">Preguntas frecuentes</h2>
       <dl class="space-y-4 text-[var(--color-text-muted)] leading-relaxed">
         <div>

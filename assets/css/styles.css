@@ -271,3 +271,50 @@ details.help-accordion > summary { min-height: 2.75rem; }
 .cc-fav-x { background: none; border: 0; cursor: pointer; font-size: 1.1rem; line-height: 1; width: 2rem; height: 2rem; border-radius: 9999px; color: var(--color-text-muted); }
 .cc-fav-x:hover { background: rgba(220, 38, 38, 0.12); color: #dc2626; }
 @media print { #cc-favs { display: none !important; } }
+
+/* ------------------------------------------------------------------
+   Cuentas (account.js): botón del encabezado, modal de ingreso y página /cuenta/
+   ------------------------------------------------------------------ */
+.cc-acc-btn { display: inline-flex; align-items: center; gap: 0.5rem; height: 2.5rem; padding: 0 0.9rem; border-radius: 9999px; border: 1px solid var(--color-border); background: var(--color-surface); color: var(--color-text); font-size: 0.85rem; font-weight: 600; cursor: pointer; text-decoration: none; position: relative; transition: box-shadow 0.15s; }
+.cc-acc-btn:hover { box-shadow: 0 4px 12px rgba(15, 23, 42, 0.12); }
+.cc-acc-avatar { width: 1.6rem; height: 1.6rem; border-radius: 9999px; background: var(--color-primary); color: #fff; display: inline-flex; align-items: center; justify-content: center; font-size: 0.8rem; margin-left: -0.35rem; }
+.cc-acc-dot { position: absolute; top: 0.2rem; right: 0.2rem; width: 0.6rem; height: 0.6rem; border-radius: 9999px; background: #f59e0b; border: 2px solid var(--color-surface); }
+@media (max-width: 420px) { .cc-acc-label { display: none; } .cc-acc-btn { padding: 0 0.6rem; } }
+
+.cc-modal { border: 1px solid var(--color-border); border-radius: 1.25rem; padding: 1.5rem; width: min(26rem, calc(100vw - 2rem)); background: var(--color-surface); color: var(--color-text); box-shadow: 0 24px 60px rgba(2, 6, 23, 0.35); }
+.cc-modal::backdrop { background: rgba(2, 6, 23, 0.55); }
+.cc-modal-x { position: absolute; top: 0.6rem; right: 0.8rem; background: none; border: 0; font-size: 1.6rem; line-height: 1; cursor: pointer; color: var(--color-text-muted); width: 2.2rem; height: 2.2rem; }
+.cc-modal-title { font-family: "Inter", sans-serif; font-weight: 800; font-size: 1.25rem; margin-right: 1.5rem; }
+.cc-modal-sub { margin-top: 0.4rem; font-size: 0.85rem; line-height: 1.5; color: var(--color-text-muted); }
+.cc-tabs { display: flex; gap: 0.25rem; margin-top: 1rem; padding: 0.25rem; border-radius: 9999px; background: var(--color-bg); border: 1px solid var(--color-border); }
+.cc-tabs button { flex: 1; padding: 0.45rem; border-radius: 9999px; border: 0; background: transparent; font-weight: 600; font-size: 0.85rem; color: var(--color-text-muted); cursor: pointer; }
+.cc-tabs button[aria-selected="true"] { background: var(--color-primary); color: #fff; }
+.cc-google-wrap { position: relative; display: flex; flex-direction: column; align-items: center; margin-top: 1rem; min-height: 44px; }
+.cc-google-lock { position: absolute; inset: 0; background: transparent; border: 0; cursor: not-allowed; }
+.cc-or { display: flex; align-items: center; gap: 0.75rem; margin: 1rem 0 0.25rem; font-size: 0.75rem; color: var(--color-text-muted); }
+.cc-or::before, .cc-or::after { content: ""; flex: 1; height: 1px; background: var(--color-border); }
+.cc-field { display: block; margin-top: 0.75rem; font-size: 0.85rem; font-weight: 600; }
+.cc-field input, .cc-input { display: block; width: 100%; margin-top: 0.25rem; padding: 0.6rem 0.75rem; border-radius: 0.75rem; border: 1px solid var(--color-border); background: var(--color-bg); color: var(--color-text); font-size: 1rem; }
+.cc-field input:focus, .cc-input:focus { outline: 2px solid var(--color-primary); outline-offset: 1px; }
+.cc-hint { margin-top: 0.25rem; font-size: 0.75rem; color: var(--color-text-muted); }
+.cc-check { display: flex; align-items: flex-start; gap: 0.5rem; margin-top: 0.9rem; font-size: 0.8rem; line-height: 1.4; color: var(--color-text-muted); }
+.cc-check input { margin-top: 0.15rem; width: 1.1rem; height: 1.1rem; }
+.cc-check a, .cc-modal a { color: var(--color-primary-link); text-decoration: underline; }
+.cc-msg { min-height: 1.2rem; margin: 0.6rem 0; font-size: 0.8rem; line-height: 1.4; }
+.cc-msg[data-kind="error"] { color: var(--color-danger, #dc2626); }
+.cc-msg[data-kind="ok"] { color: #16a34a; }
+.cc-link { display: block; margin: 0.6rem auto 0; background: none; border: 0; color: var(--color-primary-link); font-size: 0.8rem; text-decoration: underline; cursor: pointer; min-height: 2rem; }
+.cc-row { display: flex; flex-wrap: wrap; align-items: center; gap: 0.5rem; margin-top: 1rem; }
+.cc-toast { position: fixed; left: 50%; bottom: 1.25rem; transform: translateX(-50%); z-index: 70; max-width: min(34rem, calc(100vw - 2rem)); padding: 0.8rem 1rem; border-radius: 0.9rem; background: var(--color-text); color: var(--color-bg); font-size: 0.85rem; line-height: 1.4; box-shadow: 0 10px 30px rgba(2, 6, 23, 0.3); }
+.cc-toast[data-kind="error"] { background: #b91c1c; color: #fff; }
+.cc-toast[hidden] { display: none; }
+.cc-dl { margin-top: 1rem; }
+.cc-kv { display: flex; flex-wrap: wrap; gap: 0.25rem 1rem; padding: 0.55rem 0; border-bottom: 1px solid var(--color-border); font-size: 0.9rem; }
+.cc-kv dt { width: 10rem; color: var(--color-text-muted); }
+.cc-kv dd { font-weight: 600; word-break: break-all; }
+.cc-h2 { font-family: "Inter", sans-serif; font-weight: 700; font-size: 1.05rem; margin: 1.5rem 0 0.5rem; }
+.cc-ul { margin-left: 1.1rem; list-style: disc; font-size: 0.9rem; line-height: 1.7; color: var(--color-text-muted); }
+.cc-danger { margin-top: 2.5rem; padding: 1rem; border: 1px solid #fca5a5; border-radius: 1rem; }
+.cc-danger-btn { margin-top: 0.75rem; padding: 0.55rem 1rem; border-radius: 0.75rem; border: 0; background: #dc2626; color: #fff; font-weight: 700; cursor: pointer; }
+.cc-danger-btn:hover { background: #b91c1c; }
+@media print { #cc-account-slot, .cc-toast, .cc-modal { display: none !important; } }

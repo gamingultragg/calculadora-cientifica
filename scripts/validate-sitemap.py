@@ -25,7 +25,7 @@ sitemap_locs = [el.text.strip() for el in tree.getroot().findall("sm:url/sm:loc"
 print(f"sitemap.xml es XML válido. {len(sitemap_locs)} URLs listadas.\n")
 
 # --- 2. Páginas reales en disco (excluyendo la 404, que es noindex) ------
-pages = sorted(ROOT.glob("**/index.html"))
+pages = sorted(p for p in ROOT.glob("**/index.html") if "node_modules" not in p.parts and p.relative_to(ROOT).parts[0] != "tools" and 'content="noindex' not in p.read_text(encoding="utf-8"))  # las noindex (404, /cuenta/) no van
 real_paths = {"/" + str(p.relative_to(ROOT)).replace("index.html", "").replace("\\", "/") for p in pages}
 real_urls = {SITE + p for p in real_paths}
 

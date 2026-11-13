@@ -42,7 +42,7 @@ self.addEventListener("fetch", (event) => {
   }
 
   if (url.origin !== self.location.origin) return;
-  if (url.pathname === "/sw.js") return;
+  if (url.pathname === "/sw.js" || url.pathname.startsWith("/api/")) return; // la API de cuentas siempre va a la red
 
   event.respondWith(
     fetch(req)

@@ -2,7 +2,7 @@
  * Estrategia: precarga del sitio (páginas + CSS + JS) para que funcione sin conexión;
  * red primero con respaldo en caché; tipografías de Google en caché "stale-while-revalidate".
  * No intercepta anuncios, analítica ni nada de otros orígenes (salvo las tipografías). */
-const VERSION = "05a40df2d8";
+const VERSION = "ae725f2d97";
 const CACHE = "cc-" + VERSION;
 const FONTS = "cc-fonts-v1";
 const PRECACHE = [
@@ -163,6 +163,7 @@ const PRECACHE = [
  "/assets/img/favicon.svg",
  "/assets/img/pwa-192.png",
  "/assets/img/pwa-512.png",
+ "/assets/js/account.js",
  "/assets/js/ads.js",
  "/assets/js/back-to-top.js",
  "/assets/js/calc-simple.js",
@@ -278,7 +279,7 @@ self.addEventListener("fetch", (event) => {
   }
 
   if (url.origin !== self.location.origin) return;
-  if (url.pathname === "/sw.js") return;
+  if (url.pathname === "/sw.js" || url.pathname.startsWith("/api/")) return; // la API de cuentas siempre va a la red
 
   event.respondWith(
     fetch(req)

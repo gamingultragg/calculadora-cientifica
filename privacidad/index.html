@@ -55,22 +55,24 @@
     </nav>
 
     <h1 class="font-display font-extrabold text-2xl sm:text-3xl">Política de Privacidad</h1>
-    <p class="mt-2 text-sm text-[var(--color-text-muted)]">Última actualización: 30 de agosto de 2026.</p>
+    <p class="mt-2 text-sm text-[var(--color-text-muted)]">Última actualización: 12 de noviembre de 2026 (versión 2026-11-12).</p>
 
     <div class="mt-6 space-y-6 text-sm leading-relaxed text-[var(--color-text-muted)]">
       <section class="surface rounded-2xl p-5">
         <h2 class="font-display font-semibold text-lg text-[var(--color-text)] mb-2">Resumen breve</h2>
-        <p>Calculadora Científica no requiere registro, no tiene cuentas de usuario y no te pide
-          datos personales para usar ninguna herramienta. Todos los cálculos se hacen en tu propio
-          navegador — los números que ingresás en una calculadora nunca se envían a ningún servidor.</p>
+        <p>Podés usar todo el sitio <strong class="text-[var(--color-text)]">sin registrarte</strong> y sin darnos ningún dato personal.
+          Los cálculos se hacen en tu propio navegador: los números que ingresás en una calculadora no se envían a ningún servidor.
+          Si decidís <strong class="text-[var(--color-text)]">crear una cuenta</strong> (opcional), guardamos los datos que se
+          detallan en la sección "Si creás una cuenta", entre ellos el historial de tus cálculos para poder sincronizarlo.</p>
       </section>
 
       <section class="surface rounded-2xl p-5">
         <h2 class="font-display font-semibold text-lg text-[var(--color-text)] mb-2">Qué guarda tu navegador</h2>
         <p>Usamos <code class="font-numeric text-[var(--color-text)]">localStorage</code> (almacenamiento
-          local del navegador, no cookies) únicamente para recordar tu preferencia de tema claro u
-          oscuro entre visitas. Ese dato queda en tu dispositivo, no lo recibimos ni lo almacenamos
-          nosotros, y podés borrarlo en cualquier momento desde la configuración de tu navegador.</p>
+          local del navegador, no cookies) para recordar tu preferencia de tema claro u oscuro, tus calculadoras favoritas y el
+          historial de tus últimos cálculos. Esos datos quedan en tu dispositivo y no los recibimos, salvo que inicies sesión con
+          una cuenta: en ese caso se sincronizan con tu cuenta (ver más abajo). Podés borrarlos en cualquier momento desde la
+          configuración de tu navegador.</p>
       </section>
 
       <section class="surface rounded-2xl p-5">
@@ -87,10 +89,34 @@
           cálculos ocurren enteramente en tu navegador y nunca salen de tu dispositivo.</p>
       </section>
 
+      <section id="cuenta" class="surface rounded-2xl p-5">
+        <h2 class="font-display font-semibold text-lg text-[var(--color-text)] mb-2">Si creás una cuenta</h2>
+        <p>La cuenta es opcional. Si la creás, tratamos estos datos:</p>
+        <ul class="list-disc list-inside mt-2 space-y-1">
+          <li><strong class="text-[var(--color-text)]">Datos de acceso:</strong> tu mail y, si ingresás con Google, tu nombre y el identificador de tu cuenta de Google. Si elegís contraseña, guardamos solo un <em>hash</em> irreversible (nunca la contraseña en texto).</li>
+          <li><strong class="text-[var(--color-text)]">Constancia de aceptación:</strong> la versión de los Términos y la Política que aceptaste y cuándo.</li>
+          <li><strong class="text-[var(--color-text)]">Lo que guardás:</strong> tus calculadoras favoritas, el historial de tus últimos cálculos (con los valores que ingresaste y el resultado) y tu preferencia de tema.</li>
+          <li><strong class="text-[var(--color-text)]">Seguridad:</strong> una cookie de sesión y contadores de intentos asociados a tu dirección IP de forma no reversible, que se borran a los pocos minutos u horas, para frenar abusos.</li>
+        </ul>
+        <p class="mt-2"><strong class="text-[var(--color-text)]">Para qué:</strong> identificarte, guardar y sincronizar tus datos entre dispositivos y
+          mantener el servicio seguro. No vendemos tus datos ni los cedemos a terceros con fines comerciales.</p>
+        <p class="mt-2"><strong class="text-[var(--color-text)]">Proveedores que intervienen:</strong> Cloudflare (aloja el sitio y la base de datos), Google
+          (solo si elegís ingresar con Google) y Resend (envío de los mails de confirmación y de recuperación de contraseña).</p>
+        <p class="mt-2"><strong class="text-[var(--color-text)]">Cuánto tiempo:</strong> hasta que elimines tu cuenta. Podés hacerlo, y descargar una copia de tus datos, desde
+          <a class="text-[var(--color-primary-link)] hover:underline" href="/cuenta/">Mi cuenta</a>; la eliminación borra al instante tu cuenta y todo lo que guardaste. Al cerrar sesión, los datos sincronizados se borran de ese dispositivo.</p>
+        <p class="mt-2"><strong class="text-[var(--color-text)]">Tus derechos:</strong> como titular de los datos podés acceder a ellos, rectificarlos y suprimirlos (Ley 25.326 de Protección de los
+          Datos Personales). Para ejercerlos, usá tu página de cuenta o escribinos a
+          <a class="text-[var(--color-primary-link)] hover:underline" href="mailto:contacto@calculadoracientifica.com.ar">contacto@calculadoracientifica.com.ar</a>. La Agencia de Acceso a la Información Pública,
+          en su carácter de Órgano de Control de la Ley 25.326, tiene la atribución de atender las denuncias y reclamos de quienes resulten afectados en sus derechos
+          por el incumplimiento de las normas de protección de datos personales.</p>
+      </section>
+
       <section id="cookies" class="surface rounded-2xl p-5">
         <h2 class="font-display font-semibold text-lg text-[var(--color-text)] mb-2">Cookies</h2>
         <p>La analítica que usamos (Cloudflare Web Analytics) no utiliza cookies — está diseñada
-          específicamente para no requerirlas.</p>
+          específicamente para no requerirlas. Si iniciás sesión con una cuenta, usamos una única cookie
+          <strong class="text-[var(--color-text)]">esencial</strong> (<code class="font-numeric text-[var(--color-text)]">cc_session</code>,
+          segura, de acceso solo por el servidor y de 30 días) para mantener tu sesión abierta.</p>
         <p class="mt-2">Usamos <strong class="text-[var(--color-text)]">Google AdSense</strong> para
           mostrar anuncios, que sí puede usar cookies y tecnologías similares (propias y de
           terceros) para mostrar anuncios basados en tus visitas a este sitio y a otros, y para
@@ -107,14 +133,15 @@
       <section class="surface rounded-2xl p-5">
         <h2 class="font-display font-semibold text-lg text-[var(--color-text)] mb-2">Menores de edad</h2>
         <p>El sitio está pensado como herramienta educativa y puede ser usado por estudiantes de
-          cualquier edad. No recolectamos datos personales de nadie, incluidos menores.</p>
+          cualquier edad sin registrarse. Las cuentas son para mayores de 13 años; si sos menor de 18, creala con conocimiento de tu madre, padre o tutor.
+          No recolectamos datos personales de quienes usan el sitio sin cuenta.</p>
       </section>
 
       <section class="surface rounded-2xl p-5">
         <h2 class="font-display font-semibold text-lg text-[var(--color-text)] mb-2">Cambios a esta política</h2>
-        <p>Podemos actualizar esta política si cambia cómo funciona el sitio (por ejemplo, si
-          agregamos analítica o cuentas de usuario en el futuro). La fecha de "última actualización"
-          arriba refleja la versión vigente.</p>
+        <p>Podemos actualizar esta política si cambia cómo funciona el sitio. La fecha de "última actualización"
+          arriba refleja la versión vigente. Si el cambio es importante, a quienes tienen una cuenta les vamos a pedir que
+          acepten la nueva versión la próxima vez que ingresen.</p>
       </section>
 
       <section class="surface rounded-2xl p-5">
@@ -146,5 +173,6 @@
 </button>
 <script src="/assets/js/back-to-top.js"></script>
 <script src="/assets/js/pwa.js" defer></script>
+<script src="/assets/js/account.js" defer></script>
 </body>
 </html>

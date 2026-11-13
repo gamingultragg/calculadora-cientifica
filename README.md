@@ -599,3 +599,39 @@ rueda/botones, desplazamiento arrastrando y enlace compartible (`?gf-f1=…`). E
 guías de uso frecuente. Las respuestas se verificaron con cálculos independientes antes de cargarlas. Para sumar otra guía,
 agregarla al diccionario `EX` del script. Revisión móvil (375 px) de las 148 URLs del sitemap, también con resultado a la vista:
 sin desbordes.
+
+## Cuentas de usuario (2026-11-12)
+
+Cuentas **opcionales** con ingreso con Google y con mail + contraseña, aceptación de los términos y sincronización de favoritas,
+historial y preferencias. Sin la configuración de abajo el sitio funciona exactamente igual: `/api/config` responde
+`{ enabled: false }` y `account.js` no dibuja nada.
+
+**Piezas**
+- `functions/api/[[path]].js` → llama a `server-lib/api.mjs` (toda la lógica; `util.mjs` y `google.mjs` al lado). `server-lib/` queda
+  fuera de `functions/` a propósito, para que no se convierta en rutas.
+- `migrations/0001_cuentas.sql` — tablas D1: `users`, `terms_acceptances`, `sessions`, `email_tokens`, `user_data`, `rate_limits`.
+- `assets/js/account.js` (botón del encabezado, modal, sincronización, página `/cuenta/`), estilos `.cc-*` en `styles.css`,
+  `scripts/build-cuenta.py` (página `/cuenta/`, noindex), Términos y Privacidad actualizados (versión `TERMS_VERSION` en `util.mjs`).
+- Pruebas: `node --test tools/tests/api.test.mjs` (SQLite en memoria en lugar de D1, Resend simulado, ID token de Google firmado con
+  una clave generada en la prueba). Desarrollo local de punta a punta: `tools/api-dev` (wrangler) →
+  `npx wrangler d1 execute calculadora --local --config tools/api-dev/wrangler.toml --file migrations/0001_cuentas.sql --persist-to .wrangler/state`
+  y `node tools/api-dev/node_modules/wrangler/bin/wrangler.js pages dev . --port 8788 --d1 DB=local-dev-0000 --persist-to .wrangler/state --binding GOOGLE_CLIENT_ID=… RESEND_API_KEY=x DEV_MAIL_LOG=1`
+  (`DEV_MAIL_LOG=1` imprime los mails en la consola en vez de enviarlos; jamás se define en producción).
+
+**Seguridad (resumen):** contraseñas con PBKDF2-SHA256 de 100.000 iteraciones (el máximo que permite Workers) y sal propia; sesión con
+cookie `cc_session` HttpOnly + Secure + SameSite=Lax y solo el hash del token en la base; protección CSRF por `Origin`; límites de
+intentos por IP y por mail; verificación del mail antes de sincronizar; si alguien se registra con el mail ajeno y la dueña ingresa
+después con Google, se descarta la contraseña del impostor; el ID token de Google se valida con la firma RS256 de Google (sin secretos);
+exportar y eliminar la cuenta desde `/cuenta/`. La API nunca la cachea el service worker.
+
+**Para habilitarlo en producción** (en la cuenta de Cloudflare dueña del proyecto Pages `calculadora-cientifica`):
+1. Crear una base D1 (`calculadora`) y ejecutar `migrations/0001_cuentas.sql` en su consola.
+2. Proyecto Pages → Settings → Bindings → D1 database → variable `DB` (Production y Preview).
+3. Google Cloud → Credenciales → ID de cliente OAuth (Aplicación web), con orígenes autorizados
+   `https://www.calculadoracientifica.com.ar` y `https://calculadoracientifica.com.ar` → variable de entorno `GOOGLE_CLIENT_ID` (no es secreta).
+4. Resend: verificar el dominio `calculadoracientifica.com.ar` (registros DNS) y crear una API key → **secreto** `RESEND_API_KEY`
+   (`MAIL_FROM` opcional; por defecto `Calculadora Científica <contacto@calculadoracientifica.com.ar>`).
+5. Volver a desplegar. Sin `GOOGLE_CLIENT_ID` no aparece Google; sin `RESEND_API_KEY` no aparece el registro con mail (queda solo Google).
+
+Pendiente legal (no es código): evaluar con un profesional la inscripción de la base de datos de usuarios ante la AAIP (Ley 25.326)
+y revisar los textos de Términos y Privacidad.

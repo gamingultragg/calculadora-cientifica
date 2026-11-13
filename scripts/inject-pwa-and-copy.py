@@ -13,6 +13,7 @@ HEAD_ADD = '\n<link rel="manifest" href="/manifest.webmanifest" />\n<meta name="
 PWA = '<script src="/assets/js/pwa.js" defer></script>'
 COPY = '<script src="/assets/js/copy-result.js" defer></script>'
 FAVS = '<script src="/assets/js/favorites.js" defer></script>'
+ACCOUNT = '<script src="/assets/js/account.js" defer></script>'
 
 changed = 0
 for f in sorted(ROOT.rglob("*.html")):
@@ -34,6 +35,8 @@ for f in sorted(ROOT.rglob("*.html")):
     # favoritas: home y páginas de calculadoras (calculadoras/<categoria>/<slug>/index.html)
     if FAVS not in s and (rel == "index.html" or (rel.startswith("calculadoras/") and rel.count("/") == 3)):
         add += FAVS + "\n"
+    if ACCOUNT not in s and rel not in ("404.html",):
+        add += ACCOUNT + "\n"
     if add:
         s = s.replace("</body>", add + "</body>", 1)
     if s != o:

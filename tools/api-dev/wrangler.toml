@@ -1,0 +1,9 @@
+# Solo para desarrollo local de la API de cuentas (wrangler pages dev). NO se usa en producción:
+# en Cloudflare Pages el binding D1 "DB" se configura en el panel del proyecto.
+name = "calculadora-dev"
+compatibility_date = "2026-11-01"
+
+[[d1_databases]]
+binding = "DB"
+database_name = "calculadora"
+database_id = "local-dev-0000"

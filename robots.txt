@@ -1,4 +1,6 @@
 User-agent: *
 Allow: /
+Disallow: /api/
+Disallow: /cuenta/
 
 Sitemap: https://www.calculadoracientifica.com.ar/sitemap.xml

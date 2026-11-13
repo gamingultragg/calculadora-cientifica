@@ -218,14 +218,15 @@
         el("button", { type: "button", role: "tab", "data-tab": "login", "aria-selected": "true", text: "Ingresar", onclick: () => setMode("login") }),
         el("button", { type: "button", role: "tab", "data-tab": "register", "aria-selected": "false", text: "Crear cuenta", onclick: () => setMode("register") })),
       el("div", { id: "cc-google-wrap", class: "cc-google-wrap" }, el("div", { id: "cc-google-btn" }), el("button", { type: "button", id: "cc-google-lock", class: "cc-google-lock", hidden: true, "aria-label": "Aceptá los términos para continuar con Google", onclick: () => showMsg("Para crear la cuenta, primero marcá que aceptás los términos.", true) })),
+      // Términos y mensajes van fuera del formulario: tienen que verse aunque el ingreso con mail esté apagado (solo Google).
+      el("div", { id: "cc-terms-row", class: "cc-terms", hidden: true },
+        el("label", { class: "cc-check" }, el("input", { id: "cc-terms", type: "checkbox", onchange: updateGoogleLock }), el("span", {}, "Acepto los ", termsLinks))),
+      el("p", { id: "cc-msg", class: "cc-msg", role: "alert", "aria-live": "polite" }),
       el("p", { id: "cc-or", class: "cc-or", text: "o con tu mail" }),
       el("form", { id: "cc-form", novalidate: true, onsubmit: onSubmit },
         el("label", { class: "cc-field" }, "Mail", el("input", { id: "cc-email", type: "email", autocomplete: "email", required: true, inputmode: "email" })),
         el("label", { class: "cc-field" }, "Contraseña", el("input", { id: "cc-pass", type: "password", autocomplete: "current-password", required: true, minlength: "8" })),
         el("p", { id: "cc-pass-hint", class: "cc-hint", text: "Mínimo 8 caracteres.", hidden: true }),
-        el("div", { id: "cc-terms-row", class: "cc-terms", hidden: true },
-          el("label", { class: "cc-check" }, el("input", { id: "cc-terms", type: "checkbox", onchange: updateGoogleLock }), el("span", {}, "Acepto los ", termsLinks))),
-        el("p", { id: "cc-msg", class: "cc-msg", role: "alert", "aria-live": "polite" }),
         el("button", { id: "cc-submit", type: "submit", class: "calc-btn calc-btn--op w-full py-2.5", text: "Ingresar" }),
         el("button", { id: "cc-forgot", type: "button", class: "cc-link", text: "Olvidé mi contraseña", onclick: onForgot })));
     dialog.addEventListener("click", (e) => e.target === dialog && dialog.close());

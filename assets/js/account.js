@@ -449,7 +449,8 @@
   // -------------------------------------------------------------------------- inicio --
   (async function init() {
     const c = await api("GET", "config");
-    if (!c.ok || !c.data.enabled) return; // cuentas no habilitadas: el sitio sigue como siempre
+    // cuentas no habilitadas, o sin ningún método de ingreso configurado: el sitio sigue como siempre
+    if (!c.ok || !c.data.enabled || (!c.data.google && !c.data.email)) return;
     cfg = c.data;
     const m = await api("GET", "me");
     me = (m.data && m.data.user) || null;

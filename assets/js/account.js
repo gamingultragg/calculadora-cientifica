@@ -137,7 +137,7 @@
       if (v != null) data[rk] = { v, t: loadMeta()[rk] || Date.now() };
     });
     dirty.clear();
-    if (Object.keys(data).length) push(data, keepalive);
+    if (Object.keys(data).length) return push(data, keepalive);
   }
   function markDirty(localKey) {
     const rk = toRemote(localKey);
@@ -181,13 +181,22 @@
   function renderHeader() {
     const slot = document.getElementById("cc-account-slot");
     if (!slot) return;
-    slot.querySelectorAll(".cc-acc-btn").forEach((n) => n.remove());
+    slot.querySelectorAll(".cc-acc-btn, .cc-acc-wrap").forEach((n) => n.remove());
     const toggle = slot.querySelector("[data-theme-toggle]");
     if (me) {
       const label = (me.name || me.email).split(/[ @]/)[0].slice(0, 14);
-      const a = el("a", { href: "/cuenta/", class: "cc-acc-btn", "aria-label": "Mi cuenta" }, el("span", { class: "cc-acc-avatar", text: (me.name || me.email)[0].toUpperCase() }), el("span", { class: "cc-acc-label", text: label }));
+      const a = el("button", { type: "button", class: "cc-acc-btn", "aria-label": "Mi cuenta", "aria-haspopup": "true", "aria-expanded": "false" }, el("span", { class: "cc-acc-avatar", text: (me.name || me.email)[0].toUpperCase() }), el("span", { class: "cc-acc-label", text: label }));
       if (!me.emailVerified || me.needsTerms) a.append(el("span", { class: "cc-acc-dot", title: me.needsTerms ? "Aceptá los términos actualizados" : "Falta confirmar tu mail" }));
-      slot.insertBefore(a, toggle);
+      const menu = el("div", { class: "cc-acc-menu", role: "menu", hidden: true },
+        el("p", { class: "cc-acc-who", text: me.email }),
+        el("a", { href: "/cuenta/", role: "menuitem", text: "Mi cuenta y mis resultados" }),
+        el("button", { type: "button", role: "menuitem", text: "Cerrar sesión", onclick: () => doLogout() }));
+      const close = () => { menu.hidden = true; a.setAttribute("aria-expanded", "false"); };
+      a.addEventListener("click", (e) => { e.stopPropagation(); menu.hidden = !menu.hidden; a.setAttribute("aria-expanded", String(!menu.hidden)); });
+      document.addEventListener("click", (e) => { if (!menu.contains(e.target)) close(); });
+      document.addEventListener("keydown", (e) => e.key === "Escape" && close());
+      const wrap = el("div", { class: "cc-acc-wrap" }, a, menu);
+      slot.insertBefore(wrap, toggle);
     } else {
       slot.insertBefore(el("button", { type: "button", class: "cc-acc-btn", onclick: () => openAuth("login") }, el("span", { text: "Ingresar" })), toggle);
     }
@@ -370,7 +379,15 @@
   }
 
   async function doLogout() {
-    await api("POST", "auth/logout", {});
+    await flush(); // lo último que hiciste se guarda en la cuenta antes de salir
+    const r = await api("POST", "auth/logout", {});
+    if (!r.ok) {
+      // sin conexión o error del servidor: no dejamos a la persona trabada
+      toast(r.data && r.data.message ? r.data.message : "No se pudo cerrar la sesión. Probá de nuevo.", "error");
+      return;
+    }
+    me = null; // que ningún guardado pendiente intente enviarse con la sesión ya cerrada
+    dirty.clear();
     clearSyncedLocal();
     location.href = "/";
   }

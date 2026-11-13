@@ -228,10 +228,16 @@
       render();
     }
     // Esperamos a que el resultado se "asiente" (las calculadoras en vivo recalculan en cada tecla).
+    let pending = false;
     new MutationObserver(() => {
       clearTimeout(timer);
-      timer = setTimeout(record, 1500);
+      pending = true;
+      timer = setTimeout(() => { pending = false; record(); }, 1500);
     }).observe(panel, { childList: true, subtree: true, characterData: true, attributes: true, attributeFilter: ["class"] });
+    // Si la persona se va antes de que el resultado "se asiente", se guarda igual (y account.js lo envía a la cuenta).
+    const saveNow = () => { if (pending) { clearTimeout(timer); pending = false; record(); } };
+    document.addEventListener("visibilitychange", () => document.visibilityState === "hidden" && saveNow());
+    window.addEventListener("pagehide", saveNow);
     clear.addEventListener("click", () => {
       saveHistory([]);
       render();

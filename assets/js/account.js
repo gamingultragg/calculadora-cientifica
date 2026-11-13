@@ -17,13 +17,14 @@
   let pendingGoogle = null; // credencial de Google a la espera de que se acepten los términos
 
   // ------------------------------------------------------------------ utilidades --
-  async function api(method, path, body) {
+  async function api(method, path, body, keepalive = false) {
     try {
       const res = await fetch("/api/" + path, {
         method,
         credentials: "same-origin",
         headers: body ? { "Content-Type": "application/json" } : {},
         body: body ? JSON.stringify(body) : undefined,
+        keepalive, // permite que el envío termine aunque la persona cierre o cambie de página
       });
       let data = {};
       try { data = await res.json(); } catch { /* sin cuerpo */ }
@@ -87,11 +88,11 @@
     return (lt || 0) >= (rt || 0) ? lv : rv; // preferencias: gana la más reciente
   }
 
-  async function push(data) {
+  async function push(data, keepalive = false) {
     const keys = Object.keys(data);
     for (let i = 0; i < keys.length; i += 50) {
       const chunk = Object.fromEntries(keys.slice(i, i + 50).map((k) => [k, data[k]]));
-      await api("PUT", "sync", { data: chunk });
+      await api("PUT", "sync", { data: chunk }, keepalive);
     }
   }
 
@@ -127,7 +128,8 @@
 
   const dirty = new Set();
   let timer = null;
-  function flush() {
+  function flush(keepalive = false) {
+    clearTimeout(timer);
     if (!me || !me.emailVerified || !dirty.size) return;
     const data = {};
     dirty.forEach((rk) => {
@@ -135,7 +137,7 @@
       if (v != null) data[rk] = { v, t: loadMeta()[rk] || Date.now() };
     });
     dirty.clear();
-    if (Object.keys(data).length) push(data);
+    if (Object.keys(data).length) push(data, keepalive);
   }
   function markDirty(localKey) {
     const rk = toRemote(localKey);
@@ -145,7 +147,7 @@
     saveMeta(meta);
     dirty.add(rk);
     clearTimeout(timer);
-    timer = setTimeout(flush, 2500);
+    timer = setTimeout(() => flush(), 800);
   }
   Storage.prototype.setItem = function (k, v) {
     rawSet.call(this, k, v);
@@ -154,7 +156,8 @@
   Storage.prototype.removeItem = function (k) {
     rawRemove.call(this, k);
   };
-  document.addEventListener("visibilitychange", () => document.visibilityState === "hidden" && flush());
+  document.addEventListener("visibilitychange", () => document.visibilityState === "hidden" && flush(true));
+  window.addEventListener("pagehide", () => flush(true));
 
   function clearSyncedLocal() {
     const rm = [];
@@ -403,6 +406,23 @@
         el("li", { text: `${favs} calculadora${favs === 1 ? "" : "s"} favorita${favs === 1 ? "" : "s"}` }),
         el("li", { text: `Historial de ${hists} calculadora${hists === 1 ? "" : "s"}${sci ? ` y ${sci} cálculo${sci === 1 ? "" : "s"} de la calculadora científica` : ""}` }),
         el("li", { text: "Preferencia de tema (claro u oscuro)" })));
+
+      // Resultados guardados: el último cálculo de cada calculadora, para poder verlos desde acá.
+      const saved = Object.keys(data).filter((k) => k.startsWith("hist:")).map((k) => {
+        const items = (parse((data[k] || {}).v) || []).filter((e) => e && typeof e.r === "string");
+        const path = k.slice(5);
+        const name = path.split("/").filter(Boolean).pop().replace(/-/g, " ").replace(/^./, (c) => c.toUpperCase());
+        return items.length ? { path, name, last: items[0], count: items.length } : null;
+      }).filter(Boolean).sort((a, b) => (b.last.t || 0) - (a.last.t || 0)).slice(0, 25);
+      const sciList = (parse((data["sci-history"] || {}).v) || []).filter((e) => e && e.expr).slice(0, 10);
+      if (saved.length || sciList.length) {
+        box.append(el("h2", { class: "cc-h2", text: "Tus resultados guardados" }));
+        if (saved.length) box.append(el("ul", { class: "cc-ul" }, saved.map((s) =>
+          el("li", {}, el("a", { href: s.path, class: "text-[var(--color-primary-link)] hover:underline", text: s.name }), ` → ${s.last.r}`, s.count > 1 ? ` (${s.count} cálculos guardados)` : ""))));
+        if (sciList.length) box.append(el("p", { class: "cc-modal-sub mt-3", text: "Últimos cálculos de la calculadora científica:" }), el("ul", { class: "cc-ul" }, sciList.map((s) => el("li", { text: `${s.expr} = ${s.res || s.raw}` }))));
+      } else {
+        box.append(el("p", { class: "cc-modal-sub mt-3", text: "Todavía no hay resultados guardados. Hacé un cálculo en cualquier calculadora y va a aparecer acá en unos segundos." }));
+      }
     }
 
     box.append(el("div", { class: "cc-row mt-6" },

@@ -15,6 +15,7 @@
     pendingOperator: null,
     shouldResetDisplay: false,
     error: false,
+    chain: [], // la cuenta tal como se va tipeando ("2 + 3 ×"), para el historial
   };
 
   const fmt = (n) => {
@@ -63,6 +64,7 @@
     state.pendingOperator = null;
     state.shouldResetDisplay = false;
     state.error = false;
+    state.chain = [];
   }
 
   function pressDigit(d) {
@@ -95,9 +97,13 @@
         state.error = true;
         return;
       }
+      state.chain.push(fmt(current), OP_SYMBOLS[op]);
       state.previousValue = result;
       state.display = String(result);
+    } else if (state.pendingOperator && state.chain.length) {
+      state.chain[state.chain.length - 1] = OP_SYMBOLS[op]; // cambió de operador sin tipear otro número
     } else {
+      state.chain = [fmt(current), OP_SYMBOLS[op]];
       state.previousValue = current;
     }
     state.pendingOperator = op;
@@ -112,6 +118,8 @@
       state.error = true;
       return;
     }
+    saveToHistory([...state.chain, fmt(current)].join(" "), result);
+    state.chain = [];
     state.display = String(result);
     state.previousValue = null;
     state.pendingOperator = null;
@@ -219,6 +227,82 @@
       return;
     }
   });
+
+  // ------------------------------------------------------- historial --
+  // Se guarda en este navegador (localStorage) y, si la persona tiene cuenta, se sincroniza (account.js).
+  // Mismo formato que el historial de las demás calculadoras: [{ f: {...}, r: "resultado", t: fecha }].
+  const HIST_KEY = "cc-hist:" + location.pathname;
+  const HIST_MAX = 8;
+  const histBox = document.createElement("details");
+  histBox.className = "cc-hist-box";
+  histBox.hidden = true;
+  histBox.open = true;
+  const histSummary = document.createElement("summary");
+  const histList = document.createElement("ul");
+  histList.className = "cc-hist-list";
+  const histClear = document.createElement("button");
+  histClear.type = "button";
+  histClear.className = "cc-copy";
+  histClear.textContent = "Borrar historial";
+  histBox.append(histSummary, histList, histClear);
+  const pad = document.querySelector("[data-action='equals']");
+  const padSection = pad && pad.closest("section");
+  if (padSection) padSection.append(histBox);
+
+  function loadHistory() {
+    try {
+      const list = JSON.parse(localStorage.getItem(HIST_KEY) || "[]");
+      return Array.isArray(list) ? list.filter((e) => e && e.f && typeof e.r === "string").slice(0, HIST_MAX) : [];
+    } catch {
+      return [];
+    }
+  }
+  function storeHistory(list) {
+    try {
+      localStorage.setItem(HIST_KEY, JSON.stringify(list));
+    } catch {
+      /* sin almacenamiento: el historial dura solo mientras la página está abierta */
+    }
+  }
+  function renderHistory() {
+    const items = loadHistory();
+    histBox.hidden = items.length === 0;
+    histSummary.textContent = `Historial de esta calculadora (${items.length})`;
+    histList.textContent = "";
+    items.forEach((e) => {
+      const li = document.createElement("li");
+      li.className = "cc-history-item";
+      const expr = document.createElement("span");
+      expr.className = "cc-history-expr";
+      expr.textContent = e.f.e || "";
+      const res = document.createElement("button");
+      res.type = "button";
+      res.className = "cc-history-res";
+      res.textContent = "= " + e.r;
+      res.title = "Usar este resultado";
+      res.addEventListener("click", () => {
+        resetAll();
+        state.display = String(e.v != null ? e.v : e.r.replace(/\./g, "").replace(",", "."));
+        state.shouldResetDisplay = true;
+        render();
+      });
+      li.append(expr, res);
+      histList.append(li);
+    });
+  }
+  function saveToHistory(expr, result) {
+    if (!Number.isFinite(result)) return;
+    const entry = { f: { e: expr }, r: fmt(result), v: String(result), t: Date.now() };
+    const items = loadHistory().filter((x) => x.f.e !== expr);
+    items.unshift(entry);
+    storeHistory(items.slice(0, HIST_MAX));
+    renderHistory();
+  }
+  histClear.addEventListener("click", () => {
+    storeHistory([]);
+    renderHistory();
+  });
+  renderHistory();
 
   render();
 })();

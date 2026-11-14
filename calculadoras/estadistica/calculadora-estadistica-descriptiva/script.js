@@ -165,4 +165,24 @@
   });
 
   renderChips();
+
+  // Historial (lo usa copy-result.js): guarda y restaura la lista de datos.
+  window.ccHistory = {
+    get() {
+      return data.length && data.length <= 150 ? { d: data.slice() } : null;
+    },
+    set(s) {
+      data = (Array.isArray(s.d) ? s.d : []).map(Number).filter((n) => Number.isFinite(n)).slice(0, 150);
+      clearError();
+      renderChips();
+      recalculate();
+    },
+    label(s) {
+      const d = s.d || [];
+      return `${d.length} dato${d.length === 1 ? "" : "s"}: ${d.slice(0, 5).map(fmt).join(" · ")}${d.length > 5 ? "…" : ""}`;
+    },
+    result() {
+      return `Media ${fields.mean.textContent} · Desv. ${fields.stdSample.textContent}`;
+    },
+  };
 })();

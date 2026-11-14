@@ -211,6 +211,7 @@
           resultTitle.textContent = "B × A";
           resultBody.innerHTML = renderMatrix(multiply(b, a));
         }
+        lastBtn = btn;
         resultPanel.classList.remove("hidden");
       } catch (err) {
         showError(err.message);
@@ -219,4 +220,41 @@
   });
 
   setSize(2);
+
+  // Historial (lo usa copy-result.js): guarda el tamaño, las dos matrices y la última operación hecha.
+  let lastBtn = null;
+  const readRaw = (prefix) =>
+    Array.from({ length: size }, (_, r) => Array.from({ length: size }, (_, c) => document.getElementById(`${prefix}-${r}-${c}`).value.trim()));
+  const OP_NAMES = { det: (t) => `det(${t})`, transpose: (t) => `${t}ᵀ`, inverse: (t) => `${t}⁻¹`, "multiply-ab": () => "A × B", "multiply-ba": () => "B × A" };
+  window.ccHistory = {
+    get() {
+      if (!lastBtn) return null;
+      return { n: size, a: readRaw("a"), b: readRaw("b"), op: lastBtn.dataset.op, tg: lastBtn.dataset.target || "" };
+    },
+    set(s) {
+      const n = s.n === 3 ? 3 : 2;
+      setSize(n);
+      ["a", "b"].forEach((p) => {
+        const m = Array.isArray(s[p]) ? s[p] : [];
+        for (let r = 0; r < n; r++) {
+          for (let c = 0; c < n; c++) {
+            const v = Array.isArray(m[r]) ? m[r][c] : "";
+            document.getElementById(`${p}-${r}-${c}`).value = String(v == null ? "" : v).slice(0, 40);
+          }
+        }
+      });
+      const btn = [...document.querySelectorAll("[data-op]")].find((b) => b.dataset.op === s.op && (b.dataset.target || "") === (s.tg || ""));
+      if (btn) btn.click();
+    },
+    label(s) {
+      const name = (OP_NAMES[s.op] || (() => s.op))(s.tg);
+      const show = (m) => (m || []).map((row) => row.join(" ")).join(" / ");
+      const both = s.op === "multiply-ab" || s.op === "multiply-ba";
+      const mats = both ? `A = [${show(s.a)}] · B = [${show(s.b)}]` : s.tg === "B" ? `B = [${show(s.b)}]` : `A = [${show(s.a)}]`;
+      return `${name} · ${s.n}×${s.n}: ${mats}`;
+    },
+    result() {
+      return `${resultTitle.textContent} → ${resultBody.innerText}`;
+    },
+  };
 })();

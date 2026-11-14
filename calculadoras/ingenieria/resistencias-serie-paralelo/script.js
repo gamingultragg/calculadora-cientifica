@@ -133,4 +133,25 @@
 
   renderChips();
   setConfig("serie");
+
+  // Historial (lo usa copy-result.js): guarda y restaura la lista de resistores y la configuración.
+  window.ccHistory = {
+    get() {
+      return data.length && data.length <= 150 ? { c: config, d: data.slice() } : null;
+    },
+    set(s) {
+      const list = (Array.isArray(s.d) ? s.d : []).map(Number).filter((n) => Number.isFinite(n) && n >= 0).slice(0, 150);
+      data = list;
+      clearError();
+      renderChips();
+      setConfig(s.c === "paralelo" ? "paralelo" : "serie");
+    },
+    label(s) {
+      const vals = (s.d || []).slice(0, 4).map(fmt).join(" · ") + ((s.d || []).length > 4 ? "…" : "");
+      return `${s.c === "paralelo" ? "paralelo" : "serie"}: ${vals} Ω`;
+    },
+    result() {
+      return "Total " + totalEl.textContent;
+    },
+  };
 })();

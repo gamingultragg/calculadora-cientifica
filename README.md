@@ -536,7 +536,11 @@ registraron con `scripts/register-batch-3.py`. Orden para sumar un lote nuevo: g
 
 - **Historial local:** `copy-result.js` guarda, en `localStorage` (`cc-hist:<ruta>`), los últimos 8 cálculos de cada
   calculadora con panel de resultado (espera 1,5 s de resultado estable para no guardar cada tecla). Se restauran con un
-  clic (`applyParams` con `reset`). Se omite en las calculadoras con filas dinámicas (`NO_HISTORY` en el script).
+  clic (`applyParams` con `reset`). Las calculadoras con filas dinámicas (`NO_HISTORY` en el script) no se restauran por campos:
+  desde 2026-11-14 cada una declara un adaptador `window.ccHistory = { get(), set(estado), label(estado), result() }` en su
+  propio `script.js` (promedio de notas, resistencias, estadística descriptiva, matrices, regla de tres) y `copy-result.js` lo usa
+  en lugar de leer los campos; sin adaptador esas páginas no guardan nada. `set()` carga siempre por `.value`, nunca como HTML
+  (el estado puede venir de la sincronización). La calculadora básica y la científica tienen su propio historial.
 - **Revisión móvil (375 px) de las 82 URLs:** se corrigió un desborde horizontal (campo + botón "Agregar" en estadística
   descriptiva y resistencias, regla `.flex-1 { min-width: 0 }`), objetivos táctiles chicos (resúmenes del acordeón de
   ayuda, botones de texto, historial) y el rótulo "Publicidad" (12 px). Las guías no tenían problemas.
@@ -632,6 +636,17 @@ exportar y eliminar la cuenta desde `/cuenta/`. La API nunca la cachea el servic
 4. Resend: verificar el dominio `calculadoracientifica.com.ar` (registros DNS) y crear una API key → **secreto** `RESEND_API_KEY`
    (`MAIL_FROM` opcional; por defecto `Calculadora Científica <contacto@calculadoracientifica.com.ar>`).
 5. Volver a desplegar. Sin `GOOGLE_CLIENT_ID` no aparece Google; sin `RESEND_API_KEY` no aparece el registro con mail (queda solo Google).
+
+**Estado en producción (2026-11-14):** todo lo anterior está activo (D1 `calculadora`, `GOOGLE_CLIENT_ID`, `RESEND_API_KEY`).
+- Resend: dominio `calculadoracientifica.com.ar` verificado (DKIM `resend._domainkey`, CNAME `rsend` y `send`, DMARC `p=none`,
+  cargados a mano en Cloudflare DNS). No se agregó el MX de recepción de Resend: chocaría con Cloudflare Email Routing, que reenvía
+  `contacto@` al Gmail del dueño.
+- Cloudflare: regla de redirección 301 `https://calculadoracientifica.com.ar/*` → `https://www.calculadoracientifica.com.ar/${1}`
+  (sin ella, apex y www son orígenes distintos con cookies y `localStorage` separados). Orígenes de Google autorizados: ambos.
+- Si un despliegue de Pages queda colgado en "Getting things ready…", un commit vacío lo destraba. Las variables y bindings se
+  aplican recién en el siguiente despliegue.
+- El historial de cada calculadora (`cc-hist:<ruta>`), los favoritos y las preferencias se sincronizan; `flush` se dispara al ocultar
+  o cerrar la pestaña (`keepalive`).
 
 Pendiente legal (no es código): evaluar con un profesional la inscripción de la base de datos de usuarios ante la AAIP (Ley 25.326)
 y revisar los textos de Términos y Privacidad.

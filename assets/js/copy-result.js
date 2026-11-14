@@ -128,8 +128,11 @@
   }
 
   // ---- Historial local (últimos cálculos de esta calculadora, solo en este navegador) ----------
-  // Se omite en las calculadoras con filas dinámicas, donde los campos no se pueden restaurar solos.
+  // Las calculadoras con filas dinámicas (donde los campos no se restauran solos) declaran un adaptador
+  // `window.ccHistory = { get(), set(estado), label(estado), result() }` en su propio script; sin
+  // adaptador, en esas páginas no se guarda nada (por eso NO_HISTORY).
   const NO_HISTORY = /(calculadora-de-promedio-de-notas|resistencias-serie-paralelo|calculadora-estadistica-descriptiva|calculadora-matrices|regla-de-tres)/;
+  const adapter = () => (window.ccHistory && typeof window.ccHistory.get === "function" ? window.ccHistory : null);
   const HIST_MAX = 8;
   const HIST_KEY = "cc-hist:" + location.pathname;
 
@@ -178,7 +181,7 @@
   }
 
   function setupHistory(panel, anchor) {
-    if (NO_HISTORY.test(location.pathname) || document.querySelector(".cc-hist-box")) return;
+    if (document.querySelector(".cc-hist-box")) return;
     const box = document.createElement("details");
     box.className = "cc-hist-box";
     box.hidden = true;
@@ -203,9 +206,20 @@
         const use = document.createElement("button");
         use.type = "button";
         use.className = "cc-history-expr";
-        use.textContent = inputsSummary(e.f);
+        const ad = adapter();
+        let text = "";
+        if (ad && typeof ad.label === "function") {
+          try { text = String(ad.label(e.f) || ""); } catch { /* estado de otra versión: se muestra genérico */ }
+        }
+        use.textContent = text || (ad ? "(cálculo guardado)" : inputsSummary(e.f));
         use.title = "Volver a cargar estos datos";
-        use.addEventListener("click", () => applyParams(Object.entries(e.f), { reset: true, maxLen: 2000 }));
+        use.addEventListener("click", () => {
+          if (ad) {
+            try { ad.set(e.f); } catch { /* estado inválido: se ignora */ }
+          } else {
+            applyParams(Object.entries(e.f), { reset: true, maxLen: 2000 });
+          }
+        });
         const res = document.createElement("span");
         res.className = "cc-history-res";
         res.textContent = "→ " + e.r;
@@ -217,9 +231,19 @@
     let timer;
     function record() {
       if (panel.classList.contains("hidden")) return;
-      const fields = collectFields();
-      const r = resultSummary(panel);
-      if (!r || !Object.keys(fields).length) return;
+      const ad = adapter();
+      if (!ad && NO_HISTORY.test(location.pathname)) return;
+      let fields;
+      let r;
+      try {
+        fields = ad ? ad.get() : collectFields();
+        r = ad && typeof ad.result === "function" ? ad.result() : resultSummary(panel);
+      } catch {
+        return;
+      }
+      r = String(r || "").replace(/\s+/g, " ").trim();
+      if (r.length > 70) r = r.slice(0, 67) + "…";
+      if (!r || !fields || !Object.keys(fields).length) return;
       let items = loadHistory();
       const key = JSON.stringify(fields);
       items = items.filter((e) => JSON.stringify(e.f) !== key);

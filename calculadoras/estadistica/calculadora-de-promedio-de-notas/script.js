@@ -149,4 +149,42 @@
   addRow();
   addRow();
   syncWeighted();
+
+  // Historial (lo usa copy-result.js): guarda y restaura las filas dinámicas. Los valores se cargan siempre
+  // por .value (nunca como HTML), porque el estado puede venir de la sincronización con la cuenta.
+  const clip = (v) => String(v == null ? "" : v).slice(0, 40);
+  window.ccHistory = {
+    get() {
+      const rows = [...rowsEl.children]
+        .map((d) => [d.querySelector('[data-f="nota"]').value.trim(), d.querySelector('[data-f="peso"]').value.trim()])
+        .filter((r) => r[0] || r[1]);
+      if (!rows.length || rows.length > 30) return null;
+      return { w: weightedEl.checked ? 1 : 0, rows, t: $("pn-target").value.trim(), rem: $("pn-remaining").value.trim(), max: $("pn-max").value.trim() };
+    },
+    set(s) {
+      const rows = Array.isArray(s.rows) ? s.rows.slice(0, 30) : [];
+      rowsEl.textContent = "";
+      weightedEl.checked = !!s.w;
+      for (let i = 0; i < Math.max(rows.length, 1); i++) {
+        addRow();
+        const d = rowsEl.lastElementChild;
+        const r = Array.isArray(rows[i]) ? rows[i] : [];
+        d.querySelector('[data-f="nota"]').value = clip(r[0]);
+        d.querySelector('[data-f="peso"]').value = clip(r[1]);
+      }
+      $("pn-target").value = clip(s.t);
+      $("pn-remaining").value = clip(s.rem);
+      $("pn-max").value = clip(s.max);
+      syncWeighted();
+      calculate();
+    },
+    label(s) {
+      const notas = (s.rows || []).map((r) => r[0]).filter(Boolean);
+      const txt = notas.slice(0, 4).join(" · ") + (notas.length > 4 ? "…" : "");
+      return (txt || "(sin notas)") + (s.w ? " (ponderado)" : "");
+    },
+    result() {
+      return "Promedio " + $("pn-average").textContent;
+    },
+  };
 })();

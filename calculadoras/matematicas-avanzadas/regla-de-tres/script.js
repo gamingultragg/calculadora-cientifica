@@ -135,4 +135,47 @@
   );
 
   setTab("directa");
+
+  // Historial (lo usa copy-result.js): guarda y restaura la pestaña activa y sus campos.
+  const idsOf = (tab) =>
+    tab === "compuesta"
+      ? ["comp-r1", ...[1, 2, 3].flatMap((i) => [`comp-${i}-v1`, `comp-${i}-v2`, `comp-${i}-dir`])]
+      : [`${tab}-a`, `${tab}-b`, `${tab}-c`];
+  window.ccHistory = {
+    get() {
+      const tab = Object.keys(panels).find((k) => !panels[k].classList.contains("hidden"));
+      if (!tab) return null;
+      const v = {};
+      idsOf(tab).forEach((id) => {
+        const val = $(id).value.trim();
+        if (val) v[id] = val;
+      });
+      return Object.keys(v).length ? { tab, v } : null;
+    },
+    set(s) {
+      const tab = panels[s.tab] ? s.tab : "directa";
+      setTab(tab);
+      idsOf(tab).forEach((id) => {
+        const el = $(id);
+        const val = String((s.v && s.v[id]) || "").slice(0, 40);
+        if (el.tagName === "SELECT") {
+          if (val && [...el.options].some((o) => o.value === val)) el.value = val;
+        } else {
+          el.value = val;
+        }
+      });
+      $(`rt-${tab}-solve`).click();
+    },
+    label(s) {
+      const v = s.v || {};
+      if (s.tab === "compuesta") {
+        const n = [1, 2, 3].filter((i) => v[`comp-${i}-v1`] || v[`comp-${i}-v2`]).length;
+        return `compuesta: ${v["comp-r1"] || "?"} con ${n} dato${n === 1 ? "" : "s"}`;
+      }
+      return `${s.tab}: ${v[`${s.tab}-a`] || "?"} → ${v[`${s.tab}-b`] || "?"} · ${v[`${s.tab}-c`] || "?"} → x`;
+    },
+    result() {
+      return "x = " + $("rt-result").textContent;
+    },
+  };
 })();

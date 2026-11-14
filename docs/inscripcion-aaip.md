@@ -37,7 +37,8 @@ que enlaza la página):
 ## Después
 - Si la AAIP observa algo, escribe por mail.
 - La inscripción no vence, pero **si cambia algo de lo declarado** (por ejemplo, otro proveedor o nuevos datos) hay que modificarla.
-- Cuando llegue el número de registro, se agrega a la Política de Privacidad (sección "Responsable").
+- Cuando llegue el número de registro, se agrega a la Política de Privacidad (sección "Responsable", donde ya figura el nombre
+  del responsable: Santiago Rios Centeno; el domicilio declarado es electrónico: contacto@calculadoracientifica.com.ar).
 - Consultas: registrobasesdedatos@aaip.gob.ar.
 
 > Nota: esta guía y los textos legales del sitio fueron preparados sin asesoramiento profesional. Cubren los requisitos

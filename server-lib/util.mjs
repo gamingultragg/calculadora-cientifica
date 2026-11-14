@@ -1,7 +1,7 @@
 /**
  * util.mjs — Utilidades del backend de cuentas (funcionan en Cloudflare Workers y en Node ≥ 20).
  */
-export const TERMS_VERSION = "2026-11-12"; // cambiar al modificar Términos o Privacidad: se vuelve a pedir la aceptación
+export const TERMS_VERSION = "2026-11-14"; // cambiar al modificar Términos o Privacidad: se vuelve a pedir la aceptación
 export const SESSION_DAYS = 30;
 export const PBKDF2_ITERATIONS = 100000; // máximo permitido por WebCrypto en Cloudflare Workers
 

@@ -55,9 +55,17 @@
     </nav>
 
     <h1 class="font-display font-extrabold text-2xl sm:text-3xl">Política de Privacidad</h1>
-    <p class="mt-2 text-sm text-[var(--color-text-muted)]">Última actualización: 12 de noviembre de 2026 (versión 2026-11-12).</p>
+    <p class="mt-2 text-sm text-[var(--color-text-muted)]">Última actualización: 14 de noviembre de 2026 (versión 2026-11-14).</p>
 
     <div class="mt-6 space-y-6 text-sm leading-relaxed text-[var(--color-text-muted)]">
+      <section class="surface rounded-2xl p-5">
+        <h2 class="font-display font-semibold text-lg text-[var(--color-text)] mb-2">Responsable</h2>
+        <p>El responsable del tratamiento de los datos personales y de la base de datos de cuentas es el titular del sitio
+          www.calculadoracientifica.com.ar, con domicilio electrónico en
+          <a class="text-[var(--color-primary-link)] hover:underline" href="mailto:contacto@calculadoracientifica.com.ar">contacto@calculadoracientifica.com.ar</a>. Por ese medio se atienden
+          todas las consultas y el ejercicio de tus derechos.</p>
+      </section>
+
       <section class="surface rounded-2xl p-5">
         <h2 class="font-display font-semibold text-lg text-[var(--color-text)] mb-2">Resumen breve</h2>
         <p>Podés usar todo el sitio <strong class="text-[var(--color-text)]">sin registrarte</strong> y sin darnos ningún dato personal.
@@ -82,7 +90,7 @@
         <ul class="list-disc list-inside mt-2 space-y-1">
           <li><strong class="text-[var(--color-text)]">Cloudflare</strong>: aloja el sitio y provee la red de distribución de contenido (CDN) y el certificado HTTPS.</li>
           <li><strong class="text-[var(--color-text)]">Cloudflare Web Analytics</strong>: mide visitas y páginas vistas de forma agregada y anónima, sin cookies ni huella digital (fingerprinting) del dispositivo. No podemos identificarte individualmente con estos datos.</li>
-          <li><strong class="text-[var(--color-text)]">Google Fonts</strong>: sirve las tipografías del sitio (Inter y Roboto Mono) desde los servidores de Google.</li>
+          <li><strong class="text-[var(--color-text)]">Google Fonts</strong>: sirve las tipografías del sitio (Inter y Roboto Mono) desde los servidores de Google, por lo que Google recibe tu dirección IP al cargar cada página.</li>
           <li><strong class="text-[var(--color-text)]">Google AdSense</strong>: muestra anuncios en el sitio, que es lo que nos permite mantenerlo gratis. Puede usar cookies y almacenamiento del navegador para mostrar anuncios relevantes, medir su rendimiento y prevenir fraude. Más detalles en la sección <a class="text-[var(--color-primary-link)] hover:underline" href="#cookies">Cookies</a> de esta misma página.</li>
         </ul>
         <p class="mt-2">Ninguno de estos servicios recibe los datos que ingresás en las calculadoras — esos
@@ -93,20 +101,36 @@
         <h2 class="font-display font-semibold text-lg text-[var(--color-text)] mb-2">Si creás una cuenta</h2>
         <p>La cuenta es opcional. Si la creás, tratamos estos datos:</p>
         <ul class="list-disc list-inside mt-2 space-y-1">
-          <li><strong class="text-[var(--color-text)]">Datos de acceso:</strong> tu mail y, si ingresás con Google, tu nombre y el identificador de tu cuenta de Google. Si elegís contraseña, guardamos solo un <em>hash</em> irreversible (nunca la contraseña en texto).</li>
+          <li><strong class="text-[var(--color-text)]">Datos de acceso:</strong> tu mail, la fecha de tu último ingreso y, si ingresás con Google, tu nombre y el identificador de tu cuenta de Google. Si elegís contraseña, guardamos solo un <em>hash</em> (nunca la contraseña en texto).</li>
           <li><strong class="text-[var(--color-text)]">Constancia de aceptación:</strong> la versión de los Términos y la Política que aceptaste y cuándo.</li>
           <li><strong class="text-[var(--color-text)]">Lo que guardás:</strong> tus calculadoras favoritas, el historial de tus últimos cálculos (con los valores que ingresaste y el resultado) y tu preferencia de tema.</li>
-          <li><strong class="text-[var(--color-text)]">Seguridad:</strong> una cookie de sesión y contadores de intentos asociados a tu dirección IP de forma no reversible, que se borran a los pocos minutos u horas, para frenar abusos.</li>
+          <li><strong class="text-[var(--color-text)]">Seguridad:</strong> una cookie de sesión y contadores de intentos asociados a una huella (<em>hash</em>) derivada de tu dirección IP, que se borran a los pocos minutos u horas, para frenar abusos. No guardamos tu dirección IP en la base de datos.</li>
         </ul>
         <p class="mt-2"><strong class="text-[var(--color-text)]">Para qué:</strong> identificarte, guardar y sincronizar tus datos entre dispositivos y
-          mantener el servicio seguro. No vendemos tus datos ni los cedemos a terceros con fines comerciales.</p>
-        <p class="mt-2"><strong class="text-[var(--color-text)]">Proveedores que intervienen:</strong> Cloudflare (aloja el sitio y la base de datos), Google
-          (solo si elegís ingresar con Google) y Resend (envío de los mails de confirmación y de recuperación de contraseña).</p>
+          mantener el servicio seguro. No vendemos tus datos ni los cedemos a terceros con fines comerciales. Tampoco te enviamos publicidad ni
+          boletines: los únicos mails que mandamos son el de confirmación de tu dirección y el de recuperación de contraseña.</p>
+        <p class="mt-2"><strong class="text-[var(--color-text)]">Carácter facultativo:</strong> darnos tus datos es optativo. Si no creás una cuenta, usás todo
+          el sitio igual; la única consecuencia es que tus favoritas y tu historial quedan solo en tu dispositivo. Para crear la cuenta sí necesitamos tu mail:
+          sin él no podemos crearla.</p>
+        <p class="mt-2"><strong class="text-[var(--color-text)]">Proveedores (destinatarios):</strong> Cloudflare (aloja el sitio y la base de datos), Google
+          (solo si elegís ingresar con Google) y Resend (envío de los mails de confirmación y de recuperación de contraseña). Reciben únicamente lo necesario
+          para cumplir esa función.</p>
+        <p class="mt-2"><strong class="text-[var(--color-text)]">Transferencia internacional:</strong> esos proveedores tienen servidores fuera de la Argentina
+          (por ejemplo, en Estados Unidos), países que no figuran entre los considerados con nivel adecuado de protección. Al crear tu cuenta y aceptar esta política
+          <strong class="text-[var(--color-text)]">prestás tu consentimiento</strong> para esa transferencia, que es necesaria para prestarte el servicio (art. 12 de la Ley 25.326).
+          Si no estás de acuerdo, no crees una cuenta: el sitio funciona igual sin ella.</p>
+        <p class="mt-2"><strong class="text-[var(--color-text)]">Seguridad:</strong> las conexiones usan HTTPS; las contraseñas se guardan con un algoritmo de hash con sal
+          (PBKDF2); los tokens de sesión y de verificación se guardan solo como hash; el acceso a la base de datos está restringido al titular. Ningún sistema es
+          infalible: si ocurriera un incidente de seguridad que afecte tus datos, te lo vamos a informar.</p>
         <p class="mt-2"><strong class="text-[var(--color-text)]">Cuánto tiempo:</strong> hasta que elimines tu cuenta. Podés hacerlo, y descargar una copia de tus datos, desde
-          <a class="text-[var(--color-primary-link)] hover:underline" href="/cuenta/">Mi cuenta</a>; la eliminación borra al instante tu cuenta y todo lo que guardaste. Al cerrar sesión, los datos sincronizados se borran de ese dispositivo.</p>
-        <p class="mt-2"><strong class="text-[var(--color-text)]">Tus derechos:</strong> como titular de los datos podés acceder a ellos, rectificarlos y suprimirlos (Ley 25.326 de Protección de los
-          Datos Personales). Para ejercerlos, usá tu página de cuenta o escribinos a
-          <a class="text-[var(--color-primary-link)] hover:underline" href="mailto:contacto@calculadoracientifica.com.ar">contacto@calculadoracientifica.com.ar</a>. La Agencia de Acceso a la Información Pública,
+          <a class="text-[var(--color-primary-link)] hover:underline" href="/cuenta/">Mi cuenta</a>; la eliminación borra al instante tu cuenta y todo lo que guardaste, incluida la constancia de aceptación de los términos. Al cerrar sesión, los datos sincronizados se borran de ese dispositivo. Los registros técnicos que lleva Cloudflare por su cuenta se rigen por su propia política.</p>
+        <p class="mt-2"><strong class="text-[var(--color-text)]">Tus derechos:</strong> como titular de los datos podés acceder a ellos, rectificarlos, actualizarlos y suprimirlos (Ley 25.326 de Protección de los
+          Datos Personales). Podés hacerlo vos mismo desde tu página de cuenta o escribiéndonos a
+          <a class="text-[var(--color-primary-link)] hover:underline" href="mailto:contacto@calculadoracientifica.com.ar">contacto@calculadoracientifica.com.ar</a>. Respondemos los pedidos de acceso dentro de los 10 días corridos y los de rectificación o
+          supresión dentro de los 5 días hábiles de recibidos.</p>
+        <p class="mt-2">El titular de los datos personales tiene la facultad de ejercer el derecho de acceso a los mismos en forma gratuita a intervalos no inferiores a seis meses,
+          salvo que se acredite un interés legítimo al efecto, conforme lo establecido en el artículo 14, inciso 3 de la Ley 25.326.</p>
+        <p class="mt-2">La <a class="text-[var(--color-primary-link)] hover:underline" href="https://www.argentina.gob.ar/aaip/datospersonales" target="_blank" rel="noopener noreferrer">Agencia de Acceso a la Información Pública</a>,
           en su carácter de Órgano de Control de la Ley 25.326, tiene la atribución de atender las denuncias y reclamos de quienes resulten afectados en sus derechos
           por el incumplimiento de las normas de protección de datos personales.</p>
       </section>
@@ -126,14 +150,15 @@
           privacidad de Google.</p>
         <p class="mt-2">Podés administrar o inhabilitar los anuncios personalizados de Google desde
           <a class="text-[var(--color-primary-link)] hover:underline" href="https://adssettings.google.com/" target="_blank" rel="noopener noreferrer">Configuración de anuncios de Google</a>,
-          y conocer más sobre cómo Google usa estos datos en
+          o desactivar el uso de cookies de proveedores externos para publicidad personalizada en <a class="text-[var(--color-primary-link)] hover:underline" href="https://www.aboutads.info/choices/" target="_blank" rel="noopener noreferrer">aboutads.info</a>, y conocer más sobre cómo Google usa estos datos en
           <a class="text-[var(--color-primary-link)] hover:underline" href="https://policies.google.com/technologies/partner-sites" target="_blank" rel="noopener noreferrer">cómo Google usa la información de sitios que usan sus servicios</a>.</p>
       </section>
 
       <section class="surface rounded-2xl p-5">
         <h2 class="font-display font-semibold text-lg text-[var(--color-text)] mb-2">Menores de edad</h2>
         <p>El sitio está pensado como herramienta educativa y puede ser usado por estudiantes de
-          cualquier edad sin registrarse. Las cuentas son para mayores de 13 años; si sos menor de 18, creala con conocimiento de tu madre, padre o tutor.
+          cualquier edad sin registrarse. Las cuentas son para mayores de 13 años; si sos menor de 18, creala con conocimiento de tu madre, padre o tutor. Si
+          sos madre, padre o tutor y creés que un menor de 13 años nos dio sus datos, escribinos y los eliminamos.
           No recolectamos datos personales de quienes usan el sitio sin cuenta.</p>
       </section>
 

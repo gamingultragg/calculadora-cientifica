@@ -440,6 +440,47 @@
     <priority>0.9</priority>
   </url>
 
+  <url>
+    <loc>https://www.calculadoracientifica.com.ar/calculadoras/matematicas-avanzadas/calculadora-de-notacion-cientifica/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://www.calculadoracientifica.com.ar/calculadoras/matematicas-avanzadas/calculadora-de-potencias-y-raices/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://www.calculadoracientifica.com.ar/calculadoras/estadistica/calculadora-de-probabilidad/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://www.calculadoracientifica.com.ar/calculadoras/fisica/calculadora-de-pendulo-simple/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://www.calculadoracientifica.com.ar/calculadoras/fisica/calculadora-de-ley-de-coulomb/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://www.calculadoracientifica.com.ar/calculadoras/fisica/calculadora-de-presion/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://www.calculadoracientifica.com.ar/calculadoras/hogar-y-construccion/calculadora-de-escaleras/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://www.calculadoracientifica.com.ar/calculadoras/finanzas/calculadora-de-meta-de-ahorro/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+
   <!-- Guías -->
   <url>
     <loc>https://www.calculadoracientifica.com.ar/guias/</loc>
@@ -828,6 +869,47 @@
   </url>
   <url>
     <loc>https://www.calculadoracientifica.com.ar/guias/como-calcular-el-consumo-de-combustible-de-un-auto/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <url>
+    <loc>https://www.calculadoracientifica.com.ar/guias/notacion-cientifica-que-es-y-como-usarla/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://www.calculadoracientifica.com.ar/guias/potencias-y-raices-propiedades-y-ejemplos/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://www.calculadoracientifica.com.ar/guias/como-calcular-probabilidades/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://www.calculadoracientifica.com.ar/guias/periodo-del-pendulo-simple/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://www.calculadoracientifica.com.ar/guias/ley-de-coulomb-explicada/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://www.calculadoracientifica.com.ar/guias/presion-y-presion-hidrostatica/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://www.calculadoracientifica.com.ar/guias/como-calcular-una-escalera/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://www.calculadoracientifica.com.ar/guias/como-calcular-cuanto-ahorrar-para-una-meta/</loc>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>

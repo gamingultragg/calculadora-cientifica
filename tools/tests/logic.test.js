@@ -723,3 +723,159 @@ test("Consumo de combustible", () => {
   near(f.range(50, 8), 625);
   near(f.efficiency(100, 10).l100, 10);
 });
+
+// ---------------------------------------------------------------- Lote 11 (2026-11-14)
+test("Notación científica", () => {
+  const n = load("matematicas-avanzadas/calculadora-de-notacion-cientifica");
+  assert.equal(n.formatSci(n.toScientific("123,45")), "1,2345 × 10²");
+  assert.equal(n.formatSci(n.toScientific("0,00045")), "4,5 × 10⁻⁴");
+  assert.equal(n.formatEng(n.toScientific("0,00045")), "450 × 10⁻⁶");
+  assert.equal(n.formatSci(n.toScientific("300000")), "3 × 10⁵");
+  assert.equal(n.formatEng(n.toScientific("300000")), "300 × 10³");
+  assert.equal(n.formatSci(n.toScientific("-6,02")), "−6,02 × 10⁰");
+  assert.equal(n.formatSci(n.toScientific("1.234.567")), "1,234567 × 10⁶"); // punto de miles
+  assert.equal(n.formatSci(n.toScientific("0.00045")), "4,5 × 10⁻⁴"); // punto decimal
+  assert.equal(n.formatSci(n.toScientific("0")), "0");
+  assert.equal(n.toDecimal("6,02", 23), "602.000.000.000.000.000.000.000");
+  assert.equal(n.toDecimal("1,6", -19), "0,00000000000000000016");
+  assert.equal(n.toDecimal("2,5", 3), "2.500");
+  assert.equal(n.toDecimal("-3,2", -2), "−0,032");
+  assert.equal(n.toDecimal("4,5", 0), "4,5");
+  assert.equal(n.toDecimal("0", 5), "0");
+  assert.throws(() => n.toDecimal("1", 400));
+  assert.throws(() => n.parseDecimal("abc"));
+  const m = n.operate("3", 8, "*", "2", -3);
+  assert.equal(n.formatSci(m.sci), "6 × 10⁵");
+  assert.equal(m.decimal, "600.000");
+  assert.equal(n.formatSci(n.operate("5", 3, "+", "2", 3).sci), "7 × 10³");
+  assert.equal(n.formatSci(n.operate("1,1", 0, "+", "2,2", 0).sci), "3,3 × 10⁰"); // sin ruido de coma flotante
+  assert.equal(n.formatSci(n.operate("1", 0, "/", "3", 0).sci), "3,33333333333 × 10⁻¹");
+  assert.equal(n.formatSci(n.operate("2", 3, "-", "5", 3).sci), "−3 × 10³");
+  assert.throws(() => n.operate("1", 0, "/", "0", 0));
+});
+
+test("Potencias y raíces", () => {
+  const p = load("matematicas-avanzadas/calculadora-de-potencias-y-raices");
+  assert.equal(p.power(2, 10), 1024);
+  assert.equal(p.power(2, -2), 0.25);
+  assert.equal(p.power(-2, 3), -8);
+  near(p.power(9, 0.5), 3);
+  assert.throws(() => p.power(0, -1));
+  assert.throws(() => p.power(-8, 1 / 3));
+  assert.equal(p.root(27, 3), 3);
+  assert.equal(p.root(-27, 3), -3);
+  assert.equal(p.root(16, 4), 2);
+  near(p.root(2, 2), 1.4142135623731);
+  assert.throws(() => p.root(-4, 2));
+  assert.throws(() => p.root(4, 1));
+  assert.deepEqual(p.simplify(72, 2), { out: 6, inside: 2 });
+  assert.deepEqual(p.simplify(50, 2), { out: 5, inside: 2 });
+  assert.deepEqual(p.simplify(16, 2), { out: 4, inside: 1 });
+  assert.deepEqual(p.simplify(54, 3), { out: 3, inside: 2 });
+  assert.deepEqual(p.simplify(7, 2), { out: 1, inside: 7 });
+  assert.deepEqual(p.simplify(49, 2), { out: 7, inside: 1 });
+  assert.deepEqual(p.simplify(1, 2), { out: 1, inside: 1 });
+  assert.equal(p.simplify(0.5, 2), null);
+  // out^n · inside = x
+  const s = p.simplify(1000000007 * 4, 2);
+  assert.equal(s.out * s.out * s.inside, 1000000007 * 4);
+});
+
+test("Probabilidad básica", () => {
+  const p = load("estadistica/calculadora-de-probabilidad");
+  const a = p.simple(1, 6);
+  near(a.p, 1 / 6);
+  near(a.complement, 5 / 6);
+  near(a.oneIn, 6);
+  assert.equal(p.simple(0, 10).oneIn, Infinity);
+  assert.throws(() => p.simple(7, 5));
+  assert.throws(() => p.simple(1, 0));
+  const t = p.twoEvents(0.5, 0.3);
+  near(t.and, 0.15);
+  near(t.or, 0.65);
+  near(t.none, 0.35);
+  near(t.exactlyOne, 0.5);
+  near(t.onlyA, 0.35);
+  near(t.orExclusive, 0.8);
+  near(t.or + t.none, 1);
+  const r = p.atLeastOne(0.5, 3);
+  near(r.none, 0.125);
+  near(r.atLeast, 0.875);
+  near(r.expected, 1.5);
+  near(p.atLeastOne(1 / 6, 4).atLeast, 1 - Math.pow(5 / 6, 4));
+});
+
+test("Péndulo simple", () => {
+  const d = load("fisica/calculadora-de-pendulo-simple");
+  near(d.period(1, 9.81), 2.0061, 1e-3);
+  near(d.period(0.25, 9.81), 1.00304, 1e-3); // un cuarto de longitud, la mitad del período
+  near(d.length(2, 9.81), 0.99397, 1e-4);
+  near(d.gravity(1, 2), (4 * Math.PI * Math.PI) / 4);
+  near(d.gravity(d.length(1.5, 9.8), 1.5), 9.8, 1e-9);
+  near(d.amplitudeFactor(0), 1);
+  near(d.amplitudeFactor((30 * Math.PI) / 180), 1.0174, 1e-4);
+});
+
+test("Ley de Coulomb", () => {
+  const c = load("fisica/calculadora-de-ley-de-coulomb");
+  near(c.force(1e-6, 1e-6, 0.1), 0.898755, 1e-6);
+  assert.ok(c.force(1e-6, -1e-6, 0.1) < 0); // atractiva
+  near(c.force(1.602176634e-19, -1.602176634e-19, 5.29177e-11), -8.2387e-8, 5e-12); // electrón y protón en el hidrógeno
+  near(c.force(2e-6, 2e-6, 0.2) / c.force(1e-6, 1e-6, 0.1), 1); // duplicar cargas y distancia: (4)/(4) = 1
+  near(c.distance(0.898755, 1e-6, 1e-6), 0.1, 1e-6);
+  near(c.charge2(0.898755, 1e-6, 0.1), 1e-6, 1e-12);
+  near(3 * c.CHARGE.uC, 3e-6);
+  near(50 * c.DIST.cm, 0.5);
+});
+
+test("Presión", () => {
+  const p = load("fisica/calculadora-de-presion");
+  near(p.pressure(100, 0.5), 200);
+  near(p.pressure(50, 25 * p.AREA.cm2), 20000);
+  near(p.hydrostatic(1000, 9.81, 10), 98100);
+  near(p.ATM * p.UNITS.atm, 1);
+  near(p.ATM * p.UNITS.bar, 1.01325);
+  near(p.ATM * p.UNITS.mmHg, 760, 1e-3);
+  near(p.ATM * p.UNITS.psi, 14.6959, 1e-3);
+  near((p.hydrostatic(1000, 9.81, 10) + p.ATM) * p.UNITS.atm, 1.968, 1e-3); // 10 m bajo el agua
+});
+
+test("Escaleras", () => {
+  const { stairs } = load("hogar-y-construccion/calculadora-de-escaleras");
+  const a = stairs(270, 17.5);
+  assert.equal(a.n, 15);
+  near(a.riser, 18);
+  near(a.tread, 27);
+  near(a.run, 378);
+  near(a.blondel, 63);
+  near(a.angle, 33.690067, 1e-5);
+  near(a.stringer, Math.sqrt(270 * 270 + 378 * 378));
+  const b = stairs(280, 17);
+  assert.equal(b.n, 16);
+  near(b.riser, 17.5);
+  near(b.tread, 28);
+  near(b.run, 420);
+  const c = stairs(250, 18, 30); // huella propia
+  assert.equal(c.n, 14);
+  near(c.tread, 30);
+  near(c.blondel, 2 * (250 / 14) + 30);
+  assert.equal(stairs(10, 17.5).n, 2); // mínimo
+});
+
+test("Meta de ahorro", () => {
+  const s = load("finanzas/calculadora-de-meta-de-ahorro");
+  near(s.contribution(120000, 0, 0, 12), 10000);
+  near(s.contribution(100000, 20000, 0, 10), 8000);
+  near(s.futureValue(0, 1000, 0, 12), 12000);
+  const A = s.contribution(1000000, 0, 0.03, 24);
+  near(s.futureValue(0, A, 0.03, 24), 1000000, 1e-6);
+  near(s.months(1000000, 0, A, 0.03), 24, 1e-9);
+  const B = s.contribution(500000, 100000, 0.02, 36);
+  near(s.futureValue(100000, B, 0.02, 36), 500000, 1e-6);
+  near(s.months(500000, 100000, B, 0.02), 36, 1e-9);
+  near(s.months(120000, 0, 10000, 0), 12);
+  assert.ok(A < 1000000 / 24); // con interés se aporta menos que sin interés
+  assert.throws(() => s.contribution(1000, 1000, 0, 5));
+  assert.throws(() => s.months(1000, 1500, 10, 0));
+  assert.throws(() => s.contribution(110000, 100000, 0.05, 120));
+});

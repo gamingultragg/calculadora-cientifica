@@ -16,19 +16,19 @@ CATS = {
         desc="Calculadora científica y básica, ecuaciones de segundo grado, matrices, fracciones, regla de tres, MCD y MCM, teorema de Pitágoras, bases numéricas y áreas y volúmenes, con desarrollo paso a paso.",
         meta="Calculadoras de matemática online y gratis: científica, fracciones, ecuaciones, matrices, regla de tres, MCD y MCM, Pitágoras, bases numéricas y áreas y volúmenes.",
         text="Resolvé desde una cuenta simple hasta un sistema de álgebra lineal. Cada calculadora muestra el desarrollo paso a paso y viene con una guía que explica el método, para que no solo obtengas el resultado sino que entiendas cómo se llega a él.",
-        guides=["como-operar-con-fracciones", "regla-de-tres-simple-y-compuesta", "como-calcular-mcd-y-mcm", "teorema-de-pitagoras-explicado", "como-calcular-areas-y-volumenes", "como-convertir-binario-decimal-y-hexadecimal", "como-resolver-ecuaciones-de-segundo-grado", "determinante-y-matriz-inversa", "grados-y-radianes", "orden-de-operaciones-vs-calculo-secuencial", "como-resolver-sistemas-de-ecuaciones", "como-saber-si-un-numero-es-primo", "progresiones-aritmeticas-y-geometricas", "teorema-del-seno-y-del-coseno", "como-leer-y-escribir-numeros-romanos", "como-graficar-una-funcion", "como-calcular-la-pendiente-y-la-distancia-entre-dos-puntos", "logaritmos-que-son-y-como-calcularlos"]),
+        guides=["como-operar-con-fracciones", "regla-de-tres-simple-y-compuesta", "como-calcular-mcd-y-mcm", "teorema-de-pitagoras-explicado", "como-calcular-areas-y-volumenes", "como-convertir-binario-decimal-y-hexadecimal", "como-resolver-ecuaciones-de-segundo-grado", "determinante-y-matriz-inversa", "grados-y-radianes", "orden-de-operaciones-vs-calculo-secuencial", "como-resolver-sistemas-de-ecuaciones", "como-saber-si-un-numero-es-primo", "progresiones-aritmeticas-y-geometricas", "teorema-del-seno-y-del-coseno", "como-leer-y-escribir-numeros-romanos", "como-graficar-una-funcion", "como-calcular-la-pendiente-y-la-distancia-entre-dos-puntos", "logaritmos-que-son-y-como-calcularlos", "notacion-cientifica-que-es-y-como-usarla", "potencias-y-raices-propiedades-y-ejemplos"]),
     "estadistica": dict(
         key="estadistica", label="Estadística",
         desc="Estadística descriptiva, promedio de notas, distribución normal, permutaciones y combinaciones y regresión lineal, para cátedras, tesis e informes.",
         meta="Calculadoras de estadística online y gratis: estadística descriptiva, promedio de notas, distribución normal, combinatoria y regresión lineal.",
         text="Herramientas para analizar datos y resolver problemas de probabilidad y combinatoria: media, mediana, desvío estándar, puntaje Z, permutaciones, combinaciones y la recta de regresión con su correlación.",
-        guides=["como-calcular-desviacion-estandar", "puntaje-z-y-curva-normal", "permutaciones-vs-combinaciones", "como-calcular-promedio-de-notas", "regresion-lineal-y-correlacion", "distribucion-binomial-explicada", "intervalo-de-confianza-explicado", "como-calcular-el-tamano-de-una-muestra"]),
+        guides=["como-calcular-desviacion-estandar", "puntaje-z-y-curva-normal", "permutaciones-vs-combinaciones", "como-calcular-promedio-de-notas", "regresion-lineal-y-correlacion", "distribucion-binomial-explicada", "intervalo-de-confianza-explicado", "como-calcular-el-tamano-de-una-muestra", "como-calcular-probabilidades"]),
     "fisica": dict(
         key="fisica", label="Física",
         desc="Cinemática (MRU y MRUA), segunda ley de Newton, ley de Ohm y energía cinética y potencial, con fórmulas explicadas.",
         meta="Calculadoras de física online y gratis: cinemática MRU y MRUA, leyes de Newton y Ohm, energía cinética y potencial, con fórmulas.",
         text="Calculadoras para los temas centrales de física general: movimiento, fuerza, electricidad y energía. Todas despejan la incógnita que necesites y muestran la fórmula que usan.",
-        guides=["formulas-de-mru-y-mrua", "segunda-ley-de-newton-explicada", "ley-de-ohm-explicada", "energia-cinetica-y-potencial-explicada", "caida-libre-y-tiro-oblicuo-explicados", "trabajo-y-potencia-mecanica", "como-calcular-la-densidad", "calor-especifico-y-calorimetria", "movimiento-circular-uniforme-explicado"]),
+        guides=["formulas-de-mru-y-mrua", "segunda-ley-de-newton-explicada", "ley-de-ohm-explicada", "energia-cinetica-y-potencial-explicada", "caida-libre-y-tiro-oblicuo-explicados", "trabajo-y-potencia-mecanica", "como-calcular-la-densidad", "calor-especifico-y-calorimetria", "movimiento-circular-uniforme-explicado", "periodo-del-pendulo-simple", "ley-de-coulomb-explicada", "presion-y-presion-hidrostatica"]),
     "quimica": dict(
         key="quimica", label="Química",
         desc="pH y pOH, molaridad, diluciones, masa molar, moles y gases ideales para química general y analítica.",
@@ -46,7 +46,7 @@ CATS = {
         desc="Interés simple y compuesto, préstamos con sistema francés, plazo fijo, IVA, porcentajes y aguinaldo.",
         meta="Calculadoras financieras online y gratis para Argentina: interés simple y compuesto, préstamos (sistema francés), plazo fijo, IVA, porcentajes y aguinaldo.",
         text="Calculá cuánto rinde un plazo fijo, cuánto pagás de cuota, cuánto es el IVA o el aguinaldo que te corresponde. Las calculadoras usan las convenciones argentinas (año de 365 días, alícuotas de IVA vigentes) y explican cada fórmula.",
-        guides=["cuotas-o-contado-como-saber-cual-conviene", "como-calcular-un-plazo-fijo-tna-y-tea", "como-calcular-cuota-de-prestamo", "como-calcular-la-inflacion-acumulada", "como-calcular-el-ajuste-de-un-alquiler", "diferencia-entre-margen-y-markup", "como-calcular-descuentos-sucesivos", "interes-simple-vs-compuesto", "como-calcular-el-aguinaldo", "como-calcular-iva", "como-calcular-porcentajes"]),
+        guides=["cuotas-o-contado-como-saber-cual-conviene", "como-calcular-un-plazo-fijo-tna-y-tea", "como-calcular-cuota-de-prestamo", "como-calcular-la-inflacion-acumulada", "como-calcular-el-ajuste-de-un-alquiler", "diferencia-entre-margen-y-markup", "como-calcular-descuentos-sucesivos", "interes-simple-vs-compuesto", "como-calcular-el-aguinaldo", "como-calcular-iva", "como-calcular-porcentajes", "como-calcular-cuanto-ahorrar-para-una-meta"]),
     "vida-diaria": dict(
         key="vida", label="Vida Diaria",
         desc="Edad y fechas, IMC, conversor de cocina, horas trabajadas y propina: cálculos del día a día, rápidos y sin vueltas.",
@@ -58,7 +58,7 @@ CATS = {
         desc="Cerámicos, pintura, ladrillos, hormigón y consumo eléctrico: cálculos de materiales y gastos del hogar.",
         meta="Calculadoras de hogar y construcción online y gratis: cerámicos, pintura, ladrillos, hormigón y consumo eléctrico, con cantidades y costos.",
         text="Cuántos cerámicos, litros de pintura, ladrillos o metros cúbicos de hormigón comprar para tu obra o refacción, y cuánto cuesta usar cada artefacto de la casa. Las cantidades son estimaciones: para estructuras, consultá siempre a un profesional.",
-        guides=["cuantos-ceramicos-necesito", "cuanta-pintura-necesito", "cuantos-ladrillos-necesito-por-m2", "como-calcular-el-hormigon-de-una-losa", "como-calcular-el-consumo-electrico"]),
+        guides=["cuantos-ceramicos-necesito", "cuanta-pintura-necesito", "cuantos-ladrillos-necesito-por-m2", "como-calcular-el-hormigon-de-una-losa", "como-calcular-el-consumo-electrico", "como-calcular-una-escalera"]),
 }
 
 

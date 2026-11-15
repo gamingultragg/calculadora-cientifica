@@ -624,6 +624,22 @@ sin desbordes.
   → `build-sw.py` → `audit-links`, `validate-jsonld`, `validate-sitemap` y `node --test tools/tests/logic.test.js tools/tests/api.test.mjs`. Los scripts se corren desde la
   raíz del repo y sin `python -I` (importan módulos vecinos).
 
+## Lote 11 (2026-11-14)
+
+8 calculadoras nuevas con su guía (`build-batch-11.py`, `build-batch-11-guides.py`, `register-batch-11.py`), sin solaparse con las
+existentes (se revisó antes que no hubiera nada equivalente):
+- Matemática: **notación científica** (conversión exacta con los dígitos como texto, sin errores de coma flotante; notación de ingeniería y
+  prefijos del SI; operaciones entre dos números a × 10ⁿ con 12 cifras significativas) y **potencias y raíces** (exponentes negativos y
+  fraccionarios, raíces de cualquier índice, detección de potencias perfectas y simplificación de radicales por factorización).
+- Estadística: **probabilidad básica** (favorables/posibles, dos eventos independientes y "al menos uno en n intentos").
+- Física: **péndulo simple** (T = 2π√(L/g), con despeje de L y g y corrección por amplitud), **ley de Coulomb** y **presión** (P = F/A y
+  presión hidrostática, con presión absoluta y conversión a Pa, atm, bar, mmHg y psi).
+- Hogar y Construcción: **escaleras** (escalones, contrahuella y huella con la fórmula de Blondel, recorrido e inclinación).
+- Finanzas: **meta de ahorro** (aporte mensual o meses necesarios, con capital inicial y TNA opcionales; es la inversa de `interes-compuesto`,
+  que calcula el capital final).
+- Verificado: 8 pruebas nuevas (65 de lógica + 11 de la API = 76), cada ejemplo de las guías contra la calculadora en el navegador y sin
+  desborde a 375 px en las 16 páginas. Esta vez `inject-ad-slots.py` tocó solo las 16 páginas nuevas.
+
 ## Cuentas de usuario (2026-11-12)
 
 Cuentas **opcionales** con ingreso con Google y con mail + contraseña, aceptación de los términos y sincronización de favoritas,

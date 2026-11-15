@@ -2,7 +2,7 @@
  * Estrategia: precarga del sitio (páginas + CSS + JS) para que funcione sin conexión;
  * red primero con respaldo en caché; tipografías de Google en caché "stale-while-revalidate".
  * No intercepta anuncios, analítica ni nada de otros orígenes (salvo las tipografías). */
-const VERSION = "12dad67d90";
+const VERSION = "2aba86a834";
 const CACHE = "cc-" + VERSION;
 const FONTS = "cc-fonts-v1";
 const PRECACHE = [
@@ -91,6 +91,14 @@ const PRECACHE = [
  "/calculadoras/quimica/leyes-de-los-gases/",
  "/calculadoras/quimica/calculadora-de-concentracion-ppm/",
  "/calculadoras/vida-diaria/calculadora-de-consumo-de-combustible/",
+ "/calculadoras/matematicas-avanzadas/calculadora-de-notacion-cientifica/",
+ "/calculadoras/matematicas-avanzadas/calculadora-de-potencias-y-raices/",
+ "/calculadoras/estadistica/calculadora-de-probabilidad/",
+ "/calculadoras/fisica/calculadora-de-pendulo-simple/",
+ "/calculadoras/fisica/calculadora-de-ley-de-coulomb/",
+ "/calculadoras/fisica/calculadora-de-presion/",
+ "/calculadoras/hogar-y-construccion/calculadora-de-escaleras/",
+ "/calculadoras/finanzas/calculadora-de-meta-de-ahorro/",
  "/guias/",
  "/guias/orden-de-operaciones-vs-calculo-secuencial/",
  "/guias/como-resolver-ecuaciones-de-segundo-grado/",
@@ -167,6 +175,14 @@ const PRECACHE = [
  "/guias/leyes-de-boyle-charles-y-gay-lussac/",
  "/guias/como-calcular-ppm-y-porcentaje-de-concentracion/",
  "/guias/como-calcular-el-consumo-de-combustible-de-un-auto/",
+ "/guias/notacion-cientifica-que-es-y-como-usarla/",
+ "/guias/potencias-y-raices-propiedades-y-ejemplos/",
+ "/guias/como-calcular-probabilidades/",
+ "/guias/periodo-del-pendulo-simple/",
+ "/guias/ley-de-coulomb-explicada/",
+ "/guias/presion-y-presion-hidrostatica/",
+ "/guias/como-calcular-una-escalera/",
+ "/guias/como-calcular-cuanto-ahorrar-para-una-meta/",
  "/sobre-nosotros/",
  "/privacidad/",
  "/terminos-de-uso/",
@@ -190,6 +206,7 @@ const PRECACHE = [
  "/assets/js/main.js",
  "/assets/js/pwa.js",
  "/assets/js/theme.js",
+ "/calculadoras/estadistica/calculadora-de-probabilidad/script.js",
  "/calculadoras/estadistica/calculadora-de-promedio-de-notas/script.js",
  "/calculadoras/estadistica/calculadora-estadistica-descriptiva/script.js",
  "/calculadoras/estadistica/distribucion-binomial/script.js",
@@ -205,6 +222,7 @@ const PRECACHE = [
  "/calculadoras/finanzas/calculadora-de-interes-simple/script.js",
  "/calculadoras/finanzas/calculadora-de-iva/script.js",
  "/calculadoras/finanzas/calculadora-de-margen-y-markup/script.js",
+ "/calculadoras/finanzas/calculadora-de-meta-de-ahorro/script.js",
  "/calculadoras/finanzas/calculadora-de-plazo-fijo/script.js",
  "/calculadoras/finanzas/calculadora-de-porcentajes/script.js",
  "/calculadoras/finanzas/cuotas-vs-contado/script.js",
@@ -213,7 +231,10 @@ const PRECACHE = [
  "/calculadoras/fisica/caida-libre-y-tiro-oblicuo/script.js",
  "/calculadoras/fisica/calculadora-de-calor-especifico/script.js",
  "/calculadoras/fisica/calculadora-de-densidad/script.js",
+ "/calculadoras/fisica/calculadora-de-ley-de-coulomb/script.js",
  "/calculadoras/fisica/calculadora-de-movimiento-circular/script.js",
+ "/calculadoras/fisica/calculadora-de-pendulo-simple/script.js",
+ "/calculadoras/fisica/calculadora-de-presion/script.js",
  "/calculadoras/fisica/cinematica-mru-mrua/script.js",
  "/calculadoras/fisica/energia-cinetica-y-potencial/script.js",
  "/calculadoras/fisica/ley-de-ohm/script.js",
@@ -221,6 +242,7 @@ const PRECACHE = [
  "/calculadoras/fisica/trabajo-y-potencia/script.js",
  "/calculadoras/hogar-y-construccion/calculadora-de-ceramicos/script.js",
  "/calculadoras/hogar-y-construccion/calculadora-de-consumo-electrico/script.js",
+ "/calculadoras/hogar-y-construccion/calculadora-de-escaleras/script.js",
  "/calculadoras/hogar-y-construccion/calculadora-de-hormigon/script.js",
  "/calculadoras/hogar-y-construccion/calculadora-de-ladrillos/script.js",
  "/calculadoras/hogar-y-construccion/calculadora-de-pintura/script.js",
@@ -236,6 +258,8 @@ const PRECACHE = [
  "/calculadoras/matematicas-avanzadas/calculadora-de-areas-y-volumenes/script.js",
  "/calculadoras/matematicas-avanzadas/calculadora-de-fracciones/script.js",
  "/calculadoras/matematicas-avanzadas/calculadora-de-logaritmos/script.js",
+ "/calculadoras/matematicas-avanzadas/calculadora-de-notacion-cientifica/script.js",
+ "/calculadoras/matematicas-avanzadas/calculadora-de-potencias-y-raices/script.js",
  "/calculadoras/matematicas-avanzadas/calculadora-matrices/script.js",
  "/calculadoras/matematicas-avanzadas/conversor-de-bases-numericas/script.js",
  "/calculadoras/matematicas-avanzadas/conversor-de-numeros-romanos/script.js",

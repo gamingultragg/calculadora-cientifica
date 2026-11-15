@@ -16,7 +16,7 @@ CATS = {
         desc="Calculadora científica y básica, ecuaciones de segundo grado, matrices, fracciones, regla de tres, MCD y MCM, teorema de Pitágoras, bases numéricas y áreas y volúmenes, con desarrollo paso a paso.",
         meta="Calculadoras de matemática online y gratis: científica, fracciones, ecuaciones, matrices, regla de tres, MCD y MCM, Pitágoras, bases numéricas y áreas y volúmenes.",
         text="Resolvé desde una cuenta simple hasta un sistema de álgebra lineal. Cada calculadora muestra el desarrollo paso a paso y viene con una guía que explica el método, para que no solo obtengas el resultado sino que entiendas cómo se llega a él.",
-        guides=["como-operar-con-fracciones", "regla-de-tres-simple-y-compuesta", "como-calcular-mcd-y-mcm", "teorema-de-pitagoras-explicado", "como-calcular-areas-y-volumenes", "como-convertir-binario-decimal-y-hexadecimal", "como-resolver-ecuaciones-de-segundo-grado", "determinante-y-matriz-inversa", "grados-y-radianes", "orden-de-operaciones-vs-calculo-secuencial", "como-resolver-sistemas-de-ecuaciones", "como-saber-si-un-numero-es-primo", "progresiones-aritmeticas-y-geometricas", "teorema-del-seno-y-del-coseno", "como-leer-y-escribir-numeros-romanos", "como-graficar-una-funcion"]),
+        guides=["como-operar-con-fracciones", "regla-de-tres-simple-y-compuesta", "como-calcular-mcd-y-mcm", "teorema-de-pitagoras-explicado", "como-calcular-areas-y-volumenes", "como-convertir-binario-decimal-y-hexadecimal", "como-resolver-ecuaciones-de-segundo-grado", "determinante-y-matriz-inversa", "grados-y-radianes", "orden-de-operaciones-vs-calculo-secuencial", "como-resolver-sistemas-de-ecuaciones", "como-saber-si-un-numero-es-primo", "progresiones-aritmeticas-y-geometricas", "teorema-del-seno-y-del-coseno", "como-leer-y-escribir-numeros-romanos", "como-graficar-una-funcion", "como-calcular-la-pendiente-y-la-distancia-entre-dos-puntos", "logaritmos-que-son-y-como-calcularlos"]),
     "estadistica": dict(
         key="estadistica", label="Estadística",
         desc="Estadística descriptiva, promedio de notas, distribución normal, permutaciones y combinaciones y regresión lineal, para cátedras, tesis e informes.",
@@ -28,13 +28,13 @@ CATS = {
         desc="Cinemática (MRU y MRUA), segunda ley de Newton, ley de Ohm y energía cinética y potencial, con fórmulas explicadas.",
         meta="Calculadoras de física online y gratis: cinemática MRU y MRUA, leyes de Newton y Ohm, energía cinética y potencial, con fórmulas.",
         text="Calculadoras para los temas centrales de física general: movimiento, fuerza, electricidad y energía. Todas despejan la incógnita que necesites y muestran la fórmula que usan.",
-        guides=["formulas-de-mru-y-mrua", "segunda-ley-de-newton-explicada", "ley-de-ohm-explicada", "energia-cinetica-y-potencial-explicada", "caida-libre-y-tiro-oblicuo-explicados", "trabajo-y-potencia-mecanica"]),
+        guides=["formulas-de-mru-y-mrua", "segunda-ley-de-newton-explicada", "ley-de-ohm-explicada", "energia-cinetica-y-potencial-explicada", "caida-libre-y-tiro-oblicuo-explicados", "trabajo-y-potencia-mecanica", "como-calcular-la-densidad", "calor-especifico-y-calorimetria", "movimiento-circular-uniforme-explicado"]),
     "quimica": dict(
         key="quimica", label="Química",
         desc="pH y pOH, molaridad, diluciones, masa molar, moles y gases ideales para química general y analítica.",
         meta="Calculadoras de química online y gratis: pH y pOH, molaridad, diluciones, masa molar, moles y gases ideales, con fórmulas y paso a paso.",
         text="Todo lo que se usa en las prácticas de química general: concentración de soluciones, masa molar de una fórmula, cantidad de sustancia en moles y la ecuación de los gases ideales.",
-        guides=["como-calcular-molaridad", "como-calcular-moles", "como-calcular-masa-molar", "como-calcular-ph-y-poh", "como-hacer-una-dilucion", "ley-de-los-gases-ideales", "estequiometria-y-reactivo-limitante-paso-a-paso", "como-balancear-ecuaciones-quimicas"]),
+        guides=["como-calcular-molaridad", "como-calcular-moles", "como-calcular-masa-molar", "como-calcular-ph-y-poh", "como-hacer-una-dilucion", "ley-de-los-gases-ideales", "estequiometria-y-reactivo-limitante-paso-a-paso", "como-balancear-ecuaciones-quimicas", "leyes-de-boyle-charles-y-gay-lussac", "como-calcular-ppm-y-porcentaje-de-concentracion"]),
     "ingenieria": dict(
         key="ingenieria", label="Ingeniería",
         desc="Conversión de unidades técnicas y de temperatura, ley de Hooke y resistencias en serie y paralelo.",
@@ -52,7 +52,7 @@ CATS = {
         desc="Edad y fechas, IMC, conversor de cocina, horas trabajadas y propina: cálculos del día a día, rápidos y sin vueltas.",
         meta="Calculadoras de vida diaria online y gratis: edad y días entre fechas, IMC, conversor de cocina, horas trabajadas y propina.",
         text="Las cuentas que aparecen todos los días: cuántos años y días tenés, cuál es tu IMC, cuántos gramos es una taza de harina, cuántas horas trabajaste o cuánto paga cada uno en la mesa.",
-        guides=["como-calcular-la-edad-y-los-dias-entre-fechas", "como-calcular-el-imc", "equivalencias-de-cocina-tazas-cucharadas-y-gramos", "como-calcular-horas-trabajadas-y-horas-extra", "como-calcular-la-propina-y-dividir-la-cuenta", "como-calcular-el-metabolismo-basal-y-las-calorias-diarias"]),
+        guides=["como-calcular-la-edad-y-los-dias-entre-fechas", "como-calcular-el-imc", "equivalencias-de-cocina-tazas-cucharadas-y-gramos", "como-calcular-horas-trabajadas-y-horas-extra", "como-calcular-la-propina-y-dividir-la-cuenta", "como-calcular-el-metabolismo-basal-y-las-calorias-diarias", "como-calcular-el-consumo-de-combustible-de-un-auto"]),
     "hogar-y-construccion": dict(
         key="hogar", label="Hogar y Construcción",
         desc="Cerámicos, pintura, ladrillos, hormigón y consumo eléctrico: cálculos de materiales y gastos del hogar.",

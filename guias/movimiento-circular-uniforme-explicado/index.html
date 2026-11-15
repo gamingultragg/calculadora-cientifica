@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="es-AR">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Movimiento Circular Uniforme (MCU): Fórmulas, Período y Aceleración Centrípeta | Calculadora Científica</title>
+<meta name="description" content="Qué es el movimiento circular uniforme, la relación entre período, frecuencia, velocidad angular y lineal, la aceleración centrípeta y ejemplos resueltos con rpm." />
+<link rel="canonical" href="https://www.calculadoracientifica.com.ar/guias/movimiento-circular-uniforme-explicado/" />
+<link rel="alternate" hreflang="es-AR" href="https://www.calculadoracientifica.com.ar/guias/movimiento-circular-uniforme-explicado/" />
+<link rel="alternate" hreflang="es" href="https://www.calculadoracientifica.com.ar/guias/movimiento-circular-uniforme-explicado/" />
+<link rel="icon" type="image/svg+xml" href="/assets/img/favicon.svg" />
+<link rel="icon" type="image/png" sizes="32x32" href="/assets/img/favicon-32.png" />
+<link rel="icon" type="image/png" sizes="16x16" href="/assets/img/favicon-16.png" />
+<link rel="apple-touch-icon" href="/assets/img/apple-touch-icon.png" />
+<link rel="manifest" href="/manifest.webmanifest" />
+<meta name="theme-color" content="#2563eb" />
+
+<meta property="og:type" content="article" />
+<meta property="og:locale" content="es_AR" />
+<meta property="og:site_name" content="Calculadora Científica" />
+<meta property="og:title" content="Movimiento circular uniforme explicado" />
+<meta property="og:description" content="MCU: período, frecuencia, velocidades, aceleración centrípeta y ejemplos resueltos." />
+<meta property="og:url" content="https://www.calculadoracientifica.com.ar/guias/movimiento-circular-uniforme-explicado/" />
+<meta property="og:image" content="https://www.calculadoracientifica.com.ar/assets/img/og-image.png" />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="630" />
+<meta name="twitter:image" content="https://www.calculadoracientifica.com.ar/assets/img/og-image.png" />
+<meta name="twitter:card" content="summary_large_image" />
+
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Roboto+Mono:wght@400;500;700&display=swap" rel="stylesheet" />
+
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7274131858034505" crossorigin="anonymous"></script>
+<link rel="stylesheet" href="/assets/css/styles.css" />
+<link rel="stylesheet" href="/assets/css/tailwind.css" />
+<script src="/assets/js/theme.js"></script>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Article",
+      "headline": "Movimiento circular uniforme explicado",
+      "description": "Qué es el movimiento circular uniforme, la relación entre período, frecuencia, velocidad angular y lineal, la aceleración centrípeta y ejemplos resueltos con rpm.",
+      "author": {
+        "@type": "Organization",
+        "name": "Calculadora Científica"
+      },
+      "publisher": {
+        "@type": "Organization",
+        "name": "Calculadora Científica"
+      },
+      "mainEntityOfPage": "https://www.calculadoracientifica.com.ar/guias/movimiento-circular-uniforme-explicado/",
+      "inLanguage": "es-AR",
+      "datePublished": "2026-11-10",
+      "dateModified": "2026-11-10"
+    },
+    {
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "¿Qué es el movimiento circular uniforme?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "El de un cuerpo que recorre una circunferencia con rapidez constante."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "¿Cómo se pasa de rpm a rad/s?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Multiplicando por 2π y dividiendo por 60. 120 rpm = 12,57 rad/s."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "¿Cómo se calcula la aceleración centrípeta?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "a = v²/r o a = ω²·r. Siempre apunta al centro."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "¿Cuál es la relación entre período y frecuencia?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Son inversos: f = 1/T."
+          }
+        }
+      ]
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Inicio",
+          "item": "https://www.calculadoracientifica.com.ar/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Guías",
+          "item": "https://www.calculadoracientifica.com.ar/guias/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "Movimiento circular uniforme explicado",
+          "item": "https://www.calculadoracientifica.com.ar/guias/movimiento-circular-uniforme-explicado/"
+        }
+      ]
+    }
+  ]
+}
+</script>
+</head>
+<body class="min-h-screen font-sans antialiased">
+  <a href="#main-content" class="sr-only focus:not-sr-only focus:fixed focus:top-3 focus:left-3 focus:z-50 focus:px-4 focus:py-2 focus:rounded-lg focus:bg-[var(--color-primary)] focus:text-white focus:text-sm focus:font-semibold">Saltar al contenido</a>
+
+  <header class="sticky top-0 z-40 backdrop-blur border-b border-[var(--color-border)] bg-[var(--color-bg)]/85">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 h-16 flex items-center justify-between">
+      <a href="/" class="flex items-center gap-2 font-display font-extrabold text-lg">
+        <span class="w-8 h-8 rounded-lg bg-[var(--color-primary)] text-white flex items-center justify-center text-sm">∑</span>
+        Calculadora<span class="text-[var(--color-primary-link)]">Científica</span>
+      </a>
+      <button data-theme-toggle type="button" aria-label="Cambiar tema claro/oscuro"
+        class="w-10 h-10 rounded-full surface flex items-center justify-center hover:shadow-md transition-shadow">
+        <span data-theme-icon>🌙</span>
+      </button>
+    </div>
+  </header>
+
+  <main id="main-content" class="max-w-3xl mx-auto px-4 sm:px-6 py-8">
+    <nav aria-label="Breadcrumb" class="text-sm text-[var(--color-text-muted)] mb-4">
+      <ol class="flex flex-wrap items-center gap-1">
+        <li><a href="/" class="hover:text-[var(--color-primary-link)]">Inicio</a></li>
+        <li aria-hidden="true">/</li>
+        <li><a href="/guias/" class="hover:text-[var(--color-primary-link)]">Guías</a></li>
+        <li aria-hidden="true">/</li>
+        <li class="text-[var(--color-text)] font-medium" aria-current="page">Movimiento circular uniforme explicado</li>
+      </ol>
+    </nav>
+
+    <article>
+      <h1 class="font-display font-extrabold text-2xl sm:text-3xl">Movimiento circular uniforme explicado</h1>
+      <p class="mt-3 text-[var(--color-text-muted)] leading-relaxed">
+        Una rueda, un ventilador o un auto en una curva describen una circunferencia. Si lo hacen con rapidez constante, se trata de un movimiento circular uniforme, y todas sus magnitudes se relacionan con unas pocas fórmulas.
+      </p>
+
+      <div class="mt-5 rounded-2xl surface p-4 text-sm leading-relaxed">
+        <p class="font-semibold text-[var(--color-text)] mb-1">Respuesta rápida</p>
+        <p class="text-[var(--color-text-muted)]">ω = 2π/T = 2πf · v = ω·r · a = v²/r = ω²·r · 1 rpm = 1/60 Hz.</p>
+      </div>
+
+      <div class="mt-6 rounded-2xl surface p-4 flex items-center justify-between gap-3">
+        <p class="text-sm">¿Preferís que lo calcule por vos?</p>
+        <a href="/calculadoras/fisica/calculadora-de-movimiento-circular/" class="calc-btn calc-btn--op px-4 py-2 text-sm whitespace-nowrap">Abrir calculadora</a>
+      </div>
+
+      <h2 class="font-display font-bold text-xl mt-8 mb-2">1. Las magnitudes del MCU</h2>
+
+      <ul class="list-disc list-inside space-y-1 text-[var(--color-text-muted)]">
+        <li>Período (T): el tiempo que tarda en dar una vuelta, en segundos.</li>
+        <li>Frecuencia (f): las vueltas por segundo, en hertz. Es la inversa del período: f = 1/T.</li>
+        <li>Velocidad angular (ω): el ángulo que recorre por segundo, en rad/s. Una vuelta son 2π radianes.</li>
+        <li>Velocidad lineal (v): la rapidez a lo largo de la circunferencia, en m/s.</li>
+      </ul>
+
+      <p class="font-numeric text-center my-3 text-[var(--color-text)]">ω = 2π / T = 2π·f &nbsp;&nbsp;·&nbsp;&nbsp; v = ω · r</p>
+
+      <h2 class="font-display font-bold text-xl mt-8 mb-2">2. La aceleración centrípeta</h2>
+
+      <p class="text-[var(--color-text-muted)] leading-relaxed">
+        Aunque la rapidez sea constante, la velocidad cambia de dirección en todo momento, y eso es una aceleración. Apunta siempre hacia el centro de la circunferencia:
+      </p>
+
+      <p class="font-numeric text-center my-3 text-[var(--color-text)]">a = v² / r = ω² · r</p>
+
+      <p class="text-[var(--color-text-muted)] leading-relaxed">
+        La fuerza que la produce es la fuerza centrípeta, F = m·a: puede ser la tensión de una cuerda, el rozamiento de las ruedas o la gravedad.
+      </p>
+
+      <h2 class="font-display font-bold text-xl mt-8 mb-2">3. Ejemplo: una rueda de 30 cm a 120 rpm</h2>
+
+      <ol class="list-decimal list-inside space-y-1 text-[var(--color-text-muted)] font-numeric">
+        <li>f = 120 rpm / 60 = 2 Hz → T = 1/2 = 0,5 s</li>
+        <li>ω = 2π·2 = 12,57 rad/s</li>
+        <li>v = ω·r = 12,57 × 0,3 = 3,77 m/s ≈ 13,6 km/h</li>
+        <li>a = ω²·r = 157,9 × 0,3 ≈ 47,4 m/s²</li>
+      </ol>
+
+      <h2 class="font-display font-bold text-xl mt-8 mb-2">4. Ejemplo: un auto en una curva</h2>
+
+      <ol class="list-decimal list-inside space-y-1 text-[var(--color-text-muted)] font-numeric">
+        <li>Curva de 50 m de radio a 20 m/s (72 km/h)</li>
+        <li>a = v²/r = 400 / 50 = 8 m/s² (cerca de 0,8 g)</li>
+        <li>ω = v/r = 0,4 rad/s → T = 2π/0,4 ≈ 15,7 s por vuelta completa</li>
+      </ol>
+
+      <p class="text-[var(--color-text-muted)] leading-relaxed">
+        Por eso el rozamiento necesario para tomar la curva crece con el cuadrado de la velocidad: al duplicar la velocidad, hace falta cuatro veces más agarre.
+      </p>
+
+      <h2 class="font-display font-bold text-xl mt-8 mb-2">5. Ejemplo: la aguja de un reloj</h2>
+
+      <ol class="list-decimal list-inside space-y-1 text-[var(--color-text-muted)] font-numeric">
+        <li>Minutero de 10 cm: T = 3.600 s</li>
+        <li>ω = 2π/3.600 ≈ 0,001745 rad/s</li>
+        <li>v = 0,001745 × 0,1 ≈ 0,000175 m/s</li>
+      </ol>
+
+      <h2 class="font-display font-bold text-xl mt-8 mb-2">6. Errores comunes</h2>
+
+      <ul class="list-disc list-inside space-y-1 text-[var(--color-text-muted)]">
+        <li>Mezclar rpm con rad/s: 1 rpm = 2π/60 ≈ 0,1047 rad/s.</li>
+        <li>Usar el diámetro en lugar del radio.</li>
+        <li>Pensar que no hay aceleración porque la rapidez es constante: la dirección cambia.</li>
+      </ul>
+
+      <h2 class="font-display font-bold text-xl mt-8 mb-2">Preguntas frecuentes</h2>
+      <dl class="space-y-4 text-[var(--color-text-muted)] leading-relaxed">
+        <div>
+          <dt class="font-semibold text-[var(--color-text)]">¿Qué es el movimiento circular uniforme?</dt>
+          <dd>El de un cuerpo que recorre una circunferencia con rapidez constante.</dd>
+        </div>
+        <div>
+          <dt class="font-semibold text-[var(--color-text)]">¿Cómo se pasa de rpm a rad/s?</dt>
+          <dd>Multiplicando por 2π y dividiendo por 60. 120 rpm = 12,57 rad/s.</dd>
+        </div>
+        <div>
+          <dt class="font-semibold text-[var(--color-text)]">¿Cómo se calcula la aceleración centrípeta?</dt>
+          <dd>a = v²/r o a = ω²·r. Siempre apunta al centro.</dd>
+        </div>
+        <div>
+          <dt class="font-semibold text-[var(--color-text)]">¿Cuál es la relación entre período y frecuencia?</dt>
+          <dd>Son inversos: f = 1/T.</dd>
+        </div>
+      </dl>
+    </article>
+
+    <aside class="cc-ad" data-ad="guide" aria-label="Publicidad" hidden>
+      <p class="cc-ad-label">Publicidad</p>
+      <div class="cc-ad-slot"></div>
+    </aside>
+
+    <section class="mt-10 surface rounded-2xl p-5 shadow-sm">
+      <h2 class="font-display font-semibold text-lg mb-2">Calculadoras relacionadas</h2>
+      <ul class="space-y-2 text-sm">
+        <li><a class="text-[var(--color-primary-link)] hover:underline" href="/calculadoras/fisica/calculadora-de-movimiento-circular/">Calculadora de movimiento circular</a></li>
+        <li><a class="text-[var(--color-primary-link)] hover:underline" href="/guias/segunda-ley-de-newton-explicada/">Guía: segunda ley de Newton</a></li>
+        <li><a class="text-[var(--color-primary-link)] hover:underline" href="/guias/grados-y-radianes/">Guía: grados y radianes</a></li>
+      </ul>
+    </section>
+  </main>
+
+  <footer class="border-t border-[var(--color-border)] mt-10">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 py-10 text-sm text-[var(--color-text-muted)] flex flex-col sm:flex-row items-center justify-between gap-4">
+      <p>© 2026 Calculadora Científica · Hecho en Argentina 🇦🇷 · <a href="/sobre-nosotros/" class="hover:text-[var(--color-primary-link)]">Sobre Nosotros</a> · <a href="/privacidad/" class="hover:text-[var(--color-primary-link)]">Privacidad</a> · <a href="/terminos-de-uso/" class="hover:text-[var(--color-primary-link)]">Términos</a></p>
+      <a href="/" class="hover:text-[var(--color-primary-link)]">← Volver al inicio</a>
+    </div>
+  </footer>
+  <!-- Cloudflare Web Analytics --><script type='module' src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "62cded9cafa8475a9f6f875888b918b9"}'></script><!-- End Cloudflare Web Analytics -->
+<a href="/" id="back-to-home" aria-label="Ir al inicio del sitio"
+  class="fixed bottom-6 right-6 z-40 w-11 h-11 rounded-full surface shadow-lg hidden lg:flex items-center justify-center transition-all duration-200 hover:shadow-xl">
+  <svg class="w-5 h-5 text-[var(--color-text)]" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+    <path stroke-linecap="round" stroke-linejoin="round" d="M3 9.5L12 3l9 6.5M5 9.5V20a1 1 0 001 1h4v-6h4v6h4a1 1 0 001-1V9.5"/>
+  </svg>
+</a>
+<button id="back-to-top" type="button" aria-label="Volver al inicio de la página"
+  class="fixed bottom-20 right-6 z-40 w-11 h-11 rounded-full bg-[var(--color-primary)] text-white shadow-lg hidden lg:flex items-center justify-center opacity-0 pointer-events-none translate-y-2 transition-all duration-200 hover:brightness-110">
+  <svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5">
+    <path stroke-linecap="round" stroke-linejoin="round" d="M5 15l7-7 7 7"/>
+  </svg>
+</button>
+<script src="/assets/js/ads.js" defer></script>
+<script src="/assets/js/back-to-top.js"></script>
+<script src="/assets/js/pwa.js" defer></script>
+<script src="/assets/js/account.js" defer></script>
+</body>
+</html>

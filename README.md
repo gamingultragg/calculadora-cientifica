@@ -604,6 +604,26 @@ guías de uso frecuente. Las respuestas se verificaron con cálculos independien
 agregarla al diccionario `EX` del script. Revisión móvil (375 px) de las 148 URLs del sitemap, también con resultado a la vista:
 sin desbordes.
 
+## Lote 10 (2026-11-14)
+
+8 calculadoras nuevas con su guía, todas con el motor `calc-simple.js` y sin repetir temas existentes (`build-batch-10.py`,
+`build-batch-10-guides.py`, `register-batch-10.py` generado con `make-register.py`):
+- Matemática: **recta y distancia entre dos puntos** (pendiente, ecuación explícita y general, distancia, punto medio, ángulo) y
+  **logaritmos** (cualquier base, ln, log, log₂ y potencias).
+- Física: **densidad** (despeja ρ, m o V con conversión de unidades y flotación), **calor específico** (Q = m·c·ΔT, con J/kJ/cal/kcal) y
+  **movimiento circular uniforme** (T, f, rpm, ω, v y aceleración centrípeta).
+- Química: **leyes de los gases** (ley combinada; detecta Boyle, Charles o Gay-Lussac y pasa °C a K) y **concentración en ppm**
+  (mg/L, g/L, % m/v y soluto necesario).
+- Vida Diaria: **consumo de combustible** (km/L, L/100 km, costo del viaje y autonomía; el precio del litro lo ingresa la persona).
+- Los ejemplos de cada guía se verificaron contra la calculadora en el navegador y con 8 pruebas nuevas (57 en total). Sin desborde
+  a 375 px en las 16 páginas.
+- Al correr `inject-ad-slots.py` quedaron también los contenedores de anuncios (ocultos, `ads.js` sigue con `ENABLED = false`) en
+  ~80 páginas de los lotes 6 a 9, que se habían saltado ese paso.
+- **Orden de los pasos de un lote** (comprobado): `build-batch-N*.py` → `make-register.py N spec.json` → `register-batch-N.py` →
+  `enrich-categories.py` → `prerender-cards.py` → `inject-ad-slots.py` → `inject-pwa-and-copy.py` → `cd tools/tailwind && npm run build`
+  → `build-sw.py` → `audit-links`, `validate-jsonld`, `validate-sitemap` y `node --test tools/tests/logic.test.js tools/tests/api.test.mjs`. Los scripts se corren desde la
+  raíz del repo y sin `python -I` (importan módulos vecinos).
+
 ## Cuentas de usuario (2026-11-12)
 
 Cuentas **opcionales** con ingreso con Google y con mail + contraseña, aceptación de los términos y sincronización de favoritas,

@@ -595,3 +595,131 @@ test("Calorías y metabolismo basal", () => {
   near(c.maintenance(1648.75, "moderado"), 2555.5625, 1e-9);
   near(c.maintenance(1000, "sedentario"), 1200);
 });
+
+// ---------------------------------------------------------------- Lote 10 (2026-11-14)
+test("Recta y distancia entre dos puntos", () => {
+  const { line } = load("matematicas-avanzadas/recta-y-distancia-entre-puntos");
+  const r = line(1, 2, 3, 6);
+  assert.equal(r.slope, 2);
+  assert.equal(r.b, 0);
+  near(r.distance, Math.sqrt(20));
+  assert.deepEqual(r.mid, [2, 4]);
+  near(r.incl, 63.434948822922);
+  assert.deepEqual([r.A, r.B, r.C], [4, -2, 0]);
+  const neg = line(0, 4, 2, 0);
+  assert.equal(neg.slope, -2);
+  assert.equal(neg.b, 4);
+  near(neg.incl, 116.565051177078);
+  const vert = line(2, 1, 2, 5);
+  assert.equal(vert.vertical, true);
+  assert.equal(vert.distance, 4);
+  assert.equal(vert.incl, 90);
+  const hor = line(1, 3, 5, 3);
+  assert.equal(hor.slope, 0);
+  assert.equal(hor.b, 3);
+  assert.equal(hor.incl, 0);
+  assert.throws(() => line(1, 1, 1, 1));
+  // la forma general pasa por los dos puntos
+  const g = line(-3, 7, 4, -2);
+  assert.equal(g.A * -3 + g.B * 7 + g.C, 0);
+  assert.equal(g.A * 4 + g.B * -2 + g.C, 0);
+});
+
+test("Logaritmos", () => {
+  const { logBase, power } = load("matematicas-avanzadas/calculadora-de-logaritmos");
+  near(logBase(2, 8), 3);
+  near(logBase(10, 1000), 3);
+  near(logBase(3, 81), 4);
+  near(logBase(Math.E, Math.E), 1);
+  near(logBase(5, 1), 0);
+  near(logBase(0.5, 8), -3);
+  assert.throws(() => logBase(1, 5));
+  assert.throws(() => logBase(2, 0));
+  assert.throws(() => logBase(2, -4));
+  assert.throws(() => logBase(-2, 4));
+  assert.equal(power(2, 10), 1024);
+  near(power(10, -2), 0.01);
+  near(logBase(7, power(7, 3.5)), 3.5);
+});
+
+test("Densidad", () => {
+  const d = load("fisica/calculadora-de-densidad");
+  near(d.density(500 * d.MASS.g, 250 * d.VOL.cm3), 2000); // 500 g en 250 cm³ = 2 g/cm³
+  near(d.mass(7.87 * d.DENS.gcm3, 100 * d.VOL.cm3), 0.787);
+  near(d.volume(1, 1000), 1e-3); // 1 kg de agua = 1 L
+  near(d.volume(2.7 * d.MASS.kg, 2.7 * d.DENS.gcm3) * 1000, 1); // aluminio: 2,7 kg ocupan 1 L
+});
+
+test("Calor específico y calorimetría", () => {
+  const c = load("fisica/calculadora-de-calor-especifico");
+  near(c.heat(1000, 4.186, 60), 251160);
+  near(c.heat(1000, 4.186, 60) / c.CAL, 60028.7, 0.1); // calorías
+  near(c.specificHeat(251160, 1000, 60), 4.186);
+  near(c.mass(251160, 4.186, 60), 1000);
+  near(c.deltaT(251160, 1000, 4.186), 60);
+  near(c.heat(200, 0.385, -50), -3850); // el cobre que se enfría cede calor
+  assert.throws(() => c.specificHeat(100, 10, 0));
+  assert.throws(() => c.mass(100, 4, 0));
+});
+
+test("Movimiento circular uniforme", () => {
+  const { circular } = load("fisica/calculadora-de-movimiento-circular");
+  const a = circular(0.5, "T", 2);
+  near(a.omega, Math.PI);
+  near(a.f, 0.5);
+  near(a.rpm, 30);
+  near(a.v, Math.PI * 0.5);
+  near(a.a, Math.PI * Math.PI * 0.5);
+  const b = circular(2, "rpm", 60);
+  near(b.f, 1);
+  near(b.T, 1);
+  near(b.omega, 2 * Math.PI);
+  near(b.v, 4 * Math.PI);
+  near(b.a, 8 * Math.PI * Math.PI);
+  const c = circular(1, "v", 10);
+  near(c.omega, 10);
+  near(c.a, 100); // v²/r
+  near(circular(3, "w", 2).v, 6);
+  near(circular(3, "f", 2).omega, 4 * Math.PI);
+});
+
+test("Leyes de los gases", () => {
+  const g = load("quimica/leyes-de-los-gases");
+  near(g.solveP2(1, 10, 300, 5, 300), 2); // Boyle: se comprime a la mitad, la presión se duplica
+  near(g.solveV2(1, 10, 300, 2, 300), 5);
+  near(g.solveV2(1, 10, 300, 1, 600), 20); // Charles: al duplicar T, se duplica V
+  near(g.solveP2(2, 5, 300, 5, 450), 3); // Gay-Lussac: mismo V, T × 1,5 → P × 1,5
+  near(g.solveT2(1, 10, 300, 2, 5), 300);
+  near(g.toKelvin(27, "C"), 300.15);
+  near(g.fromKelvin(373.15, "C"), 100);
+  assert.throws(() => g.toKelvin(-300, "C"));
+  assert.throws(() => g.toKelvin(0, "K"));
+  assert.match(g.lawName(1, 10, 300, 2, 5, 300), /Boyle/);
+  assert.match(g.lawName(1, 10, 300, 1, 20, 600), /Charles/);
+  assert.match(g.lawName(2, 5, 300, 3, 5, 450), /Gay-Lussac/);
+  assert.match(g.lawName(1, 10, 300, 2, 8, 500), /combinada/);
+});
+
+test("Concentración en ppm y porcentaje", () => {
+  const c = load("quimica/calculadora-de-concentracion-ppm");
+  const r = c.concentration(5 * c.MG.g, 2); // 5 g en 2 L
+  near(r.mgL, 2500);
+  near(r.gL, 2.5);
+  near(r.pctMV, 0.25);
+  const p = c.fromPpm(1000);
+  near(p.gL, 1);
+  near(p.pctMV, 0.1);
+  near(c.fromPpm(50).pctMV, 0.005);
+  near(c.massNeeded(50, 20), 1000); // 50 ppm en 20 L = 1 g
+  near(c.concentration(250 * c.MG.mg, 500 * c.LITERS.mL).mgL, 500); // 250 mg en 500 mL
+});
+
+test("Consumo de combustible", () => {
+  const f = load("vida-diaria/calculadora-de-consumo-de-combustible");
+  const e = f.efficiency(450, 36);
+  near(e.kmL, 12.5);
+  near(e.l100, 8);
+  near(f.tripLiters(300, 8), 24);
+  near(f.range(50, 8), 625);
+  near(f.efficiency(100, 10).l100, 10);
+});

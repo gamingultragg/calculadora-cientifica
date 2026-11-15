@@ -879,3 +879,140 @@ test("Meta de ahorro", () => {
   assert.throws(() => s.months(1000, 1500, 10, 0));
   assert.throws(() => s.contribution(110000, 100000, 0.05, 120));
 });
+
+// ---------------------------------------------------------------- Lote 12 (2026-11-14)
+test("Peso ideal", () => {
+  const p = load("vida-diaria/calculadora-de-peso-ideal");
+  const m = p.idealWeights("hombre", 175);
+  near(m.devine, 70.4646, 1e-3);
+  near(m.robinson, 68.9055, 1e-3);
+  near(m.miller, 68.7457, 1e-3);
+  near(m.hamwi, 72.0236, 1e-3);
+  const w = p.idealWeights("mujer", 165);
+  near(w.devine, 56.9095, 1e-3);
+  near(w.robinson, 57.4331, 1e-3);
+  near(w.miller, 59.8465, 1e-3);
+  near(w.hamwi, 56.4134, 1e-3);
+  const r = p.healthyRange(175);
+  near(r.min, 18.5 * 1.75 * 1.75);
+  near(r.max, 24.9 * 1.75 * 1.75);
+  near(p.idealWeights("hombre", 152.4).devine, 50, 1e-9); // 60 pulgadas: el valor base
+});
+
+test("Fecha probable de parto", () => {
+  const f = load("vida-diaria/calculadora-de-fecha-probable-de-parto");
+  assert.equal(f.dueDateFromLMP("2026-01-01"), "2026-10-08");
+  assert.equal(f.dueDateFromLMP("2026-01-01", 32), "2026-10-12"); // ciclo más largo: más días
+  assert.equal(f.dueDateFromLMP("2026-01-01", 25), "2026-10-05");
+  assert.equal(f.dueDateFromLMP("2024-01-01"), "2024-10-07"); // año bisiesto
+  assert.equal(f.dueDateFromLMP("2026-12-20"), "2027-09-26"); // cruza de año
+  assert.equal(f.dueDateFromConception("2026-01-15"), "2026-10-08");
+  assert.equal(f.lmpFromConception("2026-01-15"), "2026-01-01");
+  const a = f.gestationalAge("2026-01-01", "2026-03-26");
+  assert.deepEqual([a.days, a.weeks, a.rem], [84, 12, 0]);
+  assert.deepEqual([f.gestationalAge("2026-01-01", "2026-01-09").weeks, f.gestationalAge("2026-01-01", "2026-01-09").rem], [1, 1]);
+  assert.equal(f.gestationalAge("2026-01-10", "2026-01-01").days, -9);
+  assert.equal([f.trimester(5), f.trimester(13), f.trimester(14), f.trimester(27), f.trimester(28), f.trimester(40)].join(), "1,1,2,2,3,3");
+  assert.throws(() => f.parseISO("2026-02-30"));
+  assert.throws(() => f.parseISO("hoy"));
+});
+
+test("Gravitación universal", () => {
+  const g = load("fisica/calculadora-de-gravitacion-universal");
+  near(g.surfaceGravity(5.972e24, 6.371e6), 9.82, 0.01); // Tierra
+  near(g.surfaceGravity(7.342e22, 1.7374e6), 1.62, 0.01); // Luna
+  near(g.surfaceGravity(6.417e23, 3.3895e6), 3.73, 0.01); // Marte (con M = 6,417 × 10²³ kg y R = 3.389,5 km)
+  near(g.force(1.989e30, 5.972e24, 1.496e11) / 1e22, 3.54, 0.01); // Sol-Tierra
+  near(g.orbitalSpeed(5.972e24, 6.779e6), 7668, 5); // estación espacial
+  near(g.orbitPeriod(5.972e24, 6.779e6) / 60, 92.6, 0.2);
+  near(g.escapeSpeed(5.972e24, 6.371e6), 11186, 5);
+  near(g.escapeSpeed(5.972e24, 6.779e6) / g.orbitalSpeed(5.972e24, 6.779e6), Math.SQRT2);
+  near(g.force(2, 3, 4) * 4, g.force(2, 3, 2)); // al duplicar la distancia, F se reduce a la cuarta parte
+});
+
+test("Ley de Snell", () => {
+  const s = load("fisica/calculadora-de-ley-de-snell");
+  near(s.refract(1.0003, 1.333, 30).theta2, 22.04, 0.02); // aire → agua
+  near(s.refract(1, 1.5, 0).theta2, 0, 1e-9); // incidencia normal: no se desvía
+  assert.equal(s.refract(1.52, 1, 60).tir, true); // vidrio → aire a 60°: reflexión total
+  assert.equal(s.refract(1.52, 1, 30).tir, false);
+  near(s.critical(1.52, 1), 41.14, 0.01);
+  near(s.critical(1.333, 1), 48.61, 0.01);
+  assert.equal(s.critical(1, 1.5), null);
+  near(s.index2(1, 30, (Math.asin(1 / 3) * 180) / Math.PI), 1.5, 1e-9);
+  near(s.C / 1.5 / 1000, 199861.64, 0.01); // km/s en vidrio
+  const r = s.refract(1.333, 1.0003, 20); // trayectoria inversa: agua → aire
+  near(s.refract(1.0003, 1.333, r.theta2).theta2, 20, 1e-6); // reversibilidad
+});
+
+test("Medias", () => {
+  const m = load("estadistica/calculadora-de-medias");
+  assert.deepEqual(m.parseList("2 8"), [2, 8]);
+  assert.deepEqual(m.parseList("1, 2, 3"), [1, 2, 3]);
+  assert.deepEqual(m.parseList("2,5 3,5"), [2.5, 3.5]);
+  assert.deepEqual(m.parseList("1;2;3"), [1, 2, 3]);
+  assert.deepEqual(m.parseList("1.234,5\n2"), [1234.5, 2]);
+  assert.throws(() => m.parseList("5"));
+  assert.throws(() => m.parseList("a b"));
+  const a = m.means([2, 8]);
+  near(a.arithmetic, 5);
+  near(a.geometric, 4);
+  near(a.harmonic, 3.2);
+  near(a.quadratic, Math.sqrt(34));
+  const b = m.means([1, 2, 3, 4]);
+  near(b.geometric, Math.pow(24, 0.25));
+  near(b.harmonic, 4 / (1 + 0.5 + 1 / 3 + 0.25));
+  near(m.means([60, 40]).harmonic, 48); // velocidad media en dos tramos de igual distancia
+  near(m.means([1.1, 1.2, 0.95]).geometric, Math.pow(1.1 * 1.2 * 0.95, 1 / 3)); // crecimiento promedio
+  assert.equal(m.means([3, -1]).geometric, null);
+  assert.equal(m.means([3, 0]).harmonic, null);
+  for (const l of [[2, 8], [1, 2, 3, 4], [5, 5, 5], [0.5, 10, 3]]) {
+    const x = m.means(l);
+    assert.ok(x.harmonic <= x.geometric + 1e-12 && x.geometric <= x.arithmetic + 1e-12 && x.arithmetic <= x.quadratic + 1e-12);
+  }
+});
+
+test("Errores de medición", () => {
+  const e = load("estadistica/calculadora-de-error-absoluto-y-relativo");
+  const r = e.singleError(9.81, 9.65);
+  near(r.absolute, 0.16);
+  near(r.relative, 0.16 / 9.81);
+  near(r.percent, (0.16 / 9.81) * 100);
+  assert.ok(r.signed < 0);
+  assert.throws(() => e.singleError(0, 1));
+  near(e.singleError(-10, -9).percent, 10); // valor real negativo
+  const s = e.series([9.8, 9.7, 9.9, 9.75]);
+  near(s.mean, 9.7875);
+  near(s.s, 0.0853913, 1e-6);
+  near(s.sem, 0.0426956, 1e-6);
+  near(s.min, 9.7);
+  near(s.max, 9.9);
+  assert.deepEqual(e.parseList("9,8 9,7 9,9"), [9.8, 9.7, 9.9]);
+});
+
+test("Propiedades coligativas", () => {
+  const c = load("quimica/calculadora-de-propiedades-coligativas");
+  near(c.molality(58.44, 58.44, 1000), 1);
+  near(c.freezingDrop(2, c.SOLVENTS.agua.kf, 1), 3.72); // 1 molal de NaCl en agua
+  near(c.boilingRise(2, c.SOLVENTS.agua.kb, 1), 1.024);
+  near(c.molality(342.3, 342.3, 500), 2); // 1 mol de azúcar en 500 g
+  near(c.freezingDrop(1, c.SOLVENTS.agua.kf, 2), 3.72);
+  near(c.SOLVENTS.benceno.tf - c.freezingDrop(1, c.SOLVENTS.benceno.kf, 0.5), 2.94);
+  near(c.SOLVENTS.agua.tb + c.boilingRise(1, c.SOLVENTS.agua.kb, 1), 100.512);
+});
+
+test("Pendiente de una rampa", () => {
+  const r = load("hogar-y-construccion/calculadora-de-pendiente-de-rampa");
+  const s = r.slope(0.9, 9);
+  near(s.pct, 10);
+  near(s.deg, 5.710593, 1e-5);
+  near(s.length, Math.sqrt(81 + 0.81));
+  near(r.runFor(0.5, 8), 6.25);
+  near(r.riseFor(5, 8), 0.4);
+  near(r.slope(r.riseFor(7, 6), 7).pct, 6);
+  assert.match(r.describe(4), /suave/);
+  assert.match(r.describe(8), /moderada/);
+  assert.match(r.describe(10), /pronunciada/);
+  assert.match(r.describe(15), /muy pronunciada/);
+  near(r.slope(1, 1).deg, 45); // 100 % = 45°
+});

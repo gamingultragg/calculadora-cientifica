@@ -2,7 +2,7 @@
  * Estrategia: precarga del sitio (páginas + CSS + JS) para que funcione sin conexión;
  * red primero con respaldo en caché; tipografías de Google en caché "stale-while-revalidate".
  * No intercepta anuncios, analítica ni nada de otros orígenes (salvo las tipografías). */
-const VERSION = "2aba86a834";
+const VERSION = "fccb183e94";
 const CACHE = "cc-" + VERSION;
 const FONTS = "cc-fonts-v1";
 const PRECACHE = [
@@ -99,6 +99,14 @@ const PRECACHE = [
  "/calculadoras/fisica/calculadora-de-presion/",
  "/calculadoras/hogar-y-construccion/calculadora-de-escaleras/",
  "/calculadoras/finanzas/calculadora-de-meta-de-ahorro/",
+ "/calculadoras/vida-diaria/calculadora-de-peso-ideal/",
+ "/calculadoras/vida-diaria/calculadora-de-fecha-probable-de-parto/",
+ "/calculadoras/fisica/calculadora-de-gravitacion-universal/",
+ "/calculadoras/fisica/calculadora-de-ley-de-snell/",
+ "/calculadoras/estadistica/calculadora-de-medias/",
+ "/calculadoras/estadistica/calculadora-de-error-absoluto-y-relativo/",
+ "/calculadoras/quimica/calculadora-de-propiedades-coligativas/",
+ "/calculadoras/hogar-y-construccion/calculadora-de-pendiente-de-rampa/",
  "/guias/",
  "/guias/orden-de-operaciones-vs-calculo-secuencial/",
  "/guias/como-resolver-ecuaciones-de-segundo-grado/",
@@ -183,7 +191,16 @@ const PRECACHE = [
  "/guias/presion-y-presion-hidrostatica/",
  "/guias/como-calcular-una-escalera/",
  "/guias/como-calcular-cuanto-ahorrar-para-una-meta/",
+ "/guias/como-calcular-el-peso-ideal/",
+ "/guias/como-calcular-la-fecha-probable-de-parto/",
+ "/guias/ley-de-gravitacion-universal-explicada/",
+ "/guias/ley-de-snell-y-refraccion-de-la-luz/",
+ "/guias/media-aritmetica-geometrica-y-armonica/",
+ "/guias/error-absoluto-relativo-y-porcentual/",
+ "/guias/propiedades-coligativas-crioscopia-y-ebulloscopia/",
+ "/guias/como-calcular-la-pendiente-de-una-rampa/",
  "/sobre-nosotros/",
+ "/contacto/",
  "/privacidad/",
  "/terminos-de-uso/",
  "/404.html",
@@ -206,6 +223,8 @@ const PRECACHE = [
  "/assets/js/main.js",
  "/assets/js/pwa.js",
  "/assets/js/theme.js",
+ "/calculadoras/estadistica/calculadora-de-error-absoluto-y-relativo/script.js",
+ "/calculadoras/estadistica/calculadora-de-medias/script.js",
  "/calculadoras/estadistica/calculadora-de-probabilidad/script.js",
  "/calculadoras/estadistica/calculadora-de-promedio-de-notas/script.js",
  "/calculadoras/estadistica/calculadora-estadistica-descriptiva/script.js",
@@ -231,7 +250,9 @@ const PRECACHE = [
  "/calculadoras/fisica/caida-libre-y-tiro-oblicuo/script.js",
  "/calculadoras/fisica/calculadora-de-calor-especifico/script.js",
  "/calculadoras/fisica/calculadora-de-densidad/script.js",
+ "/calculadoras/fisica/calculadora-de-gravitacion-universal/script.js",
  "/calculadoras/fisica/calculadora-de-ley-de-coulomb/script.js",
+ "/calculadoras/fisica/calculadora-de-ley-de-snell/script.js",
  "/calculadoras/fisica/calculadora-de-movimiento-circular/script.js",
  "/calculadoras/fisica/calculadora-de-pendulo-simple/script.js",
  "/calculadoras/fisica/calculadora-de-presion/script.js",
@@ -245,6 +266,7 @@ const PRECACHE = [
  "/calculadoras/hogar-y-construccion/calculadora-de-escaleras/script.js",
  "/calculadoras/hogar-y-construccion/calculadora-de-hormigon/script.js",
  "/calculadoras/hogar-y-construccion/calculadora-de-ladrillos/script.js",
+ "/calculadoras/hogar-y-construccion/calculadora-de-pendiente-de-rampa/script.js",
  "/calculadoras/hogar-y-construccion/calculadora-de-pintura/script.js",
  "/calculadoras/ingenieria/codigo-de-colores-de-resistencias/script.js",
  "/calculadoras/ingenieria/conversor-de-temperatura/script.js",
@@ -281,13 +303,16 @@ const PRECACHE = [
  "/calculadoras/quimica/calculadora-de-molaridad/script.js",
  "/calculadoras/quimica/calculadora-de-moles/script.js",
  "/calculadoras/quimica/calculadora-de-ph/script.js",
+ "/calculadoras/quimica/calculadora-de-propiedades-coligativas/script.js",
  "/calculadoras/quimica/estequiometria-y-reactivo-limitante/script.js",
  "/calculadoras/quimica/leyes-de-los-gases/script.js",
  "/calculadoras/vida-diaria/calculadora-de-calorias-y-metabolismo-basal/script.js",
  "/calculadoras/vida-diaria/calculadora-de-consumo-de-combustible/script.js",
  "/calculadoras/vida-diaria/calculadora-de-edad-y-fechas/script.js",
+ "/calculadoras/vida-diaria/calculadora-de-fecha-probable-de-parto/script.js",
  "/calculadoras/vida-diaria/calculadora-de-horas-trabajadas/script.js",
  "/calculadoras/vida-diaria/calculadora-de-imc/script.js",
+ "/calculadoras/vida-diaria/calculadora-de-peso-ideal/script.js",
  "/calculadoras/vida-diaria/calculadora-de-propina/script.js",
  "/calculadoras/vida-diaria/conversor-de-cocina/script.js"
 ];

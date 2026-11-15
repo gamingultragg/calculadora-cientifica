@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+<html lang="es-AR">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Error Absoluto, Relativo y Porcentual: Fórmulas, Incertidumbre y Ejemplos | Calculadora Científica</title>
+<meta name="description" content="Cómo calcular el error absoluto, relativo y porcentual de una medición, el error estándar de una serie de mediciones, la diferencia entre exactitud y precisión y ejemplos para informes de laboratorio." />
+<link rel="canonical" href="https://www.calculadoracientifica.com.ar/guias/error-absoluto-relativo-y-porcentual/" />
+<link rel="alternate" hreflang="es-AR" href="https://www.calculadoracientifica.com.ar/guias/error-absoluto-relativo-y-porcentual/" />
+<link rel="alternate" hreflang="es" href="https://www.calculadoracientifica.com.ar/guias/error-absoluto-relativo-y-porcentual/" />
+<link rel="icon" type="image/svg+xml" href="/assets/img/favicon.svg" />
+<link rel="icon" type="image/png" sizes="32x32" href="/assets/img/favicon-32.png" />
+<link rel="icon" type="image/png" sizes="16x16" href="/assets/img/favicon-16.png" />
+<link rel="apple-touch-icon" href="/assets/img/apple-touch-icon.png" />
+<link rel="manifest" href="/manifest.webmanifest" />
+<meta name="theme-color" content="#2563eb" />
+
+<meta property="og:type" content="article" />
+<meta property="og:locale" content="es_AR" />
+<meta property="og:site_name" content="Calculadora Científica" />
+<meta property="og:title" content="Error absoluto, relativo y porcentual" />
+<meta property="og:description" content="Errores de medición: fórmulas, incertidumbre y ejemplos resueltos." />
+<meta property="og:url" content="https://www.calculadoracientifica.com.ar/guias/error-absoluto-relativo-y-porcentual/" />
+<meta property="og:image" content="https://www.calculadoracientifica.com.ar/assets/img/og-image.png" />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="630" />
+<meta name="twitter:image" content="https://www.calculadoracientifica.com.ar/assets/img/og-image.png" />
+<meta name="twitter:card" content="summary_large_image" />
+
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Roboto+Mono:wght@400;500;700&display=swap" rel="stylesheet" />
+
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7274131858034505" crossorigin="anonymous"></script>
+<link rel="stylesheet" href="/assets/css/styles.css" />
+<link rel="stylesheet" href="/assets/css/tailwind.css" />
+<script src="/assets/js/theme.js"></script>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Article",
+      "headline": "Error absoluto, relativo y porcentual",
+      "description": "Cómo calcular el error absoluto, relativo y porcentual de una medición, el error estándar de una serie de mediciones, la diferencia entre exactitud y precisión y ejemplos para informes de laboratorio.",
+      "author": {
+        "@type": "Organization",
+        "name": "Calculadora Científica"
+      },
+      "publisher": {
+        "@type": "Organization",
+        "name": "Calculadora Científica"
+      },
+      "mainEntityOfPage": "https://www.calculadoracientifica.com.ar/guias/error-absoluto-relativo-y-porcentual/",
+      "inLanguage": "es-AR",
+      "datePublished": "2026-11-10",
+      "dateModified": "2026-11-10"
+    },
+    {
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "¿Cómo se calcula el error absoluto?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Es el valor absoluto de la diferencia entre lo medido y el valor real."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "¿Cómo se calcula el error porcentual?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Se divide el error absoluto por el valor real y se multiplica por 100."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "¿Qué diferencia hay entre exactitud y precisión?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Exactitud: cercanía al valor real. Precisión: cercanía entre mediciones repetidas."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "¿Qué es el error estándar de la media?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "s/√n: la incertidumbre del promedio de una serie de mediciones."
+          }
+        }
+      ]
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Inicio",
+          "item": "https://www.calculadoracientifica.com.ar/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Guías",
+          "item": "https://www.calculadoracientifica.com.ar/guias/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "Error absoluto, relativo y porcentual",
+          "item": "https://www.calculadoracientifica.com.ar/guias/error-absoluto-relativo-y-porcentual/"
+        }
+      ]
+    }
+  ]
+}
+</script>
+</head>
+<body class="min-h-screen font-sans antialiased">
+  <a href="#main-content" class="sr-only focus:not-sr-only focus:fixed focus:top-3 focus:left-3 focus:z-50 focus:px-4 focus:py-2 focus:rounded-lg focus:bg-[var(--color-primary)] focus:text-white focus:text-sm focus:font-semibold">Saltar al contenido</a>
+
+  <header class="sticky top-0 z-40 backdrop-blur border-b border-[var(--color-border)] bg-[var(--color-bg)]/85">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 h-16 flex items-center justify-between">
+      <a href="/" class="flex items-center gap-2 font-display font-extrabold text-lg">
+        <span class="w-8 h-8 rounded-lg bg-[var(--color-primary)] text-white flex items-center justify-center text-sm">∑</span>
+        Calculadora<span class="text-[var(--color-primary-link)]">Científica</span>
+      </a>
+      <button data-theme-toggle type="button" aria-label="Cambiar tema claro/oscuro"
+        class="w-10 h-10 rounded-full surface flex items-center justify-center hover:shadow-md transition-shadow">
+        <span data-theme-icon>🌙</span>
+      </button>
+    </div>
+  </header>
+
+  <main id="main-content" class="max-w-3xl mx-auto px-4 sm:px-6 py-8">
+    <nav aria-label="Breadcrumb" class="text-sm text-[var(--color-text-muted)] mb-4">
+      <ol class="flex flex-wrap items-center gap-1">
+        <li><a href="/" class="hover:text-[var(--color-primary-link)]">Inicio</a></li>
+        <li aria-hidden="true">/</li>
+        <li><a href="/guias/" class="hover:text-[var(--color-primary-link)]">Guías</a></li>
+        <li aria-hidden="true">/</li>
+        <li class="text-[var(--color-text)] font-medium" aria-current="page">Error absoluto, relativo y porcentual</li>
+      </ol>
+    </nav>
+
+    <article>
+      <h1 class="font-display font-extrabold text-2xl sm:text-3xl">Error absoluto, relativo y porcentual</h1>
+      <p class="mt-3 text-[var(--color-text-muted)] leading-relaxed">
+        Toda medición tiene un error. Saber cuánto vale y expresarlo bien es una parte central de cualquier informe de laboratorio, y se resuelve con tres fórmulas simples y una medida para series de datos.
+      </p>
+
+      <div class="mt-5 rounded-2xl surface p-4 text-sm leading-relaxed">
+        <p class="font-semibold text-[var(--color-text)] mb-1">Respuesta rápida</p>
+        <p class="text-[var(--color-text-muted)]">E = |medido − real| · e = E / |real| · e % = e × 100 · error estándar = s / √n.</p>
+      </div>
+
+      <div class="mt-6 rounded-2xl surface p-4 flex items-center justify-between gap-3">
+        <p class="text-sm">¿Preferís que lo calcule por vos?</p>
+        <a href="/calculadoras/estadistica/calculadora-de-error-absoluto-y-relativo/" class="calc-btn calc-btn--op px-4 py-2 text-sm whitespace-nowrap">Abrir calculadora</a>
+      </div>
+
+      <h2 class="font-display font-bold text-xl mt-8 mb-2">1. Error absoluto, relativo y porcentual</h2>
+
+      <p class="font-numeric text-center my-3 text-[var(--color-text)]">E = |valor medido − valor real| &nbsp;&nbsp;·&nbsp;&nbsp; e = E / |valor real| &nbsp;&nbsp;·&nbsp;&nbsp; e % = e × 100</p>
+
+      <ul class="list-disc list-inside space-y-1 text-[var(--color-text-muted)]">
+        <li>El error absoluto tiene las unidades de la medición y dice cuánto se erró.</li>
+        <li>El error relativo es un número sin unidades: permite comparar mediciones de distinta magnitud.</li>
+        <li>El error porcentual es el relativo expresado en %.</li>
+      </ul>
+
+      <ol class="list-decimal list-inside space-y-1 text-[var(--color-text-muted)] font-numeric">
+        <li>Se mide la aceleración de la gravedad y da 9,65 m/s² (valor de referencia: 9,81)</li>
+        <li>E = |9,65 − 9,81| = 0,16 m/s²</li>
+        <li>e = 0,16 / 9,81 = 0,0163 → 1,63 %</li>
+      </ol>
+
+      <ol class="list-decimal list-inside space-y-1 text-[var(--color-text-muted)] font-numeric">
+        <li>Se mide una pieza de 50 mm y la regla indica 49,2 mm</li>
+        <li>E = 0,8 mm · e = 0,8 / 50 = 0,016 → 1,6 %</li>
+      </ol>
+
+      <p class="text-[var(--color-text-muted)] leading-relaxed">
+        Un error de 1 cm es enorme si se mide un tornillo y despreciable si se mide una cancha: el relativo muestra la diferencia.
+      </p>
+
+      <h2 class="font-display font-bold text-xl mt-8 mb-2">2. Exactitud y precisión</h2>
+
+      <ul class="list-disc list-inside space-y-1 text-[var(--color-text-muted)]">
+        <li>Exactitud: qué tan cerca está la medición del valor real (error pequeño).</li>
+        <li>Precisión: qué tan parecidas son entre sí las mediciones repetidas (poca dispersión).</li>
+      </ul>
+
+      <p class="text-[var(--color-text-muted)] leading-relaxed">
+        Una balanza mal calibrada puede dar siempre el mismo valor equivocado: es muy precisa pero poco exacta.
+      </p>
+
+      <h2 class="font-display font-bold text-xl mt-8 mb-2">3. Una serie de mediciones</h2>
+
+      <p class="text-[var(--color-text-muted)] leading-relaxed">
+        Cuando se repite la medición, el mejor valor es el promedio, y su incertidumbre se estima con el error estándar:
+      </p>
+
+      <p class="font-numeric text-center my-3 text-[var(--color-text)]">x̄ = Σx / n &nbsp;&nbsp;·&nbsp;&nbsp; s = √(Σ(x − x̄)² / (n − 1)) &nbsp;&nbsp;·&nbsp;&nbsp; error estándar = s / √n</p>
+
+      <ol class="list-decimal list-inside space-y-1 text-[var(--color-text-muted)] font-numeric">
+        <li>Cuatro mediciones de g: 9,80 · 9,70 · 9,90 · 9,75</li>
+        <li>promedio = 9,7875</li>
+        <li>s = 0,0854 · error estándar = 0,0854 / √4 = 0,0427</li>
+        <li>resultado: g = 9,79 ± 0,04 m/s²</li>
+      </ol>
+
+      <p class="text-[var(--color-text-muted)] leading-relaxed">
+        El error estándar baja con la raíz de la cantidad de mediciones: para reducirlo a la mitad hay que cuatro veces más datos.
+      </p>
+
+      <h2 class="font-display font-bold text-xl mt-8 mb-2">4. Cómo se expresa el resultado</h2>
+
+      <ul class="list-disc list-inside space-y-1 text-[var(--color-text-muted)]">
+        <li>La incertidumbre se redondea a una o dos cifras significativas.</li>
+        <li>El valor se escribe con los mismos decimales que la incertidumbre: 9,79 ± 0,04, no 9,7875 ± 0,04.</li>
+      </ul>
+
+      <h2 class="font-display font-bold text-xl mt-8 mb-2">5. Propagación de errores (reglas simples)</h2>
+
+      <ul class="list-disc list-inside space-y-1 text-[var(--color-text-muted)]">
+        <li>Suma y resta: se suman los errores absolutos.</li>
+        <li>Producto y cociente: se suman los errores relativos.</li>
+      </ul>
+
+      <ol class="list-decimal list-inside space-y-1 text-[var(--color-text-muted)] font-numeric">
+        <li>Un rectángulo mide 20,0 ± 0,1 cm por 10,0 ± 0,1 cm</li>
+        <li>errores relativos: 0,1/20 = 0,5 % y 0,1/10 = 1 % → suma 1,5 %</li>
+        <li>área = 200 cm² ± 1,5 % = 200 ± 3 cm²</li>
+      </ol>
+
+      <h2 class="font-display font-bold text-xl mt-8 mb-2">6. Errores comunes</h2>
+
+      <ul class="list-disc list-inside space-y-1 text-[var(--color-text-muted)]">
+        <li>Dividir por el valor medido en lugar del valor real.</li>
+        <li>Olvidar el valor absoluto y obtener un error negativo.</li>
+        <li>Informar demasiados decimales.</li>
+        <li>Confundir el desvío estándar (dispersión de los datos) con el error estándar (incertidumbre del promedio).</li>
+      </ul>
+
+      <!-- CC-EXERCISES:START -->
+      <h2 class="font-display font-bold text-xl mt-8 mb-2">Ejercicios para practicar</h2>
+      <p class="text-[var(--color-text-muted)] leading-relaxed">Probá resolverlos vos y después abrí la solución para comparar.</p>
+      <ol class="list-decimal list-inside space-y-4 mt-3">
+        <li>
+          <p class="text-[var(--color-text-muted)] leading-relaxed">Una balanza marca 250 g para una pesa de 245 g. ¿Cuál es el error absoluto, relativo y porcentual?</p>
+          <details class="mt-1">
+            <summary class="cursor-pointer text-sm font-semibold text-[var(--color-primary-link)] min-h-[2rem] flex items-center">Ver la solución</summary>
+            <p class="text-[var(--color-text-muted)] leading-relaxed mt-1">E = |250 − 245| = <strong>5 g</strong>. e = 5 / 245 = <strong>0,0204</strong>. Porcentual: <strong>2,04 %</strong>.</p>
+          </details>
+        </li>
+        <li>
+          <p class="text-[var(--color-text-muted)] leading-relaxed">Se mide una mesa de 119,5 cm como 120,0 cm. ¿Cuál es el error porcentual?</p>
+          <details class="mt-1">
+            <summary class="cursor-pointer text-sm font-semibold text-[var(--color-primary-link)] min-h-[2rem] flex items-center">Ver la solución</summary>
+            <p class="text-[var(--color-text-muted)] leading-relaxed mt-1">E = 0,5 cm. e = 0,5 / 119,5 = 0,00418 → <strong>0,42 %</strong>.</p>
+          </details>
+        </li>
+        <li>
+          <p class="text-[var(--color-text-muted)] leading-relaxed">Cuatro mediciones de un tiempo dan 2,1 · 2,3 · 2,2 · 2,2 s. ¿Cómo se informa el resultado?</p>
+          <details class="mt-1">
+            <summary class="cursor-pointer text-sm font-semibold text-[var(--color-primary-link)] min-h-[2rem] flex items-center">Ver la solución</summary>
+            <p class="text-[var(--color-text-muted)] leading-relaxed mt-1">Promedio = 2,2 s. s = 0,0816 y error estándar = 0,0816 / √4 = 0,0408. Resultado: <strong>2,20 ± 0,04 s</strong>.</p>
+          </details>
+        </li>
+      </ol>
+      <!-- CC-EXERCISES:END -->
+
+      <h2 class="font-display font-bold text-xl mt-8 mb-2">Preguntas frecuentes</h2>
+      <dl class="space-y-4 text-[var(--color-text-muted)] leading-relaxed">
+        <div>
+          <dt class="font-semibold text-[var(--color-text)]">¿Cómo se calcula el error absoluto?</dt>
+          <dd>Es el valor absoluto de la diferencia entre lo medido y el valor real.</dd>
+        </div>
+        <div>
+          <dt class="font-semibold text-[var(--color-text)]">¿Cómo se calcula el error porcentual?</dt>
+          <dd>Se divide el error absoluto por el valor real y se multiplica por 100.</dd>
+        </div>
+        <div>
+          <dt class="font-semibold text-[var(--color-text)]">¿Qué diferencia hay entre exactitud y precisión?</dt>
+          <dd>Exactitud: cercanía al valor real. Precisión: cercanía entre mediciones repetidas.</dd>
+        </div>
+        <div>
+          <dt class="font-semibold text-[var(--color-text)]">¿Qué es el error estándar de la media?</dt>
+          <dd>s/√n: la incertidumbre del promedio de una serie de mediciones.</dd>
+        </div>
+      </dl>
+    </article>
+
+    <aside class="cc-ad" data-ad="guide" aria-label="Publicidad" hidden>
+      <p class="cc-ad-label">Publicidad</p>
+      <div class="cc-ad-slot"></div>
+    </aside>
+
+    <section class="mt-10 surface rounded-2xl p-5 shadow-sm">
+      <h2 class="font-display font-semibold text-lg mb-2">Calculadoras relacionadas</h2>
+      <ul class="space-y-2 text-sm">
+        <li><a class="text-[var(--color-primary-link)] hover:underline" href="/calculadoras/estadistica/calculadora-de-error-absoluto-y-relativo/">Calculadora de errores de medición</a></li>
+        <li><a class="text-[var(--color-primary-link)] hover:underline" href="/guias/como-calcular-desviacion-estandar/">Guía: desviación estándar</a></li>
+        <li><a class="text-[var(--color-primary-link)] hover:underline" href="/guias/intervalo-de-confianza-explicado/">Guía: intervalo de confianza</a></li>
+      </ul>
+    </section>
+  </main>
+
+  <footer class="border-t border-[var(--color-border)] mt-10">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 py-10 text-sm text-[var(--color-text-muted)] flex flex-col sm:flex-row items-center justify-between gap-4">
+      <p>© 2026 Calculadora Científica · Hecho en Argentina 🇦🇷 · <a href="/sobre-nosotros/" class="hover:text-[var(--color-primary-link)]">Sobre Nosotros</a> · <a href="/privacidad/" class="hover:text-[var(--color-primary-link)]">Privacidad</a> · <a href="/terminos-de-uso/" class="hover:text-[var(--color-primary-link)]">Términos</a> · <a href="/contacto/" class="hover:text-[var(--color-primary-link)]">Contacto</a></p>
+      <a href="/" class="hover:text-[var(--color-primary-link)]">← Volver al inicio</a>
+    </div>
+  </footer>
+  <!-- Cloudflare Web Analytics --><script type='module' src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "62cded9cafa8475a9f6f875888b918b9"}'></script><!-- End Cloudflare Web Analytics -->
+<a href="/" id="back-to-home" aria-label="Ir al inicio del sitio"
+  class="fixed bottom-6 right-6 z-40 w-11 h-11 rounded-full surface shadow-lg hidden lg:flex items-center justify-center transition-all duration-200 hover:shadow-xl">
+  <svg class="w-5 h-5 text-[var(--color-text)]" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+    <path stroke-linecap="round" stroke-linejoin="round" d="M3 9.5L12 3l9 6.5M5 9.5V20a1 1 0 001 1h4v-6h4v6h4a1 1 0 001-1V9.5"/>
+  </svg>
+</a>
+<button id="back-to-top" type="button" aria-label="Volver al inicio de la página"
+  class="fixed bottom-20 right-6 z-40 w-11 h-11 rounded-full bg-[var(--color-primary)] text-white shadow-lg hidden lg:flex items-center justify-center opacity-0 pointer-events-none translate-y-2 transition-all duration-200 hover:brightness-110">
+  <svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5">
+    <path stroke-linecap="round" stroke-linejoin="round" d="M5 15l7-7 7 7"/>
+  </svg>
+</button>
+<script src="/assets/js/ads.js" defer></script>
+<script src="/assets/js/back-to-top.js"></script>
+<script src="/assets/js/pwa.js" defer></script>
+<script src="/assets/js/account.js" defer></script>
+</body>
+</html>

@@ -22,19 +22,19 @@ CATS = {
         desc="Estadística descriptiva, promedio de notas, distribución normal, permutaciones y combinaciones y regresión lineal, para cátedras, tesis e informes.",
         meta="Calculadoras de estadística online y gratis: estadística descriptiva, promedio de notas, distribución normal, combinatoria y regresión lineal.",
         text="Herramientas para analizar datos y resolver problemas de probabilidad y combinatoria: media, mediana, desvío estándar, puntaje Z, permutaciones, combinaciones y la recta de regresión con su correlación.",
-        guides=["como-calcular-desviacion-estandar", "puntaje-z-y-curva-normal", "permutaciones-vs-combinaciones", "como-calcular-promedio-de-notas", "regresion-lineal-y-correlacion", "distribucion-binomial-explicada", "intervalo-de-confianza-explicado", "como-calcular-el-tamano-de-una-muestra", "como-calcular-probabilidades"]),
+        guides=["como-calcular-desviacion-estandar", "puntaje-z-y-curva-normal", "permutaciones-vs-combinaciones", "como-calcular-promedio-de-notas", "regresion-lineal-y-correlacion", "distribucion-binomial-explicada", "intervalo-de-confianza-explicado", "como-calcular-el-tamano-de-una-muestra", "como-calcular-probabilidades", "media-aritmetica-geometrica-y-armonica", "error-absoluto-relativo-y-porcentual"]),
     "fisica": dict(
         key="fisica", label="Física",
         desc="Cinemática (MRU y MRUA), segunda ley de Newton, ley de Ohm y energía cinética y potencial, con fórmulas explicadas.",
         meta="Calculadoras de física online y gratis: cinemática MRU y MRUA, leyes de Newton y Ohm, energía cinética y potencial, con fórmulas.",
         text="Calculadoras para los temas centrales de física general: movimiento, fuerza, electricidad y energía. Todas despejan la incógnita que necesites y muestran la fórmula que usan.",
-        guides=["formulas-de-mru-y-mrua", "segunda-ley-de-newton-explicada", "ley-de-ohm-explicada", "energia-cinetica-y-potencial-explicada", "caida-libre-y-tiro-oblicuo-explicados", "trabajo-y-potencia-mecanica", "como-calcular-la-densidad", "calor-especifico-y-calorimetria", "movimiento-circular-uniforme-explicado", "periodo-del-pendulo-simple", "ley-de-coulomb-explicada", "presion-y-presion-hidrostatica"]),
+        guides=["formulas-de-mru-y-mrua", "segunda-ley-de-newton-explicada", "ley-de-ohm-explicada", "energia-cinetica-y-potencial-explicada", "caida-libre-y-tiro-oblicuo-explicados", "trabajo-y-potencia-mecanica", "como-calcular-la-densidad", "calor-especifico-y-calorimetria", "movimiento-circular-uniforme-explicado", "periodo-del-pendulo-simple", "ley-de-coulomb-explicada", "presion-y-presion-hidrostatica", "ley-de-gravitacion-universal-explicada", "ley-de-snell-y-refraccion-de-la-luz"]),
     "quimica": dict(
         key="quimica", label="Química",
         desc="pH y pOH, molaridad, diluciones, masa molar, moles y gases ideales para química general y analítica.",
         meta="Calculadoras de química online y gratis: pH y pOH, molaridad, diluciones, masa molar, moles y gases ideales, con fórmulas y paso a paso.",
         text="Todo lo que se usa en las prácticas de química general: concentración de soluciones, masa molar de una fórmula, cantidad de sustancia en moles y la ecuación de los gases ideales.",
-        guides=["como-calcular-molaridad", "como-calcular-moles", "como-calcular-masa-molar", "como-calcular-ph-y-poh", "como-hacer-una-dilucion", "ley-de-los-gases-ideales", "estequiometria-y-reactivo-limitante-paso-a-paso", "como-balancear-ecuaciones-quimicas", "leyes-de-boyle-charles-y-gay-lussac", "como-calcular-ppm-y-porcentaje-de-concentracion"]),
+        guides=["como-calcular-molaridad", "como-calcular-moles", "como-calcular-masa-molar", "como-calcular-ph-y-poh", "como-hacer-una-dilucion", "ley-de-los-gases-ideales", "estequiometria-y-reactivo-limitante-paso-a-paso", "como-balancear-ecuaciones-quimicas", "leyes-de-boyle-charles-y-gay-lussac", "como-calcular-ppm-y-porcentaje-de-concentracion", "propiedades-coligativas-crioscopia-y-ebulloscopia"]),
     "ingenieria": dict(
         key="ingenieria", label="Ingeniería",
         desc="Conversión de unidades técnicas y de temperatura, ley de Hooke y resistencias en serie y paralelo.",
@@ -52,13 +52,13 @@ CATS = {
         desc="Edad y fechas, IMC, conversor de cocina, horas trabajadas y propina: cálculos del día a día, rápidos y sin vueltas.",
         meta="Calculadoras de vida diaria online y gratis: edad y días entre fechas, IMC, conversor de cocina, horas trabajadas y propina.",
         text="Las cuentas que aparecen todos los días: cuántos años y días tenés, cuál es tu IMC, cuántos gramos es una taza de harina, cuántas horas trabajaste o cuánto paga cada uno en la mesa.",
-        guides=["como-calcular-la-edad-y-los-dias-entre-fechas", "como-calcular-el-imc", "equivalencias-de-cocina-tazas-cucharadas-y-gramos", "como-calcular-horas-trabajadas-y-horas-extra", "como-calcular-la-propina-y-dividir-la-cuenta", "como-calcular-el-metabolismo-basal-y-las-calorias-diarias", "como-calcular-el-consumo-de-combustible-de-un-auto"]),
+        guides=["como-calcular-la-edad-y-los-dias-entre-fechas", "como-calcular-el-imc", "equivalencias-de-cocina-tazas-cucharadas-y-gramos", "como-calcular-horas-trabajadas-y-horas-extra", "como-calcular-la-propina-y-dividir-la-cuenta", "como-calcular-el-metabolismo-basal-y-las-calorias-diarias", "como-calcular-el-consumo-de-combustible-de-un-auto", "como-calcular-el-peso-ideal", "como-calcular-la-fecha-probable-de-parto"]),
     "hogar-y-construccion": dict(
         key="hogar", label="Hogar y Construcción",
         desc="Cerámicos, pintura, ladrillos, hormigón y consumo eléctrico: cálculos de materiales y gastos del hogar.",
         meta="Calculadoras de hogar y construcción online y gratis: cerámicos, pintura, ladrillos, hormigón y consumo eléctrico, con cantidades y costos.",
         text="Cuántos cerámicos, litros de pintura, ladrillos o metros cúbicos de hormigón comprar para tu obra o refacción, y cuánto cuesta usar cada artefacto de la casa. Las cantidades son estimaciones: para estructuras, consultá siempre a un profesional.",
-        guides=["cuantos-ceramicos-necesito", "cuanta-pintura-necesito", "cuantos-ladrillos-necesito-por-m2", "como-calcular-el-hormigon-de-una-losa", "como-calcular-el-consumo-electrico", "como-calcular-una-escalera"]),
+        guides=["cuantos-ceramicos-necesito", "cuanta-pintura-necesito", "cuantos-ladrillos-necesito-por-m2", "como-calcular-el-hormigon-de-una-losa", "como-calcular-el-consumo-electrico", "como-calcular-una-escalera", "como-calcular-la-pendiente-de-una-rampa"]),
 }
 
 

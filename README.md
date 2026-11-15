@@ -640,6 +640,20 @@ existentes (se revisó antes que no hubiera nada equivalente):
 - Verificado: 8 pruebas nuevas (65 de lógica + 11 de la API = 76), cada ejemplo de las guías contra la calculadora en el navegador y sin
   desborde a 375 px en las 16 páginas. Esta vez `inject-ad-slots.py` tocó solo las 16 páginas nuevas.
 
+## Lote 12, Contacto y más ejercicios (2026-11-14)
+
+- **Página de Contacto** (`/contacto/`, generada con `scripts/build-contacto.py`): cómo reportar un error, para qué más escribir (cuenta, derechos
+  sobre los datos, prensa), tiempos de respuesta y qué no se hace; JSON-LD `ContactPage`. El enlace "Contacto" está en el pie de todas las páginas
+  (`scripts/inject-contact-link.py`, idempotente; las plantillas de `page_templates.py` ya lo traen) y la URL, en `sitemap.xml`.
+- **8 calculadoras nuevas con su guía** (`build-batch-12.py`, `build-batch-12-guides.py`, `register-batch-12.py`): peso ideal (Devine, Robinson,
+  Miller, Hamwi y rango por IMC), fecha probable de parto (regla de Naegele con ajuste por ciclo; usa campos `type="date"` con el motor común y
+  fechas en UTC), gravitación universal (fuerza, gravedad de un astro, órbita y velocidad de escape), ley de Snell (refracción, índice,
+  ángulo crítico y reflexión total), medias (aritmética, geométrica, armónica y cuadrática), errores de medición (absoluto, relativo, porcentual y
+  error estándar), propiedades coligativas (crioscopía y ebulloscopía con factor de van't Hoff) y pendiente de rampa.
+- **Ejercicios resueltos:** `add-exercises.py` ahora cubre 40 guías (las 16 de uso frecuente y las de los lotes 10, 11 y 12). Cada respuesta se
+  verificó con un cálculo independiente en Node antes de cargarla.
+- Verificado: 84 pruebas (73 de lógica + 11 de la API), cada ejemplo contra la calculadora en el navegador y sin desborde a 375 px.
+
 ## Cuentas de usuario (2026-11-12)
 
 Cuentas **opcionales** con ingreso con Google y con mail + contraseña, aceptación de los términos y sincronización de favoritas,

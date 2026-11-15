@@ -481,6 +481,47 @@
     <priority>0.9</priority>
   </url>
 
+  <url>
+    <loc>https://www.calculadoracientifica.com.ar/calculadoras/vida-diaria/calculadora-de-peso-ideal/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://www.calculadoracientifica.com.ar/calculadoras/vida-diaria/calculadora-de-fecha-probable-de-parto/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://www.calculadoracientifica.com.ar/calculadoras/fisica/calculadora-de-gravitacion-universal/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://www.calculadoracientifica.com.ar/calculadoras/fisica/calculadora-de-ley-de-snell/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://www.calculadoracientifica.com.ar/calculadoras/estadistica/calculadora-de-medias/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://www.calculadoracientifica.com.ar/calculadoras/estadistica/calculadora-de-error-absoluto-y-relativo/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://www.calculadoracientifica.com.ar/calculadoras/quimica/calculadora-de-propiedades-coligativas/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://www.calculadoracientifica.com.ar/calculadoras/hogar-y-construccion/calculadora-de-pendiente-de-rampa/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+
   <!-- Guías -->
   <url>
     <loc>https://www.calculadoracientifica.com.ar/guias/</loc>
@@ -914,9 +955,55 @@
     <priority>0.7</priority>
   </url>
 
+  <url>
+    <loc>https://www.calculadoracientifica.com.ar/guias/como-calcular-el-peso-ideal/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://www.calculadoracientifica.com.ar/guias/como-calcular-la-fecha-probable-de-parto/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://www.calculadoracientifica.com.ar/guias/ley-de-gravitacion-universal-explicada/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://www.calculadoracientifica.com.ar/guias/ley-de-snell-y-refraccion-de-la-luz/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://www.calculadoracientifica.com.ar/guias/media-aritmetica-geometrica-y-armonica/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://www.calculadoracientifica.com.ar/guias/error-absoluto-relativo-y-porcentual/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://www.calculadoracientifica.com.ar/guias/propiedades-coligativas-crioscopia-y-ebulloscopia/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://www.calculadoracientifica.com.ar/guias/como-calcular-la-pendiente-de-una-rampa/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
   <!-- Institucional -->
   <url>
     <loc>https://www.calculadoracientifica.com.ar/sobre-nosotros/</loc>
+    <changefreq>yearly</changefreq>
+    <priority>0.4</priority>
+  </url>
+  <url>
+    <loc>https://www.calculadoracientifica.com.ar/contacto/</loc>
     <changefreq>yearly</changefreq>
     <priority>0.4</priority>
   </url>
